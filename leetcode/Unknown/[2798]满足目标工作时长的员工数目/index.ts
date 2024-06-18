@@ -6,7 +6,7 @@
 
 // @lc code=start
 function numberOfEmployeesWhoMetTarget(hours: number[], target: number): number {
-
+    return hours.reduce((count, hour) => hour >= target ? ++count : count, 0);
 };
 // @lc code=end
 
