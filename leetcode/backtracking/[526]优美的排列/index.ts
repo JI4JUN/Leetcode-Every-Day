@@ -11,14 +11,14 @@ function countArrangement(n: number): number {
     const visted = new Array<boolean>(n + 1).fill(false);
 
     const backtrack = (index: number): void => {
-        if (index === n + 1) {
+        if (index > n) {
             result++;
 
             return;
         }
 
         for (let i = 1; i <= n; i++) {
-            if ((!(i % index) || !(index % i)) && !visted[i]) {
+            if (!visted[i] && (!(i % index) || !(index % i))) {
                 visted[i] = true;
                 backtrack(index + 1);
                 visted[i] = false;
