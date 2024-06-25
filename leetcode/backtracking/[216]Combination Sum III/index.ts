@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=216 lang=typescript
  *
- * [216] 组合总和 III
+ * [216] Combination Sum III
  */
 
 // @lc code=start

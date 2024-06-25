@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=131 lang=typescript
  *
- * [131] 分割回文串
+ * [131] Palindrome Partitioning
  */
 
 // @lc code=start

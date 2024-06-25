@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=89 lang=typescript
  *
- * [89] 格雷编码
+ * [89] Gray Code
  */
 
 // @lc code=start

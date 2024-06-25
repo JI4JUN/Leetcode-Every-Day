@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=2769 lang=typescript
  *
- * [2769] 找出最大的可达成数字
+ * [2769] Find the Maximum Achievable Number
  */
 
 // @lc code=start

@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=77 lang=typescript
  *
- * [77] 组合
+ * [77] Combinations
  */
 
 // @lc code=start

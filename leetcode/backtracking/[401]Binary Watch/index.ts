@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=401 lang=typescript
  *
- * [401] 二进制手表
+ * [401] Binary Watch
  */
 
 // @lc code=start

@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=526 lang=typescript
  *
- * [526] 优美的排列
+ * [526] Beautiful Arrangement
  */
 
 // @lc code=start

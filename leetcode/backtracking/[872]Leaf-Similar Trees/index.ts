@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=872 lang=typescript
  *
- * [872] 叶子相似的树
+ * [872] Leaf-Similar Trees
  */
 
 // @lc code=start

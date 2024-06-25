@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=2798 lang=typescript
  *
- * [2798] 满足目标工作时长的员工数目
+ * [2798] Number of Employees Who Met the Target
  */
 
 // @lc code=start

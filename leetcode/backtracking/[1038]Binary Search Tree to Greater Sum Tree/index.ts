@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=1038 lang=typescript
  *
- * [1038] 从二叉搜索树到更大和树
+ * [1038] Binary Search Tree to Greater Sum Tree
  */
 
 // @lc code=start

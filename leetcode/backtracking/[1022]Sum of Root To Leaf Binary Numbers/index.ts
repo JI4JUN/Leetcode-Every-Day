@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=1022 lang=typescript
  *
- * [1022] 从根到叶的二进制数之和
+ * [1022] Sum of Root To Leaf Binary Numbers
  */
 
 // @lc code=start
