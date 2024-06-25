@@ -20,11 +20,7 @@ function combinationSum3(k: number, n: number): number[][] {
             return;
         }
 
-        for (let i = index; i <= 9; i++) {
-            if (n - i < 0) {
-                return;
-            }
-
+        for (let i = index; i <= 9 - (k - path.length) + 1; i++) {
             path.push(i);
             backtrack(n - i, k, i + 1);
             path.pop();
