@@ -8,7 +8,7 @@
 function countArrangement(n: number): number {
     let result: number = 0;
 
-    const visted = new Array<boolean>(n + 1).fill(false);
+    const visited = new Array<boolean>(n + 1).fill(false);
 
     const backtrack = (index: number): void => {
         if (index > n) {
@@ -18,10 +18,10 @@ function countArrangement(n: number): number {
         }
 
         for (let i = 1; i <= n; i++) {
-            if (!visted[i] && (!(i % index) || !(index % i))) {
-                visted[i] = true;
+            if (!visited[i] && (!(i % index) || !(index % i))) {
+                visited[i] = true;
                 backtrack(index + 1);
-                visted[i] = false;
+                visited[i] = false;
             }
         }
     }
