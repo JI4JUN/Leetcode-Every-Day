@@ -27,16 +27,16 @@ function bstToGst(root: TreeNode | null): TreeNode | null {
             return;
         }
 
-        backtrack(root.right);
-        sum += root.val;
-        root.val = sum;
-        backtrack(root.left);
+        const { left, right, val } = root;
 
-    }
+        backtrack(right);
+        sum += val;
+        root.val = sum;
+        backtrack(left);
+    };
 
     backtrack(root);
 
     return root;
-};
+}
 // @lc code=end
-

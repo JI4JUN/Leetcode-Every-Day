@@ -24,8 +24,8 @@ function letterCombinations(digits: string): string[] {
         9: ['w', 'x', 'y', 'z'],
         0: [],
         '*': [],
-        '#': [],
-    }
+        '#': []
+    };
 
     const path: string[] = [];
 
@@ -42,12 +42,10 @@ function letterCombinations(digits: string): string[] {
             backtrack(path, currentIdx + 1);
             path.pop();
         }
-
-    }
+    };
 
     backtrack(path, 0);
 
     return result;
-};
+}
 // @lc code=end
-

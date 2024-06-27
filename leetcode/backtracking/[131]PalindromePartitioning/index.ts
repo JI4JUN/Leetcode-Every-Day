@@ -32,7 +32,7 @@ function partition(s: string): string[][] {
             const possibleStr = s.slice(0, i);
 
             if (isPalindrome(possibleStr)) {
-                path.push(possibleStr)
+                path.push(possibleStr);
                 backtrack(s.slice(i), result, path);
                 path.pop();
             }
@@ -44,4 +44,3 @@ function partition(s: string): string[][] {
     return result;
 }
 // @lc code=end
-

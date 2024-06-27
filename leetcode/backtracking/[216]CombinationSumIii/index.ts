@@ -13,23 +13,28 @@ function combinationSum3(k: number, n: number): number[][] {
         return result;
     }
 
-    const backtrack = (n: number, k: number, index: number): void => {
-        if (path.length === k && n === 0) {
+    const backtrack = (n: number, k: number, startIndex: number): void => {
+        const len = path.length;
+
+        if (len === k && n === 0) {
             result.push([...path]);
 
             return;
         }
 
-        for (let i = index; i <= 9 - (k - path.length) + 1; i++) {
+        for (let i = startIndex; i <= 9 - (k - len) + 1; ++i) {
+            if (n - i < 0) {
+                return;
+            }
+
             path.push(i);
             backtrack(n - i, k, i + 1);
             path.pop();
         }
-    }
+    };
 
     backtrack(n, k, 1);
 
     return result;
-};
+}
 // @lc code=end
-

@@ -34,7 +34,7 @@ function leafSimilar(root1: TreeNode | null, root2: TreeNode | null): boolean {
 
         backtrack(left, leaves);
         backtrack(right, leaves);
-    }
+    };
 
     const leaves1: number[] = [];
     const leaves2: number[] = [];
@@ -42,6 +42,5 @@ function leafSimilar(root1: TreeNode | null, root2: TreeNode | null): boolean {
     backtrack(root2, leaves2);
 
     return leaves1.toString() === leaves2.toString();
-};
+}
 // @lc code=end
-

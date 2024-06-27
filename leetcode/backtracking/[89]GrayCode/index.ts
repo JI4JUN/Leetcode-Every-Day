@@ -17,6 +17,5 @@ function grayCode(n: number): number[] {
     }
 
     return result;
-};
+}
 // @lc code=end
-

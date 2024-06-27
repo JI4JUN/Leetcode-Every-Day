@@ -24,11 +24,10 @@ function countArrangement(n: number): number {
                 visited[i] = false;
             }
         }
-    }
+    };
 
     backtrack(1);
 
     return result;
-};
+}
 // @lc code=end
-
