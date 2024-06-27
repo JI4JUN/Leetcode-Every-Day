@@ -1,5 +1,5 @@
 /*
- * @lc app=leetcode.cn id=131 lang=typescript
+ * @lc app=leetcode id=131 lang=typescript
  *
  * [131] Palindrome Partitioning
  */

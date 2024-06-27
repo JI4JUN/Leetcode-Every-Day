@@ -1,5 +1,5 @@
 /*
- * @lc app=leetcode.cn id=401 lang=typescript
+ * @lc app=leetcode id=401 lang=typescript
  *
  * [401] Binary Watch
  */

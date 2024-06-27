@@ -1,5 +1,5 @@
 /*
- * @lc app=leetcode.cn id=89 lang=typescript
+ * @lc app=leetcode id=89 lang=typescript
  *
  * [89] Gray Code
  */

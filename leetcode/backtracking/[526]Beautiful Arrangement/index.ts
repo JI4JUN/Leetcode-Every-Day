@@ -1,5 +1,5 @@
 /*
- * @lc app=leetcode.cn id=526 lang=typescript
+ * @lc app=leetcode id=526 lang=typescript
  *
  * [526] Beautiful Arrangement
  */

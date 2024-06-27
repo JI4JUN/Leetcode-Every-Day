@@ -1,5 +1,5 @@
 /*
- * @lc app=leetcode.cn id=39 lang=typescript
+ * @lc app=leetcode id=39 lang=typescript
  *
  * [39] Combination Sum
  */

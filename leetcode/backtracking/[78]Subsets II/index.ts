@@ -1,5 +1,5 @@
 /*
- * @lc app=leetcode.cn id=78 lang=typescript
+ * @lc app=leetcode id=78 lang=typescript
  *
  * [78] Subsets II
  */

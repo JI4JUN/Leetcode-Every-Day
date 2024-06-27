@@ -1,5 +1,5 @@
 /*
- * @lc app=leetcode.cn id=1038 lang=typescript
+ * @lc app=leetcode id=1038 lang=typescript
  *
  * [1038] Binary Search Tree to Greater Sum Tree
  */

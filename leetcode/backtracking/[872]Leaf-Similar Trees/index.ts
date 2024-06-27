@@ -1,5 +1,5 @@
 /*
- * @lc app=leetcode.cn id=872 lang=typescript
+ * @lc app=leetcode id=872 lang=typescript
  *
  * [872] Leaf-Similar Trees
  */

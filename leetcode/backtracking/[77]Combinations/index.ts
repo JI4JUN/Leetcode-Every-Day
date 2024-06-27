@@ -1,5 +1,5 @@
 /*
- * @lc app=leetcode.cn id=77 lang=typescript
+ * @lc app=leetcode id=77 lang=typescript
  *
  * [77] Combinations
  */

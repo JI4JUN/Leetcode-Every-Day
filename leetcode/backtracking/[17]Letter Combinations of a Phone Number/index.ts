@@ -1,5 +1,5 @@
 /*
- * @lc app=leetcode.cn id=17 lang=typescript
+ * @lc app=leetcode id=17 lang=typescript
  *
  * [17] Letter Combinations of a Phone Number
  */

@@ -1,5 +1,5 @@
 /*
- * @lc app=leetcode.cn id=1022 lang=typescript
+ * @lc app=leetcode id=1022 lang=typescript
  *
  * [1022] Sum of Root To Leaf Binary Numbers
  */
