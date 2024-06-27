@@ -4,31 +4,38 @@
  * [131] Palindrome Partitioning
  */
 
+// ======================== Approach 0 ======================== //
+
 // @lc code=start
-function isPalindrome(str: string): boolean {
-    let left = 0;
-    let right = str.length - 1;
-
-    while (left < right) {
-        if (str.at(left++) !== str.at(right--)) {
-            return false;
-        }
-    }
-
-    return true;
-}
-
-function partition(s: string): string[][] {
+function partition1(s: string): string[][] {
     const result: string[][] = [];
 
+    const isPalindrome = (str: string): boolean => {
+        let left = 0;
+        let right = str.length - 1;
+
+        while (left < right) {
+            if (str[left] !== str[right]) {
+                return false;
+            }
+
+            ++left;
+            --right;
+        }
+
+        return true;
+    };
+
     const backtrack = (s: string, result: string[][], path: string[]): void => {
-        if (s.length === 0) {
-            result.push(path.slice());
+        const len = s.length;
+
+        if (len === 0) {
+            result.push([...path]);
 
             return;
         }
 
-        for (let i = 1; i <= s.length; i++) {
+        for (let i = 1; i <= len; ++i) {
             const possibleStr = s.slice(0, i);
 
             if (isPalindrome(possibleStr)) {
@@ -40,6 +47,60 @@ function partition(s: string): string[][] {
     };
 
     backtrack(s, result, []);
+
+    return result;
+}
+
+//======================== Approach 1 ======================== //
+function partition(s: string): string[][] {
+    const result: string[][] = [];
+    const path: string[] = [];
+    const isPalindrome: boolean[][] = [];
+
+    const computePalindrome = (str: string): void => {
+        const sLength = str.length;
+
+        for (let i = 0; i < sLength; ++i) {
+            isPalindrome[i] = new Array<boolean>(sLength).fill(false);
+        }
+
+        for (let i = sLength - 1; i >= 0; --i) {
+            for (let j = i; j < sLength; ++j) {
+                if (j === i) {
+                    isPalindrome[i][j] = true;
+                } else if (j - i === 1) {
+                    isPalindrome[i][j] = s[i] === s[j];
+                } else {
+                    isPalindrome[i][j] =
+                        s[i] === s[j] && isPalindrome[i + 1][j - 1];
+                }
+            }
+        }
+    };
+
+    const backtrack = (s: string, startIndex: number): void => {
+        const sLength = s.length;
+
+        if (startIndex >= sLength) {
+            result.push([...path]);
+
+            return;
+        }
+
+        for (let i = startIndex; i < sLength; ++i) {
+            if (!isPalindrome[startIndex][i]) {
+                continue;
+            }
+
+            const possibleStr = s.substring(startIndex, i + 1);
+            path.push(possibleStr);
+            backtrack(s, i + 1);
+            path.pop();
+        }
+    };
+
+    computePalindrome(s);
+    backtrack(s, 0);
 
     return result;
 }
