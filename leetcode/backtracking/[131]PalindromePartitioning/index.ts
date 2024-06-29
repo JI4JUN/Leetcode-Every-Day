@@ -7,8 +7,9 @@
 // ======================== Approach 0 ======================== //
 
 // @lc code=start
-function partition1(s: string): string[][] {
+function partition(s: string): string[][] {
     const result: string[][] = [];
+    const path: string[] = [];
 
     const isPalindrome = (str: string): boolean => {
         let left = 0;
@@ -26,7 +27,7 @@ function partition1(s: string): string[][] {
         return true;
     };
 
-    const backtrack = (s: string, result: string[][], path: string[]): void => {
+    const backtrack = (s: string): void => {
         const len = s.length;
 
         if (len === 0) {
@@ -40,19 +41,19 @@ function partition1(s: string): string[][] {
 
             if (isPalindrome(possibleStr)) {
                 path.push(possibleStr);
-                backtrack(s.slice(i), result, path);
+                backtrack(s.slice(i));
                 path.pop();
             }
         }
     };
 
-    backtrack(s, result, []);
+    backtrack(s);
 
     return result;
 }
 
 //======================== Approach 1 ======================== //
-function partition(s: string): string[][] {
+function partition1(s: string): string[][] {
     const result: string[][] = [];
     const path: string[] = [];
     const isPalindrome: boolean[][] = [];
