@@ -1,9 +1,12 @@
 # 131 Palindrome Partitioning
 
 Created: June 27, 2024 10:47 AM
-Tags: backtracking, medium
+Select: Medium
+Topics: Backtracking
 
-https://leetcode.com/problems/palindrome-partitioning/description/
+## 📖Description
+
+[Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/description/)
 
 ## 🤔Intuition
 
