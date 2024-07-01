@@ -4,9 +4,8 @@
  * [131] Palindrome Partitioning
  */
 
-// ======================== Approach 0 ======================== //
-
 // @lc code=start
+// ======================== Approach 0 ======================== //
 function partition(s: string): string[][] {
     const result: string[][] = [];
     const path: string[] = [];
