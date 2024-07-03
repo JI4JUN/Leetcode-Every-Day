@@ -5,7 +5,8 @@
  */
 
 // @lc code=start
-function permute(nums: number[]): number[][] {
+// ======================== Approach 0 ======================== //
+function permute1(nums: number[]): number[][] {
     const length = nums.length;
 
     const result: number[][] = [];
@@ -32,6 +33,31 @@ function permute(nums: number[]): number[][] {
     };
 
     backtrack([]);
+
+    return result;
+}
+
+// ======================== Approach 1 ======================== //
+function permute(nums: number[]): number[][] {
+    const length = nums.length;
+
+    const result: number[][] = [];
+
+    const backtrack = (first: number): void => {
+        if (first === length) {
+            result.push([...nums]);
+
+            return;
+        }
+
+        for (let i = first; i < length; ++i) {
+            [nums[i], nums[first]] = [nums[first], nums[i]];
+            backtrack(first + 1);
+            [nums[i], nums[first]] = [nums[first], nums[i]];
+        }
+    };
+
+    backtrack(0);
 
     return result;
 }
