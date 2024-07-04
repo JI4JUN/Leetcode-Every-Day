@@ -5,7 +5,8 @@
  */
 
 // @lc code=start
-function generateParenthesis(n: number): string[] {
+// ======================== Approach 0 ======================== //
+function generateParenthesis1(n: number): string[] {
     const result: string[] = [];
     const visited: boolean[] = new Array<boolean>(n).fill(false);
 
@@ -58,6 +59,35 @@ function generateParenthesis(n: number): string[] {
     };
 
     backtrack('');
+
+    return result;
+}
+
+// ======================== Approach 1 ======================== //
+function generateParenthesis(n: number): string[] {
+    const result: string[] = [];
+
+    const backtrack = (
+        numOpen: number,
+        numClose: number,
+        path: string
+    ): void => {
+        if (path.length === 2 * n) {
+            result.push(path);
+
+            return;
+        }
+
+        if (numOpen < n) {
+            backtrack(numOpen + 1, numClose, path + '(');
+        }
+
+        if (numClose < numOpen) {
+            backtrack(numOpen, numClose + 1, path + ')');
+        }
+    };
+
+    backtrack(0, 0, '');
 
     return result;
 }
