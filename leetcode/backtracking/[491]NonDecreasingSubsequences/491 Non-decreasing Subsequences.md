@@ -16,7 +16,7 @@ The problem is to find all the different non-decreasing subsequences of the give
 
 ### Recursion Tree
 
-TODO……
+![NonDecreasingSubsequences](./NonDecreasingSubsequences.png)
 
 ### **Recursive Backtracking**
 
