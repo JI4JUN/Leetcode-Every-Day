@@ -43,9 +43,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": -1449.3236768347494,
-			"y": 213.25464206712996,
-			"lastActivityTimestamp": 1720241584254,
+			"x": 1374.7799884113992,
+			"y": 1876.3617362899963,
+			"lastActivityTimestamp": 1720408137809,
 			"meta": {}
 		},
 		{
@@ -75,7 +75,7 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 1429,
+				"w": 1482,
 				"h": 918
 			},
 			"insets": [
@@ -93,10 +93,8 @@
 			"isFocused": true,
 			"devicePixelRatio": 1,
 			"isCoarsePointer": false,
-			"isHoveringCanvas": false,
-			"openMenus": [
-				"main menu"
-			],
+			"isHoveringCanvas": true,
+			"openMenus": [],
 			"isChangingStyle": false,
 			"isReadonly": false,
 			"meta": {},
@@ -106,10 +104,12 @@
 			"typeName": "instance"
 		},
 		{
-			"editingShapeId": null,
+			"editingShapeId": "shape:XGL83AATgVkVfa4vOsFC8",
 			"croppingShapeId": null,
-			"selectedShapeIds": [],
-			"hoveredShapeId": null,
+			"selectedShapeIds": [
+				"shape:XGL83AATgVkVfa4vOsFC8"
+			],
+			"hoveredShapeId": "shape:XGL83AATgVkVfa4vOsFC8",
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -119,9 +119,9 @@
 			"typeName": "instance_page_state"
 		},
 		{
-			"x": 1900.8382213671784,
-			"y": -88.17291013584895,
-			"z": 0.3277856755495287,
+			"x": 87.81668720899125,
+			"y": -972.1455649089175,
+			"z": 0.8327654645347531,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -222,6 +222,516 @@
 				"isExact": false,
 				"normalizedAnchor": {
 					"x": 0.5795877096478136,
+					"y": 0.5
+				},
+				"terminal": "end"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:nmPvoMTBKhu5Yj4Q0UlRg",
+			"type": "arrow",
+			"fromId": "shape:NC7jA4gVOkHM88O6y59sQ",
+			"toId": "shape:2xoSBcTwG0ScqATOLn6ld",
+			"props": {
+				"isPrecise": false,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5327102803738318,
+					"y": 0.6351351351351384
+				},
+				"terminal": "start"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:3gKzI83f3OaTcEsb1lcEx",
+			"type": "arrow",
+			"fromId": "shape:NC7jA4gVOkHM88O6y59sQ",
+			"toId": "shape:LT7LTuoS5MfbyRqSqZnzo",
+			"props": {
+				"isPrecise": true,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5,
+					"y": 0.5
+				},
+				"terminal": "end"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:Ta9MNSrRB4Z8MmOAPIL70",
+			"type": "arrow",
+			"fromId": "shape:u_xL12S0vc1C_AWNnoTez",
+			"toId": "shape:LT7LTuoS5MfbyRqSqZnzo",
+			"props": {
+				"isPrecise": false,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5560747663551401,
+					"y": 0.48648648648649084
+				},
+				"terminal": "start"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:eEUYh3RA8ozVBdjz0Gvnr",
+			"type": "arrow",
+			"fromId": "shape:UY2UXNDn6Jv_05OimSjZJ",
+			"toId": "shape:2xoSBcTwG0ScqATOLn6ld",
+			"props": {
+				"isPrecise": false,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.46728971962616894,
+					"y": 0.36486486486486736
+				},
+				"terminal": "start"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:j3_Hpt5EPLIktsdPu9V8p",
+			"type": "arrow",
+			"fromId": "shape:UY2UXNDn6Jv_05OimSjZJ",
+			"toId": "shape:dEM_MQhvK8xzqu2JRJ00t",
+			"props": {
+				"isPrecise": true,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5,
+					"y": 0.5
+				},
+				"terminal": "end"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:4Og4Yu8DXXe5jwW5fDlaH",
+			"type": "arrow",
+			"fromId": "shape:u_xL12S0vc1C_AWNnoTez",
+			"toId": "shape:3co6DfKTyBPhOltDr1Jvf",
+			"props": {
+				"isPrecise": true,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5,
+					"y": 0.5
+				},
+				"terminal": "end"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:PEdarPFRg_eWuWLtqZrME",
+			"type": "arrow",
+			"fromId": "shape:HHJU_B7bE8RSQXvASqWy7",
+			"toId": "shape:dEM_MQhvK8xzqu2JRJ00t",
+			"props": {
+				"isPrecise": false,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.6682242990654214,
+					"y": 0.8513513513513544
+				},
+				"terminal": "start"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:mq6Rvj0NIFBwAJug0ZxXL",
+			"type": "arrow",
+			"fromId": "shape:uVijZPmA2T0L48Dlve4QJ",
+			"toId": "shape:3co6DfKTyBPhOltDr1Jvf",
+			"props": {
+				"isPrecise": false,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.4751605115060918,
+					"y": 0.521200935606113
+				},
+				"terminal": "start"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:kTdewirlrlObW9osWmwvn",
+			"type": "arrow",
+			"fromId": "shape:uVijZPmA2T0L48Dlve4QJ",
+			"toId": "shape:k49ZTacq1r5FDm7LqjiFT",
+			"props": {
+				"isPrecise": true,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5,
+					"y": 0.5
+				},
+				"terminal": "end"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:eIrjZCc-A2FBkbNDbpyw5",
+			"type": "arrow",
+			"fromId": "shape:V6lsTHYV3vg-kjUBIT5_R",
+			"toId": "shape:3co6DfKTyBPhOltDr1Jvf",
+			"props": {
+				"isPrecise": false,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.4998621950567798,
+					"y": 0.4617663001891035
+				},
+				"terminal": "start"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:5M8exDGloYVrbdUAzgAYG",
+			"type": "arrow",
+			"fromId": "shape:V6lsTHYV3vg-kjUBIT5_R",
+			"toId": "shape:gSvFvO4NoHG_v4DDzGOzU",
+			"props": {
+				"isPrecise": true,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5,
+					"y": 0.5
+				},
+				"terminal": "end"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:d-rUVmyfwBvF-YpVovWcg",
+			"type": "arrow",
+			"fromId": "shape:BqHOq0LTDjZAXxn88S_Hv",
+			"toId": "shape:gSvFvO4NoHG_v4DDzGOzU",
+			"props": {
+				"isPrecise": false,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5123867207223292,
+					"y": 0.5342943293385161
+				},
+				"terminal": "start"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:xt7HMdJFoa59b0bmyANcl",
+			"type": "arrow",
+			"fromId": "shape:BqHOq0LTDjZAXxn88S_Hv",
+			"toId": "shape:ts0N0melRFCT4J4s7jTNB",
+			"props": {
+				"isPrecise": true,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5,
+					"y": 0.5
+				},
+				"terminal": "end"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:O0fU9Pm7AeKgEry4IL86l",
+			"type": "arrow",
+			"fromId": "shape:G6gXgb7HehgBARg4jBg_u",
+			"toId": "shape:ts0N0melRFCT4J4s7jTNB",
+			"props": {
+				"isPrecise": false,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5134235643543067,
+					"y": 0.5623147280711301
+				},
+				"terminal": "start"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:fRxEebPOADJ3UGtUZbaAb",
+			"type": "arrow",
+			"fromId": "shape:NXFIEdylmpQK9wG8C7VrV",
+			"toId": "shape:B6KFgYW9mOt9v9rCgaWar",
+			"props": {
+				"isPrecise": true,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5,
+					"y": 0.5
+				},
+				"terminal": "end"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:0L-J3ng1Jb3XAgxaVLCWT",
+			"type": "arrow",
+			"fromId": "shape:mBh3JvFx91_2aGKVnHYYN",
+			"toId": "shape:B6KFgYW9mOt9v9rCgaWar",
+			"props": {
+				"isPrecise": false,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.4921377589247423,
+					"y": 0.44253194600973006
+				},
+				"terminal": "start"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:LStLEs0QwSVYIGDBbp9Ph",
+			"type": "arrow",
+			"fromId": "shape:G6gXgb7HehgBARg4jBg_u",
+			"toId": "shape:-vh1AgDKcOLAsuV_bW3N3",
+			"props": {
+				"isPrecise": true,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5,
+					"y": 0.5
+				},
+				"terminal": "end"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:pBhjy7q0JWfOTMT7OrlVa",
+			"type": "arrow",
+			"fromId": "shape:HHJU_B7bE8RSQXvASqWy7",
+			"toId": "shape:HTXYZWdbG4l_ACMky_YM_",
+			"props": {
+				"isPrecise": true,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5,
+					"y": 0.5
+				},
+				"terminal": "end"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:Jyk4f4OHJPGdI6F3zZKO-",
+			"type": "arrow",
+			"fromId": "shape:NXFIEdylmpQK9wG8C7VrV",
+			"toId": "shape:HTXYZWdbG4l_ACMky_YM_",
+			"props": {
+				"isPrecise": false,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.4667889144077124,
+					"y": 0.3455337018522511
+				},
+				"terminal": "start"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:3uQMQXZZUiu7wqs2-vZvn",
+			"type": "arrow",
+			"fromId": "shape:xQhDoENAa0ltTSHt44hpY",
+			"toId": "shape:dEM_MQhvK8xzqu2JRJ00t",
+			"props": {
+				"isPrecise": false,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5144563494177864,
+					"y": 0.5777424955709356
+				},
+				"terminal": "start"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:8Cz0PGCVQwHtmMszA4MUH",
+			"type": "arrow",
+			"fromId": "shape:xQhDoENAa0ltTSHt44hpY",
+			"toId": "shape:jQ2gvE35-KATjxK2MKiY9",
+			"props": {
+				"isPrecise": false,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5687165196238332,
+					"y": 0.6565131302302263
+				},
+				"terminal": "end"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:VJbO_V6UX3mLsmiN4ziXR",
+			"type": "arrow",
+			"fromId": "shape:J8hUTZ0IbaFDZFEV406-0",
+			"toId": "shape:jQ2gvE35-KATjxK2MKiY9",
+			"props": {
+				"isPrecise": false,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5368712629541388,
+					"y": 0.5449478686088817
+				},
+				"terminal": "start"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:PDN3R1MAfW_p1oAqGCj92",
+			"type": "arrow",
+			"fromId": "shape:J8hUTZ0IbaFDZFEV406-0",
+			"toId": "shape:hVwdyLn6j841QEfNyNEyk",
+			"props": {
+				"isPrecise": true,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5,
+					"y": 0.5
+				},
+				"terminal": "end"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:t16R7XB_f8KYloLRraArG",
+			"type": "arrow",
+			"fromId": "shape:mBh3JvFx91_2aGKVnHYYN",
+			"toId": "shape:lxHBqPjYWZlnLyJPelDfs",
+			"props": {
+				"isPrecise": true,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5,
+					"y": 0.5
+				},
+				"terminal": "end"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:dtYg9iUKSaleRL4tAoRlv",
+			"type": "arrow",
+			"fromId": "shape:gGfIJqNk_QFKtdMjmNBPD",
+			"toId": "shape:lxHBqPjYWZlnLyJPelDfs",
+			"props": {
+				"isPrecise": false,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5048030192214824,
+					"y": 0.4785083978139517
+				},
+				"terminal": "start"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:jLOQmbuMTlDl6SEy15OUJ",
+			"type": "arrow",
+			"fromId": "shape:CGsKyQPRQU5hqbZ2LwiFw",
+			"toId": "shape:hVwdyLn6j841QEfNyNEyk",
+			"props": {
+				"isPrecise": false,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.504037329245656,
+					"y": 0.5333544069511025
+				},
+				"terminal": "start"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:Uoi4ghAmpgORMx9gUOSuL",
+			"type": "arrow",
+			"fromId": "shape:CGsKyQPRQU5hqbZ2LwiFw",
+			"toId": "shape:hBQZx7sJTA_PeFVsYOeB5",
+			"props": {
+				"isPrecise": true,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5,
+					"y": 0.5
+				},
+				"terminal": "end"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:KDmm22wRMuB5Jxi6DXY9Y",
+			"type": "arrow",
+			"fromId": "shape:gGfIJqNk_QFKtdMjmNBPD",
+			"toId": "shape:C6Z1fpHuII1FiodCKsYC2",
+			"props": {
+				"isPrecise": true,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5,
+					"y": 0.5
+				},
+				"terminal": "end"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:Wmdmez05Xjo4uSEDNFaFO",
+			"type": "arrow",
+			"fromId": "shape:qWZa0wkC6TZ_VfelBP06g",
+			"toId": "shape:hBQZx7sJTA_PeFVsYOeB5",
+			"props": {
+				"isPrecise": false,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5004434332971789,
+					"y": 0.4783805165038131
+				},
+				"terminal": "start"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:cbp64lNnLa4JZLrpXd7Zp",
+			"type": "arrow",
+			"fromId": "shape:qWZa0wkC6TZ_VfelBP06g",
+			"toId": "shape:XGL83AATgVkVfa4vOsFC8",
+			"props": {
+				"isPrecise": true,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5,
 					"y": 0.5
 				},
 				"terminal": "end"
@@ -535,7 +1045,7 @@
 				"dash": "draw",
 				"size": "m",
 				"font": "draw",
-				"text": "[JFK, SFO], [JKF, ATL]\nitinerary:\nunused: 5",
+				"text": "[JFK, SFO], [JKF, ATL]\nitinerary: JKF\ncount: 1",
 				"align": "middle",
 				"verticalAlign": "middle",
 				"growY": 14.32088414634147,
@@ -565,7 +1075,7 @@
 				"dash": "draw",
 				"size": "m",
 				"font": "draw",
-				"text": "[SFO, ATL]\nitinerary: JKF -> SFO\nunused: 4",
+				"text": "[SFO, ATL]\nitinerary: JKF -> SFO\ncount: 2",
 				"align": "middle",
 				"verticalAlign": "middle",
 				"growY": 14.32088414634147,
@@ -612,23 +1122,6 @@
 			"typeName": "shape"
 		},
 		{
-			"meta": {},
-			"id": "binding:nmPvoMTBKhu5Yj4Q0UlRg",
-			"type": "arrow",
-			"fromId": "shape:NC7jA4gVOkHM88O6y59sQ",
-			"toId": "shape:2xoSBcTwG0ScqATOLn6ld",
-			"props": {
-				"isPrecise": false,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5327102803738318,
-					"y": 0.6351351351351384
-				},
-				"terminal": "start"
-			},
-			"typeName": "binding"
-		},
-		{
 			"x": 246.5760094221207,
 			"y": 536.2169822688278,
 			"rotation": 0,
@@ -670,7 +1163,7 @@
 				"dash": "draw",
 				"size": "m",
 				"font": "draw",
-				"text": "[ATL, SFO], [ATL, JFK]\nitinerary: JKF -> SFO -> ATL\nunused: 3",
+				"text": "[ATL, SFO], [ATL, JFK]\nitinerary: JKF -> SFO -> ATL\ncount: 3",
 				"align": "middle",
 				"verticalAlign": "middle",
 				"growY": 0,
@@ -740,40 +1233,6 @@
 			"typeName": "shape"
 		},
 		{
-			"meta": {},
-			"id": "binding:3gKzI83f3OaTcEsb1lcEx",
-			"type": "arrow",
-			"fromId": "shape:NC7jA4gVOkHM88O6y59sQ",
-			"toId": "shape:LT7LTuoS5MfbyRqSqZnzo",
-			"props": {
-				"isPrecise": true,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5,
-					"y": 0.5
-				},
-				"terminal": "end"
-			},
-			"typeName": "binding"
-		},
-		{
-			"meta": {},
-			"id": "binding:Ta9MNSrRB4Z8MmOAPIL70",
-			"type": "arrow",
-			"fromId": "shape:u_xL12S0vc1C_AWNnoTez",
-			"toId": "shape:LT7LTuoS5MfbyRqSqZnzo",
-			"props": {
-				"isPrecise": false,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5560747663551401,
-					"y": 0.48648648648649084
-				},
-				"terminal": "start"
-			},
-			"typeName": "binding"
-		},
-		{
 			"x": 809.9976220792721,
 			"y": 666.4387939685791,
 			"rotation": 0,
@@ -792,7 +1251,7 @@
 				"dash": "draw",
 				"size": "m",
 				"font": "draw",
-				"text": "[ATL, JFK], [ATL, SFO]\nitinerary: JFK -> ATL\nunused: 4",
+				"text": "[ATL, JFK], [ATL, SFO]\nitinerary: JFK -> ATL\ncount: 2",
 				"align": "middle",
 				"verticalAlign": "middle",
 				"growY": 14.32088414634147,
@@ -862,57 +1321,6 @@
 			"typeName": "shape"
 		},
 		{
-			"meta": {},
-			"id": "binding:eEUYh3RA8ozVBdjz0Gvnr",
-			"type": "arrow",
-			"fromId": "shape:UY2UXNDn6Jv_05OimSjZJ",
-			"toId": "shape:2xoSBcTwG0ScqATOLn6ld",
-			"props": {
-				"isPrecise": false,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.46728971962616894,
-					"y": 0.36486486486486736
-				},
-				"terminal": "start"
-			},
-			"typeName": "binding"
-		},
-		{
-			"meta": {},
-			"id": "binding:j3_Hpt5EPLIktsdPu9V8p",
-			"type": "arrow",
-			"fromId": "shape:UY2UXNDn6Jv_05OimSjZJ",
-			"toId": "shape:dEM_MQhvK8xzqu2JRJ00t",
-			"props": {
-				"isPrecise": true,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5,
-					"y": 0.5
-				},
-				"terminal": "end"
-			},
-			"typeName": "binding"
-		},
-		{
-			"meta": {},
-			"id": "binding:4Og4Yu8DXXe5jwW5fDlaH",
-			"type": "arrow",
-			"fromId": "shape:u_xL12S0vc1C_AWNnoTez",
-			"toId": "shape:3co6DfKTyBPhOltDr1Jvf",
-			"props": {
-				"isPrecise": true,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5,
-					"y": 0.5
-				},
-				"terminal": "end"
-			},
-			"typeName": "binding"
-		},
-		{
 			"x": 430.5752978844969,
 			"y": 933.8477200629075,
 			"rotation": 0,
@@ -931,7 +1339,7 @@
 				"dash": "draw",
 				"size": "m",
 				"font": "draw",
-				"text": "[JKF, SFO]\nitinerary: JKF -> ATL -> JFK\nunused: 3",
+				"text": "[JKF, SFO]\nitinerary: JKF -> ATL -> JFK\ncount: 3",
 				"align": "middle",
 				"verticalAlign": "middle",
 				"growY": 0,
@@ -978,23 +1386,6 @@
 			"typeName": "shape"
 		},
 		{
-			"meta": {},
-			"id": "binding:PEdarPFRg_eWuWLtqZrME",
-			"type": "arrow",
-			"fromId": "shape:HHJU_B7bE8RSQXvASqWy7",
-			"toId": "shape:dEM_MQhvK8xzqu2JRJ00t",
-			"props": {
-				"isPrecise": false,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.6682242990654214,
-					"y": 0.8513513513513544
-				},
-				"terminal": "start"
-			},
-			"typeName": "binding"
-		},
-		{
 			"x": 625.2947819237211,
 			"y": 813.6084806070123,
 			"rotation": 0,
@@ -1036,7 +1427,7 @@
 				"dash": "draw",
 				"size": "m",
 				"font": "draw",
-				"text": "[SFO, ATL]\nitinerary: JKF -> ATL -> JFK -> SFO\nunused: 2",
+				"text": "[SFO, ATL]\nitinerary: JKF -> ATL -> JFK -> SFO\ncount: 4",
 				"align": "middle",
 				"verticalAlign": "middle",
 				"growY": 0,
@@ -1124,10 +1515,10 @@
 				"dash": "draw",
 				"size": "m",
 				"font": "draw",
-				"text": "itinerary: JKF -> SFO -> ATL -> SFO\nunused: 2\nno vaild airline and not assume all tickets",
+				"text": "itinerary: JKF -> SFO -> ATL -> SFO\ncount: 4\nno vaild airline and not assume all tickets (count should be equal to tickets.length)",
 				"align": "middle",
 				"verticalAlign": "middle",
-				"growY": 29.6875,
+				"growY": 59.375,
 				"url": "",
 				"scale": 1
 			},
@@ -1171,23 +1562,6 @@
 			"typeName": "shape"
 		},
 		{
-			"meta": {},
-			"id": "binding:mq6Rvj0NIFBwAJug0ZxXL",
-			"type": "arrow",
-			"fromId": "shape:uVijZPmA2T0L48Dlve4QJ",
-			"toId": "shape:3co6DfKTyBPhOltDr1Jvf",
-			"props": {
-				"isPrecise": false,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.4751605115060918,
-					"y": 0.521200935606113
-				},
-				"terminal": "start"
-			},
-			"typeName": "binding"
-		},
-		{
 			"x": -493.6996998312735,
 			"y": 1074.305567601822,
 			"rotation": 0,
@@ -1211,23 +1585,6 @@
 			"typeName": "shape"
 		},
 		{
-			"meta": {},
-			"id": "binding:kTdewirlrlObW9osWmwvn",
-			"type": "arrow",
-			"fromId": "shape:uVijZPmA2T0L48Dlve4QJ",
-			"toId": "shape:k49ZTacq1r5FDm7LqjiFT",
-			"props": {
-				"isPrecise": true,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5,
-					"y": 0.5
-				},
-				"terminal": "end"
-			},
-			"typeName": "binding"
-		},
-		{
 			"x": -283.4014281433516,
 			"y": 1199.8564529244786,
 			"rotation": 0,
@@ -1246,7 +1603,7 @@
 				"dash": "draw",
 				"size": "m",
 				"font": "draw",
-				"text": "[JFK, ATL]\nitinerary: JKF -> SFO -> ATL -> JFK\nunused: 2",
+				"text": "[JFK, ATL]\nitinerary: JKF -> SFO -> ATL -> JFK\ncount: 4",
 				"align": "middle",
 				"verticalAlign": "middle",
 				"growY": 0,
@@ -1293,23 +1650,6 @@
 			"typeName": "shape"
 		},
 		{
-			"meta": {},
-			"id": "binding:eIrjZCc-A2FBkbNDbpyw5",
-			"type": "arrow",
-			"fromId": "shape:V6lsTHYV3vg-kjUBIT5_R",
-			"toId": "shape:3co6DfKTyBPhOltDr1Jvf",
-			"props": {
-				"isPrecise": false,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.4998621950567798,
-					"y": 0.4617663001891035
-				},
-				"terminal": "start"
-			},
-			"typeName": "binding"
-		},
-		{
 			"x": -233.47313068594985,
 			"y": 1113.0427337662384,
 			"rotation": 0,
@@ -1333,23 +1673,6 @@
 			"typeName": "shape"
 		},
 		{
-			"meta": {},
-			"id": "binding:5M8exDGloYVrbdUAzgAYG",
-			"type": "arrow",
-			"fromId": "shape:V6lsTHYV3vg-kjUBIT5_R",
-			"toId": "shape:gSvFvO4NoHG_v4DDzGOzU",
-			"props": {
-				"isPrecise": true,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5,
-					"y": 0.5
-				},
-				"terminal": "end"
-			},
-			"typeName": "binding"
-		},
-		{
 			"x": -314.9650450180611,
 			"y": 1449.4959682062715,
 			"rotation": 0,
@@ -1368,7 +1691,7 @@
 				"dash": "draw",
 				"size": "m",
 				"font": "draw",
-				"text": "[ATL, SFO]\nitinerary: JKF -> SFO -> ATL -> JFK -> ATL\nunused: 1",
+				"text": "[ATL, SFO]\nitinerary: JKF -> SFO -> ATL -> JFK -> ATL\ncount: 5",
 				"align": "middle",
 				"verticalAlign": "middle",
 				"growY": 0,
@@ -1415,23 +1738,6 @@
 			"typeName": "shape"
 		},
 		{
-			"meta": {},
-			"id": "binding:d-rUVmyfwBvF-YpVovWcg",
-			"type": "arrow",
-			"fromId": "shape:BqHOq0LTDjZAXxn88S_Hv",
-			"toId": "shape:gSvFvO4NoHG_v4DDzGOzU",
-			"props": {
-				"isPrecise": false,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5123867207223292,
-					"y": 0.5342943293385161
-				},
-				"terminal": "start"
-			},
-			"typeName": "binding"
-		},
-		{
 			"x": -248.38272926536325,
 			"y": 1368.421088479797,
 			"rotation": 0,
@@ -1455,23 +1761,6 @@
 			"typeName": "shape"
 		},
 		{
-			"meta": {},
-			"id": "binding:xt7HMdJFoa59b0bmyANcl",
-			"type": "arrow",
-			"fromId": "shape:BqHOq0LTDjZAXxn88S_Hv",
-			"toId": "shape:ts0N0melRFCT4J4s7jTNB",
-			"props": {
-				"isPrecise": true,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5,
-					"y": 0.5
-				},
-				"terminal": "end"
-			},
-			"typeName": "binding"
-		},
-		{
 			"x": -355.13692104041866,
 			"y": 1723.5255510730674,
 			"rotation": 0,
@@ -1490,7 +1779,7 @@
 				"dash": "draw",
 				"size": "m",
 				"font": "draw",
-				"text": "itinerary: JKF -> SFO -> ATL -> JFK -> ATL -> SFO\nunused: 0\npossible itinerary",
+				"text": "itinerary: JKF -> SFO -> ATL -> JFK -> ATL -> SFO\ncount: 6\npossible itinerary",
 				"align": "middle",
 				"verticalAlign": "middle",
 				"growY": 0,
@@ -1537,23 +1826,6 @@
 			"typeName": "shape"
 		},
 		{
-			"meta": {},
-			"id": "binding:O0fU9Pm7AeKgEry4IL86l",
-			"type": "arrow",
-			"fromId": "shape:G6gXgb7HehgBARg4jBg_u",
-			"toId": "shape:ts0N0melRFCT4J4s7jTNB",
-			"props": {
-				"isPrecise": false,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5134235643543067,
-					"y": 0.5623147280711301
-				},
-				"terminal": "start"
-			},
-			"typeName": "binding"
-		},
-		{
 			"x": -242.62547469153918,
 			"y": 1641.0159614886513,
 			"rotation": 0,
@@ -1577,23 +1849,6 @@
 			"typeName": "shape"
 		},
 		{
-			"meta": {},
-			"id": "binding:fRxEebPOADJ3UGtUZbaAb",
-			"type": "arrow",
-			"fromId": "shape:NXFIEdylmpQK9wG8C7VrV",
-			"toId": "shape:B6KFgYW9mOt9v9rCgaWar",
-			"props": {
-				"isPrecise": true,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5,
-					"y": 0.5
-				},
-				"terminal": "end"
-			},
-			"typeName": "binding"
-		},
-		{
 			"x": 353.06434385900207,
 			"y": 1446.9494798569478,
 			"rotation": 0,
@@ -1612,7 +1867,7 @@
 				"dash": "draw",
 				"size": "m",
 				"font": "draw",
-				"text": "[ATL, SFO]\nitinerary: JKF -> ATL -> JFK -> SFO -> ATL\nunused: 1",
+				"text": "[ATL, SFO]\nitinerary: JKF -> ATL -> JFK -> SFO -> ATL\ncount: 5",
 				"align": "middle",
 				"verticalAlign": "middle",
 				"growY": 0,
@@ -1659,23 +1914,6 @@
 			"typeName": "shape"
 		},
 		{
-			"meta": {},
-			"id": "binding:0L-J3ng1Jb3XAgxaVLCWT",
-			"type": "arrow",
-			"fromId": "shape:mBh3JvFx91_2aGKVnHYYN",
-			"toId": "shape:B6KFgYW9mOt9v9rCgaWar",
-			"props": {
-				"isPrecise": false,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.4921377589247423,
-					"y": 0.44253194600973006
-				},
-				"terminal": "start"
-			},
-			"typeName": "binding"
-		},
-		{
 			"x": 390.1865783723017,
 			"y": 1196.3743968921758,
 			"rotation": 0,
@@ -1694,7 +1932,7 @@
 				"dash": "draw",
 				"size": "m",
 				"font": "draw",
-				"text": "[SFO, ATL]\nitinerary: JKF -> ATL -> JFK -> SFO\nunused: 2",
+				"text": "",
 				"align": "middle",
 				"verticalAlign": "middle",
 				"growY": 0,
@@ -1704,23 +1942,6 @@
 			"parentId": "page:page",
 			"index": "aZ",
 			"typeName": "shape"
-		},
-		{
-			"meta": {},
-			"id": "binding:LStLEs0QwSVYIGDBbp9Ph",
-			"type": "arrow",
-			"fromId": "shape:G6gXgb7HehgBARg4jBg_u",
-			"toId": "shape:-vh1AgDKcOLAsuV_bW3N3",
-			"props": {
-				"isPrecise": true,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5,
-					"y": 0.5
-				},
-				"terminal": "end"
-			},
-			"typeName": "binding"
 		},
 		{
 			"x": 318.82132199788555,
@@ -1741,7 +1962,7 @@
 				"dash": "draw",
 				"size": "m",
 				"font": "draw",
-				"text": "itinerary: JKF -> ATL -> JFK -> SFO -> ATL -> SFO\nunused: 0\npossible itinerary",
+				"text": "itinerary: JKF -> ATL -> JFK -> SFO -> ATL -> SFO\ncount: 6\npossible itinerary",
 				"align": "middle",
 				"verticalAlign": "middle",
 				"growY": 0,
@@ -1834,40 +2055,6 @@
 			"typeName": "shape"
 		},
 		{
-			"meta": {},
-			"id": "binding:pBhjy7q0JWfOTMT7OrlVa",
-			"type": "arrow",
-			"fromId": "shape:HHJU_B7bE8RSQXvASqWy7",
-			"toId": "shape:HTXYZWdbG4l_ACMky_YM_",
-			"props": {
-				"isPrecise": true,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5,
-					"y": 0.5
-				},
-				"terminal": "end"
-			},
-			"typeName": "binding"
-		},
-		{
-			"meta": {},
-			"id": "binding:Jyk4f4OHJPGdI6F3zZKO-",
-			"type": "arrow",
-			"fromId": "shape:NXFIEdylmpQK9wG8C7VrV",
-			"toId": "shape:HTXYZWdbG4l_ACMky_YM_",
-			"props": {
-				"isPrecise": false,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.4667889144077124,
-					"y": 0.3455337018522511
-				},
-				"terminal": "start"
-			},
-			"typeName": "binding"
-		},
-		{
 			"x": 1112.5012029591715,
 			"y": 932.347012342348,
 			"rotation": 0,
@@ -1886,7 +2073,7 @@
 				"dash": "draw",
 				"size": "m",
 				"font": "draw",
-				"text": "[SFO, ATL]\nitinerary: JKF -> ATL -> SFO\nunused: 3",
+				"text": "[SFO, ATL]\nitinerary: JKF -> ATL -> SFO\ncount: 3",
 				"align": "middle",
 				"verticalAlign": "middle",
 				"growY": 0,
@@ -1933,40 +2120,6 @@
 			"typeName": "shape"
 		},
 		{
-			"meta": {},
-			"id": "binding:3uQMQXZZUiu7wqs2-vZvn",
-			"type": "arrow",
-			"fromId": "shape:xQhDoENAa0ltTSHt44hpY",
-			"toId": "shape:dEM_MQhvK8xzqu2JRJ00t",
-			"props": {
-				"isPrecise": false,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5144563494177864,
-					"y": 0.5777424955709356
-				},
-				"terminal": "start"
-			},
-			"typeName": "binding"
-		},
-		{
-			"meta": {},
-			"id": "binding:8Cz0PGCVQwHtmMszA4MUH",
-			"type": "arrow",
-			"fromId": "shape:xQhDoENAa0ltTSHt44hpY",
-			"toId": "shape:jQ2gvE35-KATjxK2MKiY9",
-			"props": {
-				"isPrecise": false,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5687165196238332,
-					"y": 0.6565131302302263
-				},
-				"terminal": "end"
-			},
-			"typeName": "binding"
-		},
-		{
 			"x": 1137.0306318546322,
 			"y": 819.6113114892494,
 			"rotation": 0,
@@ -2008,7 +2161,7 @@
 				"dash": "draw",
 				"size": "m",
 				"font": "draw",
-				"text": "[ATL, JFK]\nitinerary: JKF -> ATL -> SFO -> ATL\nunused: 2",
+				"text": "[ATL, JFK]\nitinerary: JKF -> ATL -> SFO -> ATL\ncount: 4",
 				"align": "middle",
 				"verticalAlign": "middle",
 				"growY": 0,
@@ -2055,40 +2208,6 @@
 			"typeName": "shape"
 		},
 		{
-			"meta": {},
-			"id": "binding:VJbO_V6UX3mLsmiN4ziXR",
-			"type": "arrow",
-			"fromId": "shape:J8hUTZ0IbaFDZFEV406-0",
-			"toId": "shape:jQ2gvE35-KATjxK2MKiY9",
-			"props": {
-				"isPrecise": false,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5368712629541388,
-					"y": 0.5449478686088817
-				},
-				"terminal": "start"
-			},
-			"typeName": "binding"
-		},
-		{
-			"meta": {},
-			"id": "binding:PDN3R1MAfW_p1oAqGCj92",
-			"type": "arrow",
-			"fromId": "shape:J8hUTZ0IbaFDZFEV406-0",
-			"toId": "shape:hVwdyLn6j841QEfNyNEyk",
-			"props": {
-				"isPrecise": true,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5,
-					"y": 0.5
-				},
-				"terminal": "end"
-			},
-			"typeName": "binding"
-		},
-		{
 			"x": 1323.4959447054257,
 			"y": 1105.054955536423,
 			"rotation": 0,
@@ -2112,40 +2231,6 @@
 			"typeName": "shape"
 		},
 		{
-			"meta": {},
-			"id": "binding:t16R7XB_f8KYloLRraArG",
-			"type": "arrow",
-			"fromId": "shape:mBh3JvFx91_2aGKVnHYYN",
-			"toId": "shape:lxHBqPjYWZlnLyJPelDfs",
-			"props": {
-				"isPrecise": true,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5,
-					"y": 0.5
-				},
-				"terminal": "end"
-			},
-			"typeName": "binding"
-		},
-		{
-			"meta": {},
-			"id": "binding:dtYg9iUKSaleRL4tAoRlv",
-			"type": "arrow",
-			"fromId": "shape:gGfIJqNk_QFKtdMjmNBPD",
-			"toId": "shape:lxHBqPjYWZlnLyJPelDfs",
-			"props": {
-				"isPrecise": false,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5048030192214824,
-					"y": 0.4785083978139517
-				},
-				"terminal": "start"
-			},
-			"typeName": "binding"
-		},
-		{
 			"x": 1040.9930798159141,
 			"y": 1449.9508952980661,
 			"rotation": 0,
@@ -2164,7 +2249,7 @@
 				"dash": "draw",
 				"size": "m",
 				"font": "draw",
-				"text": "[JFK, SFO]\nitinerary: JKF -> ATL -> SFO -> ATL -> JFK\nunused: 1",
+				"text": "[JFK, SFO]\nitinerary: JKF -> ATL -> SFO -> ATL -> JFK\ncount: 5",
 				"align": "middle",
 				"verticalAlign": "middle",
 				"growY": 0,
@@ -2211,40 +2296,6 @@
 			"typeName": "shape"
 		},
 		{
-			"meta": {},
-			"id": "binding:jLOQmbuMTlDl6SEy15OUJ",
-			"type": "arrow",
-			"fromId": "shape:CGsKyQPRQU5hqbZ2LwiFw",
-			"toId": "shape:hVwdyLn6j841QEfNyNEyk",
-			"props": {
-				"isPrecise": false,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.504037329245656,
-					"y": 0.5333544069511025
-				},
-				"terminal": "start"
-			},
-			"typeName": "binding"
-		},
-		{
-			"meta": {},
-			"id": "binding:Uoi4ghAmpgORMx9gUOSuL",
-			"type": "arrow",
-			"fromId": "shape:CGsKyQPRQU5hqbZ2LwiFw",
-			"toId": "shape:hBQZx7sJTA_PeFVsYOeB5",
-			"props": {
-				"isPrecise": true,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5,
-					"y": 0.5
-				},
-				"terminal": "end"
-			},
-			"typeName": "binding"
-		},
-		{
 			"x": 1322.0896947054257,
 			"y": 1361.6759757520683,
 			"rotation": 0,
@@ -2268,23 +2319,6 @@
 			"typeName": "shape"
 		},
 		{
-			"meta": {},
-			"id": "binding:KDmm22wRMuB5Jxi6DXY9Y",
-			"type": "arrow",
-			"fromId": "shape:gGfIJqNk_QFKtdMjmNBPD",
-			"toId": "shape:C6Z1fpHuII1FiodCKsYC2",
-			"props": {
-				"isPrecise": true,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5,
-					"y": 0.5
-				},
-				"terminal": "end"
-			},
-			"typeName": "binding"
-		},
-		{
 			"x": 1005.2493502342384,
 			"y": 1722.83971882236,
 			"rotation": 0,
@@ -2303,7 +2337,7 @@
 				"dash": "draw",
 				"size": "m",
 				"font": "draw",
-				"text": "itinerary: JKF -> ATL -> SFO -> ATL -> JFK -> SFO\nunused: 0\npossible itinerary",
+				"text": "itinerary: JKF -> ATL -> SFO -> ATL -> JFK -> SFO\ncount: 6\npossible itinerary",
 				"align": "middle",
 				"verticalAlign": "middle",
 				"growY": 0,
@@ -2348,40 +2382,6 @@
 			"parentId": "page:page",
 			"index": "ao",
 			"typeName": "shape"
-		},
-		{
-			"meta": {},
-			"id": "binding:Wmdmez05Xjo4uSEDNFaFO",
-			"type": "arrow",
-			"fromId": "shape:qWZa0wkC6TZ_VfelBP06g",
-			"toId": "shape:hBQZx7sJTA_PeFVsYOeB5",
-			"props": {
-				"isPrecise": false,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5004434332971789,
-					"y": 0.4783805165038131
-				},
-				"terminal": "start"
-			},
-			"typeName": "binding"
-		},
-		{
-			"meta": {},
-			"id": "binding:cbp64lNnLa4JZLrpXd7Zp",
-			"type": "arrow",
-			"fromId": "shape:qWZa0wkC6TZ_VfelBP06g",
-			"toId": "shape:XGL83AATgVkVfa4vOsFC8",
-			"props": {
-				"isPrecise": true,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.5,
-					"y": 0.5
-				},
-				"terminal": "end"
-			},
-			"typeName": "binding"
 		},
 		{
 			"x": 1331.383711249341,
