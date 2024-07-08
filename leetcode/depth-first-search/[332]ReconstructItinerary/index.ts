@@ -11,7 +11,7 @@ function findItinerary(tickets: string[][]): string[] {
     };
     const ticketsMap: TicketsMap = {};
 
-    tickets.sort((a, b) => (a[1] < b[1] ? -1 : 1));
+    tickets.sort((a, b) => a[1].localeCompare(b[1]));
     for (const [from, to] of tickets) {
         if (!ticketsMap[from]) {
             ticketsMap[from] = new Map();
