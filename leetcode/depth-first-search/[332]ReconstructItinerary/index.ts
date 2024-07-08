@@ -5,7 +5,8 @@
  */
 
 // @lc code=start
-function findItinerary(tickets: string[][]): string[] {
+// ======================== Approach 0 ======================== //
+function findItinerary1(tickets: string[][]): string[] {
     type TicketsMap = {
         [index: string]: Map<string, number>;
     };
@@ -48,5 +49,37 @@ function findItinerary(tickets: string[][]): string[] {
     backtrack(result);
 
     return result;
+}
+
+// ======================== Approach 0 ======================== //
+function findItinerary(tickets: string[][]): string[] {
+    type TicketsMap = {
+        [index: string]: string[];
+    };
+    const ticketsMap: TicketsMap = {};
+
+    for (const [from, to] of tickets) {
+        ticketsMap[from] = ticketsMap[from] ?? [];
+        ticketsMap[from].push(to);
+    }
+
+    for (const [from] of tickets) {
+        ticketsMap[from].sort();
+    }
+
+    const result: string[] = [];
+
+    const dfs = (airport: string): void => {
+        const destinations: string[] = ticketsMap[airport] ?? [];
+        while (destinations.length > 0) {
+            dfs(destinations.shift()!);
+        }
+
+        result.push(airport);
+    };
+
+    dfs('JFK');
+
+    return result.reverse();
 }
 // @lc code=end
