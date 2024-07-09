@@ -5,7 +5,7 @@
  */
 
 // @lc code=start
-// ======================== Approach 0 ======================== //
+// ======================== Approach 1 ======================== //
 function findItinerary1(tickets: string[][]): string[] {
     type TicketsMap = {
         [index: string]: Map<string, number>;
@@ -51,7 +51,7 @@ function findItinerary1(tickets: string[][]): string[] {
     return result;
 }
 
-// ======================== Approach 0 ======================== //
+// ======================== Approach 2 ======================== //
 function findItinerary(tickets: string[][]): string[] {
     type TicketsMap = {
         [index: string]: string[];

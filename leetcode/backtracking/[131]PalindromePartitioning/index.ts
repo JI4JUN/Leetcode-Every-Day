@@ -5,7 +5,7 @@
  */
 
 // @lc code=start
-// ======================== Approach 0 ======================== //
+// ======================== Approach 1 ======================== //
 function partition(s: string): string[][] {
     const result: string[][] = [];
     const path: string[] = [];
@@ -51,7 +51,7 @@ function partition(s: string): string[][] {
     return result;
 }
 
-//======================== Approach 1 ======================== //
+//======================== Approach 2 ======================== //
 function partition1(s: string): string[][] {
     const result: string[][] = [];
     const path: string[] = [];

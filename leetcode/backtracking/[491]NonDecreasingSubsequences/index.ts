@@ -5,7 +5,7 @@
  */
 
 // @lc code=start
-// ======================== Approach 0 ======================== //
+// ======================== Approach 1 ======================== //
 function findSubsequences(nums: number[]): number[][] {
     const result: number[][] = [];
 
@@ -37,7 +37,7 @@ function findSubsequences(nums: number[]): number[][] {
     return result;
 }
 
-// ======================== Approach 1 ======================== //
+// ======================== Approach 2 ======================== //
 function findSubsequences1(nums: number[]): number[][] {
     const result: number[][] = [];
 

@@ -5,7 +5,7 @@
  */
 
 // @lc code=start
-// ======================== Approach 0 ======================== //
+// ======================== Approach 1 ======================== //
 function permute1(nums: number[]): number[][] {
     const length = nums.length;
 
@@ -37,7 +37,7 @@ function permute1(nums: number[]): number[][] {
     return result;
 }
 
-// ======================== Approach 1 ======================== //
+// ======================== Approach 2 ======================== //
 function permute(nums: number[]): number[][] {
     const length = nums.length;
 

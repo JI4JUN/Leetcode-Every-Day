@@ -5,7 +5,7 @@
  */
 
 // @lc code=start
-// ======================== Approach 0 ======================== //
+// ======================== Approach 1 ======================== //
 function generateParenthesis1(n: number): string[] {
     const result: string[] = [];
     const visited: boolean[] = new Array<boolean>(n).fill(false);
@@ -63,7 +63,7 @@ function generateParenthesis1(n: number): string[] {
     return result;
 }
 
-// ======================== Approach 1 ======================== //
+// ======================== Approach 2 ======================== //
 function generateParenthesis(n: number): string[] {
     const result: string[] = [];
 
