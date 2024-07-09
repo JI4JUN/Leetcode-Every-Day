@@ -109,7 +109,7 @@ function findItinerary(tickets: string[][]): string[] {
 
 ## 📋Optimized Approach
 
-The above approach is actually more in line with the solution of backtracking problems. In fact, the goal of solving this problem can be regard as finding an Euler path or circuit that sticks to smallest lexical order in an Eular graph or semi-Euler graph composed of flights. There is a efficient way ($O(E)$, i.e., linear time) to find the path/circuit —— Hierholzer’s Algorithm.
+The above approach is actually more in line with the solution of backtracking problems. In fact, the goal of solving this problem can be regard as finding an Eulerian path or circuit that sticks to smallest lexical order in an Eulerian graph or semi-Eulerian graph composed of flights. There is a efficient way ($O(E)$, i.e., linear time) to find the path/circuit —— Hierholzer’s Algorithm.
 
 ### Hierholzer’s Algorithm
 
