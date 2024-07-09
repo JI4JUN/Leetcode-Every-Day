@@ -126,3 +126,7 @@ function findSubsequences(nums: number[]): number[][] {
     return result;
 }
 ```
+## 🔖Reference
+
+1. [https://programmercarl.com/0491.递增子序列.html](https://programmercarl.com/0491.%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97.html)
+2. [https://leetcode.com/problems/non-decreasing-subsequences/solutions/3074832/javascript-explained-solution-beginner-friendly-backtracking-js/](https://leetcode.com/problems/non-decreasing-subsequences/solutions/3074832/javascript-explained-solution-beginner-friendly-backtracking-js/)

@@ -185,3 +185,7 @@ function generateParenthesis(n: number): string[] {
     return result;
 }
 ```
+## 🔖Reference
+
+1. [https://leetcode.com/problems/generate-parentheses/solutions/5388832/easy-approach-recursion-stack-backtracking-lifo/](https://leetcode.com/problems/generate-parentheses/solutions/5388832/easy-approach-recursion-stack-backtracking-lifo/)
+2. [https://leetcode.com/problems/generate-parentheses/solutions/3290261/i-bet-you-will-understand-intutive-solution-beginner-friendly-c/](https://leetcode.com/problems/generate-parentheses/solutions/3290261/i-bet-you-will-understand-intutive-solution-beginner-friendly-c/)

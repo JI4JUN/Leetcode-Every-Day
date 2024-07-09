@@ -115,7 +115,7 @@ The above approach is actually more in line with the solution of backtracking pr
 
 - Choose an suitable starting vertex, e.g., `"JFK"` in this problem.
 - Keep following unused edges and removing them until we get stuck.
-- Once we get stuck, append the current vertex to `result` , and backtrack to the nearest vertex in our current `path` that has unused edges.
+- Once we get stuck, append the current vertex to `result` , and backtrack to the nearest vertex in our current itinerary that has unused edges.
 - Repeat this process until all the edges have been used.
 
 ## 📊Complexity
@@ -157,3 +157,11 @@ function findItinerary(tickets: string[][]): string[] {
     return result.reverse();
 }
 ```
+
+## 🔖Reference
+
+1. [https://programmercarl.com/0332.重新安排行程.html#算法公开课](https://programmercarl.com/0332.%E9%87%8D%E6%96%B0%E5%AE%89%E6%8E%92%E8%A1%8C%E7%A8%8B.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE)
+2. [https://www.geeksforgeeks.org/hierholzers-algorithm-directed-graph/](https://www.geeksforgeeks.org/hierholzers-algorithm-directed-graph/)
+3. [https://leetcode.cn/circle/discuss/Dh85Wa/](https://leetcode.cn/circle/discuss/Dh85Wa/)
+4. [https://leetcode.com/problems/reconstruct-itinerary/solutions/4041944/95-76-dfs-recursive-iterative/](https://leetcode.com/problems/reconstruct-itinerary/solutions/4041944/95-76-dfs-recursive-iterative/)
+5. [https://leetcode.com/problems/reconstruct-itinerary/solutions/4042491/video-visualized-solution-python-javascript-java-c/](https://leetcode.com/problems/reconstruct-itinerary/solutions/4042491/video-visualized-solution-python-javascript-java-c/)
