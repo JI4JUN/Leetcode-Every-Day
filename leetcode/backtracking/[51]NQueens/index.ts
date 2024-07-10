@@ -4,8 +4,9 @@
  * [51] N-Queens
  */
 
+// ======================== Approach 1 ======================== //
 // @lc code=start
-function solveNQueens(n: number): string[][] {
+function solveNQueens1(n: number): string[][] {
     const result: string[][] = [];
     const chessboard: string[][] = new Array(n)
         .fill(0)
@@ -61,6 +62,47 @@ function solveNQueens(n: number): string[][] {
     };
 
     backtrack(0, chessboard);
+
+    return result;
+}
+
+// ======================== Approach 2 ======================== //
+function solveNQueens(n: number): string[][] {
+    const result: string[][] = [];
+    const column: number[] = new Array(n).fill(0);
+
+    const isValid = (row: number, col: number): boolean => {
+        for (let r = 0; r < row; r++) {
+            const c = column[r];
+
+            if (row + col === r + c || row - col === r - c) {
+                return false;
+            }
+        }
+
+        return true;
+    };
+
+    const backtrack = (r: number, colSet: Set<number>): void => {
+        if (r === n) {
+            result.push(
+                column.map((c) => '.'.repeat(c) + 'Q' + '.'.repeat(n - 1 - c))
+            );
+
+            return;
+        }
+
+        for (const c of colSet) {
+            if (isValid(r, c)) {
+                column[r] = c;
+                const s = new Set(colSet);
+                s.delete(c);
+                backtrack(r + 1, s);
+            }
+        }
+    };
+
+    backtrack(0, new Set([...new Array(n).keys()]));
 
     return result;
 }
