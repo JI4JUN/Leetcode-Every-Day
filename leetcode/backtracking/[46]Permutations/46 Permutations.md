@@ -32,8 +32,8 @@ For avoiding duplicates, we need to use an array to mark the taken elements.
 
 ## 📊Complexity
 
-- **Time complexity:** $O(n*n!)$
-- **Space complexity:** $O(n*n!)$
+- **Time complexity:** $O(N*N!)$
+- **Space complexity:** $O(N*N!)$
 
 ## 🧑🏻‍💻Code
 
@@ -90,8 +90,8 @@ For each index `i` in the range `[first, nums.lenght]` :
 
 ## 📊Complexity
 
-- **Time complexity:** $O(n*n!)$
-- **Space complexity:** $O(n*n!)$
+- **Time complexity:** $O(N*N!)$
+- **Space complexity:** $O(N*N!)$
 
 ## 🧑🏻‍💻Code
 
