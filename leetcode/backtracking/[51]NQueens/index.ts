@@ -67,7 +67,7 @@ function solveNQueens1(n: number): string[][] {
 }
 
 // ======================== Approach 2 ======================== //
-function solveNQueens(n: number): string[][] {
+function solveNQueens2(n: number): string[][] {
     const result: string[][] = [];
     const column: number[] = new Array(n).fill(0);
 
@@ -103,6 +103,80 @@ function solveNQueens(n: number): string[][] {
     };
 
     backtrack(0, new Set([...new Array(n).keys()]));
+
+    return result;
+}
+
+// ======================== Approach 3 ======================== //
+function solveNQueens3(n: number): string[][] {
+    const result: string[][] = [];
+    const column: number[] = new Array(n).fill(0);
+    const visited: boolean[] = new Array(n).fill(false);
+
+    const isValid = (row: number, col: number): boolean => {
+        for (let r = 0; r < row; r++) {
+            const c = column[r];
+
+            if (row + col === r + c || row - col === r - c) {
+                return false;
+            }
+        }
+
+        return true;
+    };
+
+    const backtrack = (r: number): void => {
+        if (r === n) {
+            result.push(
+                column.map((c) => '.'.repeat(c) + 'Q' + '.'.repeat(n - 1 - c))
+            );
+
+            return;
+        }
+
+        for (let c = 0; c < n; c++) {
+            if (!visited[c] && isValid(r, c)) {
+                column[r] = c;
+                visited[c] = true;
+                backtrack(r + 1);
+                visited[c] = false;
+            }
+        }
+    };
+
+    backtrack(0);
+
+    return result;
+}
+
+// ======================== Approach 4 ======================== //
+function solveNQueens(n: number): string[][] {
+    const result: string[][] = [];
+    const column: number[] = new Array(n).fill(0);
+    const visited: boolean[] = new Array(n).fill(false);
+    const diagonal1: boolean[] = new Array(2 * n - 1).fill(false);
+    const diagonal2: boolean[] = new Array(2 * n - 1).fill(false);
+
+    const backtrack = (r: number): void => {
+        if (r === n) {
+            result.push(
+                column.map((c) => '.'.repeat(c) + 'Q' + '.'.repeat(n - 1 - c))
+            );
+
+            return;
+        }
+
+        for (let c = 0; c < n; c++) {
+            if (!visited[c] && !diagonal1[r + c] && !diagonal2[r - c]) {
+                column[r] = c;
+                visited[c] = diagonal1[r + c] = diagonal2[r - c] = true;
+                backtrack(r + 1);
+                visited[c] = diagonal1[r + c] = diagonal2[r - c] = false;
+            }
+        }
+    };
+
+    backtrack(0);
 
     return result;
 }
