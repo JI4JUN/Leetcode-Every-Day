@@ -47,8 +47,8 @@ function isPalindrome(str: string): boolean {
 
 ## 📊Complexity
 
-- **Time complexity:** $O(n * 2^n)$
-- **Space complexity:** $O(n^2)$
+- **Time complexity:** $O(N * 2^N)$
+- **Space complexity:** $O(N^2)$
 
 ## 🧑🏻‍💻Code
 
@@ -134,8 +134,8 @@ Based on this, we can using [Dynamic Programming](https://www.notion.so/Dynamic-
 
 ## 📊Complexity
 
-- **Time complexity:** $O(n * 2^n)$
-- **Space complexity:** $O(n^2)$
+- **Time complexity:** $O(N * 2^N)$
+- **Space complexity:** $O(N^2)$
 
 ## 🧑🏻‍💻Code
 

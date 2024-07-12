@@ -14,25 +14,17 @@ function solveSudoku(board: string[][]): void {
     const digits: string[] = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
     const isValid = (row: number, col: number, digit: string): boolean => {
-        for (let i = 0; i < 9; i++) {
-            if (board[i][col] === digit) {
-                return false;
-            }
-        }
+        const subBoxTop: number = Math.floor(row / 3) * 3;
+        const subBoxLeft: number = Math.floor(col / 3) * 3;
 
         for (let i = 0; i < 9; i++) {
-            if (board[row][i] === digit) {
+            if (
+                board[i][col] === digit ||
+                board[row][i] === digit ||
+                board[subBoxTop + Math.floor(i / 3)][subBoxLeft + (i % 3)] ===
+                    digit
+            ) {
                 return false;
-            }
-        }
-
-        const subBoxX: number = Math.floor(row / 3);
-        const subBoxY: number = Math.floor(col / 3);
-        for (let i = 0; i < 3; i++) {
-            for (let j = 0; j < 3; j++) {
-                if (board[subBoxX * 3 + i][subBoxY * 3 + j] === digit) {
-                    return false;
-                }
             }
         }
 
