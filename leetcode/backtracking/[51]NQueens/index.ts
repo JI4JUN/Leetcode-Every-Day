@@ -167,11 +167,23 @@ function solveNQueens(n: number): string[][] {
         }
 
         for (let c = 0; c < n; c++) {
-            if (!visited[c] && !diagonal1[r + c] && !diagonal2[r - c]) {
+            const diagIndex1 = r + c;
+            const diagIndex2 = r - c + n - 1; // diagIndex2 can be r - c while using JS/TS
+            if (
+                !visited[c] &&
+                !diagonal1[diagIndex1] &&
+                !diagonal2[diagIndex2]
+            ) {
                 column[r] = c;
-                visited[c] = diagonal1[r + c] = diagonal2[r - c] = true;
+                visited[c] =
+                    diagonal1[diagIndex1] =
+                    diagonal2[diagIndex2] =
+                        true;
                 backtrack(r + 1);
-                visited[c] = diagonal1[r + c] = diagonal2[r - c] = false;
+                visited[c] =
+                    diagonal1[diagIndex1] =
+                    diagonal2[diagIndex2] =
+                        false;
             }
         }
     };
