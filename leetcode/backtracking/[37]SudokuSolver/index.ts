@@ -5,10 +5,11 @@
  */
 
 // @lc code=start
+// ======================== Approach 1 ======================== //
 /**
  Do not return anything, modify board in-place instead.
  */
-function solveSudoku(board: string[][]): void {
+function solveSudoku1(board: string[][]): void {
     const height: number = board.length;
     const width: number = board[0].length;
     const digits: string[] = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -56,5 +57,58 @@ function solveSudoku(board: string[][]): void {
     };
 
     backtrack();
+}
+
+// ======================== Approach 2 ======================== //
+function solveSudoku(board: string[][]): void {
+    const height: number = board.length;
+    const width: number = board[0].length;
+    const digits: string[] = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+    const isValid = (row: number, col: number, digit: string): boolean => {
+        const subBoxTop: number = Math.floor(row / 3) * 3;
+        const subBoxLeft: number = Math.floor(col / 3) * 3;
+
+        for (let i = 0; i < 9; i++) {
+            if (
+                board[i][col] === digit ||
+                board[row][i] === digit ||
+                board[subBoxTop + Math.floor(i / 3)][subBoxLeft + (i % 3)] ===
+                    digit
+            ) {
+                return false;
+            }
+        }
+
+        return true;
+    };
+
+    const backtrack = (row: number, col: number): boolean => {
+        if (row === height) {
+            return true;
+        }
+
+        if (col === width) {
+            return backtrack(row + 1, 0);
+        }
+
+        if (board[row][col] !== '.') {
+            return backtrack(row, col + 1);
+        }
+
+        for (const digit of digits) {
+            if (isValid(row, col, digit)) {
+                board[row][col] = digit;
+                if (backtrack(row, col + 1)) {
+                    return true;
+                }
+                board[row][col] = '.';
+            }
+        }
+
+        return false;
+    };
+
+    backtrack(0, 0);
 }
 // @lc code=end
