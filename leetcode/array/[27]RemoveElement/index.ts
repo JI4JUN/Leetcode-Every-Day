@@ -6,14 +6,13 @@
 
 // @lc code=start
 function removeElement(nums: number[], val: number): number {
-    let slow: number = 0;
-    for (let fast = 0; fast < nums.length; fast++) {
-        const num: number = nums[fast];
+    let count: number = 0;
+    for (const num of nums) {
         if (num !== val) {
-            nums[slow++] = num;
+            nums[count++] = num;
         }
     }
 
-    return slow;
+    return count;
 }
 // @lc code=end
