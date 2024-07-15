@@ -5,7 +5,8 @@
  */
 
 // @lc code=start
-function minSubArrayLen(target: number, nums: number[]): number {
+// ======================== Approach 1 ======================== //
+function minSubArrayLen1(target: number, nums: number[]): number {
     const len: number = nums.length;
 
     let result: number = Infinity;
@@ -28,6 +29,23 @@ function minSubArrayLen(target: number, nums: number[]): number {
             }
 
             ++right;
+        }
+    }
+
+    return result === Infinity ? 0 : result;
+}
+
+// ======================== Approach 2 ======================== //
+function minSubArrayLen(target: number, nums: number[]): number {
+    let result: number = Infinity;
+    let sum: number = 0;
+
+    for (let left = 0, right = 0; right < nums.length; ++right) {
+        sum += nums[right];
+
+        while (sum >= target) {
+            result = Math.min(result, right - left + 1);
+            sum -= nums[left++];
         }
     }
 
