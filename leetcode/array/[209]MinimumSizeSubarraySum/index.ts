@@ -36,7 +36,7 @@ function minSubArrayLen1(target: number, nums: number[]): number {
 }
 
 // ======================== Approach 2 ======================== //
-function minSubArrayLen(target: number, nums: number[]): number {
+function minSubArrayLen2(target: number, nums: number[]): number {
     let result: number = Infinity;
     let sum: number = 0;
 
@@ -47,6 +47,37 @@ function minSubArrayLen(target: number, nums: number[]): number {
             result = Math.min(result, right - left + 1);
             sum -= nums[left++];
         }
+    }
+
+    return result === Infinity ? 0 : result;
+}
+
+// ======================== Approach 3 ======================== //
+function minSubArrayLen(target: number, nums: number[]): number {
+    const len: number = nums.length;
+    const prefix: number[] = new Array(len + 1).fill(0);
+    for (let i = 1; i < prefix.length; ++i) {
+        prefix[i] = prefix[i - 1] + nums[i - 1];
+    }
+
+    let result: number = Infinity;
+    let start: number = 0;
+
+    while (start < len) {
+        let left: number = start + 1;
+        let right: number = len + 1;
+
+        while (left < right) {
+            const mid: number = left + ((right - left) >> 1);
+
+            if (prefix[mid] - prefix[start] >= target) {
+                result = Math.min(result, mid - start);
+                right = mid;
+            } else {
+                left = mid + 1;
+            }
+        }
+        start++;
     }
 
     return result === Infinity ? 0 : result;
