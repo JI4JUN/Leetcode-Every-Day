@@ -9,10 +9,7 @@ function sortedSquares(nums: number[]): number[] {
     const len: number = nums.length;
     const result: number[] = new Array(len);
 
-    let left: number = 0;
-    let right: number = len - 1;
-
-    for (let i = len - 1; i >= 0; --i) {
+    for (let i = len - 1, left = 0, right = len - 1; i >= 0; --i) {
         const leftSquare: number = nums[left] ** 2;
         const rightSquare: number = nums[right] ** 2;
 
