@@ -6,7 +6,7 @@
 
 // @lc code=start
 function totalFruit(fruits: number[]): number {
-    const treeSet: Set<number> = new Set<number>();
+    const treeSet: Set<number> = new Set();
     const treeLen: number = fruits.length;
 
     let result: number = -Infinity;
@@ -17,9 +17,9 @@ function totalFruit(fruits: number[]): number {
         treeSet.add(fruits[right]);
 
         if (treeSet.size > 2) {
-            treeSet.delete(fruits[left]);
+            treeSet.delete(fruits[left++]);
 
-            right = ++left;
+            right = left;
         } else {
             result = Math.max(result, right - left + 1);
 
