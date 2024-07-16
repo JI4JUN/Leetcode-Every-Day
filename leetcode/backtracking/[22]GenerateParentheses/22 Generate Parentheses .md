@@ -20,6 +20,10 @@ A simple but inefficient method is to first find out all the distinct combinatio
 
 We can combine [47 **Permutations II**](https://www.notion.so/47-Permutations-II-f3c96d29a71247188dbf82d20240deb3?pvs=21) and [131 Palindrome Partitioning](https://www.notion.so/131-Palindrome-Partitioning-f7612b3ba4454f619c50796c891288d8?pvs=21) to implement this approach. All we need to do is replacing the number elements with parentheses.
 
+### Space-State Tree
+
+![GenerateParentheses](./GenerateParentheses.png)
+
 ### Initialization
 
 We need to initialize the given `n` to the string of parentheses according to the rule of the putting the same element together, which is a prerequisite for deduplication method, similar to the step of sort in [47 **Permutations II**](https://www.notion.so/47-Permutations-II-f3c96d29a71247188dbf82d20240deb3?pvs=21).
@@ -60,9 +64,9 @@ const isWellFormed = (str: string): boolean => {
 
 - If the length of `path` is equal to `2 * n` and `isWellFormed(path)` is `true` , append the current `path` to the `result` .
 - Iterate over all elements each time from zero to `2 * n` .
-  - If the candidate combination start with `")"` , it will be impossible to be a well-formed parentheses, skip it.
-  - If the `parenthesis[i - 1] === parenthesis[i] && !visited[i - 1])` , means that the previous branch has already used `parentesis[i - 1]` , in other words, the same tree layer has used `parentesis[i - 1]` . Therefore, we skip indices for avoiding duplicates.
-  - If the current element is already in `visited` , skip it.
+    - If the candidate combination start with `")"` , it will be impossible to be a well-formed parentheses, skip it.
+    - If the `parenthesis[i - 1] === parenthesis[i] && !visited[i - 1])` , means that the previous branch has already used `parentesis[i - 1]` , in other words, the same tree layer has used `parentesis[i - 1]` . Therefore, we skip indices for avoiding duplicates.
+    - If the current element is already in `visited` , skip it.
 - Mark the `parentesis[i]` as taken and append it to the `path`.
 - Recursively call `backtrack` with updated `path` .
 
@@ -139,13 +143,16 @@ function generateParenthesis(n: number): string[] {
 - The array `visited` is unnecessary.
 - Find out all the possible combinations is expensive.
 
-We can optimize this approach by building the combination one character at a time, ensuring at each step that the combination remains well-formed. A combination is well-formed if at any point, the number of `")"` doesn’t exceed the number of `"("` .
+An optimized approach is to build the combination one character at a time, ensuring at each step that the combination remains well-formed.
+
+We can draw a conclusion by observing the Space-State Tree that a combination is well-formed if at any point, the number of `")"` doesn’t exceed the number of `"("` .
 
 ### Recursive Backtracking
 
 **Implement a helper function** `backtrack(path)`**:** 
 
 - If the length of `path` is equal to `2 * n` , it means we have used `n` pair of parentheses, so we append the combination to `result` .
+- The first choice can only be open brace `"("` .
 - If the number of open brace `"("` used is less than `n` , we can continue add `"("` to the `path` .
 - If the number of close brace `")"` used is less than the number of open brace `"("` , we will add `")"` to the `path` .
 
@@ -185,6 +192,7 @@ function generateParenthesis(n: number): string[] {
     return result;
 }
 ```
+
 ## 🔖Reference
 
 1. [https://leetcode.com/problems/generate-parentheses/solutions/5388832/easy-approach-recursion-stack-backtracking-lifo/](https://leetcode.com/problems/generate-parentheses/solutions/5388832/easy-approach-recursion-stack-backtracking-lifo/)
