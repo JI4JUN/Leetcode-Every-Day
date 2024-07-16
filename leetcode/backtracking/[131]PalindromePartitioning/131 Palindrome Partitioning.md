@@ -43,7 +43,7 @@ function isPalindrome(str: string): boolean {
 - If the length of `s` is equal to zero which means we already checked all the substrings, append the current `path` to the `result` .
 - Iterate over all possible end positions from `i` to the length of the string.
 - For each substrings `s.slice(0, i)` , check if it is a palindrome.
-- if it is, recursively call `backtrack` with its substring `s.slice(i)` and append the itself to the current `path` .
+  - If it is, recursively call `backtrack` with its substring `s.slice(i)` and append the itself to the current `path` .
 
 ## 📊Complexity
 
@@ -130,7 +130,7 @@ Based on this, we can using [Dynamic Programming](https://www.notion.so/Dynamic-
 - If `startIndex` is equal to `s.lenght` , append the current `path` to the `result` .
 - Iterate over all possible end positions from `start` to `s.lenght` .
 - For each end position, query the precomputed DP table to validate palindromes.
-- If it is a palindrome, recursively call `backtrack` with itself and the updated `startIndex` , and append the new palindrome to the current `path` .
+  - If it is a palindrome, recursively call `backtrack` with itself and the updated `startIndex` , and append the new palindrome to the current `path` .
 
 ## 📊Complexity
 

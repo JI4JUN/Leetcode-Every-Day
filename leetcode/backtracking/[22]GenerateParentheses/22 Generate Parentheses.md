@@ -60,9 +60,9 @@ const isWellFormed = (str: string): boolean => {
 
 - If the length of `path` is equal to `2 * n` and `isWellFormed(path)` is `true` , append the current `path` to the `result` .
 - Iterate over all elements each time from zero to `2 * n` .
-- If the candidate combination start with `")"` , it will be impossible to be a well-formed parentheses, skip it.
-- If the `parenthesis[i - 1] === parenthesis[i] && !visited[i - 1])` , means that the previous branch has already used `parentesis[i - 1]` , in other words, the same tree layer has used `parentesis[i - 1]` . Therefore, we skip indices for avoiding duplicates.
-- If the current element is already in `visited` , skip it.
+  - If the candidate combination start with `")"` , it will be impossible to be a well-formed parentheses, skip it.
+  - If the `parenthesis[i - 1] === parenthesis[i] && !visited[i - 1])` , means that the previous branch has already used `parentesis[i - 1]` , in other words, the same tree layer has used `parentesis[i - 1]` . Therefore, we skip indices for avoiding duplicates.
+  - If the current element is already in `visited` , skip it.
 - Mark the `parentesis[i]` as taken and append it to the `path`.
 - Recursively call `backtrack` with updated `path` .
 

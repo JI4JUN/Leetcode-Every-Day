@@ -57,9 +57,9 @@ const isValid = (row: number, col: number, digit: string): boolean => {
 **Implement a recursive function** `backtrack()` **:**
 
 - Using nested loop to iterate over each cell of the board.
-- If current cell `board[row][col]` is `'.'` , indicates it’s empty, and we can try place each `digit` from 1 to 9 in that cell.
-- For each possible `digit` , if `isValid(row, col, digit)` is `true` , means this `digit` is allow to be place this cell.
-- Recursively call `backtrack` to proceed to the next cell, if the return is `true` , indicates the board is completely filled correctly. If the return is `false` , illustrates there is no valid solution in this board.
+  - If current cell `board[row][col]` is `'.'` , indicates it’s empty, and we can try place each `digit` from 1 to 9 in that cell.
+  - For each possible `digit` , if `isValid(row, col, digit)` is `true` , means this `digit` is allow to be place this cell.
+  - Recursively call `backtrack` to proceed to the next cell, if the return is `true` , indicates the board is completely filled correctly. If the return is `false` , illustrates there is no valid solution in this board.
 
 ## 📊Complexity
 

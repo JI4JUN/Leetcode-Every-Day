@@ -59,8 +59,8 @@ const isValid = (
 
 - If the row index `row` reaches `n` , a valid configuration is found and appended to the `result` .
 - Iterate over all `col` , and check if the current position `(row, col)` is valid for placing a queen.
-- If `isValid` is `true` , update the `chessboard[row][col]` to `'Q'` , means this index can be placed a queen.
-- Recursively call `backtrack` with updated `row + 1` .
+  - If `isValid` is `true` , update the `chessboard[row][col]` to `'Q'` , means this index can be placed a queen.
+  - Recursively call `backtrack` with updated `row + 1` .
 
 ## 📊Complexity
 
@@ -167,8 +167,8 @@ const isValid = (row: number, col: number): boolean => {
 
 - If the row index `r` reaches `n` , a valid configuration is found and appended to the `result` .
 - Create a Set `colSet` initiated by from `0` to `n` for recording which column hasn't been placed, then iterate over the `c` of `colSet` .
-- If `isValid(r, c)` is `true` , update the `column` , and create another Set `s` constructed from `colSet` in current backtracking process, and delete `c` in this `s` .
-- Recursively call `backtrack` with updated `r + 1` and `s` .
+  - If `isValid(r, c)` is `true` , update the `column` , and create another Set `s` constructed from `colSet` in current backtracking process, and delete `c` in this `s` .
+  - Recursively call `backtrack` with updated `r + 1` and `s` .
 
 ## 📊Complexity
 
@@ -285,8 +285,8 @@ Consider following figure, we can initialize three arrays to keep track of the c
 
 - If the row index `r` reaches `n` , a valid configuration is found and appended to the `result` .
 - Iterate over all `col` , compute the `diagIndex1` and `diagIndex2` , then check if `visited[col]` , `diagonal1[diagIndex1]` and `diagonal2[diagIndex2]` are all `false` .
-- If they are all `false`, means this `(row, col)` is safe to place the queen, update `column` and set `visited[col]` , `diagonal1[diagIndex1]` and `diagonal2[diagIndex2]` to be `true` .
-- Recursively call `backtrack` with updated `r + 1` .
+  - If they are all `false`, means this `(row, col)` is safe to place the queen, update `column` and set `visited[col]` , `diagonal1[diagIndex1]` and `diagonal2[diagIndex2]` to be `true` .
+  - Recursively call `backtrack` with updated `r + 1` .
 
 > The `diagIndex2` can be `r - c` while using JS/TS, because it will not throw an error while using a negative index in an array. For example:
 > 

@@ -50,8 +50,8 @@ for (const [from, to] of tickets) {
 
 - If the length of `path` is equal to length of `tickets + 1` , means there is no more destinations to visit, return `true` .
 - Get destinations `to` and `count` by iterating over the current airport’s `targetsMap` .
-- If `count > 0` , means this destination `to` is allow to be chosen as the next airport, thus, append it to the `path` , and use `count - 1` to update the value of current `to` ’s `targetsMap` .
-- Recursively call `backtrack` with `path` , if the return value is `true` , finish backtracking process.
+  - If `count > 0` , means this destination `to` is allow to be chosen as the next airport, thus, append it to the `path` , and use `count - 1` to update the value of current `to` ’s `targetsMap` .
+  - Recursively call `backtrack` with `path` , if the return value is `true` , finish backtracking process.
 
 ## 📊Complexity
 

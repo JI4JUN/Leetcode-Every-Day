@@ -25,8 +25,8 @@ The problem is to find all the different non-decreasing subsequences of the give
 - If the length of `path` is not less than two, the subsequences already meets the condition of containing at least two elements.
 - An empty `Set<number>` called `visited` is used to keep track of elements used at the current level to avoid duplicates.
 - Iterate through the remaining elements in `nums` starting from the given `startIndex` which is initialized to zero.
-- If the current element is already in `visited` , skip it (avoid duplicates at the same level).
-- If the `path` is empty or the current element is greater than the last element `path.at(-1)` , recursively call `backtrack` with itself and an updated `startIndex` , add it to the `visited` as well as append it to the `path` .
+  - If the current element is already in `visited` , skip it (avoid duplicates at the same level).
+  - If the `path` is empty or the current element is greater than the last element `path.at(-1)` , recursively call `backtrack` with itself and an updated `startIndex` , add it to the `visited` as well as append it to the `path` .
 
 <aside>
 💡 **There are two things to note here:**

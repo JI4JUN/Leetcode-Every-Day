@@ -38,10 +38,10 @@ We sort the given `nums` first for the convenience of judging whether the elemen
 
 - If the length of `path` is equal to `nums.length` , then we know that we have reached a new permutation, so we just need to append it to the `result` .
 - Iterate over all elements each time from zero to `nums.length` .
-- If we are in the Solution 2, skip it.
-- If the `visited[i]` is `1`, then this indicates, that we already take this element in the current permutation, skip it.
-- Mark the `nums[i]` as taken and append it to the `path` .
-- Recursively call `backtrack` with updated `path` .
+  - If we are in the Solution 2, skip it.
+  - If the `visited[i]` is `1`, then this indicates, that we already take this element in the current permutation, skip it.
+  - Mark the `nums[i]` as taken and append it to the `path` .
+  - Recursively call `backtrack` with updated `path` .
 
 ## 📊Complexity
 

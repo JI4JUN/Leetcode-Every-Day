@@ -26,9 +26,9 @@ For avoiding duplicates, we need to use an array to mark the taken elements.
 
 - If the length of `path` is equal to `nums.length` , then we know that we have reached a new permutation, so we just need to append it to the `result` .
 - Iterate over all elements each time from zero to `nums.length` .
-- If the `visited[i]` is `true` , then this indicates, that we already take this element in the current permutation, skip it.
-- Mark the `num[i]` as taken and append it to the `path`.
-- Recursively call `backtrack` with updated `path` .
+  - If the `visited[i]` is `true` , then this indicates, that we already take this element in the current permutation, skip it.
+  - Mark the `num[i]` as taken and append it to the `path`.
+  - Recursively call `backtrack` with updated `path` .
 
 ## 📊Complexity
 
