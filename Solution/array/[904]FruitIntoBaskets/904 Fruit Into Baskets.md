@@ -10,7 +10,7 @@ Topics: Array, Hash Table, Sliding Window
 
 ## 🤔Intuition
 
-The description of this problem is simply to find the longest subarray which has only two unique elements.
+In short, the description of this problem is to find the longest subarray which has only two unique elements.
 
 ## 📋Approach
 
