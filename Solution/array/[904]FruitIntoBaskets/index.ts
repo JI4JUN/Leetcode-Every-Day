@@ -6,27 +6,31 @@
 
 // @lc code=start
 function totalFruit(fruits: number[]): number {
-    const treeSet: Set<number> = new Set();
-    const treeLen: number = fruits.length;
+    const fruitsLen: number = fruits.length;
+    const treeMap: Map<number, number> = new Map();
 
-    let result: number = -Infinity;
-    let left: number = 0;
-    let right: number = 0;
+    let result: number = 0;
 
-    while (right < treeLen) {
-        treeSet.add(fruits[right]);
+    for (let left = 0, right = 0; right < fruitsLen; ++right) {
+        const rightFruit: number = fruits[right];
 
-        if (treeSet.size > 2) {
-            treeSet.delete(fruits[left++]);
+        treeMap.set(rightFruit, (treeMap.get(rightFruit) ?? 0) + 1);
 
-            right = left;
-        } else {
-            result = Math.max(result, right - left + 1);
+        while (treeMap.size > 2) {
+            const leftFruit: number = fruits[left];
 
-            ++right;
+            treeMap.set(leftFruit, treeMap.get(leftFruit)! - 1);
+
+            if (treeMap.get(leftFruit) === 0) {
+                treeMap.delete(leftFruit);
+            }
+
+            ++left;
         }
+
+        result = Math.max(result, right - left + 1);
     }
 
-    return result === -Infinity ? 0 : result;
+    return result;
 }
 // @lc code=end
