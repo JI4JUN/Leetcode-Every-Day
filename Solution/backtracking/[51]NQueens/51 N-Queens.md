@@ -28,21 +28,21 @@ const isValid = (
     col: number,
     chessboard: string[][]
 ): boolean => {
-		// Check straight line upward
+	// Check straight line upward
     for (let i = 0; i < row; i++) {
         if (chessboard[i][col] === 'Q') {
             return false;
         }
     }
     
-		// Check diagonally left
+	// Check diagonally left
     for (let i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j--) {
         if (chessboard[i][j] === 'Q') {
             return false;
         }
     }
 
-		// Check diagonally right
+	// Check diagonally right
     for (let i = row - 1, j = col + 1; i >= 0 && j < n; i--, j++) {
         if (chessboard[i][j] === 'Q') {
             return false;

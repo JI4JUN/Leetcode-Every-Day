@@ -21,12 +21,14 @@ The description of this problem is simply to find the longest subarray which has
 ### Sliding Window Approach
 
 - Initialize two pointers `left` and `right` , represent the current window.
-- The window keeps track of the current number of elements in the `backets` .
-- Start a while loop that continues until the `right` pointer reaches the end of `fruits` .
-- Update the `treeSet` by adding the current fruit `fruits[right]` inside the loop.
-    - If the number of elements in the `backets` is greater than 2, then shrink the window by deleting the fruit at index `left` to keep the length of the backets `backets.size` no more than 2.
-    - After that, let the `left` pointer slide to the next index and update the `right`pointer by the `left` pointer.
-    - Otherwise, update the `result` by comparing current `result` and current length of subarray `right - left + 1` , which one is smaller, then let the `right` pointer slide to the next index.
+- The window keeps track of the current number of elements in the picked fruits .
+- Start a `for` loop that continues until the `right` pointer reaches the end of `fruits` .
+    - Update the `backets` by adding the current fruit `fruits[right]` inside the loop.
+    - If the number of elements in the `backets` is greater than 2, enter a `while` loop, then subtract the value of element whose key is `left` in the `backets` by one in each loop.
+        - If the value of element with `left` key is equal to 0, then delete the element from the `backets` ,
+        - Otherwise, continue the loop.
+        - At the end of this loop, update the `left` pointer by `++left` to shrink the window for keeping the length of the backets `backets.size` no more than 2.
+    - Update the `result` by comparing current `result` and current length of subarray `right - left + 1` , which one is smaller, then let the `right` pointer slide to the next index.
 
 ## 📊Complexity
 
@@ -37,27 +39,31 @@ The description of this problem is simply to find the longest subarray which has
 
 ```tsx
 function totalFruit(fruits: number[]): number {
-    const backets: Set<number> = new Set();
-    const treeLen: number = fruits.length;
+    const fruitsLen: number = fruits.length;
+    const backets: Map<number, number> = new Map();
 
-    let result: number = -Infinity;
-    let left: number = 0;
-    let right: number = 0;
+    let result: number = 0;
 
-    while (right < treeLen) {
-        treeSet.add(fruits[right]);
+    for (let left = 0, right = 0; right < fruitsLen; ++right) {
+        const rightFruit: number = fruits[right];
 
-        if (backets.size > 2) {
-            backets.delete(fruits[left++]);
+        backets.set(rightFruit, (backets.get(rightFruit) ?? 0) + 1);
 
-            right = left;
-        } else {
-            result = Math.max(result, right - left + 1);
+        while (backets.size > 2) {
+            const leftFruit: number = fruits[left];
 
-            ++right;
+            backets.set(leftFruit, backets.get(leftFruit)! - 1);
+
+            if (backets.get(leftFruit) === 0) {
+                backets.delete(leftFruit);
+            }
+
+            ++left;
         }
+
+        result = Math.max(result, right - left + 1);
     }
 
-    return result === -Infinity ? 0 : result;
+    return result;
 }
 ```

@@ -22,9 +22,9 @@ We can use a Sliding Window approach to tackle this problem. The Sliding Window 
 
 - Initialize two pointers `left` and `right` , represent the current window.
 - The window keeps track of the current `sum` of elements in the subarray.
-- Start a for loop that continues until `right` pointer reaches the length of `nums` .
+- Start a `for` loop that continues until `right` pointer reaches the length of `nums` .
 - Update the `sum` by adding element at index `right` inside the loop.
-- If the `sum` is greater than or equal to `target` , enter a while loop to update the `result` by comparing current `result` and current length of subarray `right - left + 1` , which one is smaller.
+- If the `sum` is greater than or equal to `target` , enter a `while` loop to update the `result` by comparing current `result` and current length of subarray `right - left + 1` , which one is smaller.
 
 ## 📊Complexity
 

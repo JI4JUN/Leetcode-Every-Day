@@ -7,22 +7,22 @@
 // @lc code=start
 function totalFruit(fruits: number[]): number {
     const fruitsLen: number = fruits.length;
-    const treeMap: Map<number, number> = new Map();
+    const backets: Map<number, number> = new Map();
 
     let result: number = 0;
 
     for (let left = 0, right = 0; right < fruitsLen; ++right) {
         const rightFruit: number = fruits[right];
 
-        treeMap.set(rightFruit, (treeMap.get(rightFruit) ?? 0) + 1);
+        backets.set(rightFruit, (backets.get(rightFruit) ?? 0) + 1);
 
-        while (treeMap.size > 2) {
+        while (backets.size > 2) {
             const leftFruit: number = fruits[left];
 
-            treeMap.set(leftFruit, treeMap.get(leftFruit)! - 1);
+            backets.set(leftFruit, backets.get(leftFruit)! - 1);
 
-            if (treeMap.get(leftFruit) === 0) {
-                treeMap.delete(leftFruit);
+            if (backets.get(leftFruit) === 0) {
+                backets.delete(leftFruit);
             }
 
             ++left;
