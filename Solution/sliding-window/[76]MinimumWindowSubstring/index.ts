@@ -68,7 +68,7 @@ function minWindow1(s: string, t: string): string {
         : s.slice(resultLeft, resultLeft + minWinLen);
 }
 
-// ======================== Approach 1 ======================== //
+// ======================== Approach 2 ======================== //
 function minWindow(s: string, t: string): string {
     const sLen: number = s.length;
     const tLen: number = t.length;
@@ -85,12 +85,9 @@ function minWindow(s: string, t: string): string {
     }
 
     let minWinLen: number = Infinity;
-    let left: number = 0;
-    let right: number = 0;
     let resultLeft: number = 0;
-    let count: number = 0;
 
-    while (right < sLen) {
+    for (let left = 0, right = 0, count = 0; right < sLen; ++right) {
         const rightIndex: number = s[right].charCodeAt(0) - lowerBound;
 
         if (tMap[rightIndex] > 0) {
@@ -116,8 +113,6 @@ function minWindow(s: string, t: string): string {
             ++tMap[leftIndex];
             ++left;
         }
-
-        ++right;
     }
 
     return minWinLen === Infinity
