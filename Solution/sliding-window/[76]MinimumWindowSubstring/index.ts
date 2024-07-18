@@ -5,7 +5,8 @@
  */
 
 // @lc code=start
-function minWindow(s: string, t: string): string {
+// ======================== Approach 1 ======================== //
+function minWindow1(s: string, t: string): string {
     const sLen: number = s.length;
     const tLen: number = t.length;
 
@@ -56,6 +57,63 @@ function minWindow(s: string, t: string): string {
                 winMap.set(leftChar, winMap.get(leftChar)! - 1);
             }
 
+            ++left;
+        }
+
+        ++right;
+    }
+
+    return minWinLen === Infinity
+        ? ''
+        : s.slice(resultLeft, resultLeft + minWinLen);
+}
+
+// ======================== Approach 1 ======================== //
+function minWindow(s: string, t: string): string {
+    const sLen: number = s.length;
+    const tLen: number = t.length;
+
+    if (sLen === 0 || tLen === 0 || sLen < tLen) {
+        return '';
+    }
+
+    const lowerBound: number = 'A'.charCodeAt(0);
+    const tMap: number[] = new Array('{'.charCodeAt(0) - lowerBound).fill(0);
+
+    for (const c of t) {
+        ++tMap[c.charCodeAt(0) - lowerBound];
+    }
+
+    let minWinLen: number = Infinity;
+    let left: number = 0;
+    let right: number = 0;
+    let resultLeft: number = 0;
+    let count: number = 0;
+
+    while (right < sLen) {
+        const rightIndex: number = s[right].charCodeAt(0) - lowerBound;
+
+        if (tMap[rightIndex] > 0) {
+            ++count;
+        }
+
+        --tMap[rightIndex];
+
+        while (count === tLen) {
+            const curLen: number = right - left + 1;
+
+            if (Math.min(minWinLen, curLen) === curLen) {
+                minWinLen = curLen;
+                resultLeft = left;
+            }
+
+            const leftIndex: number = s[left].charCodeAt(0) - lowerBound;
+
+            if (tMap[leftIndex] === 0) {
+                --count;
+            }
+
+            ++tMap[leftIndex];
             ++left;
         }
 
