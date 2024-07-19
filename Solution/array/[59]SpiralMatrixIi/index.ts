@@ -20,20 +20,20 @@ function generateMatrix(n: number): number[][] {
         x = startX;
         y = startY;
 
-        while (x < startX + offset) {
-            matrix[y][x++] = value++;
-        }
-
         while (y < startY + offset) {
-            matrix[y++][x] = value++;
+            matrix[x][y++] = value++;
         }
 
-        while (x > startX) {
-            matrix[y][x--] = value++;
+        while (x < startX + offset) {
+            matrix[x++][y] = value++;
         }
 
         while (y > startY) {
-            matrix[y--][x] = value++;
+            matrix[x][y--] = value++;
+        }
+
+        while (x > startX) {
+            matrix[x--][y] = value++;
         }
 
         ++startX;
