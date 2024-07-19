@@ -55,8 +55,8 @@ for (const [from, to] of tickets) {
 
 ## 📊Complexity
 
-- **Time complexity: $O(NlogN)$**
-- **Space complexity: $O(N)$**
+- **Time complexity:** $O(NlogN)$
+- **Space complexity:** $O(N)$
 
 ## 🧑🏻‍💻Code
 
@@ -120,8 +120,8 @@ The above approach is actually more in line with the solution of backtracking pr
 
 ## 📊Complexity
 
-- **Time complexity: $O(NlogN)$**
-- **Space complexity: $O(N)$**
+- **Time complexity:** $O(NlogN)$
+- **Space complexity:** $O(N)$
 
 ## 🧑🏻‍💻Code
 

@@ -29,7 +29,7 @@ We can use a Sliding Window approach to tackle this problem. The Sliding Window 
 ## 📊Complexity
 
 - **Time complexity:** $O(N)$
-- **Space complexity: $O(1)$**
+- **Space complexity:** $O(1)$
 
 ## 🧑🏻‍💻Code
 
@@ -87,7 +87,7 @@ for (let i = 1; i < prefix.length; ++i) {
 ## 📊Complexity
 
 - **Time complexity:** $O(NlogN)$
-- **Space complexity: $O(1)$**
+- **Space complexity:** $O(1)$
 
 ## 🧑🏻‍💻Code
 

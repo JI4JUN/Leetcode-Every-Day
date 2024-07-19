@@ -43,8 +43,8 @@ The problem is to find all the different non-decreasing subsequences of the give
 
 ## 📊Complexity
 
-- **Time complexity:  $O(n * 2^n)$**
-- **Space complexity: $O(n)$**
+- **Time complexity:** $O(n * 2^n)$
+- **Space complexity:** $O(n)$
 
 ## 🧑🏻‍💻Code
 
@@ -89,8 +89,8 @@ We can use an `Array` instead of `Set` to avoid duplicates
 
 ## 📊Complexity
 
-- **Time complexity:  $O(n * 2^n)$**
-- **Space complexity: $O(n)$**
+- **Time complexity:** $O(n * 2^n)$
+- **Space complexity:** $O(n)$
 
 ## 🧑🏻‍💻Code
 

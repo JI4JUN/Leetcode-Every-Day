@@ -73,7 +73,7 @@ const isWellFormed = (str: string): boolean => {
 ## 📊Complexity
 
 - **Time complexity:** $O(2^{2n}*n)$
-- **Space complexity: $O(n)$**
+- **Space complexity:** $O(n)$
 
 ## 🧑🏻‍💻Code
 
@@ -158,8 +158,8 @@ We can draw a conclusion by observing the Space-State Tree that a combination is
 
 ## 📊Complexity
 
-- **Time complexity: $O(2^{2n}/\sqrt{n})$**
-- **Space complexity: $O(n)$**
+- **Time complexity:** $O(2^{2n}/\sqrt{n})$
+- **Space complexity:** $O(n)$
 
 ## 🧑🏻‍💻Code
 

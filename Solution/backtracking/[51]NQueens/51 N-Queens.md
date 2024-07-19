@@ -64,7 +64,7 @@ const isValid = (
 
 ## 📊Complexity
 
-- **Time complexity: $O(N! * N^2)$**
+- **Time complexity:** $O(N! * N^2)$
 - **Space complexity:** $O(N^2)$
 
 ## 🧑🏻‍💻Code
@@ -172,8 +172,8 @@ const isValid = (row: number, col: number): boolean => {
 
 ## 📊Complexity
 
-- **Time complexity: $O(N! * N^2)$**
-- **Space complexity: $O(N^2)$**
+- **Time complexity:** $O(N! * N^2)$
+- **Space complexity:** $O(N^2)$
 
 ## 🧑🏻‍💻Code
 
@@ -225,8 +225,8 @@ We can use an Array instead of the Set to improve algorithm performance.
 
 ## 📊Complexity
 
-- **Time complexity: $O(N! * N^2)$**
-- **Space complexity: $O(N^2)$**
+- **Time complexity:** $O(N! * N^2)$
+- **Space complexity:** $O(N^2)$
 
 ## 🧑🏻‍💻Code
 
@@ -306,8 +306,8 @@ Consider following figure, we can initialize three arrays to keep track of the c
 
 ## 📊Complexity
 
-- **Time complexity: $O(N! * N^2)$**
-- **Space complexity: $O(N^2)$**
+- **Time complexity:** $O(N! * N^2)$
+- **Space complexity:** $O(N^2)$
 
 ## 🧑🏻‍💻Code
 
