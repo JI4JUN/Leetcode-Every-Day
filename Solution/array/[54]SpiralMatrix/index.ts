@@ -4,8 +4,9 @@
  * [54] Spiral Matrix
  */
 
+// ======================== Approach 1 ======================== //
 // @lc code=start
-function spiralOrder(matrix: number[][]): number[] {
+function spiralOrder1(matrix: number[][]): number[] {
     const result: number[] = [];
     const arrLen: number = matrix.length;
     const subArrLen: number = matrix[0].length;
@@ -49,6 +50,44 @@ function spiralOrder(matrix: number[][]): number[] {
     if (arrLen % 2) {
         while (indexY <= subArrLen - offset) {
             result.push(matrix[indexX][indexY++]);
+        }
+    }
+
+    return result;
+}
+
+// ======================== Approach 2 ======================== //
+function spiralOrder(matrix: number[][]): number[] {
+    const result: number[] = [];
+
+    for (
+        let start = 0, row = matrix.length, col = matrix[0].length;
+        2 * start < row && 2 * start < col;
+        ++start
+    ) {
+        const endX: number = col - start - 1;
+        const endY: number = row - start - 1;
+
+        for (let i = start; i <= endX; ++i) {
+            result.push(matrix[start][i]);
+        }
+
+        if (start < endY) {
+            for (let i = start + 1; i <= endY; ++i) {
+                result.push(matrix[i][endX]);
+            }
+        }
+
+        if (start < endX && start < endY) {
+            for (let i = endX - 1; i >= start; --i) {
+                result.push(matrix[endY][i]);
+            }
+        }
+
+        if (start < endX && start < endY - 1) {
+            for (let i = endY - 1; i >= start + 1; --i) {
+                result.push(matrix[i][start]);
+            }
         }
     }
 
