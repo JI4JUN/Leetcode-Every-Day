@@ -57,7 +57,7 @@ function spiralOrder1(matrix: number[][]): number[] {
 }
 
 // ======================== Approach 2 ======================== //
-function spiralOrder(matrix: number[][]): number[] {
+function spiralOrder2(matrix: number[][]): number[] {
     const result: number[] = [];
 
     for (
@@ -88,6 +88,68 @@ function spiralOrder(matrix: number[][]): number[] {
             for (let i = endY - 1; i >= start + 1; --i) {
                 result.push(matrix[i][start]);
             }
+        }
+    }
+
+    return result;
+}
+
+// ======================== Approach 3 ======================== //
+
+function spiralOrder(matrix: number[][]): number[] {
+    enum EDirections {
+        Right,
+        Down,
+        Left,
+        Up
+    }
+
+    const result: number[] = [];
+
+    let left: number = 0;
+    let top: number = 0;
+    let right: number = matrix[0].length - 1;
+    let bottom: number = matrix.length - 1;
+    let dir: number = EDirections.Right;
+
+    while (bottom >= top && right >= left) {
+        switch (dir) {
+            case EDirections.Right:
+                for (let i = left; i <= right; ++i) {
+                    result.push(matrix[top][i]);
+                }
+
+                dir = EDirections.Down;
+                ++top;
+
+                break;
+            case EDirections.Down:
+                for (let i = top; i <= bottom; ++i) {
+                    result.push(matrix[i][right]);
+                }
+
+                dir = EDirections.Left;
+                --right;
+
+                break;
+            case EDirections.Left:
+                for (let i = right; i >= left; --i) {
+                    result.push(matrix[bottom][i]);
+                }
+
+                dir = EDirections.Up;
+                --bottom;
+
+                break;
+            case EDirections.Up:
+                for (let i = bottom; i >= top; --i) {
+                    result.push(matrix[i][left]);
+                }
+
+                dir = EDirections.Right;
+                ++left;
+
+                break;
         }
     }
 
