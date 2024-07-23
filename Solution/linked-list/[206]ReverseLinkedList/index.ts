@@ -18,7 +18,11 @@
  */
 
 // ======================== Approach 1 ======================== //
-function reverseList1(head: ListNode | null): ListNode | null {
+function reverseList(head: ListNode | null): ListNode | null {
+    if (head === null || head.next === null) {
+        return head;
+    }
+
     let tempNode: ListNode | null = null,
         curNode: ListNode | null = head,
         preNode: ListNode | null = null;
@@ -56,9 +60,9 @@ function reverseList2(head: ListNode | null): ListNode | null {
 }
 
 // ======================== Approach 3 ======================== //
-function reverseList(head: ListNode | null): ListNode | null {
-    if (head === null) {
-        return null;
+function reverseList3(head: ListNode | null): ListNode | null {
+    if (head === null || head.next === null) {
+        return head;
     }
 
     let newHead: ListNode | null = null;
