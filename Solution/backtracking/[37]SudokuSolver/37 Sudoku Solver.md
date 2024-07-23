@@ -1,7 +1,7 @@
 # 37 Sudoku Solver
 
 Created: July 12, 2024 5:54 PM
-Select: Hard
+SelDifficultyect: Hard
 Topics: Backtracking, Hash Table
 
 ## 📖Description

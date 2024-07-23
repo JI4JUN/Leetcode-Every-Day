@@ -1,7 +1,7 @@
 # 209 Minimum Size Subarray Sum
 
 Created: July 15, 2024 4:16 PM
-Select: Medium
+Difficulty: Medium
 Topics: Array, Binary-Search, Two-Pointers
 
 ## 📖Description

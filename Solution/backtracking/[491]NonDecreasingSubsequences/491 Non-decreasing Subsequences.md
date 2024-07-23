@@ -1,7 +1,7 @@
 # 491 Non-decreasing Subsequences
 
 Created: July 1, 2024 11:24 AM
-Select: Medium
+Difficulty: Medium
 Topics: Array, Backtracking, Bit Manipulation, Hash Table
 
 ## 📖Description

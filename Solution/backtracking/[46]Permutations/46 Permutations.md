@@ -1,7 +1,7 @@
 # 46 Permutations
 
 Created: July 2, 2024 5:10 PM
-Select: Medium
+Difficulty: Medium
 Topics: Array, Backtracking
 
 ## 📖Description

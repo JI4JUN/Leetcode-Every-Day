@@ -1,7 +1,7 @@
 # 904 Fruit Into Baskets
 
 Created: July 16, 2024 7:54 PM
-Select: Medium
+Difficulty: Medium
 Topics: Array, Hash Table, Sliding Window
 
 ## 📖Description

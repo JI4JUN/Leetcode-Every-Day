@@ -1,7 +1,7 @@
 # 22 Generate Parentheses
 
 Created: July 4, 2024 9:47 AM
-Select: Medium
+Difficulty: Medium
 Topics: Backtracking, Dynamic Programming, String
 
 ## 📖Description

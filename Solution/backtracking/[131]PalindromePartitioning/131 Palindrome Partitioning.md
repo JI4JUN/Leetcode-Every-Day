@@ -1,7 +1,7 @@
 # 131 Palindrome Partitioning
 
 Created: June 27, 2024 10:47 AM
-Select: Medium
+Difficulty: Medium
 Topics: Backtracking
 
 ## 📖Description

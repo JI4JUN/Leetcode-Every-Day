@@ -1,7 +1,7 @@
 # 332 Reconstruct Itinerary
 
 Created: July 8, 2024 9:23 AM
-Select: Hard
+Difficulty: Hard
 Topics: Depth-First Search, Eulerian Circuit, Graph
 
 ## 📖Description

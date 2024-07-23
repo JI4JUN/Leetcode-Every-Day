@@ -1,7 +1,7 @@
 # 54 Spiral Matrix
 
 Created: July 21, 2024 12:13 AM
-Select: Medium
+Difficulty: Medium
 Topics: Array, Matrix, Simulation
 
 ## 📖Description

@@ -1,7 +1,7 @@
 # 76 Minimum Window Substring
 
 Created: July 18, 2024 5:25 PM
-Select: Hard
+Difficulty: Hard
 Topics: Hash Table, Sliding Window, String
 
 ## 📖Description

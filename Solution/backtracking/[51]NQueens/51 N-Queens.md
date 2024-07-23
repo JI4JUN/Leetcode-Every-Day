@@ -1,7 +1,7 @@
 # 51 N-Queens
 
 Created: July 10, 2024 2:29 PM
-Select: Hard
+Difficulty: Hard
 Topics: Array, Backtracking
 
 ## 📖Description
