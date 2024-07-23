@@ -17,7 +17,8 @@
  * }
  */
 
-function removeElements(head: ListNode | null, val: number): ListNode | null {
+// ======================== Approach 1 ======================== //
+function removeElements1(head: ListNode | null, val: number): ListNode | null {
     while (head && head.val === val) {
         head = head.next;
     }
@@ -33,12 +34,32 @@ function removeElements(head: ListNode | null, val: number): ListNode | null {
         if (curNode.val === val) {
             preNode.next = curNode.next;
         } else {
-            preNode = preNode.next;
+            preNode = curNode;
         }
 
         curNode = curNode.next;
     }
 
     return head;
+}
+
+// ======================== Approach 2 ======================== //
+function removeElements(head: ListNode | null, val: number): ListNode | null {
+    const dummyNode: ListNode | null = new ListNode(0, head);
+
+    let preNode: ListNode | null = dummyNode;
+    let curNode: ListNode | null = dummyNode.next;
+
+    while (curNode) {
+        if (curNode.val === val) {
+            preNode.next = curNode.next;
+        } else {
+            preNode = curNode;
+        }
+
+        curNode = curNode.next;
+    }
+
+    return dummyNode.next;
 }
 // @lc code=end
