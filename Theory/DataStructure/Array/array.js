@@ -1,3 +1,8 @@
+/**
+ * Array.prototype.forEach(callbackfn [, thisArg])
+ * https://tc39.es/ecma262/#sec-array.prototype.foreach
+ */
+
 const {
     ToObject,
     LengthOfArrayLike,
