@@ -22,28 +22,29 @@
 function sumRootToLeaf(root: TreeNode | null): number {
     const result: string[] = [];
 
-    const backtrack = (root: TreeNode, valStr: string) => {
+    const backtrack = (root: TreeNode | null, valStr: string): void => {
         if (!root) {
             return;
         }
 
-        const tmpValStr = valStr;
-        valStr += ('' + root.val);
+        const tmpValStr: string = valStr;
+        const { left, right, val } = root;
 
-        const { left, right } = root;
-        if (left === null && right === null) {
-            result.push(valStr)
-            return
+        valStr += String(val);
+
+        if (!left && !right) {
+            result.push(valStr);
+
+            return;
         }
 
         backtrack(left, valStr);
         backtrack(right, valStr);
         valStr = tmpValStr;
-    }
+    };
 
     backtrack(root, '');
 
-    return result.reduce((sum, str) => sum += parseInt(str, 2), 0);
-};
+    return result.reduce((sum, str) => (sum += parseInt(str, 2)), 0);
+}
 // @lc code=end
-
