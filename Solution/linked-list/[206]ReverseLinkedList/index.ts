@@ -34,7 +34,7 @@ function reverseList1(head: ListNode | null): ListNode | null {
 }
 
 // ======================== Approach 2 ======================== //
-function reverseList(head: ListNode | null): ListNode | null {
+function reverseList2(head: ListNode | null): ListNode | null {
     const recur = (
         preNode: ListNode | null,
         curNode: ListNode | null
@@ -53,5 +53,28 @@ function reverseList(head: ListNode | null): ListNode | null {
     };
 
     return recur(null, head);
+}
+
+// ======================== Approach 3 ======================== //
+function reverseList(head: ListNode | null): ListNode | null {
+    if (head === null) {
+        return null;
+    }
+
+    let newHead: ListNode | null = null;
+
+    const recur = (node: ListNode | null, preNode: ListNode | null): void => {
+        if (node.next === null) {
+            newHead = node;
+            node.next = preNode;
+        } else {
+            recur(node.next, node);
+            node.next = preNode;
+        }
+    };
+
+    recur(head, null);
+
+    return newHead;
 }
 // @lc code=end
