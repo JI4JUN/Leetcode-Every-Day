@@ -1,13 +1,18 @@
 /**
- * Steps:
- * 1. Let desc be ? O.[[GetOwnProperty]](P).
- * 2. If desc is undefined, return false.
- * 3. Return true.
+ * The abstract opertaion HasProperty is used to determine whether an object
+ * has a property with the specified key.
  *
- * @param {*} O
- * @param {*} P
- * @returns
+ * Steps:
+ * 1. Return ? O.[[HasProperty]](P).
+ *
+ * @param {*} O A Object.
+ * @param {*} P A property key.
+ * @returns Either a normal completion containing a Boolean or a throw completion.
  */
 export function HasProperty(O, P) {
-    return O.hasOwnProperty(P) ? O.hasOwnProperty(P) : P in O;
+    if (typeof O !== 'object' || O === null) {
+        throw new TypeError('Object required');
+    }
+
+    return O.hasOwnProperty(P) || P in O;
 }
