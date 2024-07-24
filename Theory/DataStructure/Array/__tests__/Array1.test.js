@@ -1,4 +1,4 @@
-const Array = require('../Array1.js');
+const Array = require('../Array.js');
 
 test('Using the then() method --- Success', async () => {
     const arr = [1, 2, 3];
