@@ -28,7 +28,7 @@ const {
     Get,
     Call,
     F
-} = require('../utils/utils.js');
+} = require('../utils/AbstractOperations/utils.js');
 
 Array.prototype.tinyForEach = function (callbackfn, thisArg) {
     // 1. Let O be ? ToObject(this value).

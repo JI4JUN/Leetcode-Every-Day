@@ -58,16 +58,51 @@ function ToObject(argument) {
     throw new TypeError(`Cannot convert a ${argument} to a Object`);
 }
 
-// TODO: lack of description
+/**
+ * The abstract operation GetV is used to retrieve the value of a specific property of
+ * an ECMAScript language value. If the value is not an object, the property lookup is
+ * performed using a wrapper object appropriate for the type of the value.
+ *
+ * Steps:
+ * 1. Let O be ? ToObject(V).
+ * 2. Return ? O.[[Get]](P, V).
+ *
+ * @param {*} V An ECMAScript language value
+ * @param {*} P A property key
+ * @returns Either a normal completion containing an ECMAScript language value or a throw completion.
+ */
 function GetV(V, P) {
     const O = ToObject(V);
 
     return O[P];
 }
 
-// TODO: lack of description and implement
+/**
+ * The abstract operation GetMethod is used to get the value of a specific property of
+ * an ECMAScript language value when the value of property is expected to be a function.
+ *
+ * Steps:
+ * 1. Let func be ? GetV(V, P).
+ * 2. If func is either undefined or null, return undefined.
+ * 3. If IsCallable(func) is false, throw a TypeError exception.
+ * 4. Return func.
+ *
+ * @param {*} V An ECMAScript language value
+ * @param {*} P A property key
+ * @returns Either a normal completion containing either a function object or undefined, or a throw completion.
+ */
 function GetMethod(V, P) {
     const func = GetV(V, P);
+
+    if (func === undefined || func === null) {
+        return undefined;
+    }
+
+    if (!IsCallable(func)) {
+        throw new TypeError(`${P} is not a function`);
+    }
+
+    return func;
 }
 
 /**
@@ -243,22 +278,30 @@ function LengthOfArrayLike(obj) {
     return length;
 }
 
-// TODO: lack of description
+/**
+ * The abstract operation IsCallable is used to determine whether argument is a callable
+ * function with a [[Call]] internal method.
+ *
+ * Steps:
+ * 1. If argument is not an Object, return false.
+ * 2. If argument has a [[Call]] internal method, return true.
+ * 3. Return false.
+ *
+ * @param {*} argument An ECMAScript language value
+ * @returns
+ * 1. If argument is not an Object, return false.
+ * 2. If argument has a [[Call]] internal method, return true.
+ * 3. Otherwise, return false.
+ */
 function IsCallable(argument) {
-    // 如果 argument 不是一个对象，则返回 false
-    if (Object.is(typeof argument, 'object') || Object.is(argument, null)) {
+    if (typeof argument !== 'object') {
         return false;
     }
 
-    // 如果 argument 有一个 [[Call]] 内部方法，则返回 true
-    if (
-        Object.is(typeof argument, 'function') ||
-        Object.is(typeof argument?.call, 'function')
-    ) {
+    if (typeof argument?.call === 'function') {
         return true;
     }
 
-    // 否则返回 false
     return false;
 }
 
