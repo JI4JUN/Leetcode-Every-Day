@@ -1,5 +1,21 @@
 /**
  * Array.prototype.forEach(callbackfn [, thisArg])
+ *
+ * Steps:
+ *
+ * 1. Let O be ? ToObject(this value).
+ * 2. Let len be ? LengthOfArrayLike(O).
+ * 3. If IsCallable(callbackfn) is false, throw a TypeError exception.
+ * 4. Let k be 0.
+ * 5. Repeat, while k < len,
+ *     a. Let Pk be ! ToString(𝔽(k)).
+ *     b. Let kPresent be ? HasProperty(O, Pk).
+ *     c. If kPresent is true, then
+ *         i. Let kValue be ? Get(O, Pk).
+ *         ii. Perform ? Call(callbackfn, thisArg, « kValue, 𝔽(k), O »).
+ *     d. Set k to k + 1.
+ * 6. Return undefined.
+ *
  * https://tc39.es/ecma262/#sec-array.prototype.foreach
  */
 
@@ -15,12 +31,13 @@ const {
 } = require('../utils/utils.js');
 
 Array.prototype.tinyForEach = function (callbackfn, thisArg) {
-    // 1. 将 this 值转换为对象
+    // 1. Let O be ? ToObject(this value).
     const O = ToObject(this);
-    // 2. 获取数组长度
+
+    // 2. Let len be ? LengthOfArrayLike(O).
     const len = LengthOfArrayLike(O);
 
-    // 3. 检查回调函数是否可调用
+    // 3. If IsCallable(callbackfn) is false, throw a TypeError exception.
     if (IsCallable(callbackfn) === false) {
         throw TypeError(
             `${typeof callbackfn} ${
@@ -29,30 +46,31 @@ Array.prototype.tinyForEach = function (callbackfn, thisArg) {
         );
     }
 
-    // 4. 初始化索引 k 为 0
+    // 4. Let k be 0.
     let k = 0;
 
-    // 5. 循环遍历数组
+    // 5. Repeat, while k < len.
     while (k < len) {
-        // a. 获取属性名
+        // a. Let Pk be ! ToString(𝔽(k)).
         const Pk = ToString(k);
 
-        // b. 检查属性是否存在
+        // b. Let kPresent be ? HasProperty(O, Pk).
         const kPresent = HasProperty(O, Pk);
 
-        // c. kPresent 是 true
+        // c. If kPresent is true, then
         if (kPresent === true) {
-            // i. 获取属性值
+            // i. Let kValue be ? Get(O, Pk).
             const kValue = Get(O, Pk);
-            // ii. 执行 Call 方法
+
+            // ii. Perform ? Call(callbackfn, thisArg, « kValue, 𝔽(k), O »).
             Call(callbackfn, thisArg, [kValue, F(k), O]);
         }
 
-        // d. 增加索引
+        // d. Set k to k + 1.
         k++;
     }
 
-    // 6. 返回 undefined
+    // 6. Return undefined.
     return undefined;
 };
 
