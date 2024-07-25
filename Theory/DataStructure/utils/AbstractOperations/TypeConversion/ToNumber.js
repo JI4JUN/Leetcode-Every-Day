@@ -16,8 +16,8 @@
  * @param {*} argument An ECMAScript language value.
  * @returns Either a normal completion containing a Number or a throw completion.
  */
-function ToNumber(argument) {
-    if (argument !== null) {
+export function ToNumber(argument) {
+    if (argument === null) {
         return +0;
     }
 

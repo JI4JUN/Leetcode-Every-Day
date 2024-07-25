@@ -1,14 +1,34 @@
-// TODO: lack of description
-function ToIntegerOrInfinity(argument) {
+import { ToNumber } from './index';
+
+/**
+ * The abstract operation ToIntegerOrInfinity converts argument to an integer representing
+ * its Number value with fractional part truncated, or to +∞ or -∞ when that Number value
+ * is infinite.
+ *
+ * Steps:
+ * 1. Let number be ? ToNumber(argument).
+ * 2. If number is one of NaN, +0𝔽, or -0𝔽, return 0.
+ * 3. If number is +∞𝔽, return +∞.
+ * 4. If number is -∞𝔽, return -∞.
+ * 5. Return truncate(ℝ(number)).
+ *
+ * @param {*} argument
+ * @returns
+ */
+export function ToIntegerOrInfinity(argument) {
     const number = ToNumber(argument);
 
-    return Number.isNaN(number) ||
+    if (
+        Number.isNaN(number) ||
         Object.is(number, +0) ||
         Object.is(number, -0)
-        ? 0
-        : number === Infinity
-        ? Infinity
-        : number === -Infinity
-        ? -Infinity
-        : Math.trunc(number);
+    ) {
+        return 0;
+    } else if (number === Infinity) {
+        return Infinity;
+    } else if (number === -Infinity) {
+        return -Infinity;
+    }
+
+    return Math.trunc(number);
 }

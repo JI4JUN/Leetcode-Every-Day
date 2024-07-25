@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.84% </span>
+                <span class="strong">70% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>43/77</span>
+                <span class='fraction'>42/60</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>1/3</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.84% </span>
+                <span class="strong">70% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>43/77</span>
+                <span class='fraction'>42/60</span>
             </div>
         
             
@@ -123,24 +123,8 @@
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L61'></a><a href='#L61'>61</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -199,25 +183,18 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {
+    ToObject,
+    ToString,
+    LengthOfArrayLike
+} from '../utils/AbstractOperations/TypeConversion/index.js';
+import { IsCallable } from '../utils/AbstractOperations/TestingAndComparsionOperations/index.js';
+import {
+    Call,
+    HasProperty
+} from '../utils/AbstractOperations/OperationsOnObjects/HasProperty.js';
+&nbsp;
+/**
  * Array.prototype.forEach(callbackfn [, thisArg])
  *
  * Steps:
@@ -237,63 +214,35 @@
  *
  * https://tc39.es/ecma262/#sec-array.prototype.foreach
  */
-&nbsp;
-const {
-    ToObject,
-    LengthOfArrayLike,
-    IsCallable,
-    ToString,
-    HasProperty,
-    Get,
-    Call,
-    F
-} = require('../utils/AbstractOperations/utils.js');
-&nbsp;
 Array.prototype.tinyForEach = function (callbackfn, thisArg) {
-    // 1. Let O be ? ToObject(this value).
     const O = ToObject(this);
-&nbsp;
-    // 2. Let len be ? LengthOfArrayLike(O).
     const len = LengthOfArrayLike(O);
 &nbsp;
-    // 3. If IsCallable(callbackfn) is false, throw a TypeError exception.
-    if (IsCallable(callbackfn) === false) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        throw TypeError(</span>
-<span class="cstat-no" title="statement not covered" >            `${typeof callbackfn} ${</span>
-<span class="cstat-no" title="statement not covered" >                Object.is(callbackfn, undefined) ? '' : callbackfn</span>
-<span class="cstat-no" title="statement not covered" >            } is not a function`</span>
-<span class="cstat-no" title="statement not covered" >        );</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+    if (IsCallable(callbackfn) === false) {
+        throw new TypeError(
+            `${typeof callbackfn} ${
+                Object.is(callbackfn, undefined)<span class="branch-0 cbranch-no" title="branch not covered" > ? '' </span>: callbackfn
+            } is not a function`
+        );
+<span class="branch-0 cbranch-no" title="branch not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // 4. Let k be 0.</span>
 <span class="cstat-no" title="statement not covered" >    let k = 0;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // 5. Repeat, while k &lt; len.</span>
 <span class="cstat-no" title="statement not covered" >    while (k &lt; len) {</span>
-<span class="cstat-no" title="statement not covered" >        // a. Let Pk be ! ToString(𝔽(k)).</span>
 <span class="cstat-no" title="statement not covered" >        const Pk = ToString(k);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // b. Let kPresent be ? HasProperty(O, Pk).</span>
 <span class="cstat-no" title="statement not covered" >        const kPresent = HasProperty(O, Pk);</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // c. If kPresent is true, then</span>
 <span class="cstat-no" title="statement not covered" >        if (kPresent === true) {</span>
-<span class="cstat-no" title="statement not covered" >            // i. Let kValue be ? Get(O, Pk).</span>
 <span class="cstat-no" title="statement not covered" >            const kValue = Get(O, Pk);</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            // ii. Perform ? Call(callbackfn, thisArg, « kValue, 𝔽(k), O »).</span>
 <span class="cstat-no" title="statement not covered" >            Call(callbackfn, thisArg, [kValue, F(k), O]);</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // d. Set k to k + 1.</span>
 <span class="cstat-no" title="statement not covered" >        k++;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // 6. Return undefined.</span>
 <span class="cstat-no" title="statement not covered" >    return undefined;</span>
 <span class="cstat-no" title="statement not covered" >};</span>
-&nbsp;
-module.exports = Array;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -301,7 +250,7 @@ module.exports = Array;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-07-24T06:44:51.508Z
+                at 2024-07-25T03:49:57.388Z
             </div>
         <script src="../prettify.js"></script>
         <script>

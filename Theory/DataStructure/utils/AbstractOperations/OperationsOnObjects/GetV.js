@@ -11,7 +11,7 @@
  * @param {*} P A property key
  * @returns Either a normal completion containing an ECMAScript language value or a throw completion.
  */
-function GetV(V, P) {
+export function GetV(V, P) {
     const O = ToObject(V);
 
     return O[P];
