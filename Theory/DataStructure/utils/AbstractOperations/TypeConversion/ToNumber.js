@@ -1,3 +1,5 @@
+import { ToPrimitive } from '../TypeConversion/index';
+
 /**
  * The abstract operation ToNumber converts argument to a value of type Number.
  *

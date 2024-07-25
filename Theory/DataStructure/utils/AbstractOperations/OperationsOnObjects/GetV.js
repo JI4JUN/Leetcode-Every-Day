@@ -1,3 +1,5 @@
+import { ToObject } from '../TypeConversion/index';
+
 /**
  * The abstract operation GetV is used to retrieve the value of a specific property of
  * an ECMAScript language value. If the value is not an object, the property lookup is

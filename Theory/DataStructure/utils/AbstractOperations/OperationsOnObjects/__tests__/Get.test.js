@@ -1,17 +1,13 @@
 import { Get } from '../index';
 
 describe('Get function', () => {
-    let testObject;
-
-    beforeEach(() => {
-        testObject = {
-            prop1: 'value',
-            prop2: 42,
-            prop3: {
-                nestedProp: 'nestedValue'
-            }
-        };
-    });
+    const testObject = {
+        prop1: 'value',
+        prop2: 42,
+        prop3: {
+            nestedProp: 'nestedValue'
+        }
+    };
 
     test('Get existing property', () => {
         expect(Get(testObject, 'prop1')).toBe('value');

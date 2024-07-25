@@ -5,6 +5,10 @@ describe('Cal function', () => {
         return 'testValue';
     }
 
+    test('Call callable function without argumentsList', () => {
+        expect(Call(testFunction, undefined)).toBe('testValue');
+    });
+
     test('Call callable function with argumentsList', () => {
         const argumentsList = [1, 2, 3];
 
@@ -13,10 +17,6 @@ describe('Cal function', () => {
         }
 
         expect(Call(sum, undefined, argumentsList)).toBe(6);
-    });
-
-    test('Call callable function without argumentsList', () => {
-        expect(Call(testFunction, undefined)).toBe('testValue');
     });
 
     test('Throws TypeError for non-callable function', () => {

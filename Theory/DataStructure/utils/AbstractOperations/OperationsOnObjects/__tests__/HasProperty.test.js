@@ -1,15 +1,11 @@
 import { HasProperty } from '../index';
 
 describe('HasProperty function', () => {
-    let testObject;
-
-    beforeEach(() => {
-        testObject = {
-            prop1: 'value',
-            prop2: undefined,
-            prop3: null
-        };
-    });
+    const testObject = {
+        prop1: 'value',
+        prop2: undefined,
+        prop3: null
+    };
 
     test('Property exists in object', () => {
         expect(HasProperty(testObject, 'prop1')).toBe(true);
