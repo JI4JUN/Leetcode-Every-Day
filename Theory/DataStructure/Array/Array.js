@@ -1,13 +1,12 @@
 import {
+    Call,
+    Get,
+    HasProperty,
+    IsCallable,
     ToObject,
     ToString,
     LengthOfArrayLike
-} from '../utils/AbstractOperations/TypeConversion/index.js';
-import { IsCallable } from '../utils/AbstractOperations/TestingAndComparsionOperations/index.js';
-import {
-    Call,
-    HasProperty
-} from '../utils/AbstractOperations/OperationsOnObjects/HasProperty.js';
+} from '../utils/AbstractOperations/index';
 
 /**
  * Array.prototype.forEach(callbackfn [, thisArg])
@@ -50,7 +49,7 @@ Array.prototype.tinyForEach = function (callbackfn, thisArg) {
         if (kPresent === true) {
             const kValue = Get(O, Pk);
 
-            Call(callbackfn, thisArg, [kValue, F(k), O]);
+            Call(callbackfn, thisArg, [kValue, k, O]);
         }
 
         k++;

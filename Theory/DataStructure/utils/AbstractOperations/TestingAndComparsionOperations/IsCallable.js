@@ -14,7 +14,7 @@
  * 3. Otherwise, return false.
  */
 export function IsCallable(argument) {
-    if (typeof argument !== 'object') {
+    if (typeof argument !== 'object' && typeof argument !== 'function') {
         return false;
     }
 
