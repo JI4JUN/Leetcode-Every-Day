@@ -22,7 +22,7 @@ import { ToPrimitive } from './index';
  */
 export function ToString(argument) {
     if (argument === null) {
-        return argument;
+        return 'null';
     }
 
     const typeHandlers = {
@@ -30,16 +30,14 @@ export function ToString(argument) {
         symbol: () => {
             throw new TypeError('Cannot convert a Symbol to a String');
         },
-        undefined: (arg) => arg,
-        boolean: (arg) => arg,
+        undefined: () => 'undefined',
+        boolean: (arg) => (arg ? 'true' : 'false'),
         number: (arg) => Number.prototype.toString.call(arg, 10),
         bigint: (arg) => BigInt.prototype.toString.call(arg, 10),
         object: (arg) => {
             const primValue = ToPrimitive(arg, 'string');
 
-            if (typeof primValue === 'object') {
-                return ToString(primValue);
-            }
+            return ToString(primValue);
         }
     };
 

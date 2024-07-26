@@ -29,36 +29,36 @@ import { IsCallable } from '../TestingAndComparsionOperations/index';
  * @returns Either a normal completion containing an ECMAScript language value or a throw completion.
  */
 export function ToPrimitive(input, preferredType) {
-    if (input === null) {
-        throw new TypeError('Cannot convert object to primitive value');
+    if (typeof input !== 'object' || input === null) {
+        return input;
     }
 
-    if (typeof input === 'object') {
-        const exoticToPrim = GetMethod(input, Symbol.toPrimitive);
+    const exoticToPrim = GetMethod(input, Symbol.toPrimitive);
 
-        if (exoticToPrim !== undefined) {
-            let hint =
-                preferredType === undefined
-                    ? 'default'
-                    : preferredType === 'string'
-                    ? 'string'
-                    : 'number';
+    if (exoticToPrim !== undefined) {
+        let hint =
+            preferredType === undefined
+                ? 'default'
+                : preferredType === 'string'
+                ? 'string'
+                : 'number';
 
-            const result = Call(exoticToPrim, input, [hint]);
+        const result = Call(exoticToPrim, input, [hint]);
 
-            if (typeof result !== 'object') {
-                return result;
-            }
+        if (typeof result !== 'object') {
+            return result;
         }
 
-        if (preferredType === undefined) {
-            preferredType = 'number';
-        }
-
-        return OrdinaryToPrimitive(input, preferredType);
+        throw new TypeError(
+            'TypeError: Cannot convert object to primitive value'
+        );
     }
 
-    return input;
+    if (preferredType === undefined) {
+        preferredType = 'number';
+    }
+
+    return OrdinaryToPrimitive(input, preferredType);
 }
 
 /**
