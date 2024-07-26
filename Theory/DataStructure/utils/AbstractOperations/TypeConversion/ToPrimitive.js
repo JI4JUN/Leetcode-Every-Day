@@ -94,7 +94,7 @@ export function OrdinaryToPrimitive(O, hint) {
         if (IsCallable(method)) {
             const result = Call(method, O);
 
-            if (typeof result === 'object') {
+            if (typeof result !== 'object') {
                 return result;
             }
         }
