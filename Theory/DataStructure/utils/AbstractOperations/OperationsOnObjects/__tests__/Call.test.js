@@ -1,6 +1,6 @@
 import { Call } from '../index';
 
-describe('Cal function', () => {
+describe('Call function', () => {
     function testFunction() {
         return 'testValue';
     }
