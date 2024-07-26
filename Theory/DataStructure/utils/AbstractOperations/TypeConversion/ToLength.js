@@ -15,5 +15,5 @@ import { ToIntegerOrInfinity } from './index';
 export function ToLength(argument) {
     const len = ToIntegerOrInfinity(argument);
 
-    return len <= 0 ? +0 : Math.min(len, 2 ** 53 - 1);
+    return len <= 0 ? +0 : Math.min(len, Number.MAX_SAFE_INTEGER);
 }
