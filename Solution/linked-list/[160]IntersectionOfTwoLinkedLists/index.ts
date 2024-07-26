@@ -17,7 +17,8 @@
  * }
  */
 
-function getIntersectionNode(
+// ======================== Approach 1 ======================== //
+function getIntersectionNode1(
     headA: ListNode | null,
     headB: ListNode | null
 ): ListNode | null {
@@ -27,13 +28,13 @@ function getIntersectionNode(
         lenB: number = 0;
 
     while (curANode) {
-        ++lenA;
         curANode = curANode.next;
+        ++lenA;
     }
 
     while (curBNode) {
-        ++lenB;
         curBNode = curBNode.next;
+        ++lenB;
     }
 
     curANode = headA;
@@ -60,5 +61,57 @@ function getIntersectionNode(
     }
 
     return null;
+}
+
+// ======================== Approach 2 ======================== //
+function getIntersectionNode2(
+    headA: ListNode | null,
+    headB: ListNode | null
+): ListNode | null {
+    const map: Map<ListNode | null, number> = new Map<
+        ListNode | null,
+        number
+    >();
+
+    while (headA) {
+        map.set(headA, 1);
+
+        headA = headA.next;
+    }
+
+    while (headB) {
+        if (map.has(headB)) {
+            return headB;
+        }
+
+        headB = headB.next;
+    }
+
+    return null;
+}
+
+// ======================== Approach 3 ======================== //
+function getIntersectionNode(
+    headA: ListNode | null,
+    headB: ListNode | null
+): ListNode | null {
+    let curANode: ListNode | null = headA,
+        curBNode: ListNode | null = headB;
+
+    while (curANode !== curBNode) {
+        if (!curANode) {
+            curANode = headB;
+        } else {
+            curANode = curANode.next;
+        }
+
+        if (!curBNode) {
+            curBNode = headA;
+        } else {
+            curBNode = curBNode.next;
+        }
+    }
+
+    return curANode;
 }
 // @lc code=end
