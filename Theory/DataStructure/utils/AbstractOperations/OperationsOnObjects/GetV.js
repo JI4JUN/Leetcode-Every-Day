@@ -14,7 +14,13 @@ import { ToObject } from '../TypeConversion/index';
  * @returns Either a normal completion containing an ECMAScript language value or a throw completion.
  */
 export function GetV(V, P) {
-    const O = ToObject(V);
+    let O;
+
+    try {
+        O = ToObject(V);
+    } catch (e) {
+        throw new TypeError('Cannot convert to object');
+    }
 
     return O[P];
 }
