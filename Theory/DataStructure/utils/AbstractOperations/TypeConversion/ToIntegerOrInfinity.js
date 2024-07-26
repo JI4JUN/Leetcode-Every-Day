@@ -24,9 +24,9 @@ export function ToIntegerOrInfinity(argument) {
         Object.is(number, -0)
     ) {
         return 0;
-    } else if (number === Infinity) {
+    } else if (number >= Number.POSITIVE_INFINITY) {
         return Infinity;
-    } else if (number === -Infinity) {
+    } else if (number <= Number.NEGATIVE_INFINITY) {
         return -Infinity;
     }
 
