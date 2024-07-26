@@ -29,6 +29,10 @@ import { IsCallable } from '../TestingAndComparsionOperations/index';
  * @returns Either a normal completion containing an ECMAScript language value or a throw completion.
  */
 export function ToPrimitive(input, preferredType) {
+    if (input === null) {
+        throw new TypeError('Cannot convert object to primitive value');
+    }
+
     if (typeof input === 'object') {
         const exoticToPrim = GetMethod(input, Symbol.toPrimitive);
 
@@ -45,8 +49,6 @@ export function ToPrimitive(input, preferredType) {
             if (typeof result !== 'object') {
                 return result;
             }
-
-            throw new TypeError('Cannot convert object to primitive value');
         }
 
         if (preferredType === undefined) {
