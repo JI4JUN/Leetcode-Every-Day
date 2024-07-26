@@ -12,8 +12,8 @@ import { ToNumber } from './index';
  * 4. If number is -∞𝔽, return -∞.
  * 5. Return truncate(ℝ(number)).
  *
- * @param {*} argument
- * @returns
+ * @param {*} argument An ECMAScript language value
+ * @returns Either a normal completion containing either an integer, +∞, or -∞, or a throw completion
  */
 export function ToIntegerOrInfinity(argument) {
     const number = ToNumber(argument);

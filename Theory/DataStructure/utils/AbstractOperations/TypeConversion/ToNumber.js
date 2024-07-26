@@ -45,7 +45,7 @@ export function ToNumber(argument) {
         boolean: (arg) => {
             return arg ? 1 : +0;
         },
-        string: (arg) => StringToNumber(arg)
+        string: (arg) => Number(arg)
     };
 
     const type = typeof argument;
