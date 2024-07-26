@@ -83,24 +83,26 @@ export function ToPrimitive(input, preferredType) {
 export function OrdinaryToPrimitive(O, hint) {
     const validHint = ['string', 'number'];
 
-    if (!validHint.includes(hint)) {
-        throw new TypeError('Invalid hint, it must be a string or number');
-    }
+    if (validHint.includes(hint)) {
+        const methodNames =
+            hint === 'string'
+                ? ['toString', 'valueOf']
+                : ['valueOf', 'toString'];
 
-    const methodNames =
-        hint === 'string' ? ['toString', 'valueOf'] : ['valueOf', 'toString'];
+        for (const name of methodNames) {
+            const method = Get(O, name);
 
-    for (const name of methodNames) {
-        const method = Get(O, name);
+            if (IsCallable(method)) {
+                const result = Call(method, O);
 
-        if (IsCallable(method)) {
-            const result = Call(method, O);
-
-            if (typeof result !== 'object') {
-                return result;
+                if (typeof result !== 'object') {
+                    return result;
+                }
             }
         }
-    }
 
-    throw new TypeError('Cannot convert object to primitive');
+        throw new TypeError('Cannot convert object to primitive');
+    } else {
+        throw new TypeError('Invalid hint, it must be a string or number');
+    }
 }
