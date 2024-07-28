@@ -5,6 +5,7 @@
  */
 
 // @lc code=start
+// ======================== Approach 1 ======================== //
 function arrayPairSum1(nums: number[]): number {
     nums.sort((a, b) => a - b);
 
@@ -17,6 +18,7 @@ function arrayPairSum1(nums: number[]): number {
     return sum;
 }
 
+// ======================== Approach 2 ======================== //
 function arrayPairSum(nums: number[]): number {
     return nums
         .sort((a, b) => a - b)
