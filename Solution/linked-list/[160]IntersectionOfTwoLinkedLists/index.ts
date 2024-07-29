@@ -64,23 +64,20 @@ function getIntersectionNode1(
 }
 
 // ======================== Approach 2 ======================== //
-function getIntersectionNode2(
+function getIntersectionNode(
     headA: ListNode | null,
     headB: ListNode | null
 ): ListNode | null {
-    const map: Map<ListNode | null, number> = new Map<
-        ListNode | null,
-        number
-    >();
+    const set: Set<ListNode | null> = new Set<ListNode | null>();
 
     while (headA) {
-        map.set(headA, 1);
+        set.add(headA);
 
         headA = headA.next;
     }
 
     while (headB) {
-        if (map.has(headB)) {
+        if (set.has(headB)) {
             return headB;
         }
 
@@ -91,7 +88,7 @@ function getIntersectionNode2(
 }
 
 // ======================== Approach 3 ======================== //
-function getIntersectionNode(
+function getIntersectionNode3(
     headA: ListNode | null,
     headB: ListNode | null
 ): ListNode | null {
