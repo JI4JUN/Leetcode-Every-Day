@@ -18,53 +18,49 @@
  */
 
 // ======================== Approach 1 ======================== //
-function getIntersectionNode1(
+function getIntersectionNode(
     headA: ListNode | null,
     headB: ListNode | null
 ): ListNode | null {
-    let curANode: ListNode | null = headA,
-        curBNode: ListNode | null = headB;
+    let curNodeA: ListNode | null = headA,
+        curNodeB: ListNode | null = headB;
     let lenA: number = 0,
         lenB: number = 0;
 
-    while (curANode) {
-        curANode = curANode.next;
+    while (curNodeA) {
+        curNodeA = curNodeA.next;
         ++lenA;
     }
 
-    while (curBNode) {
-        curBNode = curBNode.next;
+    while (curNodeB) {
+        curNodeB = curNodeB.next;
         ++lenB;
     }
 
-    curANode = headA;
-    curBNode = headB;
+    curNodeA = headA;
+    curNodeB = headB;
 
     if (lenB > lenA) {
         [lenB, lenA] = [lenA, lenB];
-        [curBNode, curANode] = [curANode, curBNode];
+        [curNodeB, curNodeA] = [curNodeA, curNodeB];
     }
 
     let diff: number = lenA - lenB;
 
     while (diff--) {
-        curANode = curANode.next;
+        curNodeA = curNodeA.next;
     }
 
-    while (curANode) {
-        if (curANode === curBNode) {
-            return curANode;
-        }
-
-        curANode = curANode.next;
-        curBNode = curBNode.next;
+    while (curNodeA !== curNodeB) {
+        curNodeA = curNodeA.next;
+        curNodeB = curNodeB.next;
     }
 
-    return null;
+    return curNodeA;
 }
 
 // ======================== Approach 2 ======================== //
-function getIntersectionNode(
+function getIntersectionNode2(
     headA: ListNode | null,
     headB: ListNode | null
 ): ListNode | null {
@@ -92,23 +88,14 @@ function getIntersectionNode3(
     headA: ListNode | null,
     headB: ListNode | null
 ): ListNode | null {
-    let curANode: ListNode | null = headA,
-        curBNode: ListNode | null = headB;
+    let curNodeA: ListNode | null = headA,
+        curNodeB: ListNode | null = headB;
 
-    while (curANode !== curBNode) {
-        if (!curANode) {
-            curANode = headB;
-        } else {
-            curANode = curANode.next;
-        }
-
-        if (!curBNode) {
-            curBNode = headA;
-        } else {
-            curBNode = curBNode.next;
-        }
+    while (curNodeA !== curNodeB) {
+        curNodeA = curNodeA ? curNodeA.next : headB;
+        curNodeB = curNodeB ? curNodeB.next : headA;
     }
 
-    return curANode;
+    return curNodeA;
 }
 // @lc code=end
