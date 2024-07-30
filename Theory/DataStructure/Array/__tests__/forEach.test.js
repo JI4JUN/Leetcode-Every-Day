@@ -1,4 +1,4 @@
-import { tinyforEach } from '../Array.js';
+import { tinyforEach } from '../forEach.js';
 
 describe('Array.prototype.forEach', () => {
     Array.prototype.tinyForEach = tinyforEach;
