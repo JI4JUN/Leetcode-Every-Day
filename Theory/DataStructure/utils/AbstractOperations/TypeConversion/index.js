@@ -5,3 +5,4 @@ export * from './ToString';
 export * from './ToPrimitive';
 export * from './ToNumber';
 export * from './ToIntegerOrInfinity';
+export * from './ToBoolean';
