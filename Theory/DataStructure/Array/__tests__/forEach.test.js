@@ -1,4 +1,4 @@
-import { tinyforEach } from '../forEach.js';
+import { tinyforEach } from '../index';
 
 describe('Array.prototype.forEach', () => {
     Array.prototype.tinyForEach = tinyforEach;
@@ -17,6 +17,28 @@ describe('Array.prototype.forEach', () => {
         expect(copyItems1).toStrictEqual(copyItems2);
     });
 
+    /**
+     * The following code logs a line for each element in an array.
+     */
+    test('Printing the contents of an array', () => {
+        const logArrayElements = (element, index) => {
+            console.log(`a[${index}] = ${element}`);
+        };
+        const consoleSpy = jest
+            .spyOn(console, 'log')
+            .mockImplementation(() => {});
+
+        [2, 5, , 9].tinyForEach(logArrayElements);
+
+        expect(consoleSpy).toHaveBeenCalledWith('a[0] = 2');
+        expect(consoleSpy).toHaveBeenCalledWith('a[1] = 5');
+        expect(consoleSpy).toHaveBeenCalledWith('a[3] = 9');
+    });
+
+    /**
+     * The following (contrived) example updates an object's properties from
+     * each entry in the array.
+     */
     test('Using thisArg', () => {
         class Counter {
             constructor() {
@@ -39,6 +61,9 @@ describe('Array.prototype.forEach', () => {
         expect(obj.count).toBe(3);
     });
 
+    /**
+     * The following code creates a copy of a given object.
+     */
     test('An object copy function', () => {
         const copy = (obj) => {
             const copy = Object.create(Object.getPrototypeOf(obj));
@@ -59,6 +84,9 @@ describe('Array.prototype.forEach', () => {
         expect(obj1).toStrictEqual(obj2);
     });
 
+    /**
+     * The following example is only here for learning purpose.
+     */
     test('Flatten an array', () => {
         const flatten = (arr) => {
             const result = [];
@@ -79,6 +107,12 @@ describe('Array.prototype.forEach', () => {
         expect(flatten(nested)).toStrictEqual([1, 2, 3, 4, 5, 6, 7, 8, 9]);
     });
 
+    /**
+     * The array argument is useful if you want to access another element in the array,
+     * especially when you don't have an existing variable that refers to the array.
+     * The following example first uses filter() to extract the positive values and
+     * then uses forEach() to log its neighbors.
+     */
     test('Using the third argument of callbackFn', () => {
         const processArray = (numbers) => {
             return numbers
@@ -124,6 +158,10 @@ describe('Array.prototype.forEach', () => {
         consoleSpy.mockRestore();
     });
 
+    /**
+     * The forEach() method reads the length property of this and then accesses
+     * each property whose key is a nonnegative integer less than length.
+     */
     test('Calling forEach() on non-array objects', () => {
         const consoleSpy = jest
             .spyOn(console, 'log')
