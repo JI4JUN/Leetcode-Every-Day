@@ -4,3 +4,4 @@ export * from './Call';
 export * from './GetMethod';
 export * from './HasProperty';
 export * from './CreateDataProperty';
+export * from './CreateDataPropertyOrThrow';
