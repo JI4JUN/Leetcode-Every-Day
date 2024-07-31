@@ -18,5 +18,11 @@ export function CreateDataProperty(O, P, V) {
         configurable: true
     };
 
-    return Object.defineProperty(O, P, newDesc);
+    try {
+        Object.defineProperty(O, P, newDesc);
+
+        return true;
+    } catch (e) {
+        return false;
+    }
 }

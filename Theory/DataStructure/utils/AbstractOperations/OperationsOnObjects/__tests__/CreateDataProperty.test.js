@@ -31,11 +31,12 @@ describe('CreateDataProperty function', () => {
         expect(descriptor.configurable).toBe(true);
     });
 
-    test('Should throw error if trying to set property on non-object', () => {
+    test('Should return false and not throw when trying to set property on non-object', () => {
         let obj = 'not an object';
 
-        expect(() => {
-            CreateDataProperty(obj, 'newProp', 'Value');
-        }).toThrow(TypeError);
+        const result = CreateDataProperty(obj, 'newProp', 'Value');
+
+        expect(result).toBe(false);
+        expect(typeof obj).toBe('string');
     });
 });
