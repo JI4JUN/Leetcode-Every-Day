@@ -1,17 +1,16 @@
 import {
-    Call,
-    CreateDataPropertyOrThrow,
-    Get,
-    IsCallable,
-    LengthOfArrayLike,
-    ToBoolean,
     ToObject,
+    LengthOfArrayLike,
+    IsCallable,
     ToString,
-    HasProperty
+    HasProperty,
+    Get,
+    Call,
+    CreateDataPropertyOrThrow
 } from '../utils/AbstractOperations/index';
 
 /**
- * Array.prototype.filter(callbackfn [, thisArg])
+ * Array.prototype.map(callbackfn [, thisArg])
  *
  * Steps:
  * 1. Let O be ? ToObject(this value).
@@ -25,16 +24,14 @@ import {
  *     b. Let kPresent be ? HasProperty(O, Pk).
  *     c. If kPresent is true, then
  *         i. Let kValue be ? Get(O, Pk).
- *         ii. Let selected be ToBoolean(? Call(callbackfn, thisArg, « kValue, 𝔽(k), O »)).
- *         iii. If selected is true, then
- *             1. Perform ? CreateDataPropertyOrThrow(A, ! ToString(𝔽(to)), kValue).
- *             2. Set to to to + 1.
+ *         ii. Let mappedValue be ? Call(callbackfn, thisArg, « kValue, 𝔽(k), O »).
+ *         iii. Perform ? CreateDataPropertyOrThrow(A, Pk, mappedValue).
  *     d. Set k to k + 1.
  * 8. Return A.
  *
- * https://tc39.es/ecma262/#sec-array.prototype.filter
+ * https://tc39.es/ecma262/#sec-array.prototype.map
  */
-export function tinyFilter(callbackfn, thisArg) {
+export function tinyMap(callbackfn, thisArg) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
 
@@ -49,7 +46,6 @@ export function tinyFilter(callbackfn, thisArg) {
     const A = new Array();
 
     let k = 0;
-    let to = 0;
 
     while (k < len) {
         const Pk = ToString(k);
@@ -58,15 +54,9 @@ export function tinyFilter(callbackfn, thisArg) {
         if (kPresent === true) {
             const kValue = Get(O, Pk);
 
-            const selected = ToBoolean(
-                Call(callbackfn, thisArg, [kValue, k, O])
-            );
+            const mappedValue = Call(callbackfn, thisArg, [kValue, k, O]);
 
-            if (selected === true) {
-                CreateDataPropertyOrThrow(A, ToString(to), kValue);
-
-                to++;
-            }
+            CreateDataPropertyOrThrow(A, Pk, mappedValue);
         }
 
         k++;
