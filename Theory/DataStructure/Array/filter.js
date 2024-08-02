@@ -17,15 +17,20 @@ import {
  * 1. Let O be ? ToObject(this value).
  * 2. Let len be ? LengthOfArrayLike(O).
  * 3. If IsCallable(callbackfn) is false, throw a TypeError exception.
- * 4. Let k be 0.
- * 5. Repeat, while k < len,
+ * 4. Let A be ? ArraySpeciesCreate(O, 0).
+ * 5. Let k be 0.
+ * 6. Let to be 0.
+ * 7. Repeat, while k < len,
  *     a. Let Pk be ! ToString(𝔽(k)).
  *     b. Let kPresent be ? HasProperty(O, Pk).
  *     c. If kPresent is true, then
  *         i. Let kValue be ? Get(O, Pk).
- *         ii. Perform ? Call(callbackfn, thisArg, « kValue, 𝔽(k), O »).
+ *         ii. Let selected be ToBoolean(? Call(callbackfn, thisArg, « kValue, 𝔽(k), O »)).
+ *         iii. If selected is true, then
+ *             1. Perform ? CreateDataPropertyOrThrow(A, ! ToString(𝔽(to)), kValue).
+ *             2. Set to to to + 1.
  *     d. Set k to k + 1.
- * 6. Return undefined.
+ * 8. Return A.
  *
  * https://tc39.es/ecma262/#sec-array.prototype.filter
  */
