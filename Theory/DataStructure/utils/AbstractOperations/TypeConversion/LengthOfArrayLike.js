@@ -1,5 +1,5 @@
 import { ToLength } from './index';
-import { Get } from '../OperationsOnObjects/index';
+import { Get, CreateDataProperty } from '../OperationsOnObjects/index';
 
 /**
  * The abstract operation LengthOfArrayLike takes argument obj (an Object) and returns either
@@ -13,11 +13,11 @@ import { Get } from '../OperationsOnObjects/index';
  * @returns A normal completion containing a non-negative integer or a throw completion
  */
 export function LengthOfArrayLike(obj) {
-    const length = ToLength(Get(obj, 'length'));
-
-    if (Number.isNaN(length) || length <= 0) {
-        throw new TypeError('Length requires a positive integer');
+    if (!obj.hasOwnProperty('length') || !('length' in obj)) {
+        CreateDataProperty(obj, 'length', 0);
     }
+
+    const length = ToLength(Get(obj, 'length'));
 
     return length;
 }
