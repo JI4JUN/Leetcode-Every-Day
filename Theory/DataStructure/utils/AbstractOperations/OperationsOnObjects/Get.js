@@ -11,7 +11,7 @@
  * @returns A normal completion containing an ECMAScript language value or a throw completion.
  */
 export function Get(O, P) {
-    if (O.hasOwnProperty(P) || P in O) {
+    if (O.hasOwnProperty(P) || P in O || O.hasOwnProperty('length')) {
         return O[P];
     }
 
