@@ -6,3 +6,4 @@ export * from './HasProperty';
 export * from './CreateDataProperty';
 export * from './CreateDataPropertyOrThrow';
 export * from './Set';
+export * from './DeletePropertyOrThrow';
