@@ -109,6 +109,10 @@ describe('Array.prototype.findLastIndex', () => {
         expect([1, , 3].tinyFindLastIndex((x) => x === undefined)).toBe(1);
     });
 
+    /**
+     * The findLastIndex() method reads the length property of this and then accesses each
+     * property whose key is a nonnegative integer less than length.
+     */
     test('Calling findLastIndex() on non-array objects', () => {
         const arrayLike = {
             length: 3,
