@@ -5,3 +5,4 @@ export * from './push';
 export * from './pop';
 export * from './findLastIndex';
 export * from './find';
+export * from './findIndex';
