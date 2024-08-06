@@ -25,8 +25,8 @@ import { IsCallable } from '../TestingAndComparsionOperations/index';
  * 2. Return input.
  *
  * @param {*} input An ECMAScript language value.
- * @param {*} preferredType Optional argument preferredType (string or number).
- * @returns Either a normal completion containing an ECMAScript language value or a throw completion.
+ * @param {*} preferredType Optional argument preferredType (STRING or NUMBER).
+ * @returns A non-Object type.
  */
 export function ToPrimitive(input, preferredType) {
     if (typeof input !== 'object' || input === null) {

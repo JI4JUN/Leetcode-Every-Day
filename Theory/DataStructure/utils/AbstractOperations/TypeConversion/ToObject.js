@@ -21,7 +21,7 @@
  * Object --- Return itself.
  *
  * @param {*} argument ECMAScript language value.
- * @returns A normal completion containing a wrapper object or a throw completion.
+ * @returns A value of type Object.
  */
 export function ToObject(argument) {
     if (argument === undefined || argument === null) {

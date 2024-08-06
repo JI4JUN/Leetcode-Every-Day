@@ -9,8 +9,8 @@ import { ToIntegerOrInfinity } from './index';
  * 2. If len ≤ 0, return +0𝔽.
  * 3. Return 𝔽(min(len, 2**53 - 1)).
  *
- * @param {*} argument An ECMAScript language value.
- * @returns Either a normal completion containing an integral Number or a throw completion.
+ * @param {*} argument An ECMAScript language value
+ * @returns An integral Number suitable for use as the length of an array-like object.
  */
 export function ToLength(argument) {
     const len = ToIntegerOrInfinity(argument);

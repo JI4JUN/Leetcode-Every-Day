@@ -8,10 +8,7 @@
  * 3. Return false.
  *
  * @param {*} argument An ECMAScript language value
- * @returns
- * 1. If argument is not an Object, return false.
- * 2. If argument has a [[Call]] internal method, return true.
- * 3. Otherwise, return false.
+ * @returns A Boolean
  */
 export function IsCallable(argument) {
     if (typeof argument !== 'object' && typeof argument !== 'function') {

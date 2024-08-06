@@ -8,8 +8,8 @@ import { ToString } from '../TypeConversion/index';
  * 2. If success is false, throw a TypeError exception.
  * 3. Return UNUSED.
  *
- * @param {*} O An Object
- * @param {*} P A property key
+ * @param {*} O An Object.
+ * @param {*} P A property key.
  * @returns Either a normal completion containing UNUSED or a throw completion.
  */
 export function DeletePropertyOrThrow(O, P) {

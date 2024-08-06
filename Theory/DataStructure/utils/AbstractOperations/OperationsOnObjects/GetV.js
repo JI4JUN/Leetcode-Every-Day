@@ -9,8 +9,8 @@ import { ToObject } from '../TypeConversion/index';
  * 1. Let O be ? ToObject(V).
  * 2. Return ? O.[[Get]](P, V).
  *
- * @param {*} V An ECMAScript language value
- * @param {*} P A property key
+ * @param {*} V An ECMAScript language value.
+ * @param {*} P A property key.
  * @returns Either a normal completion containing an ECMAScript language value or a throw completion.
  */
 export function GetV(V, P) {

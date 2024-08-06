@@ -10,7 +10,7 @@ import { Get, CreateDataProperty } from '../OperationsOnObjects/index';
  * 1. Return ℝ(? ToLength(? Get(obj, "length"))).
  *
  * @param {*} obj An Object.
- * @returns A normal completion containing a non-negative integer or a throw completion
+ * @returns The value of the "length" property of an array-like object.
  */
 export function LengthOfArrayLike(obj) {
     if (!obj.hasOwnProperty('length') || !('length' in obj)) {

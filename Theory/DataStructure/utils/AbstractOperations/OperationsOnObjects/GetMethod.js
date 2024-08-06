@@ -11,8 +11,8 @@ import { GetV } from './index';
  * 3. If IsCallable(func) is false, throw a TypeError exception.
  * 4. Return func.
  *
- * @param {*} V An ECMAScript language value
- * @param {*} P A property key
+ * @param {*} V An ECMAScript language value.
+ * @param {*} P A property key.
  * @returns Either a normal completion containing either a function object or undefined, or a throw completion.
  */
 export function GetMethod(V, P) {

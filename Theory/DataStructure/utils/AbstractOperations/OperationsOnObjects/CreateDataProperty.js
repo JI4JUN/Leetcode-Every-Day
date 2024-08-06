@@ -8,7 +8,7 @@
  * @param {*} O A Object.
  * @param {*} P A property key
  * @param {*} V An ECMAScript language value
- * @returns Either a normal completion containing a Boolean or a throw completion
+ * @returns A Boolean.
  */
 export function CreateDataProperty(O, P, V) {
     const newDesc = {

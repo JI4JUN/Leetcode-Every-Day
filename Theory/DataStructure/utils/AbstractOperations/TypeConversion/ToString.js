@@ -18,7 +18,7 @@ import { ToPrimitive } from './index';
  * 12. Return ? ToString(primValue).
  *
  * @param {*} argument An ECMAScript language value
- * @returns Either a normal completion containing a String or a throw completion.
+ * @returns A value of type String.
  */
 export function ToString(argument) {
     if (argument === null) {

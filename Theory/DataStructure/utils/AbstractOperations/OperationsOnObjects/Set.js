@@ -8,7 +8,7 @@
  *
  * @param {*} O An Object
  * @param {*} P A property key
- * @param {*} V An ECMAScript language value
+ * @param {*} V The new value for the property.
  * @param {*} Throw A Boolean
  * @returns Either a normal completion containing UNUSED or a throw completion
  */

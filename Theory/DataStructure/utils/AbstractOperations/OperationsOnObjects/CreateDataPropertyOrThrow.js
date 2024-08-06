@@ -10,8 +10,8 @@ import { ToString } from '../TypeConversion/index';
  * 3. Return UNUSED.
  *
  * @param {*} O A Object.
- * @param {*} P A property key
- * @param {*} V An ECMAScript language value
+ * @param {*} P A property key.
+ * @param {*} V An ECMAScript language value.
  * @returns Either a normal completion containing UNUSED or a throw completion.
  */
 export function CreateDataPropertyOrThrow(O, P, V) {

@@ -16,7 +16,7 @@ import { ToPrimitive } from '../TypeConversion/index';
  * 10. Return ? ToNumber(primValue).
  *
  * @param {*} argument An ECMAScript language value.
- * @returns Either a normal completion containing a Number or a throw completion.
+ * @returns A value of type Number.
  */
 export function ToNumber(argument) {
     if (argument === null) {

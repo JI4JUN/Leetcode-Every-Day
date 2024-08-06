@@ -7,8 +7,8 @@
  * 3. NOTE: This step is replaced in section B.3.6.1.
  * 4. Return true.
  *
- * @param {*} argument An ECMAScript language value
- * @returns A Boolean
+ * @param {*} argument An ECMAScript language value.
+ * @returns A value of type Boolean.
  */
 export function ToBoolean(argument) {
     if (typeof argument === 'boolean') {

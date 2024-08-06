@@ -10,7 +10,7 @@ import { IsCallable } from '../TestingAndComparsionOperations/index';
  *
  * @param {*} F An function object.
  * @param {*} V An ECMAScript language value.
- * @param {*} argumentsList An optional List of ECMAScript language values
+ * @param {*} argumentsList The value passed to the corresponding argument of the internal method.
  * @returns Either a normal completion containing an ECMAScript language value or a throw completion.
  */
 export function Call(F, V, argumentsList) {

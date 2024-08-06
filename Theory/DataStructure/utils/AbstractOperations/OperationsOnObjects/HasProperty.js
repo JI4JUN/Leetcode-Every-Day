@@ -7,7 +7,7 @@
  *
  * @param {*} O A Object.
  * @param {*} P A property key.
- * @returns Either a normal completion containing a Boolean or a throw completion.
+ * @returns A Boolean.
  */
 export function HasProperty(O, P) {
     if (typeof O !== 'object' || O === null) {

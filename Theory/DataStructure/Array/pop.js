@@ -24,6 +24,8 @@ import {
  *     e. Perform ? DeletePropertyOrThrow(O, index).
  *     f. Perform ? Set(O, "length", newLen, true).
  *     g. Return element.
+ *
+ * https://tc39.es/ecma262/#sec-array.prototype.pop
  */
 export function tinyPop() {
     const O = ToObject(this);
