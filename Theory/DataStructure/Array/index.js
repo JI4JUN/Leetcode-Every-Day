@@ -7,3 +7,4 @@ export * from './findLastIndex';
 export * from './find';
 export * from './findIndex';
 export * from './findLast';
+export * from './at';
