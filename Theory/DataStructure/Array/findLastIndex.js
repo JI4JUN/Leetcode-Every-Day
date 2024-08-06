@@ -12,7 +12,7 @@ import { tinyPush } from './index';
 Array.prototype.tinyPush = tinyPush;
 
 /**
- * Array.prototype.findLastIndex(predicate [ , thisArg ])
+ * Array.prototype.findLastIndex(predicate [, thisArg])
  *
  * Steps:
  * 1. Let O be ? ToObject(this value).

@@ -21,7 +21,7 @@ describe('Set function', () => {
     test('Should return undefined when setting succeeds', () => {
         const result = Set(obj, 'p4', '4', false);
 
-        expect(result).toBe(undefined);
+        expect(result).toBeUndefined();
     });
 
     test('Should throw TypeError when setting fails and Throw is true', () => {

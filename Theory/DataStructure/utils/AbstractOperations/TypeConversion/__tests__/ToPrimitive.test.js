@@ -5,7 +5,7 @@ describe('ToPrimitive function', () => {
         expect(ToPrimitive(42)).toBe(42);
         expect(ToPrimitive('string')).toBe('string');
         expect(ToPrimitive(true)).toBe(true);
-        expect(ToPrimitive(undefined)).toBe(undefined);
+        expect(ToPrimitive(undefined)).toBeUndefined();
         expect(ToPrimitive(null)).toBe(null);
     });
 

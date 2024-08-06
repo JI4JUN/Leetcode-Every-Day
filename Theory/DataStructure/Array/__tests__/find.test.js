@@ -50,7 +50,7 @@ describe('Array.prototype.findLastIndex', () => {
             return element > 1;
         }
 
-        expect([4, 6, 8, 12].tinyFind(isPrime)).toBe(undefined);
+        expect([4, 6, 8, 12].tinyFind(isPrime)).toBeUndefined();
         expect([4, 5, 8, 12].tinyFind(isPrime)).toBe(5);
     });
 

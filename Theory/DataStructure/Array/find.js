@@ -15,7 +15,6 @@ import { FindViaPredicate } from './index';
 export function tinyFind(predicate, thisArg) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
-
     const findRec = FindViaPredicate(O, len, 'ASCENDING', predicate, thisArg);
 
     return findRec.value;

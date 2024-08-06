@@ -6,3 +6,4 @@ export * from './pop';
 export * from './findLastIndex';
 export * from './find';
 export * from './findIndex';
+export * from './findLast';
