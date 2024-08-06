@@ -1,4 +1,5 @@
 import { ToObject, LengthOfArrayLike } from '../utils/AbstractOperations/index';
+import { FindViaPredicate } from './index';
 
 /**
  * Array.prototype.find(predicate [, thisArg ])
@@ -11,7 +12,11 @@ import { ToObject, LengthOfArrayLike } from '../utils/AbstractOperations/index';
  *
  * https://tc39.es/ecma262/#sec-array.prototype.find
  */
-export function TinyFind(predicate, thisArg) {
+export function tinyFind(predicate, thisArg) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
+
+    const findRec = FindViaPredicate(O, len, 'ASCENDING', predicate, thisArg);
+
+    return findRec.value;
 }
