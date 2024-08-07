@@ -8,3 +8,4 @@ export * from './find';
 export * from './findIndex';
 export * from './findLast';
 export * from './at';
+export * from './concat';
