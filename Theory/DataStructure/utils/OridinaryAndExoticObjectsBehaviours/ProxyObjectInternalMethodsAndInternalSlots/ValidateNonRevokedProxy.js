@@ -11,9 +11,7 @@
  */
 export function ValidateNonRevokedProxy(proxy) {
     try {
-        if (proxy.target === null || proxy.handler === null) {
-            throw new TypeError('Proxy has been revoked');
-        }
+        proxy.__proto__;
     } catch (error) {
         if (error instanceof TypeError) {
             throw new TypeError('Proxy has been revoked');
