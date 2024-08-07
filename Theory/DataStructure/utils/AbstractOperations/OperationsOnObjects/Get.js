@@ -11,9 +11,11 @@
  * @returns A normal completion containing an ECMAScript language value or a throw completion.
  */
 export function Get(O, P) {
-    if (O.hasOwnProperty(P) || P in O || O.hasOwnProperty('length')) {
-        return O[P];
+    if (O === null || O === undefined) {
+        throw new TypeError(
+            `Property '${P.toString()}' of object '${O}' does not exist`
+        );
     }
 
-    throw new TypeError(`Property '${P}' of object '${O}' does not exist`);
+    return O[P];
 }

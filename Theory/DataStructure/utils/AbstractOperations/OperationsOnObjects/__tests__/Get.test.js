@@ -21,27 +21,21 @@ describe('Get function', () => {
         expect(Get(testObject, 'prop3')).toEqual({ nestedProp: 'nestedValue' });
     });
 
-    test('Throws TypeError for non-existent property', () => {
-        expect(() => {
-            Get(testObject, 'nonexistentProp');
-        }).toThrow(TypeError);
+    test('Return undefined for non-existent property', () => {
+        expect(Get(testObject, 'nonexistentProp')).toBeUndefined();
     });
 
-    test('Throws TypeError for non-object input', () => {
+    test('Return undefined for non-object input', () => {
+        expect(Get(42, 'prop1')).toBeUndefined();
+        expect(Get('string', 'prop1')).toBeUndefined();
+    });
+
+    test('Throw TypeError for null or undefined input', () => {
         expect(() => {
             Get(null, 'prop1');
         }).toThrow(TypeError);
-
         expect(() => {
             Get(undefined, 'prop1');
-        }).toThrow(TypeError);
-
-        expect(() => {
-            Get(42, 'prop1');
-        }).toThrow(TypeError);
-
-        expect(() => {
-            Get('string', 'prop1');
         }).toThrow(TypeError);
     });
 });
