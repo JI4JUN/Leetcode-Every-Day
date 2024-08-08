@@ -10,3 +10,4 @@ export * from './findLast';
 export * from './at';
 export * from './concat';
 export * from './copyWithin';
+export * from './every';
