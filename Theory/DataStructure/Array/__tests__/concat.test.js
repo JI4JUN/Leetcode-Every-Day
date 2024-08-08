@@ -1,4 +1,4 @@
-import { tinyConcat, tinyPush } from '../index';
+import { tinyConcat, tinyPush, IsConcatSpreadable } from '../index';
 
 describe('Array.prototype.concat', () => {
     Array.prototype.tinyConcat = tinyConcat;
@@ -103,5 +103,41 @@ describe('Array.prototype.concat', () => {
         expect(Array.prototype.tinyConcat.call(arrayLike, 3, 4)).toEqual([
             1, 2, 3, 4
         ]);
+    });
+});
+
+describe('IsConcatSpreadable function', () => {
+    test('Return false if O is not an object', () => {
+        expect(IsConcatSpreadable(null)).toBe(false);
+        expect(IsConcatSpreadable(undefined)).toBe(false);
+        expect(IsConcatSpreadable(42)).toBe(false);
+        expect(IsConcatSpreadable('string')).toBe(false);
+        expect(IsConcatSpreadable(true)).toBe(false);
+    });
+
+    test('Return the value of Symbol.isConcatSpreadable if it is defined', () => {
+        const obj1 = { [Symbol.isConcatSpreadable]: true };
+        const obj2 = { [Symbol.isConcatSpreadable]: false };
+
+        expect(IsConcatSpreadable(obj1)).toBe(true);
+        expect(IsConcatSpreadable(obj2)).toBe(false);
+    });
+
+    test('Return true for arrays when Symbol.isConcatSpreadable is undefined', () => {
+        expect(IsConcatSpreadable([])).toBe(true);
+        expect(IsConcatSpreadable([1, 2, 3])).toBe(true);
+    });
+
+    test('Return false for objects that are not arrays when Symbol.isConcatSpreadable is undefined', () => {
+        expect(IsConcatSpreadable({})).toBe(false);
+        expect(IsConcatSpreadable({ foo: 'bar' })).toBe(false);
+    });
+
+    test('Correctly handles objects with a Symbol.isConcatSpreadable property set to a truthy or falsy value', () => {
+        const objWithTruthy = { [Symbol.isConcatSpreadable]: 'yes' };
+        const objWithFalsy = { [Symbol.isConcatSpreadable]: 0 };
+
+        expect(IsConcatSpreadable(objWithTruthy)).toBe(true);
+        expect(IsConcatSpreadable(objWithFalsy)).toBe(false);
     });
 });
