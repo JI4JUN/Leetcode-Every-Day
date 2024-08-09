@@ -1,4 +1,5 @@
 /**
+ * ```Markdown
  * The abstract operation IsCallable is used to determine whether argument is a callable
  * function with a [[Call]] internal method.
  *
@@ -6,6 +7,7 @@
  * 1. If argument is not an Object, return false.
  * 2. If argument has a [[Call]] internal method, return true.
  * 3. Return false.
+ * ```
  *
  * @param {*} argument An ECMAScript language value
  * @returns A Boolean

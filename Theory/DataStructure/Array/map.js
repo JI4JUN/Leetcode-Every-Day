@@ -10,6 +10,7 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
+ * ```Markdown
  * Array.prototype.map(callbackfn [, thisArg])
  *
  * Steps:
@@ -28,6 +29,7 @@ import {
  *         iii. Perform ? CreateDataPropertyOrThrow(A, Pk, mappedValue).
  *     d. Set k to k + 1.
  * 8. Return A.
+ * ```
  *
  * https://tc39.es/ecma262/#sec-array.prototype.map
  */

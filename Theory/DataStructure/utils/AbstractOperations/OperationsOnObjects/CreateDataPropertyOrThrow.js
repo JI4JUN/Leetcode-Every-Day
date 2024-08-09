@@ -2,12 +2,14 @@ import { CreateDataProperty } from './CreateDataProperty';
 import { ToString } from '../TypeConversion';
 
 /**
+ * ```Markdown
  * The abstract operation CreateDataPropertyOrThrow is used to create a new own property of an object.
  *
  * Steps:
  * 1. Let success be ? CreateDataProperty(O, P, V).
  * 2. If success is false, throw a TypeError exception.
  * 3. Return UNUSED.
+ * ```
  *
  * @param {*} O A Object.
  * @param {*} P A property key.

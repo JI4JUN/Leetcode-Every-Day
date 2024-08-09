@@ -11,6 +11,7 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
+ * ```Markdown
  * Array.prototype.filter(callbackfn [, thisArg])
  *
  * Steps:
@@ -31,6 +32,7 @@ import {
  *             2. Set to to to + 1.
  *     d. Set k to k + 1.
  * 8. Return A.
+ * ```
  *
  * https://tc39.es/ecma262/#sec-array.prototype.filter
  */

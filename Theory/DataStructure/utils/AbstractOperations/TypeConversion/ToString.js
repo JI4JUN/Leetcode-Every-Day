@@ -1,6 +1,7 @@
 import { ToPrimitive } from './ToPrimitive';
 
 /**
+ * ```Markdown
  * The abstract operation ToString converts argument to a value of type string.
  *
  * Steps:
@@ -16,6 +17,7 @@ import { ToPrimitive } from './ToPrimitive';
  * 10. Let primValue be ? ToPrimitive(argument, STRING).
  * 11. Assert: primValue is not an Object.
  * 12. Return ? ToString(primValue).
+ * ```
  *
  * @param {*} argument An ECMAScript language value
  * @returns A value of type String.

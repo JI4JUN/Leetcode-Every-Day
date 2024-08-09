@@ -1,6 +1,7 @@
 import { ToPrimitive } from '../TypeConversion';
 
 /**
+ * ```Markdown
  * The abstract operation ToNumber converts argument to a value of type Number.
  *
  * Steps:
@@ -14,6 +15,7 @@ import { ToPrimitive } from '../TypeConversion';
  * 8. Let primValue be ? ToPrimitive(argument, NUMBER).
  * 9. Assert: primValue is not an Object.
  * 10. Return ? ToNumber(primValue).
+ * ```
  *
  * @param {*} argument An ECMAScript language value.
  * @returns A value of type Number.

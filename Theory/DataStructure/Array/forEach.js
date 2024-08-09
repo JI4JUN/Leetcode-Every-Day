@@ -9,10 +9,10 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
+ * ```Markdown
  * Array.prototype.forEach(callbackfn [, thisArg])
  *
  * Steps:
- *
  * 1. Let O be ? ToObject(this value).
  * 2. Let len be ? LengthOfArrayLike(O).
  * 3. If IsCallable(callbackfn) is false, throw a TypeError exception.
@@ -25,6 +25,7 @@ import {
  *         ii. Perform ? Call(callbackfn, thisArg, « kValue, 𝔽(k), O »).
  *     d. Set k to k + 1.
  * 6. Return undefined.
+ * ```
  *
  * https://tc39.es/ecma262/#sec-array.prototype.foreach
  */

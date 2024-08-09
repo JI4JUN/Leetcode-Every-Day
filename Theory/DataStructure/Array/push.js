@@ -6,6 +6,7 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
+ * ```Markdown
  * Array.prototype.push(...items)
  *
  * Steps:
@@ -18,6 +19,7 @@ import {
  *     b. Set len to len + 1.
  * 6. Perform ? Set(O, "length", 𝔽(len), true).
  * 7. Return 𝔽(len).
+ * ```
  *
  * https://tc39.es/ecma262/#sec-array.prototype.push
  */

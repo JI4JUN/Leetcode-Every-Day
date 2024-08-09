@@ -1,24 +1,18 @@
 /**
+ * ```Markdown
  * The abstract operation ToObject takes argument and returns either a normal
  * completion containing an object or a throw completion.
  *
  * It converts argument to a value of type object according to the following (Argument Type --- Result):
- *
  * Undefined --- Throw a TypeError exception.
- *
  * Null --- Throw a TypeError exception.
- *
  * Boolean --- Return a new Boolean object.
- *
  * Number --- Return a new Number object.
- *
  * String --- Return a new String object.
- *
  * Symbol --- Return a new Symbol object.
- *
  * BigInt --- Return a new BigInt object.
- *
  * Object --- Return itself.
+ * ```
  *
  * @param {*} argument ECMAScript language value.
  * @returns A value of type Object.

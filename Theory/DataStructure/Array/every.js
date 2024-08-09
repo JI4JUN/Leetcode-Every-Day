@@ -10,6 +10,7 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
+ * ```Markdown
  * Array.prototype.every(callbackfn [, thisArg])
  *
  * Steps:
@@ -26,6 +27,7 @@ import {
  *         iii. If testResult is false, return false.
  *     d. Set k to k + 1.
  * 6. Return true.
+ * ```
  *
  * https://tc39.es/ecma262/#sec-array.prototype.every
  */

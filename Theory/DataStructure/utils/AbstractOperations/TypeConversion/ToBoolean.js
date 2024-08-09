@@ -1,4 +1,5 @@
 /**
+ * ```Markdown
  * The abstract operation ToBoolean converts argument to a value of type Boolean.
  *
  * Steps:
@@ -6,6 +7,7 @@
  * 2. If argument is one of undefined, null, +0𝔽, -0𝔽, NaN, 0ℤ, or the empty String, return false.
  * 3. NOTE: This step is replaced in section B.3.6.1.
  * 4. Return true.
+ * ```
  *
  * @param {*} argument An ECMAScript language value.
  * @returns A value of type Boolean.

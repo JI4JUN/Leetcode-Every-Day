@@ -11,6 +11,7 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
+ * ```Markdown
  * Array.prototype.concat(...items)
  *
  * Steps:
@@ -39,6 +40,7 @@ import {
  *         iv. Set n to n + 1.
  * 6. Perform ? Set(A, "length", 𝔽(n), true).
  * 7. Return A.
+ * ```
  */
 export function tinyConcat(...items) {
     const O = ToObject(this);
@@ -94,6 +96,7 @@ export function tinyConcat(...items) {
 }
 
 /**
+ * ```Markdown
  * The abstract operation IsConcatSpreadable is used to determine whether a Object is spreadable.
  *
  * Steps:
@@ -101,6 +104,7 @@ export function tinyConcat(...items) {
  * 2. Let spreadable be ? Get(O, %Symbol.isConcatSpreadable%).
  * 3. If spreadable is not undefined, return ToBoolean(spreadable).
  * 4. Return ? IsArray(O).
+ * ```
  *
  * @param {*} O An Object.
  * @returns A Boolean.

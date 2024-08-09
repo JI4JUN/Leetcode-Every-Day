@@ -7,6 +7,7 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
+ * ```Markdown
  * Array.prototype.at(index)
  *
  * Steps:
@@ -19,7 +20,7 @@ import {
  *     a. Let k be len + relativeIndex.
  * 6. If k < 0 or k ≥ len, return undefined.
  * 7. Return ? Get(O, ! ToString(𝔽(k))).
- *
+ * ```
  * https://tc39.es/ecma262/#sec-array.prototype.at
  */
 export function tinyAt(index) {

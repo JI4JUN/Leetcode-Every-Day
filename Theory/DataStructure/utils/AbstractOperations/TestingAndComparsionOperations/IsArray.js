@@ -1,6 +1,7 @@
 import { ValidateNonRevokedProxy } from '../../OridinaryAndExoticObjectsBehaviours/ProxyObjectInternalMethodsAndInternalSlots';
 
 /**
+ * ```Markdown
  * The abstract operation IsArray is used to determine whether argument is an array.
  *
  * Steps:
@@ -11,6 +12,7 @@ import { ValidateNonRevokedProxy } from '../../OridinaryAndExoticObjectsBehaviou
  *     b. Let proxyTarget be argument.[[ProxyTarget]].
  *     c. Return ? IsArray(proxyTarget).
  * 4. Return false.
+ * ```
  *
  * @param {*} argument An ECMAScript language value.
  * @returns A Boolean.

@@ -1,6 +1,7 @@
 import { ToNumber } from './ToNumber';
 
 /**
+ * ```Markdown
  * The abstract operation ToIntegerOrInfinity converts argument to an integer representing
  * its Number value with fractional part truncated, or to +∞ or -∞ when that Number value
  * is infinite.
@@ -11,6 +12,7 @@ import { ToNumber } from './ToNumber';
  * 3. If number is +∞𝔽, return +∞.
  * 4. If number is -∞𝔽, return -∞.
  * 5. Return truncate(ℝ(number)).
+ * ```
  *
  * @param {*} argument An ECMAScript language value.
  * @returns An integer representing its Number value with fractional part truncated,

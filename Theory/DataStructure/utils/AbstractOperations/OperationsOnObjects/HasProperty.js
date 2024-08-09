@@ -1,9 +1,11 @@
 /**
+ * ```Markdown
  * The abstract opertaion HasProperty is used to determine whether an object
  * has a property with the specified key.
  *
  * Steps:
  * 1. Return ? O.[[HasProperty]](P).
+ * ```
  *
  * @param {*} O A Object.
  * @param {*} P A property key.

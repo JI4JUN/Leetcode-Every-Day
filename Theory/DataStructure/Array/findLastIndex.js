@@ -12,6 +12,7 @@ import { tinyPush } from './push';
 Array.prototype.tinyPush = tinyPush;
 
 /**
+ * ```Markdown
  * Array.prototype.findLastIndex(predicate [, thisArg])
  *
  * Steps:
@@ -19,6 +20,7 @@ Array.prototype.tinyPush = tinyPush;
  * 2. Let len be ? LengthOfArrayLike(O).
  * 3. Let findRec be ? FindViaPredicate(O, len, DESCENDING, predicate, thisArg).
  * 4. Return findRec.[[Index]].
+ * ```
  *
  * https://tc39.es/ecma262/#sec-array.prototype.findlastindex
  */
@@ -33,6 +35,7 @@ export function tinyFindLastIndex(predicate, thisArg) {
 /**
  * The abstract operation FindViaPredicate is used to find elements in an array that satisfy a certain condition.
  *
+ * ```
  * Steps:
  * 1.If IsCallable(predicate) is false, throw a TypeError exception.
  * 2. If direction is ASCENDING, then
@@ -46,6 +49,7 @@ export function tinyFindLastIndex(predicate, thisArg) {
  *     d. Let testResult be ? Call(predicate, thisArg, « kValue, 𝔽(k), O »).
  *     e. If ToBoolean(testResult) is true, return the Record { [[Index]]: 𝔽(k), [[Value]]: kValue }.
  * 5. Return the Record { [[Index]]: -1𝔽, [[Value]]: undefined }.
+ * ```
  *
  * @param {*} O An array-like object or a TypedArray
  * @param {*} len A non-negative integer

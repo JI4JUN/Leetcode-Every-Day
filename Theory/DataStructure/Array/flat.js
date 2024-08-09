@@ -12,6 +12,7 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
+ * ```Markdown
  * Array.prototype.flat
  *
  * Steps:
@@ -24,6 +25,7 @@ import {
  * 5. Let A be ? ArraySpeciesCreate(O, 0).
  * 6. Perform ? FlattenIntoArray(A, O, sourceLen, 0, depthNum).
  * 7. Return A.
+ * ```
  *
  * https://tc39.es/ecma262/#sec-array.prototype.flat
  */
@@ -49,6 +51,7 @@ export function tinyFlat(depth) {
 }
 
 /**
+ * ```Markdown
  * The abstract operation FlattenIntoArray is used to flatten the given array.
  *
  * Steps:
@@ -76,6 +79,7 @@ export function tinyFlat(depth) {
  *             3. Set targetIndex to targetIndex + 1.
  *     d. Set sourceIndex to sourceIndex + 1𝔽.
  * 5. Return targetIndex.
+ * ```
  *
  * @param {*} target An Object.
  * @param {*} source An Object.

@@ -2,6 +2,7 @@ import { Get, Call, GetMethod } from '../OperationsOnObjects';
 import { IsCallable } from '../TestingAndComparsionOperations';
 
 /**
+ * ```Markdown
  * The abstract operation converts its input argument to a non-Object type.
  * If an object is capable of converting to more than one primitive type,
  * it may use the oprtional hint perferredType to favour that type.
@@ -23,6 +24,7 @@ import { IsCallable } from '../TestingAndComparsionOperations';
  *     c. If preferredType is not present, let preferredType be NUMBER.
  *     d. Return ? OrdinaryToPrimitive(input, preferredType).
  * 2. Return input.
+ * ```
  *
  * @param {*} input An ECMAScript language value.
  * @param {*} preferredType Optional argument preferredType (STRING or NUMBER).
