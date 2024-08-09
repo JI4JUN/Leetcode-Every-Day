@@ -12,3 +12,4 @@ export * from './concat';
 export * from './copyWithin';
 export * from './every';
 export * from './fill';
+export * from './flat';
