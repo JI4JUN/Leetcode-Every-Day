@@ -1,5 +1,5 @@
-import { Get, Call, GetMethod } from '../OperationsOnObjects/index';
-import { IsCallable } from '../TestingAndComparsionOperations/index';
+import { Get, Call, GetMethod } from '../OperationsOnObjects';
+import { IsCallable } from '../TestingAndComparsionOperations';
 
 /**
  * The abstract operation converts its input argument to a non-Object type.

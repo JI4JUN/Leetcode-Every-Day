@@ -8,7 +8,7 @@ import {
     ToObject,
     ToString,
     HasProperty
-} from '../utils/AbstractOperations/index';
+} from '../utils/AbstractOperations';
 
 /**
  * Array.prototype.filter(callbackfn [, thisArg])

@@ -1,4 +1,4 @@
-import { IsCallable } from '../TestingAndComparsionOperations/index';
+import { IsCallable } from '../TestingAndComparsionOperations';
 
 /**
  * The abstract operation Call is used to call the [[Call]] internal method of a function object.

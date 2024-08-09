@@ -7,7 +7,7 @@ import {
     Get,
     Call,
     CreateDataPropertyOrThrow
-} from '../utils/AbstractOperations/index';
+} from '../utils/AbstractOperations';
 
 /**
  * Array.prototype.map(callbackfn [, thisArg])

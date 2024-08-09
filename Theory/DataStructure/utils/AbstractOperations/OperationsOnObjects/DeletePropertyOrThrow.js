@@ -1,4 +1,4 @@
-import { ToString } from '../TypeConversion/index';
+import { ToString } from '../TypeConversion';
 
 /**
  * The abstract operation DeletePropertyOrThrow is used to remove a specific own property of an object.

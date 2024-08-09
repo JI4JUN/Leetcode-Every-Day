@@ -1,5 +1,5 @@
-import { IsCallable } from '../TestingAndComparsionOperations/index';
-import { GetV } from './index';
+import { IsCallable } from '../TestingAndComparsionOperations';
+import { GetV } from './GetV';
 
 /**
  * The abstract operation GetMethod is used to get the value of a specific property of

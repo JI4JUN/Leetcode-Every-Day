@@ -1,4 +1,4 @@
-import { ToNumber } from './index';
+import { ToNumber } from './ToNumber';
 
 /**
  * The abstract operation ToIntegerOrInfinity converts argument to an integer representing

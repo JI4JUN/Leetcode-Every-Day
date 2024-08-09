@@ -1,4 +1,4 @@
-import { ToIntegerOrInfinity } from './index';
+import { ToIntegerOrInfinity } from './ToIntegerOrInfinity';
 
 /**
  * The abstract operation ToLength clamps and truncates argument to an integer Number

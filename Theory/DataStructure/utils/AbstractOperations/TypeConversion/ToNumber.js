@@ -1,4 +1,4 @@
-import { ToPrimitive } from '../TypeConversion/index';
+import { ToPrimitive } from '../TypeConversion';
 
 /**
  * The abstract operation ToNumber converts argument to a value of type Number.

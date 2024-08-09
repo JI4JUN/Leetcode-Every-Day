@@ -4,7 +4,7 @@ import {
     ToIntegerOrInfinity,
     ToObject,
     ToString
-} from '../utils/AbstractOperations/index';
+} from '../utils/AbstractOperations';
 
 /**
  * Array.prototype.at(index)

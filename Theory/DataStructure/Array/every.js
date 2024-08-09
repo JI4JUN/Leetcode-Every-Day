@@ -7,7 +7,7 @@ import {
     ToBoolean,
     ToObject,
     ToString
-} from '../utils/AbstractOperations/index';
+} from '../utils/AbstractOperations';
 
 /**
  * Array.prototype.every(callbackfn [, thisArg])

@@ -1,4 +1,4 @@
-import { ToObject } from '../TypeConversion/index';
+import { ToObject } from '../TypeConversion';
 
 /**
  * The abstract operation GetV is used to retrieve the value of a specific property of

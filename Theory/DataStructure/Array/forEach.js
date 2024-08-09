@@ -6,7 +6,7 @@ import {
     ToObject,
     ToString,
     LengthOfArrayLike
-} from '../utils/AbstractOperations/index';
+} from '../utils/AbstractOperations';
 
 /**
  * Array.prototype.forEach(callbackfn [, thisArg])

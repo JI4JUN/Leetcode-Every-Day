@@ -1,5 +1,5 @@
-import { CreateDataProperty } from './index';
-import { ToString } from '../TypeConversion/index';
+import { CreateDataProperty } from './CreateDataProperty';
+import { ToString } from '../TypeConversion';
 
 /**
  * The abstract operation CreateDataPropertyOrThrow is used to create a new own property of an object.

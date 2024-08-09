@@ -3,7 +3,7 @@ import {
     ToObject,
     Set,
     ToString
-} from '../utils/AbstractOperations/index';
+} from '../utils/AbstractOperations';
 
 /**
  * Array.prototype.push(...items)

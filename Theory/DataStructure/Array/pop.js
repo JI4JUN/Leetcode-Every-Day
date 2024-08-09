@@ -5,7 +5,7 @@ import {
     Set,
     ToString,
     DeletePropertyOrThrow
-} from '../utils/AbstractOperations/index';
+} from '../utils/AbstractOperations';
 
 /**
  * Array.prototype.pop()

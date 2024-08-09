@@ -9,7 +9,7 @@ import {
     Call,
     IsArray,
     CreateDataPropertyOrThrow
-} from '../utils/AbstractOperations/index';
+} from '../utils/AbstractOperations';
 
 /**
  * Array.prototype.flat

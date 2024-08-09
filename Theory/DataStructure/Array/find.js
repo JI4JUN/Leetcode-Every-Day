@@ -1,5 +1,5 @@
-import { ToObject, LengthOfArrayLike } from '../utils/AbstractOperations/index';
-import { FindViaPredicate } from './index';
+import { ToObject, LengthOfArrayLike } from '../utils/AbstractOperations';
+import { FindViaPredicate } from './findLastIndex';
 
 /**
  * Array.prototype.find(predicate [, thisArg ])

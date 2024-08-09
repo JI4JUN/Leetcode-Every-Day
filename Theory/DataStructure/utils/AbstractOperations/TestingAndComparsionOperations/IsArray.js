@@ -1,4 +1,4 @@
-import { ValidateNonRevokedProxy } from '../../OridinaryAndExoticObjectsBehaviours/ProxyObjectInternalMethodsAndInternalSlots/index';
+import { ValidateNonRevokedProxy } from '../../OridinaryAndExoticObjectsBehaviours/ProxyObjectInternalMethodsAndInternalSlots';
 
 /**
  * The abstract operation IsArray is used to determine whether argument is an array.

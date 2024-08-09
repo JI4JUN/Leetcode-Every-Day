@@ -1,4 +1,4 @@
-import { ToPrimitive } from './index';
+import { ToPrimitive } from './ToPrimitive';
 
 /**
  * The abstract operation ToString converts argument to a value of type string.

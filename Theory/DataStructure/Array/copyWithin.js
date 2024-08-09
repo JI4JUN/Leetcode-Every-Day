@@ -7,7 +7,7 @@ import {
     ToString,
     HasProperty,
     DeletePropertyOrThrow
-} from '../utils/AbstractOperations/index';
+} from '../utils/AbstractOperations';
 
 /**
  * Array.prototype.copyWithin(target, start [, end])

@@ -7,7 +7,7 @@ import {
     LengthOfArrayLike,
     ToString
 } from '../utils/AbstractOperations';
-import { tinyPush } from './index';
+import { tinyPush } from './push';
 
 Array.prototype.tinyPush = tinyPush;
 

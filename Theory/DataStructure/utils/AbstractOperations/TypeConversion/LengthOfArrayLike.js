@@ -1,5 +1,5 @@
-import { ToLength } from './index';
-import { Get, CreateDataProperty } from '../OperationsOnObjects/index';
+import { ToLength } from './ToLength';
+import { Get, CreateDataProperty } from '../OperationsOnObjects';
 
 /**
  * The abstract operation LengthOfArrayLike takes argument obj (an Object) and returns either
