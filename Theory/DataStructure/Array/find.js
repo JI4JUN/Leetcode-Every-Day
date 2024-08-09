@@ -2,7 +2,7 @@ import { ToObject, LengthOfArrayLike } from '../utils/AbstractOperations';
 import { FindViaPredicate } from './findLastIndex';
 
 /**
- * ```Markdown
+ * ```markdown
  * Array.prototype.find(predicate [, thisArg ])
  *
  * Steps:

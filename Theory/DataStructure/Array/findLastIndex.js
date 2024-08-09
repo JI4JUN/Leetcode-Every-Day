@@ -12,7 +12,7 @@ import { tinyPush } from './push';
 Array.prototype.tinyPush = tinyPush;
 
 /**
- * ```Markdown
+ * ```markdown
  * Array.prototype.findLastIndex(predicate [, thisArg])
  *
  * Steps:

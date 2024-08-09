@@ -1,7 +1,7 @@
 import { ToIntegerOrInfinity } from './ToIntegerOrInfinity';
 
 /**
- * ```Markdown
+ * ```markdown
  * The abstract operation ToLength clamps and truncates argument to an integer Number
  * suitable for use as the length of an array-like object.
  *

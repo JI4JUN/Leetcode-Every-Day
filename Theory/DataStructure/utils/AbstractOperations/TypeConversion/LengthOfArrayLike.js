@@ -2,7 +2,7 @@ import { ToLength } from './ToLength';
 import { Get, CreateDataProperty } from '../OperationsOnObjects';
 
 /**
- * ```Markdown
+ * ```markdown
  * The abstract operation LengthOfArrayLike takes argument obj (an Object) and returns either
  * a normal completion containing a non-negative integer or a throw completion. It returns
  * the value of the "length" property of an array-like object.

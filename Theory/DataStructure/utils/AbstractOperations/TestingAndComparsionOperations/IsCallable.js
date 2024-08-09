@@ -1,5 +1,5 @@
 /**
- * ```Markdown
+ * ```markdown
  * The abstract operation IsCallable is used to determine whether argument is a callable
  * function with a [[Call]] internal method.
  *

@@ -8,7 +8,7 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
- * ```Markdown
+ * ```markdown
  * Array.prototype.pop()
  *
  * Steps:

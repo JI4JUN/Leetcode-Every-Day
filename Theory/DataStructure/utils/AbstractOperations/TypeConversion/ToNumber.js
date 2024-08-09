@@ -1,7 +1,7 @@
 import { ToPrimitive } from '../TypeConversion';
 
 /**
- * ```Markdown
+ * ```markdown
  * The abstract operation ToNumber converts argument to a value of type Number.
  *
  * Steps:

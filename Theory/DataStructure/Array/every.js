@@ -10,7 +10,7 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
- * ```Markdown
+ * ```markdown
  * Array.prototype.every(callbackfn [, thisArg])
  *
  * Steps:

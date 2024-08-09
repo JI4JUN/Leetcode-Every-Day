@@ -2,7 +2,7 @@ import { Get, Call, GetMethod } from '../OperationsOnObjects';
 import { IsCallable } from '../TestingAndComparsionOperations';
 
 /**
- * ```Markdown
+ * ```markdown
  * The abstract operation converts its input argument to a non-Object type.
  * If an object is capable of converting to more than one primitive type,
  * it may use the oprtional hint perferredType to favour that type.

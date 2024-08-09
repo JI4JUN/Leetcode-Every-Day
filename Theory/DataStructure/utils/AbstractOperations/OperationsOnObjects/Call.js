@@ -1,7 +1,7 @@
 import { IsCallable } from '../TestingAndComparsionOperations';
 
 /**
- * ```Markdown
+ * ```markdown
  * The abstract operation Call is used to call the [[Call]] internal method of a function object.
  *
  * Steps:

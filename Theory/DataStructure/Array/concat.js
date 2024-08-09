@@ -11,7 +11,7 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
- * ```Markdown
+ * ```markdown
  * Array.prototype.concat(...items)
  *
  * Steps:
@@ -96,7 +96,7 @@ export function tinyConcat(...items) {
 }
 
 /**
- * ```Markdown
+ * ```markdown
  * The abstract operation IsConcatSpreadable is used to determine whether a Object is spreadable.
  *
  * Steps:

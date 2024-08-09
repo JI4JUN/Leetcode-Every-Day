@@ -12,7 +12,7 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
- * ```Markdown
+ * ```markdown
  * Array.prototype.flat
  *
  * Steps:
@@ -51,7 +51,7 @@ export function tinyFlat(depth) {
 }
 
 /**
- * ```Markdown
+ * ```markdown
  * The abstract operation FlattenIntoArray is used to flatten the given array.
  *
  * Steps:

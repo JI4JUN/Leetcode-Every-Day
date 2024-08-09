@@ -1,7 +1,7 @@
 import { ToNumber } from './ToNumber';
 
 /**
- * ```Markdown
+ * ```markdown
  * The abstract operation ToIntegerOrInfinity converts argument to an integer representing
  * its Number value with fractional part truncated, or to +∞ or -∞ when that Number value
  * is infinite.

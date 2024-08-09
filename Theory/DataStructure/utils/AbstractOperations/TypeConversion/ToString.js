@@ -1,7 +1,7 @@
 import { ToPrimitive } from './ToPrimitive';
 
 /**
- * ```Markdown
+ * ```markdown
  * The abstract operation ToString converts argument to a value of type string.
  *
  * Steps:

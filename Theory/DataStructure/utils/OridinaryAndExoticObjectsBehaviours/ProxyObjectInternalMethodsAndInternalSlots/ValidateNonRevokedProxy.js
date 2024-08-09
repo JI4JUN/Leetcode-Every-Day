@@ -1,5 +1,5 @@
 /**
- * ```Markdown
+ * ```markdown
  * The abstract operation ValidateNonRevokedProxy throws a TypeError exception if proxy has been revoked.
  *
  * Steps:

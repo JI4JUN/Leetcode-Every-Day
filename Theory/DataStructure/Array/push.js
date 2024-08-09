@@ -6,7 +6,7 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
- * ```Markdown
+ * ```markdown
  * Array.prototype.push(...items)
  *
  * Steps:

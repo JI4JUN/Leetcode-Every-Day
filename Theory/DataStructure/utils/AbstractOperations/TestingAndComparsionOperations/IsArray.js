@@ -1,7 +1,7 @@
-import { ValidateNonRevokedProxy } from '../../OridinaryAndExoticObjectsBehaviours/ProxyObjectInternalMethodsAndInternalSlots';
+import { ValidateNonRevokedProxy } from '../../OridinaryAndExoticObjectsBehaviours/';
 
 /**
- * ```Markdown
+ * ```markdown
  * The abstract operation IsArray is used to determine whether argument is an array.
  *
  * Steps:

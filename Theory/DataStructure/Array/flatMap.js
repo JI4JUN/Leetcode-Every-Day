@@ -6,7 +6,7 @@ import {
 import { FlattenIntoArray } from './flat';
 
 /**
- * ```Markdown
+ * ```markdown
  * Array.prototype.flatMap(mapperFunction [, thisArg])
  *
  * Steps:
