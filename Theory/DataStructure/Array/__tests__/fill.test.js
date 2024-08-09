@@ -1,4 +1,4 @@
-import { tinyFill } from '../index';
+import { tinyFill } from '../fill';
 
 describe('Array.prototype.fill', () => {
     Array.prototype.tinyFill = tinyFill;

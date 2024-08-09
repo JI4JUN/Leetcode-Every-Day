@@ -1,4 +1,4 @@
-import { tinyPop } from '../index';
+import { tinyPop } from '../pop';
 
 describe('Array.prototype.pop', () => {
     Array.prototype.tinyPop = tinyPop;

@@ -1,4 +1,4 @@
-import { tinyFindLast } from '../index';
+import { tinyFindLast } from '../findLast';
 
 describe('Array.prototype.findLast', () => {
     Array.prototype.tinyFindLast = tinyFindLast;

@@ -29,7 +29,7 @@ import {
  *
  * https://tc39.es/ecma262/#sec-array.prototype.foreach
  */
-export function tinyforEach(callbackfn, thisArg) {
+export function tinyForEach(callbackfn, thisArg) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
 

@@ -100,13 +100,9 @@ export function FlattenIntoArray(
     thisArg
 ) {
     if (mapperFunction !== undefined) {
-        if (
-            IsCallable(mapperFunction) !== true ||
-            thisArg === undefined ||
-            depth !== 1
-        ) {
+        if (IsCallable(mapperFunction) !== true || depth !== 1) {
             throw new TypeError(
-                'mapperFunction must be a function and thisArg must be provided when depth is 1'
+                'mapperFunction must be a function and depth must be 1'
             );
         }
     }

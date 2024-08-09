@@ -1,4 +1,4 @@
-import { tinyFilter } from '../index';
+import { tinyFilter } from '../filter';
 
 describe('Array.prototype.filter', () => {
     Array.prototype.tinyFilter = tinyFilter;

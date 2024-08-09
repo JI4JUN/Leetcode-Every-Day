@@ -1,4 +1,4 @@
-import { tinyFindIndex } from '../index';
+import { tinyFindIndex } from '../findIndex';
 
 describe('Array.prototype.findIndex', () => {
     Array.prototype.tinyFindIndex = tinyFindIndex;

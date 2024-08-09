@@ -1,7 +1,7 @@
-import { tinyforEach } from '../index';
+import { tinyForEach } from '../forEach';
 
 describe('Array.prototype.forEach', () => {
-    Array.prototype.tinyForEach = tinyforEach;
+    Array.prototype.tinyForEach = tinyForEach;
 
     test('Converting a for loop to forEach', () => {
         const items = ['item1', 'item2', 'item3'];

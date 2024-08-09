@@ -1,4 +1,4 @@
-import { tinyFlat } from '../index';
+import { tinyFlat } from '../flat';
 
 describe('Array.prototype.flat', () => {
     Array.prototype.tinyFlat = tinyFlat;

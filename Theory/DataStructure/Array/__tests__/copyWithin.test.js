@@ -1,4 +1,4 @@
-import { tinyCopyWithin } from '../index';
+import { tinyCopyWithin } from '../copyWithin';
 
 describe('Array.prototype.copyWithin', () => {
     Array.prototype.tinyCopyWithin = tinyCopyWithin;

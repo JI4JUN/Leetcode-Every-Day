@@ -1,4 +1,4 @@
-import { tinyMap } from '../index';
+import { tinyMap } from '../map';
 
 describe('Array.prototype.map', () => {
     Array.prototype.tinyMap = tinyMap;

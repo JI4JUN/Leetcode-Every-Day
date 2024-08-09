@@ -1,4 +1,4 @@
-import { tinyPush } from '../index';
+import { tinyPush } from '../push';
 
 describe('Array.prototype.push', () => {
     Array.prototype.tinyPush = tinyPush;
