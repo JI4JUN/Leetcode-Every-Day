@@ -15,3 +15,4 @@ export * from './fill';
 export * from './flat';
 export * from './includes';
 export * from './indexOf';
+export * from './join';
