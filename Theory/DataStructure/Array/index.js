@@ -14,3 +14,4 @@ export * from './every';
 export * from './fill';
 export * from './flat';
 export * from './includes';
+export * from './indexOf';

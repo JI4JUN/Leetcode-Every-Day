@@ -27,7 +27,6 @@ describe('Array.prototype.forEach', () => {
         const consoleSpy = jest
             .spyOn(console, 'log')
             .mockImplementation(() => {});
-
         [2, 5, , 9].tinyForEach(logArrayElements);
 
         expect(consoleSpy).toHaveBeenCalledWith('a[0] = 2');
