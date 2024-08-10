@@ -18,8 +18,8 @@
 export function sameValueZero(x, y) {
     return (
         (Number.isNaN(x) && Number.isNaN(y)) ||
-        (x === +0 && y === -0) ||
-        (x === -0 && y === +0) ||
+        (Object.is(x, +0) && Object.is(y, -0)) ||
+        (Object.is(x, -0) && Object.is(y, +0)) ||
         x === y
     );
 }

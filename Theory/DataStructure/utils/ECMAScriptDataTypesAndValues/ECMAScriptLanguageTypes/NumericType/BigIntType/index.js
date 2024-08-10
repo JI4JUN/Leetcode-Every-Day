@@ -1,1 +1,1 @@
-export * from './equal';
+export * from './BigIntType.js';

@@ -1,4 +1,4 @@
-import { equal } from '../../ECMAScriptDataTypesAndValues';
+import { BigIntType } from '../../ECMAScriptDataTypesAndValues';
 
 /**
  * ```markdown
@@ -32,7 +32,7 @@ export function SameValueNonNumber(x, y) {
     }
 
     const typeHandlers = {
-        bigint: (arg1, arg2) => equal(arg1, arg2),
+        bigint: (arg1, arg2) => BigIntType.equal(arg1, arg2),
         string: (arg1, arg2) => {
             if (arg1.length !== arg2.length) {
                 return false;

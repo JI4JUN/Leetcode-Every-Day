@@ -1,1 +1,1 @@
-export * from './sameValueZero';
+export * from './NumberType.js';
