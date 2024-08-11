@@ -1,7 +1,7 @@
 import { IsUnclampedIntegerElementType } from '../IsUnclampedIntegerElementType ';
 
 describe('IsUnclampedIntegerElementType function', () => {
-    test('Should return true if element type is an Integer TypedArray element type not including UINT8CLAMPED.', () => {
+    test('Should return true if element type is an Integer TypedArray element type not including UINT8CLAMPED', () => {
         expect(IsUnclampedIntegerElementType('INT8')).toBeTruthy();
         expect(IsUnclampedIntegerElementType('UINT8')).toBeTruthy();
         expect(IsUnclampedIntegerElementType('INT16')).toBeTruthy();
