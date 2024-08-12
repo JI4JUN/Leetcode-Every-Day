@@ -12,14 +12,7 @@
  * @returns A Boolean.
  */
 export function IsUnclampedIntegerElementType(type) {
-    const unclampedIntegerElementTypeArr = [
-        'INT8',
-        'UINT8',
-        'INT16',
-        'UINT16',
-        'INT32',
-        'UINT32'
-    ];
-
-    return unclampedIntegerElementTypeArr.includes(type);
+    return ['INT8', 'UINT8', 'INT16', 'UINT16', 'INT32', 'UINT32'].includes(
+        type
+    );
 }

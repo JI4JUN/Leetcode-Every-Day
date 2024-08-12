@@ -12,7 +12,5 @@
  * https://tc39.es/ecma262/#sec-isbigintelementtype
  */
 export function IsBigIntElementType(type) {
-    const BigIntElementTypeArr = ['BIGUINT64', 'BIGINT64'];
-
-    return BigIntElementTypeArr.includes(type);
+    return ['BIGUINT64', 'BIGINT64'].includes(type);
 }
