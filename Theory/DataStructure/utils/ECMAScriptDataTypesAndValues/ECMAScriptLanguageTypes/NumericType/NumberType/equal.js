@@ -1,7 +1,7 @@
 /**
- * ```markdown
  * The abstract operation Number::equal determines whether two numbers are equal.
  *
+ * ```markdown
  * Steps:
  * 1. If x is NaN, return false.
  * 2. If y is NaN, return false.

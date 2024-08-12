@@ -2,9 +2,9 @@ import { IsBigIntElementType } from './IsBigIntElementType';
 import { IsUnclampedIntegerElementType } from './IsUnclampedIntegerElementType ';
 
 /**
- * ```markdown
  * The abstract operation IsNoTearConfiguration verifies if the argument type is not
  *
+ * ```markdown
  * Steps:
  * 1. If IsUnclampedIntegerElementType(type) is true, return true.
  * 2. If IsBigIntElementType(type) is true and order is neither INIT nor UNORDERED, return true.

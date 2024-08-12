@@ -2,10 +2,10 @@ import { NumberType } from '../../ECMAScriptDataTypesAndValues';
 import { SameValueNonNumber } from './SameValueNonNumber';
 
 /**
- * ```markdown
  * The abstract operation SameValueZero determines whether or not the two arguments are
  * the same value (ignoring the difference between +0𝔽 and -0𝔽).
  *
+ * ```markdown
  * Steps:
  * 1. If Type(x) is not Type(y), return false.
  * 2. If x is a Number, then

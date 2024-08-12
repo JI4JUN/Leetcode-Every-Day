@@ -2,9 +2,9 @@ import { LengthOfArrayLike, ToObject } from '../utils/AbstractOperations';
 import { FindViaPredicate } from './findLastIndex';
 
 /**
- * ```markdown
  * Array.prototype.findIndex(predicate [ , thisArg ])
  *
+ * ```markdown
  * Steps:
  * 1. Let O be ? ToObject(this value).
  * 2. Let len be ? LengthOfArrayLike(O).

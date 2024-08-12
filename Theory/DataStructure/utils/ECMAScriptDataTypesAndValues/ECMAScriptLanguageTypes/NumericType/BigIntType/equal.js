@@ -1,7 +1,7 @@
 /**
- * ```markdown
  * The abstract operation determines whether the given two BigInt values are equal.
  *
+ * ```markdown
  * Steps:
  * 1. If ℝ(x) = ℝ(y), return true; otherwise return false.
  * ```

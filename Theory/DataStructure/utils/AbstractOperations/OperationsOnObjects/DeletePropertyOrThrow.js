@@ -1,9 +1,9 @@
 import { ToString } from '../TypeConversion';
 
 /**
- * ```markdown
  * The abstract operation DeletePropertyOrThrow is used to remove a specific own property of an object.
  *
+ * ```markdown
  * Steps:
  * 1. Let success be ? O.[[Delete]](P).
  * 2. If success is false, throw a TypeError exception.

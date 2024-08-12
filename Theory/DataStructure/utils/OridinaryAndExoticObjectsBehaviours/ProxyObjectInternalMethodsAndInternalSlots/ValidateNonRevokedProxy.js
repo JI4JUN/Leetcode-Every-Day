@@ -1,7 +1,7 @@
 /**
- * ```markdown
  * The abstract operation ValidateNonRevokedProxy throws a TypeError exception if proxy has been revoked.
  *
+ * ```markdown
  * Steps:
  * 1. If proxy.[[ProxyTarget]] is null, throw a TypeError exception.
  * 2. Assert: proxy.[[ProxyHandler]] is not null.

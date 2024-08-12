@@ -1,11 +1,11 @@
 import { ToObject } from '../TypeConversion';
 
 /**
- * ```markdown
  * The abstract operation GetV is used to retrieve the value of a specific property of
  * an ECMAScript language value. If the value is not an object, the property lookup is
  * performed using a wrapper object appropriate for the type of the value.
  *
+ * ```markdown
  * Steps:
  * 1. Let O be ? ToObject(V).
  * 2. Return ? O.[[Get]](P, V).

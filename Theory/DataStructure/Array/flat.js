@@ -13,7 +13,7 @@ import {
 
 /**
  * ```markdown
- * Array.prototype.flat
+ * Array.prototype.flat([depth])
  *
  * Steps:
  * 1. Let O be ? ToObject(this value).

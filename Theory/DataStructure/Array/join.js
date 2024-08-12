@@ -6,9 +6,9 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
- * ```markdown
  * Array.prototype.join(separator)
  *
+ * ```markdown
  * Steps:
  * 1. Let O be ? ToObject(this value).
  * 2. Let len be ? LengthOfArrayLike(O).

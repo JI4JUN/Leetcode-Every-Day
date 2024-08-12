@@ -6,9 +6,9 @@ import {
 import { FlattenIntoArray } from './flat';
 
 /**
- * ```markdown
  * Array.prototype.flatMap(mapperFunction [, thisArg])
  *
+ * ```markdown
  * Steps:
  * 1. Let O be ? ToObject(this value).
  * 2. Let sourceLen be ? LengthOfArrayLike(O).

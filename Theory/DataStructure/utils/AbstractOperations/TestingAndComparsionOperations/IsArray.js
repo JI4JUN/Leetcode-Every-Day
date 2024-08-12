@@ -1,9 +1,9 @@
 import { ValidateNonRevokedProxy } from '../../OridinaryAndExoticObjectsBehaviours/';
 
 /**
- * ```markdown
  * The abstract operation IsArray is used to determine whether argument is an array.
  *
+ * ```markdown
  * Steps:
  * 1. If argument is not an Object, return false.
  * 2. If argument is an Array exotic object, return true.

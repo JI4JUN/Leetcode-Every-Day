@@ -1,8 +1,8 @@
 /**
- * ```markdown
  * The abstract operation IsSharedArrayBuffer tests whether an object is an ArrayBuffer,
  * a SharedArrayBuffer, or a subtype of either.
  *
+ * ```markdown
  * Steps:
  * 1. Let bufferData be obj.[[ArrayBufferData]].
  * 2. If bufferData is null, return false.
@@ -12,6 +12,8 @@
  * ```
  * @param {*} obj An ArrayBuffer or a SharedArrayBuffer.
  * @returns A Boolean.
+ *
+ * https://tc39.es/ecma262/#sec-issharedarraybuffer
  */
 export function IsSharedArrayBuffer(obj) {
     return obj instanceof SharedArrayBuffer;

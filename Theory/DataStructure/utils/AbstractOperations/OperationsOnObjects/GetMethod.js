@@ -2,10 +2,10 @@ import { IsCallable } from '../TestingAndComparsionOperations';
 import { GetV } from './GetV';
 
 /**
- * ```markdown
  * The abstract operation GetMethod is used to get the value of a specific property of
  * an ECMAScript language value when the value of property is expected to be a function.
  *
+ * ```markdown
  * Steps:
  * 1. Let func be ? GetV(V, P).
  * 2. If func is either undefined or null, return undefined.

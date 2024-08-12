@@ -1,7 +1,7 @@
 /**
- * ```markdown
  * The abstract operation IsBigIntElementType verifies if the argument type is a BigInt TypedArray element type.
  *
+ * ```markdown
  * Steps:
  * 1. If type is either BIGUINT64 or BIGINT64, return true.
  * 2. Return false.

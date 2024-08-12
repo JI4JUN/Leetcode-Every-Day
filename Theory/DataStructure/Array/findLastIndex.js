@@ -12,9 +12,9 @@ import { tinyPush } from './push';
 Array.prototype.tinyPush = tinyPush;
 
 /**
- * ```markdown
  * Array.prototype.findLastIndex(predicate [, thisArg])
  *
+ * ```markdown
  * Steps:
  * 1. Let O be ? ToObject(this value).
  * 2. Let len be ? LengthOfArrayLike(O).

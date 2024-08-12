@@ -1,10 +1,10 @@
 import { BigIntType } from '../../ECMAScriptDataTypesAndValues';
 
 /**
- * ```markdown
  * The abstract operation SameValueNonNumber determines whether the non-number value
  * is equal to the another.
  *
+ * ```markdown
  * Steps:
  * 1. Assert: Type(x) is Type(y).
  * 2. If x is either null or undefined, return true.

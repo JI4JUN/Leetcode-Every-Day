@@ -2,9 +2,9 @@ import { NumberType } from '../../ECMAScriptDataTypesAndValues/';
 import { SameValueNonNumber } from './SameValueNonNumber';
 
 /**
- * ```markdown
  * The abstract operation IsStrictlyEqual provides the semantics for the === operator.
  *
+ * ```markdown
  * Steps:
  * 1. If Type(x) is not Type(y), return false.
  * 2. If x is a Number, then
