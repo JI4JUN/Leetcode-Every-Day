@@ -47,7 +47,7 @@ export function GetRawBytesFromSharedBlock(
         FLOAT64: 8
     };
 
-    const elementSize = elementSizeTable[type];
+    const elementSize = elementSizeTable[type] || 0;
     const noTear = isTypedArray && IsNoTearConfiguration(type, order);
     const rawValue = new Uint8Array(elementSize);
 
