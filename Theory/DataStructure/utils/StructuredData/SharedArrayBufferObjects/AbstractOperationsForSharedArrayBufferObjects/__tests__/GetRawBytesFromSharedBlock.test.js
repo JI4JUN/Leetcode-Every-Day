@@ -47,10 +47,10 @@ describe('GetRawBytesFromSharedBlock function', () => {
 
     test('Handle INT16 type', () => {
         const int16View = new Int16Array(sharedBuffer);
-        int16View[0] = 0x1234;
+        int16View[2] = 0x1234;
         const result = GetRawBytesFromSharedBlock(
             sharedBuffer,
-            0,
+            4,
             'INT16',
             true,
             'SEQ-CST'
@@ -61,38 +61,38 @@ describe('GetRawBytesFromSharedBlock function', () => {
 
     test('Handle UINT16 type', () => {
         const uint16View = new Uint16Array(sharedBuffer);
-        uint16View[1] = 0xabcd;
+        uint16View[3] = 0xabcd;
         const result = GetRawBytesFromSharedBlock(
             sharedBuffer,
-            2,
+            6,
             'UINT16',
             true,
             'SEQ-CST'
         );
 
-        expect(result).toEqual([0xcd, 0xab]); // Assuming little-endian system
+        expect(result).toEqual([0xcd, 0xab]);
     });
 
     test('Handle INT32 type', () => {
         const int32View = new Int32Array(sharedBuffer);
-        int32View[0] = 0x12345678;
+        int32View[2] = 0x12345678;
         const result = GetRawBytesFromSharedBlock(
             sharedBuffer,
-            0,
+            8,
             'INT32',
             true,
             'SEQ-CST'
         );
 
-        expect(result).toEqual([0x78, 0x56, 0x34, 0x12]); // Assuming little-endian system
+        expect(result).toEqual([0x78, 0x56, 0x34, 0x12]);
     });
 
     test('Handle UINT32 type', () => {
         const uint32View = new Uint32Array(sharedBuffer);
-        uint32View[1] = 0xabcdef12;
+        uint32View[3] = 0xabcdef12;
         const result = GetRawBytesFromSharedBlock(
             sharedBuffer,
-            4,
+            12,
             'UINT32',
             true,
             'SEQ-CST'
@@ -103,10 +103,10 @@ describe('GetRawBytesFromSharedBlock function', () => {
 
     test('Handle BIGINT64 type', () => {
         const bigInt64View = new BigInt64Array(sharedBuffer);
-        bigInt64View[0] = 0x1234567890abcdefn;
+        bigInt64View[2] = 0x1234567890abcdefn;
         const result = GetRawBytesFromSharedBlock(
             sharedBuffer,
-            0,
+            16,
             'BIGINT64',
             true,
             'SEQ-CST'
@@ -119,10 +119,10 @@ describe('GetRawBytesFromSharedBlock function', () => {
 
     test('Handle BIGUINT64 type', () => {
         const bigUint64View = new BigUint64Array(sharedBuffer);
-        bigUint64View[1] = 0xfedcba9876543210n;
+        bigUint64View[3] = 0xfedcba9876543210n;
         const result = GetRawBytesFromSharedBlock(
             sharedBuffer,
-            8,
+            24,
             'BIGUINT64',
             true,
             'SEQ-CST'
@@ -135,10 +135,10 @@ describe('GetRawBytesFromSharedBlock function', () => {
 
     test('Handle FLOAT32 type', () => {
         const float32View = new Float32Array(sharedBuffer);
-        float32View[0] = 3.14;
+        float32View[8] = 3.14;
         const result = GetRawBytesFromSharedBlock(
             sharedBuffer,
-            0,
+            32,
             'FLOAT32',
             true,
             'SEQ-CST'
@@ -150,10 +150,10 @@ describe('GetRawBytesFromSharedBlock function', () => {
 
     test('Handle FLOAT64 type', () => {
         const float64View = new Float64Array(sharedBuffer);
-        float64View[0] = 3.141592653589793;
+        float64View[5] = 3.141592653589793;
         const result = GetRawBytesFromSharedBlock(
             sharedBuffer,
-            0,
+            40,
             'FLOAT64',
             true,
             'SEQ-CST'
