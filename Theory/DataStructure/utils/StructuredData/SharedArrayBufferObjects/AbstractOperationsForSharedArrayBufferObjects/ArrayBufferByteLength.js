@@ -1,11 +1,11 @@
 import { IsSharedArrayBuffer } from './IsSharedArrayBuffer';
 import { GetRawBytesFromSharedBlock } from './GetRawBytesFromSharedBlock';
-import { IsDetachedBuffer } from '../../ArrayBufferObjects/';
+import { IsDetachedBuffer, RawBytesToNumeric } from '../../ArrayBufferObjects';
 
 /**
  * https://tc39.es/ecma262/#sec-arraybufferbytelength
  *
- * The abstract operation ArrayBufferByteLength
+ * The abstract operation ArrayBufferByteLength determines and returns the length in bytes of an ArrayBuffer or SharedArrayBuffer.
  *
  * ```markdown
  * 1. If IsSharedArrayBuffer(arrayBuffer) is true and arrayBuffer has an [[ArrayBufferByteLengthData]] internal slot, then
@@ -24,13 +24,14 @@ import { IsDetachedBuffer } from '../../ArrayBufferObjects/';
 export function ArrayBufferByteLength(arrayBuffer, order) {
     if (
         IsSharedArrayBuffer(arrayBuffer) === true &&
-        arrayBuffer.buffer !== undefined
+        arrayBuffer._ArrayBufferByteLengthData !== undefined
     ) {
-        const bufferByteLengthBlock = arrayBuffer.buffer;
+        // note: Use _ArrayBufferByteLengthData simulate [[ArrayBufferByteLengthData]] internal slot, beacause we can't access it in JS.
+        const bufferByteLengthBlock = arrayBuffer._ArrayBufferByteLengthData;
         const rawLength = GetRawBytesFromSharedBlock(
             bufferByteLengthBlock,
             0,
-            BIGUINT64,
+            'BIGUINT64',
             true,
             order
         );
