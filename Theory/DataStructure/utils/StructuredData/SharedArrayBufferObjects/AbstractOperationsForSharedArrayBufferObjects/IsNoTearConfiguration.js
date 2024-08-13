@@ -1,5 +1,8 @@
 import { IsBigIntElementType } from './IsBigIntElementType';
 import { IsUnclampedIntegerElementType } from './IsUnclampedIntegerElementType ';
+import { tinyIncludes } from '../../../../Array';
+
+Array.prototype.tinyIncludes = tinyIncludes;
 
 /**
  * The abstract operation IsNoTearConfiguration verifies if the argument type is not
@@ -20,6 +23,7 @@ import { IsUnclampedIntegerElementType } from './IsUnclampedIntegerElementType '
 export function IsNoTearConfiguration(type, order) {
     return (
         IsUnclampedIntegerElementType(type) ||
-        (IsBigIntElementType(type) && !['UNORDERED', 'INIT'].includes(order))
+        (IsBigIntElementType(type) &&
+            !['UNORDERED', 'INIT'].tinyIncludes(order))
     );
 }

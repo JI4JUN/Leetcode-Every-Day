@@ -22,17 +22,16 @@ export function ToObject(argument) {
         throw new TypeError(`Cannot convert a ${argument} to a Object`);
     }
 
-    const typeList = [
-        'null',
-        'boolean',
-        'number',
-        'string',
-        'symbol',
-        'bigint'
-    ];
     const type = typeof argument;
 
-    if (typeList.includes(type)) {
+    if (
+        type === 'null' ||
+        type === 'boolean' ||
+        type === 'number' ||
+        type === 'string' ||
+        type === 'symbol' ||
+        type === 'bigint'
+    ) {
         return Object(argument);
     } else if (type === 'object') {
         return argument;

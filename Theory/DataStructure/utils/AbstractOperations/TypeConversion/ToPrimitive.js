@@ -83,9 +83,7 @@ export function ToPrimitive(input, preferredType) {
  * @returns Either a normal completion containing an ECMAScript language value or a throw completion.
  */
 export function OrdinaryToPrimitive(O, hint) {
-    const validHint = ['string', 'number'];
-
-    if (validHint.includes(hint)) {
+    if (hint === 'string' || hint === 'number') {
         const methodNames =
             hint === 'string'
                 ? ['toString', 'valueOf']

@@ -1,3 +1,7 @@
+import { tinyIncludes } from '../../../../Array';
+
+Array.prototype.tinyIncludes = tinyIncludes;
+
 /**
  * The abstract operation IsUnclampedIntegerElementType verifies if the argument type
  * is an Integer TypedArray element type not including UINT8CLAMPED.
@@ -14,7 +18,7 @@
  * https://tc39.es/ecma262/#sec-isunclampedintegerelementtype
  */
 export function IsUnclampedIntegerElementType(type) {
-    return ['INT8', 'UINT8', 'INT16', 'UINT16', 'INT32', 'UINT32'].includes(
+    return ['INT8', 'UINT8', 'INT16', 'UINT16', 'INT32', 'UINT32'].tinyIncludes(
         type
     );
 }
