@@ -1,6 +1,20 @@
+import {
+    tinyForEach,
+    tinyIncludes,
+    tinyMap,
+    tinyJoin
+} from '../../../../Array';
+import { IsBigIntElementType } from '../../SharedArrayBufferObjects/AbstractOperationsForSharedArrayBufferObjects/IsBigIntElementType';
+import { IsUnsignedElementType } from './IsUnsignedElementType';
+
+Array.prototype.tinyForEach = tinyForEach;
+Array.prototype.tinyIncludes = tinyIncludes;
+Array.prototype.tinyMap = tinyMap;
+Array.prototype.tinyJoin = tinyJoin;
+
 /**
  * https://tc39.es/ecma262/#sec-rawbytestonumeric
- * 
+ *
  * The abstract operation RawBytesToNumeric is designed to convert a sequence of raw bytesinto a
  * numeric value (either a Number or a BigInt) based on a specified data type and endianness.
  *
@@ -29,6 +43,11 @@
  * @return A Number or a BigInt.
  */
 export function RawBytesToNumeric(type, rawBytes, isLittleEndian) {
+    if (!isLittleEndian) {
+        // note: Need to implement my own reverse function in the future.
+        rawBytes.reverse();
+    }
+
     const elementSizeTable = {
         INT8: 1,
         UINT8: 1,
@@ -42,30 +61,38 @@ export function RawBytesToNumeric(type, rawBytes, isLittleEndian) {
         FLOAT32: 4,
         FLOAT64: 8
     };
-
     const elementSize = elementSizeTable[type] || 0;
+    const buffer = new ArrayBuffer(elementSize);
+    const view = new DataView(buffer);
 
-    if (!isLittleEndian) {
-        // note: Need to implement my own reverse function in the future.
-        rawBytes.reverse();
+    rawBytes.tinyForEach((byte, index) => view.setUint8(index, byte));
+
+    const typeHandler = {
+        INT8: () => view.getInt8(0, true),
+        UINT8: () => view.getUint8(0, true),
+        UINT8CLAMPED: () => view.getUint8(0, true),
+        INT16: () => view.getInt16(0, true),
+        UINT16: () => view.getUint16(0, true),
+        INT32: () => view.getInt32(0, true),
+        UINT32: () => view.getUint32(0, true),
+        BIGINT64: () => view.getBigInt64(0, true),
+        BIGUINT64: () => view.getBigUint64(0, true),
+        FLOAT32: () => view.getFloat32(0, true),
+        FLOAT64: () => view.getFloat64(0, true)
+    };
+    const getIntValueHandler = typeHandler[type];
+
+    let intValue;
+
+    if (IsUnsignedElementType(type)) {
+        intValue = getIntValueHandler();
+    } else {
+        intValue = Number(getIntValueHandler());
     }
 
-    if (type === 'FLOAT32' || type === 'FLOAT64') {
-        const buffer = new ArrayBuffer(elementSize);
-        const view = new DataView(buffer);
+    if (IsBigIntElementType(type)) {
+        return BigInt(intValue);
+    }
 
-        // note: Need to implement my own forEach function in the future.
-        rawBytes.forEach((byte, index) => view.setUint8(index, byte));
-
-        const value =
-            type === 'FLOAT32'
-                ? view.getFloat32(0, true)
-                : view.getFloat64(0, true);
-
-        if (Object.is(value, NaN)) {
-            return NaN;
-        }
-
-        return value;
-    } else if ([])
+    return Number(intValue);
 }
