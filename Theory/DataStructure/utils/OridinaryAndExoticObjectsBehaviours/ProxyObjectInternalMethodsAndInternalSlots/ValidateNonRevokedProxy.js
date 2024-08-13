@@ -1,4 +1,6 @@
 /**
+ * https://tc39.es/ecma262/#sec-validatenonrevokedproxy
+ *
  * The abstract operation ValidateNonRevokedProxy throws a TypeError exception if proxy has been revoked.
  *
  * ```markdown

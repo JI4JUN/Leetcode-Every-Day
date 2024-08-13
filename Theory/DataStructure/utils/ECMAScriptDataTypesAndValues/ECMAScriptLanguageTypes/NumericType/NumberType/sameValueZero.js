@@ -1,4 +1,6 @@
 /**
+ * https://tc39.es/ecma262/#sec-numeric-types-number-sameValueZero
+ *
  * ```markdown
  * The abstract operation Number::sameValueZero determines
  * whether or not the two arguments are the same value

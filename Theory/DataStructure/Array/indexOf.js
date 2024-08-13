@@ -9,6 +9,8 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
+ * https://tc39.es/ecma262/#sec-array.prototype.indexof
+ *
  * Array.prototype.indexOf(searchElement [, fromIndex])
  *
  * ```markdown
@@ -33,8 +35,6 @@ import {
  *     d. Set k to k + 1.
  * 11. Return -1𝔽.
  * ```
- *
- * https://tc39.es/ecma262/#sec-array.prototype.indexof
  */
 export function tinyIndexOf(searchElement, fromIndex) {
     const O = ToObject(this);

@@ -1,6 +1,8 @@
 import { ToPrimitive } from './ToPrimitive';
 
 /**
+ * https://tc39.es/ecma262/#sec-tostring
+ *
  * ```markdown
  * The abstract operation ToString converts argument to a value of type string.
  *
@@ -19,7 +21,7 @@ import { ToPrimitive } from './ToPrimitive';
  * 12. Return ? ToString(primValue).
  * ```
  *
- * @param {*} argument An ECMAScript language value
+ * @param {*} argument An ECMAScript language value.
  * @returns A value of type String.
  */
 export function ToString(argument) {

@@ -1,6 +1,8 @@
 import { ValidateNonRevokedProxy } from '../../OridinaryAndExoticObjectsBehaviours/';
 
 /**
+ * https://tc39.es/ecma262/#sec-isarray
+ *
  * The abstract operation IsArray is used to determine whether argument is an array.
  *
  * ```markdown

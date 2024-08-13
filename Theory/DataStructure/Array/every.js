@@ -10,6 +10,8 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
+ * https://tc39.es/ecma262/#sec-array.prototype.every
+ *
  * Array.prototype.every(callbackfn [, thisArg])
  *
  * ```markdown
@@ -28,8 +30,6 @@ import {
  *     d. Set k to k + 1.
  * 6. Return true.
  * ```
- *
- * https://tc39.es/ecma262/#sec-array.prototype.every
  */
 export function tinyEvery(callbackfn, thisArg) {
     const O = ToObject(this);

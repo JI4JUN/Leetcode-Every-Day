@@ -1,4 +1,6 @@
 /**
+ * https://tc39.es/ecma262/#sec-hasproperty
+ *
  * The abstract opertaion HasProperty is used to determine whether an object
  * has a property with the specified key.
  *

@@ -1,4 +1,6 @@
 /**
+ * https://tc39.es/ecma262/#sec-toboolean
+ *
  * ```markdown
  * The abstract operation ToBoolean converts argument to a value of type Boolean.
  *

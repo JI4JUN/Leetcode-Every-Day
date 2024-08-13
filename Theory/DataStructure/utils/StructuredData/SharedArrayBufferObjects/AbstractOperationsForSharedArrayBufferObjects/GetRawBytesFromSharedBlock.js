@@ -1,5 +1,7 @@
 import { IsNoTearConfiguration } from './IsNoTearConfiguration';
 /**
+ * https://tc39.es/ecma262/#sec-getrawbytesfromsharedblock
+ *
  * The abstract operation GetRawBytesFromSharedBlock is designed to read a sequence of bytes from a shared data block,
  * considering the memory consistency model and atomicity requirements.
  *
@@ -23,8 +25,6 @@ import { IsNoTearConfiguration } from './IsNoTearConfiguration';
  * @param {*} isTypedArray A Boolean.
  * @param {*} order SEQ-CST or UNORDERED.
  * @returns A List of byte values.
- *
- * https://tc39.es/ecma262/#sec-getrawbytesfromsharedblock
  */
 export function GetRawBytesFromSharedBlock(
     block,

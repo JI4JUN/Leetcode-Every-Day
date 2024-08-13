@@ -8,6 +8,8 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
+ * https://tc39.es/ecma262/#sec-array.prototype.pop
+ *
  * Array.prototype.pop()
  *
  * ```markdown
@@ -26,8 +28,6 @@ import {
  *     f. Perform ? Set(O, "length", newLen, true).
  *     g. Return element.
  * ```
- *
- * https://tc39.es/ecma262/#sec-array.prototype.pop
  */
 export function tinyPop() {
     const O = ToObject(this);

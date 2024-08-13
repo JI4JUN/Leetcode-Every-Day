@@ -1,4 +1,6 @@
 /**
+ * https://tc39.es/ecma262/#sec-numeric-types-number-equal
+ *
  * The abstract operation Number::equal determines whether two numbers are equal.
  *
  * ```markdown

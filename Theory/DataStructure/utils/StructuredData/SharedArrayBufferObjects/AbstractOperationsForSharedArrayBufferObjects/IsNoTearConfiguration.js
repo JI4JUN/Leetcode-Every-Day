@@ -5,6 +5,8 @@ import { tinyIncludes } from '../../../../Array';
 Array.prototype.tinyIncludes = tinyIncludes;
 
 /**
+ * https://tc39.es/ecma262/#sec-isnotearconfiguration
+ *
  * The abstract operation IsNoTearConfiguration verifies if the argument type is not
  *
  * ```markdown
@@ -17,8 +19,6 @@ Array.prototype.tinyIncludes = tinyIncludes;
  * @param {*} type A TypedArray element type.
  * @param {*} order SEQ-CST, UNORDERED, or INIT.
  * @returns A Boolean.
- *
- * https://tc39.es/ecma262/#sec-isnotearconfiguration
  */
 export function IsNoTearConfiguration(type, order) {
     return (

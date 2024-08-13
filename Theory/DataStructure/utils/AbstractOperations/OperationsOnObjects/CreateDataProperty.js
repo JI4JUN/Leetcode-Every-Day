@@ -1,4 +1,6 @@
 /**
+ * https://tc39.es/ecma262/#sec-createdataproperty
+ *
  * The abstract operation CreateDataProperty is used to create a new own property of an object.
  *
  * ```markdown
@@ -8,8 +10,8 @@
  * ```
  *
  * @param {*} O A Object.
- * @param {*} P A property key
- * @param {*} V An ECMAScript language value
+ * @param {*} P A property key.
+ * @param {*} V An ECMAScript language value.
  * @returns A Boolean.
  */
 export function CreateDataProperty(O, P, V) {

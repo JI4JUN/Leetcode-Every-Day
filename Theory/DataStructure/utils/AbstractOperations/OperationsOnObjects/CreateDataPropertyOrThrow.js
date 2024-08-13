@@ -2,6 +2,8 @@ import { CreateDataProperty } from './CreateDataProperty';
 import { ToString } from '../TypeConversion';
 
 /**
+ * https://tc39.es/ecma262/#sec-createdatapropertyorthrow
+ *
  * The abstract operation CreateDataPropertyOrThrow is used to create a new own property of an object.
  *
  * ```markdown

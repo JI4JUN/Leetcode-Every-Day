@@ -6,6 +6,8 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
+ * https://tc39.es/ecma262/#sec-array.prototype.join
+ *
  * Array.prototype.join(separator)
  *
  * ```markdown
@@ -25,8 +27,6 @@ import {
  *     d. Set k to k + 1.
  * 8. Return R.
  * ```
- *
- * https://tc39.es/ecma262/#sec-array.prototype.join
  */
 export function tinyJoin(separator) {
     const O = ToObject(this);

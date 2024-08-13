@@ -2,6 +2,8 @@ import { LengthOfArrayLike, ToObject } from '../utils/AbstractOperations';
 import { FindViaPredicate } from './findLastIndex';
 
 /**
+ * https://tc39.es/ecma262/#sec-array.prototype.findlast
+ *
  * Array.prototype.findIndex(predicate [ , thisArg ])
  *
  * ```markdown
@@ -11,8 +13,6 @@ import { FindViaPredicate } from './findLastIndex';
  * 3. Let findRec be ? FindViaPredicate(O, len, ASCENDING, predicate, thisArg).
  * 4. Return findRec.[[Index]].
  * ```
- *
- * https://tc39.es/ecma262/#sec-array.prototype.find
  */
 export function tinyFindIndex(predicate, thisArg) {
     const O = ToObject(this);

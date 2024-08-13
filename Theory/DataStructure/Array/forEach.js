@@ -9,6 +9,8 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
+ * https://tc39.es/ecma262/#sec-array.prototype.foreach
+ *
  * Array.prototype.forEach(callbackfn [, thisArg])
  *
  * ```markdown
@@ -26,8 +28,6 @@ import {
  *     d. Set k to k + 1.
  * 6. Return undefined.
  * ```
- *
- * https://tc39.es/ecma262/#sec-array.prototype.foreach
  */
 export function tinyForEach(callbackfn, thisArg) {
     const O = ToObject(this);

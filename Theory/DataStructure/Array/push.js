@@ -6,6 +6,8 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
+ * https://tc39.es/ecma262/#sec-array.prototype.push
+ *
  * Array.prototype.push(...items)
  *
  * ```markdown
@@ -20,8 +22,6 @@ import {
  * 6. Perform ? Set(O, "length", 𝔽(len), true).
  * 7. Return 𝔽(len).
  * ```
- *
- * https://tc39.es/ecma262/#sec-array.prototype.push
  */
 export function tinyPush(...items) {
     const O = ToObject(this);

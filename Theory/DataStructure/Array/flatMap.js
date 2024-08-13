@@ -6,6 +6,8 @@ import {
 import { FlattenIntoArray } from './flat';
 
 /**
+ * https://tc39.es/ecma262/#sec-array.prototype.flatmap
+ *
  * Array.prototype.flatMap(mapperFunction [, thisArg])
  *
  * ```markdown
@@ -17,8 +19,6 @@ import { FlattenIntoArray } from './flat';
  * 5. Perform ? FlattenIntoArray(A, O, sourceLen, 0, 1, mapperFunction, thisArg).
  * 6. Return A.
  * ```
- *
- * https://tc39.es/ecma262/#sec-array.prototype.flatmap
  */
 export function tinyFlatMap(mapperFunction, thisArg) {
     const O = ToObject(this);

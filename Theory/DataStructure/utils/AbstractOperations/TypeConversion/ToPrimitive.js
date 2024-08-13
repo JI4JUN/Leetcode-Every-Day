@@ -2,6 +2,8 @@ import { Get, Call, GetMethod } from '../OperationsOnObjects';
 import { IsCallable } from '../TestingAndComparsionOperations';
 
 /**
+ * https://tc39.es/ecma262/#sec-toprimitive
+ *
  * ```markdown
  * The abstract operation converts its input argument to a non-Object type.
  * If an object is capable of converting to more than one primitive type,

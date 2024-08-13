@@ -1,4 +1,6 @@
 /**
+ * https://tc39.es/ecma262/#sec-isdetachedbuffer
+ *
  * The abstract operation IsDetachedBuffer determines whether an ArrayBuffer is detached.
  *
  * ```markdown

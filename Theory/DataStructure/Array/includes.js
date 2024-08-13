@@ -8,6 +8,8 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
+ * https://tc39.es/ecma262/#sec-array.prototype.includes
+ *
  * Array.prototype.includes(searchElement [, fromIndex])
  *
  * ```markdown
@@ -31,7 +33,6 @@ import {
  * 11. Return false.
  *
  * ```
- * https://tc39.es/ecma262/#sec-array.prototype.includes
  */
 export function tinyIncludes(searchElement, fromIndex) {
     const O = ToObject(this);

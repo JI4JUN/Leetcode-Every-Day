@@ -7,6 +7,8 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
+ * https://tc39.es/ecma262/#sec-array.prototype.at
+ *
  * Array.prototype.at(index)
  *
  * ```markdown
@@ -21,7 +23,6 @@ import {
  * 6. If k < 0 or k ≥ len, return undefined.
  * 7. Return ? Get(O, ! ToString(𝔽(k))).
  * ```
- * https://tc39.es/ecma262/#sec-array.prototype.at
  */
 export function tinyAt(index) {
     const O = ToObject(this);

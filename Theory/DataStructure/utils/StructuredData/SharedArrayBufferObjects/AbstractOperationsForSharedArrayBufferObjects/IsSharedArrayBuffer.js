@@ -1,4 +1,6 @@
 /**
+ * https://tc39.es/ecma262/#sec-issharedarraybuffer
+ *
  * The abstract operation IsSharedArrayBuffer tests whether an object is an ArrayBuffer,
  * a SharedArrayBuffer, or a subtype of either.
  *
@@ -12,8 +14,6 @@
  * ```
  * @param {*} obj An ArrayBuffer or a SharedArrayBuffer.
  * @returns A Boolean.
- *
- * https://tc39.es/ecma262/#sec-issharedarraybuffer
  */
 export function IsSharedArrayBuffer(obj) {
     return obj instanceof SharedArrayBuffer;

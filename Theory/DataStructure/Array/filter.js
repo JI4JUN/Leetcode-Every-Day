@@ -11,6 +11,8 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
+ * https://tc39.es/ecma262/#sec-array.prototype.filter
+ *
  * Array.prototype.filter(callbackfn [, thisArg])
  *
  * ```markdown
@@ -33,8 +35,6 @@ import {
  *     d. Set k to k + 1.
  * 8. Return A.
  * ```
- *
- * https://tc39.es/ecma262/#sec-array.prototype.filter
  */
 export function tinyFilter(callbackfn, thisArg) {
     const O = ToObject(this);

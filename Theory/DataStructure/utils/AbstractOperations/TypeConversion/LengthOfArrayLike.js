@@ -2,6 +2,8 @@ import { ToLength } from './ToLength';
 import { Get, CreateDataProperty } from '../OperationsOnObjects';
 
 /**
+ * https://tc39.es/ecma262/#sec-lengthofarraylike
+ *
  * ```markdown
  * The abstract operation LengthOfArrayLike takes argument obj (an Object) and returns either
  * a normal completion containing a non-negative integer or a throw completion. It returns

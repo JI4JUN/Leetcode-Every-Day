@@ -1,6 +1,8 @@
 import { ToString } from '../TypeConversion';
 
 /**
+ * https://tc39.es/ecma262/#sec-deletepropertyorthrow
+ *
  * The abstract operation DeletePropertyOrThrow is used to remove a specific own property of an object.
  *
  * ```markdown

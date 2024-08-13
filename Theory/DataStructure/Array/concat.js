@@ -11,6 +11,8 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
+ * https://tc39.es/ecma262/#sec-array.prototype.concat
+ *
  * Array.prototype.concat(...items)
  *
  * ```markdown

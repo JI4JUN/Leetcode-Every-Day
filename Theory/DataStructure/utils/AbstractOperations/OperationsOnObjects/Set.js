@@ -1,4 +1,6 @@
 /**
+ * https://tc39.es/ecma262/#sec-set-o-p-v-throw
+ *
  * The abstract operation Set is used to set the value of a specific property of an object.
  *
  * ```markdown
@@ -8,11 +10,11 @@
  * 3. Return UNUSED.
  * ```
  *
- * @param {*} O An Object
- * @param {*} P A property key
+ * @param {*} O An Object.
+ * @param {*} P A property key.
  * @param {*} V The new value for the property.
- * @param {*} Throw A Boolean
- * @returns Either a normal completion containing UNUSED or a throw completion
+ * @param {*} Throw A Boolean.
+ * @returns Either a normal completion containing UNUSED or a throw completion.
  */
 export function Set(O, P, V, Throw) {
     try {

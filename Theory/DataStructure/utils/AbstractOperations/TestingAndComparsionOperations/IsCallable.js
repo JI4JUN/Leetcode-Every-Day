@@ -1,4 +1,6 @@
 /**
+ * https://tc39.es/ecma262/#sec-iscallable
+ *
  * The abstract operation IsCallable is used to determine whether argument is a callable
  * function with a [[Call]] internal method.
  *
@@ -9,8 +11,8 @@
  * 3. Return false.
  * ```
  *
- * @param {*} argument An ECMAScript language value
- * @returns A Boolean
+ * @param {*} argument An ECMAScript language value.
+ * @returns A Boolean.
  */
 export function IsCallable(argument) {
     if (typeof argument !== 'object' && typeof argument !== 'function') {

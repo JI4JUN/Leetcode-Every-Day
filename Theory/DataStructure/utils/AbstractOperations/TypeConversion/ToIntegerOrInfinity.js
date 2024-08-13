@@ -1,6 +1,8 @@
 import { ToNumber } from './ToNumber';
 
 /**
+ * https://tc39.es/ecma262/#sec-tointegerorinfinity
+ *
  * ```markdown
  * The abstract operation ToIntegerOrInfinity converts argument to an integer representing
  * its Number value with fractional part truncated, or to +∞ or -∞ when that Number value
@@ -15,8 +17,7 @@ import { ToNumber } from './ToNumber';
  * ```
  *
  * @param {*} argument An ECMAScript language value.
- * @returns An integer representing its Number value with fractional part truncated,
- * or to +∞ or -∞ when that Number value is infinite.
+ * @returns An integer representing its Number value with fractional part truncated, or to +∞ or -∞ when that Number value is infinite.
  */
 export function ToIntegerOrInfinity(argument) {
     const number = ToNumber(argument);

@@ -10,6 +10,8 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
+ * https://tc39.es/ecma262/#sec-array.prototype.copywithin
+ *
  * Array.prototype.copyWithin(target, start [, end])
  *
  * ```markdown
@@ -50,8 +52,6 @@ import {
  *     h. Set count to count - 1.
  * 19. Return O.
  * ```
- *
- * https://tc39.es/ecma262/#sec-array.prototype.copywithin
  */
 export function tinyCopyWithin(target, start, end) {
     const O = ToObject(this);

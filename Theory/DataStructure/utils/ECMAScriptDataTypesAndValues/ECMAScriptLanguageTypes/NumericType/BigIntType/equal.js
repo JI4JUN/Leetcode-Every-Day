@@ -1,5 +1,7 @@
 /**
- * The abstract operation determines whether the given two BigInt values are equal.
+ * https://tc39.es/ecma262/#sec-numeric-types-bigint-equal
+ *
+ * The abstract operation BigInt::equal determines whether the given two BigInt values are equal.
  *
  * ```markdown
  * Steps:

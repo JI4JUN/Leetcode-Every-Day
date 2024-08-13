@@ -12,9 +12,11 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
- * ```markdown
+ * https://tc39.es/ecma262/#sec-array.prototype.flat
+ *
  * Array.prototype.flat([depth])
  *
+ * ```markdown
  * Steps:
  * 1. Let O be ? ToObject(this value).
  * 2. Let sourceLen be ? LengthOfArrayLike(O).
@@ -26,8 +28,6 @@ import {
  * 6. Perform ? FlattenIntoArray(A, O, sourceLen, 0, depthNum).
  * 7. Return A.
  * ```
- *
- * https://tc39.es/ecma262/#sec-array.prototype.flat
  */
 export function tinyFlat(depth) {
     const O = ToObject(this);

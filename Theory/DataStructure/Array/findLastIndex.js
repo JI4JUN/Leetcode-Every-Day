@@ -12,6 +12,8 @@ import { tinyPush } from './push';
 Array.prototype.tinyPush = tinyPush;
 
 /**
+ * https://tc39.es/ecma262/#sec-array.prototype.findlastindex
+ *
  * Array.prototype.findLastIndex(predicate [, thisArg])
  *
  * ```markdown
@@ -21,8 +23,6 @@ Array.prototype.tinyPush = tinyPush;
  * 3. Let findRec be ? FindViaPredicate(O, len, DESCENDING, predicate, thisArg).
  * 4. Return findRec.[[Index]].
  * ```
- *
- * https://tc39.es/ecma262/#sec-array.prototype.findlastindex
  */
 export function tinyFindLastIndex(predicate, thisArg) {
     const O = ToObject(this);

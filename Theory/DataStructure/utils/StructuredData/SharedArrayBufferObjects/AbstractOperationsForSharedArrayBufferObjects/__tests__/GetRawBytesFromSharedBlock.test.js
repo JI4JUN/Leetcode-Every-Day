@@ -1,4 +1,4 @@
-import { GetRawBytesFromSharedBlock } from '../GetRawBytesFromSharedBlock ';
+import { GetRawBytesFromSharedBlock } from '../GetRawBytesFromSharedBlock';
 
 describe('GetRawBytesFromSharedBlock function', () => {
     let sharedBuffer;

@@ -2,6 +2,8 @@ import { NumberType } from '../../ECMAScriptDataTypesAndValues/';
 import { SameValueNonNumber } from './SameValueNonNumber';
 
 /**
+ * https://tc39.es/ecma262/#sec-isstrictlyequal
+ *
  * The abstract operation IsStrictlyEqual provides the semantics for the === operator.
  *
  * ```markdown

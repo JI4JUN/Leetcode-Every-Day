@@ -2,6 +2,8 @@ import { NumberType } from '../../ECMAScriptDataTypesAndValues';
 import { SameValueNonNumber } from './SameValueNonNumber';
 
 /**
+ * https://tc39.es/ecma262/#sec-samevaluezero
+ *
  * The abstract operation SameValueZero determines whether or not the two arguments are
  * the same value (ignoring the difference between +0𝔽 and -0𝔽).
  *
@@ -13,6 +15,7 @@ import { SameValueNonNumber } from './SameValueNonNumber';
  * 3. Return SameValueNonNumber(x, y).
  *
  * ```
+ *
  * @param {*} x An ECMAScript language value.
  * @param {*} y An ECMAScript language value.
  * @returns A Boolean.

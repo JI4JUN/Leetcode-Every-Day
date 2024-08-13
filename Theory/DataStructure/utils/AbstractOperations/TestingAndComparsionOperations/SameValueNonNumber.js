@@ -1,6 +1,8 @@
 import { BigIntType } from '../../ECMAScriptDataTypesAndValues';
 
 /**
+ * https://tc39.es/ecma262/#sec-samevaluenonnumber
+ *
  * The abstract operation SameValueNonNumber determines whether the non-number value
  * is equal to the another.
  *

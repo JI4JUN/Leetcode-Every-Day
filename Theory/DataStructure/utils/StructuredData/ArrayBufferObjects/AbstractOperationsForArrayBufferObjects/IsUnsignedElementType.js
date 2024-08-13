@@ -3,6 +3,8 @@ import { tinyIncludes } from '../../../../Array';
 Array.prototype.tinyIncludes = tinyIncludes;
 
 /**
+ * https://tc39.es/ecma262/#sec-isunsignedelementtype
+ *
  * The abstract operation IsUnsignedElementType verifies if the argument type
  * is an unsigned TypedArray element type.
  *

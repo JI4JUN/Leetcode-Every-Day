@@ -7,6 +7,8 @@ import {
 } from '../utils/AbstractOperations';
 
 /**
+ * https://tc39.es/ecma262/#sec-array.prototype.fill
+ *
  * Array.prototype.fill(value [, start [, end]])
  *
  * ```markdown
@@ -27,8 +29,6 @@ import {
  *     c. Set k to k + 1.
  * 12. Return O.
  * ```
- *
- * https://tc39.es/ecma262/#sec-array.prototype.fill
  */
 export function tinyFill(value, start, end) {
     const O = ToObject(this);
