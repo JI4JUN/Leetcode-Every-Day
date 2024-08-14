@@ -16,7 +16,7 @@ function isAnagram(s: string, t: string): boolean {
         map.set(c, (map.get(c) ?? 0) - 1);
     }
 
-    for (const [_, v] of map.entries()) {
+    for (const v of map.values()) {
         if (v !== 0) {
             return false;
         }
