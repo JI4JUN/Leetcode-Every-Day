@@ -1,5 +1,5 @@
-import { IsDetachedBuffer } from 'utils/StructuredData/ArrayBufferObjects/AbstractOperationsForArrayBufferObjects';
 import { ArrayBufferByteLength } from 'utils/StructuredData/SharedArrayBufferObjects/AbstractOperationsForSharedArrayBufferObjects';
+import { IsDetachedBuffer } from 'utils/StructuredData/ArrayBufferObjects/AbstractOperationsForArrayBufferObjects';
 
 /**
  * The abstract operation MakeTypedArrayWithBuffer is to create a record that captures the state
@@ -30,7 +30,7 @@ export function MakeTypedArrayWithBufferWitnessRecord(obj, order) {
     }
 
     return {
-        [[Object]]: obj,
-        [[CachedBufferByteLength]]: byteLength
+        object: obj,
+        cachedBufferByteLength: byteLength
     };
 }
