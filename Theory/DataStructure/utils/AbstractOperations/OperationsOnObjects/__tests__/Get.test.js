@@ -1,4 +1,4 @@
-import { Get } from '../index';
+import { Get } from '../Get';
 
 describe('Get function', () => {
     const testObject = {

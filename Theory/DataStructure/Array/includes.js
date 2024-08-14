@@ -1,11 +1,11 @@
+import { Get } from 'utils/AbstractOperations/OperationsOnObjects';
 import {
-    Get,
-    LengthOfArrayLike,
-    SameValueZero,
-    ToIntegerOrInfinity,
     ToObject,
-    ToString
-} from '../utils/AbstractOperations';
+    LengthOfArrayLike,
+    ToString,
+    ToIntegerOrInfinity
+} from 'utils/AbstractOperations/TypeConversion';
+import { SameValueZero } from 'utils/AbstractOperations/TestingAndComparsionOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.includes

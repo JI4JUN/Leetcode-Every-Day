@@ -1,4 +1,4 @@
-import { ToString } from '../TypeConversion';
+import { ToString } from 'utils/AbstractOperations/TypeConversion';
 
 /**
  * https://tc39.es/ecma262/#sec-deletepropertyorthrow

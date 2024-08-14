@@ -1,4 +1,4 @@
-import { ToLength } from '../index';
+import { ToLength } from '../ToLength';
 
 describe('ToLength function', () => {
     test('Should return an integral Number suitable for use as the length of an array-like object', () => {

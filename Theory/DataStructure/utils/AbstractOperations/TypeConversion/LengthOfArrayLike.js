@@ -1,5 +1,8 @@
-import { ToLength } from './ToLength';
-import { Get, CreateDataProperty } from '../OperationsOnObjects';
+import { ToLength } from 'utils/AbstractOperations/TypeConversion';
+import {
+    Get,
+    CreateDataProperty
+} from 'utils/AbstractOperations/OperationsOnObjects';
 
 /**
  * https://tc39.es/ecma262/#sec-lengthofarraylike

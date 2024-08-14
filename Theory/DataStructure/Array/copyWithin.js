@@ -1,13 +1,15 @@
 import {
     Get,
     Set,
-    LengthOfArrayLike,
-    ToIntegerOrInfinity,
-    ToObject,
-    ToString,
     HasProperty,
     DeletePropertyOrThrow
-} from '../utils/AbstractOperations';
+} from 'utils/AbstractOperations/OperationsOnObjects';
+import {
+    ToObject,
+    LengthOfArrayLike,
+    ToString,
+    ToIntegerOrInfinity
+} from 'utils/AbstractOperations/TypeConversion';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.copywithin

@@ -1,11 +1,6 @@
-import {
-    tinyForEach,
-    tinyIncludes,
-    tinyMap,
-    tinyJoin
-} from '../../../../Array';
-import { IsBigIntElementType } from '../../SharedArrayBufferObjects/AbstractOperationsForSharedArrayBufferObjects/IsBigIntElementType';
-import { IsUnsignedElementType } from './IsUnsignedElementType';
+import { tinyForEach, tinyIncludes, tinyMap, tinyJoin } from 'Array';
+import { IsBigIntElementType } from 'utils/StructuredData/SharedArrayBufferObjects/AbstractOperationsForSharedArrayBufferObjects';
+import { IsUnsignedElementType } from 'utils/StructuredData/ArrayBufferObjects/AbstractOperationsForArrayBufferObjects';
 
 Array.prototype.tinyForEach = tinyForEach;
 Array.prototype.tinyIncludes = tinyIncludes;

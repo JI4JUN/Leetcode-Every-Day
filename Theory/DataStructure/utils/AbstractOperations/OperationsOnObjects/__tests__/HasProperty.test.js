@@ -1,4 +1,4 @@
-import { HasProperty } from '../index';
+import { HasProperty } from '../HasProperty';
 
 describe('HasProperty function', () => {
     const testObject = {

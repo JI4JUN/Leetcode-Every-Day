@@ -1,13 +1,15 @@
 import {
-    Call,
     Get,
     HasProperty,
-    IsCallable,
-    LengthOfArrayLike,
-    ToBoolean,
+    Call
+} from 'utils/AbstractOperations/OperationsOnObjects';
+import {
     ToObject,
-    ToString
-} from '../utils/AbstractOperations';
+    LengthOfArrayLike,
+    ToString,
+    ToBoolean
+} from 'utils/AbstractOperations/TypeConversion';
+import { IsCallable } from 'utils/AbstractOperations/TestingAndComparsionOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.every

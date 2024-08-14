@@ -1,4 +1,5 @@
-import { FindViaPredicate, tinyFindLastIndex, tinyFilter } from '../index';
+import { FindViaPredicate, tinyFindLastIndex } from '../findLastIndex';
+import { tinyFilter } from '../filter';
 
 describe('FindViaPredicate function', () => {
     test('Should find the first element that satisfies the predicate', () => {

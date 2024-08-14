@@ -1,4 +1,4 @@
-import { CreateDataPropertyOrThrow } from '../index';
+import { CreateDataPropertyOrThrow } from '../CreateDataPropertyOrThrow';
 
 describe('CreateDataPropertyOrThrow function', () => {
     test('Should create a new data property with correct descriptor', () => {

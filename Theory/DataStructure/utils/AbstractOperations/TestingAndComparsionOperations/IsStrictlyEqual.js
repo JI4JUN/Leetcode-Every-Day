@@ -1,5 +1,5 @@
-import { NumberType } from '../../ECMAScriptDataTypesAndValues/';
-import { SameValueNonNumber } from './SameValueNonNumber';
+import { NumberType } from 'utils/ECMAScriptDataTypesAndValues/ECMAScriptLanguageTypes/NumericType/NumberType';
+import { SameValueNonNumber } from 'utils/AbstractOperations/TestingAndComparsionOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-isstrictlyequal

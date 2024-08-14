@@ -1,12 +1,11 @@
+import { Get, HasProperty } from 'utils/AbstractOperations/OperationsOnObjects';
 import {
-    LengthOfArrayLike,
     ToObject,
-    ToIntegerOrInfinity,
-    HasProperty,
+    LengthOfArrayLike,
     ToString,
-    Get,
-    IsStrictlyEqual
-} from '../utils/AbstractOperations';
+    ToIntegerOrInfinity
+} from 'utils/AbstractOperations/TypeConversion';
+import { IsStrictlyEqual } from 'utils/AbstractOperations/TestingAndComparsionOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.indexof

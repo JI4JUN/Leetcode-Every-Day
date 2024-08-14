@@ -1,4 +1,4 @@
-import { ToPrimitive } from '../TypeConversion';
+import { ToPrimitive } from 'utils/AbstractOperations/TypeConversion';
 
 /**
  * https://tc39.es/ecma262/#sec-tonumber

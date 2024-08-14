@@ -1,4 +1,4 @@
-import { ValidateNonRevokedProxy } from '../index';
+import { ValidateNonRevokedProxy } from '../ValidateNonRevokedProxy';
 
 describe('ValidateNonRevokedProxy function', () => {
     test('Should return "UNUSED" for a normal proxy', () => {

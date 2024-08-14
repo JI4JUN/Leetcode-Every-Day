@@ -1,4 +1,4 @@
-import { ToIntegerOrInfinity } from '../index';
+import { ToIntegerOrInfinity } from '../ToIntegerOrInfinity';
 
 describe('ToIntegerOrInfinity function', () => {
     test('Should return 0 for NaN, +0, and -0', () => {

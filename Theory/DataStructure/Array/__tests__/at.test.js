@@ -1,4 +1,5 @@
-import { tinyAt, tinyPush } from '../index';
+import { tinyAt } from '../at';
+import { tinyPush } from '../push';
 
 describe('Array.prototype.at', () => {
     Array.prototype.tinyAt = tinyAt;

@@ -1,4 +1,4 @@
-import { DeletePropertyOrThrow } from '../index';
+import { DeletePropertyOrThrow } from '../DeletePropertyOrThrow';
 
 describe('DeletePropertyOrThrow function', () => {
     test('Should delete an existing property and return UNUSED', () => {

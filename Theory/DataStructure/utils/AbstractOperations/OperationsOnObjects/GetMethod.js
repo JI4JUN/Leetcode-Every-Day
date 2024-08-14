@@ -1,5 +1,5 @@
-import { IsCallable } from '../TestingAndComparsionOperations';
-import { GetV } from './GetV';
+import { IsCallable } from 'utils/AbstractOperations/TestingAndComparsionOperations';
+import { GetV } from 'utils/AbstractOperations/OperationsOnObjects';
 
 /**
  * https://tc39.es/ecma262/#sec-getmethod

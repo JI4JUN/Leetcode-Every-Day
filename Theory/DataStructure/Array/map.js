@@ -1,13 +1,15 @@
 import {
+    Get,
+    CreateDataPropertyOrThrow,
+    HasProperty,
+    Call
+} from 'utils/AbstractOperations/OperationsOnObjects';
+import {
     ToObject,
     LengthOfArrayLike,
-    IsCallable,
-    ToString,
-    HasProperty,
-    Get,
-    Call,
-    CreateDataPropertyOrThrow
-} from '../utils/AbstractOperations';
+    ToString
+} from 'utils/AbstractOperations/TypeConversion';
+import { IsCallable } from 'utils/AbstractOperations/TestingAndComparsionOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.map

@@ -1,4 +1,4 @@
-import { ToNumber } from './ToNumber';
+import { ToNumber } from 'utils/AbstractOperations/TypeConversion';
 
 /**
  * https://tc39.es/ecma262/#sec-tointegerorinfinity

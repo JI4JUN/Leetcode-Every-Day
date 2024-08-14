@@ -1,4 +1,5 @@
-import { tinyConcat, tinyPush, IsConcatSpreadable } from '../index';
+import { tinyConcat, IsConcatSpreadable } from '../concat';
+import { tinyPush } from '../push';
 
 describe('Array.prototype.concat', () => {
     Array.prototype.tinyConcat = tinyConcat;

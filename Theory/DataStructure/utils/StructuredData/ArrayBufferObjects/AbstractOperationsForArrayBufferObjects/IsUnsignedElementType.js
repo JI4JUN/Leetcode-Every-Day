@@ -1,4 +1,4 @@
-import { tinyIncludes } from '../../../../Array';
+import { tinyIncludes } from 'Array';
 
 Array.prototype.tinyIncludes = tinyIncludes;
 

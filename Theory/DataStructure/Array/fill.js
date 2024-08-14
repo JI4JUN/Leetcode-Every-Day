@@ -1,10 +1,10 @@
+import { Set } from 'utils/AbstractOperations/OperationsOnObjects';
 import {
-    LengthOfArrayLike,
-    Set,
-    ToIntegerOrInfinity,
     ToObject,
-    ToString
-} from '../utils/AbstractOperations';
+    LengthOfArrayLike,
+    ToString,
+    ToIntegerOrInfinity
+} from 'utils/AbstractOperations/TypeConversion';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.fill

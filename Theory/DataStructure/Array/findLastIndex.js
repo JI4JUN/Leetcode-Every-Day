@@ -1,13 +1,12 @@
+import { Get, Call } from 'utils/AbstractOperations/OperationsOnObjects';
 import {
-    Call,
-    Get,
-    IsCallable,
-    ToBoolean,
     ToObject,
     LengthOfArrayLike,
-    ToString
-} from '../utils/AbstractOperations';
-import { tinyPush } from './push';
+    ToString,
+    ToBoolean
+} from 'utils/AbstractOperations/TypeConversion';
+import { IsCallable } from 'utils/AbstractOperations/TestingAndComparsionOperations';
+import { tinyPush } from 'Array/push';
 
 Array.prototype.tinyPush = tinyPush;
 

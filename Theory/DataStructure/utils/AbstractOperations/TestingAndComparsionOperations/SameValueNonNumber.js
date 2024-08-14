@@ -1,4 +1,4 @@
-import { BigIntType } from '../../ECMAScriptDataTypesAndValues';
+import { BigIntType } from 'utils/ECMAScriptDataTypesAndValues/ECMAScriptLanguageTypes/NumericType/BigIntType';
 
 /**
  * https://tc39.es/ecma262/#sec-samevaluenonnumber

@@ -1,4 +1,4 @@
-import { ToPrimitive } from '../index';
+import { ToPrimitive } from '../ToPrimitive';
 
 describe('ToPrimitive function', () => {
     test('Should return input if it is already a non-object type or null', () => {

@@ -1,4 +1,4 @@
-import { ToNumber } from '../index';
+import { ToNumber } from '../ToNumber';
 
 describe('ToNumber function', () => {
     test('Return the argument if it is a Number', () => {

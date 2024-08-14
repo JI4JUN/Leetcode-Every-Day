@@ -1,4 +1,4 @@
-import { ToObject } from '../index';
+import { ToObject } from '../ToObject';
 
 describe('ToObject function', () => {
     test('Should convert argument to an Object', () => {

@@ -1,9 +1,9 @@
+import { Set } from 'utils/AbstractOperations/OperationsOnObjects';
 import {
-    LengthOfArrayLike,
     ToObject,
-    Set,
+    LengthOfArrayLike,
     ToString
-} from '../utils/AbstractOperations';
+} from 'utils/AbstractOperations/TypeConversion';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.push

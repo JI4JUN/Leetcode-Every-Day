@@ -1,6 +1,9 @@
-import { IsSharedArrayBuffer } from './IsSharedArrayBuffer';
-import { GetRawBytesFromSharedBlock } from './GetRawBytesFromSharedBlock';
-import { IsDetachedBuffer, RawBytesToNumeric } from '../../ArrayBufferObjects';
+import { IsSharedArrayBuffer } from 'utils/StructuredData/SharedArrayBufferObjects/AbstractOperationsForSharedArrayBufferObjects';
+import { GetRawBytesFromSharedBlock } from 'utils/StructuredData/SharedArrayBufferObjects/AbstractOperationsForSharedArrayBufferObjects';
+import {
+    IsDetachedBuffer,
+    RawBytesToNumeric
+} from 'utils/StructuredData/ArrayBufferObjects/AbstractOperationsForArrayBufferObjects';
 
 /**
  * https://tc39.es/ecma262/#sec-arraybufferbytelength

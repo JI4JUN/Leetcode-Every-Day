@@ -1,5 +1,5 @@
-import { CreateDataProperty } from './CreateDataProperty';
-import { ToString } from '../TypeConversion';
+import { CreateDataProperty } from 'utils/AbstractOperations/OperationsOnObjects';
+import { ToString } from 'utils/AbstractOperations/TypeConversion';
 
 /**
  * https://tc39.es/ecma262/#sec-createdatapropertyorthrow

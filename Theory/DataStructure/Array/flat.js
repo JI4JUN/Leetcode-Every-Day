@@ -1,15 +1,19 @@
 import {
-    HasProperty,
-    IsCallable,
-    LengthOfArrayLike,
-    ToIntegerOrInfinity,
-    ToObject,
     Get,
-    ToString,
     Call,
+    CreateDataPropertyOrThrow,
+    HasProperty
+} from 'utils/AbstractOperations/OperationsOnObjects';
+import {
+    ToObject,
+    LengthOfArrayLike,
+    ToString,
+    ToIntegerOrInfinity
+} from 'utils/AbstractOperations/TypeConversion';
+import {
     IsArray,
-    CreateDataPropertyOrThrow
-} from '../utils/AbstractOperations';
+    IsCallable
+} from 'utils/AbstractOperations/TestingAndComparsionOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.flat

@@ -1,4 +1,5 @@
-import { tinyFind, tinyFilter } from '../index';
+import { tinyFind } from '../find';
+import { tinyFilter } from '../filter';
 
 describe('Array.prototype.findLastIndex', () => {
     Array.prototype.tinyFind = tinyFind;

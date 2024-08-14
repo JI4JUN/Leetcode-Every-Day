@@ -1,4 +1,4 @@
-import { ToString } from '../index';
+import { ToString } from '../ToString';
 
 describe('ToString function', () => {
     test('Should convert various types to strings correctly', () => {

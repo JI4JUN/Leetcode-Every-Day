@@ -1,14 +1,16 @@
 import {
     Get,
     Set,
-    ToBoolean,
+    CreateDataPropertyOrThrow,
+    HasProperty
+} from 'utils/AbstractOperations/OperationsOnObjects';
+import {
     ToObject,
-    IsArray,
     LengthOfArrayLike,
     ToString,
-    HasProperty,
-    CreateDataPropertyOrThrow
-} from '../utils/AbstractOperations';
+    ToBoolean
+} from 'utils/AbstractOperations/TypeConversion';
+import { IsArray } from 'utils/AbstractOperations/TestingAndComparsionOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.concat

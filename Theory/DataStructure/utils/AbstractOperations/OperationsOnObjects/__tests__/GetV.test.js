@@ -1,4 +1,4 @@
-import { GetV } from '../index';
+import { GetV } from '../GetV';
 
 describe('GetV function', () => {
     const testObject = {

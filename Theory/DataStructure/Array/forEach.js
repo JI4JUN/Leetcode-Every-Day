@@ -1,12 +1,14 @@
 import {
-    Call,
     Get,
     HasProperty,
-    IsCallable,
+    Call
+} from 'utils/AbstractOperations/OperationsOnObjects';
+import {
     ToObject,
-    ToString,
-    LengthOfArrayLike
-} from '../utils/AbstractOperations';
+    LengthOfArrayLike,
+    ToString
+} from 'utils/AbstractOperations/TypeConversion';
+import { IsCallable } from 'utils/AbstractOperations/TestingAndComparsionOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.foreach

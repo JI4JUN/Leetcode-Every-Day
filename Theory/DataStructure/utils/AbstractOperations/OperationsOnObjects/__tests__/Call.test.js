@@ -1,4 +1,4 @@
-import { Call } from '../index';
+import { Call } from '../Call';
 
 describe('Call function', () => {
     function testFunction() {

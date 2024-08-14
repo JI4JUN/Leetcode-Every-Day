@@ -1,4 +1,4 @@
-import { IsArray } from '../index';
+import { IsArray } from '../IsArray';
 
 describe('IsArray function', () => {
     test('Should return true for arrays', () => {

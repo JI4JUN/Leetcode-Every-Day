@@ -1,6 +1,6 @@
-import { IsBigIntElementType } from './IsBigIntElementType';
-import { IsUnclampedIntegerElementType } from './IsUnclampedIntegerElementType ';
-import { tinyIncludes } from '../../../../Array';
+import { IsBigIntElementType } from 'utils/StructuredData/SharedArrayBufferObjects/AbstractOperationsForSharedArrayBufferObjects';
+import { IsUnclampedIntegerElementType } from 'utils/StructuredData/SharedArrayBufferObjects/AbstractOperationsForSharedArrayBufferObjects';
+import { tinyIncludes } from 'Array';
 
 Array.prototype.tinyIncludes = tinyIncludes;
 

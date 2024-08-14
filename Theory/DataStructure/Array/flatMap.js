@@ -1,9 +1,9 @@
 import {
-    IsCallable,
-    LengthOfArrayLike,
-    ToObject
-} from '../utils/AbstractOperations';
-import { FlattenIntoArray } from './flat';
+    ToObject,
+    LengthOfArrayLike
+} from 'utils/AbstractOperations/TypeConversion';
+import { IsCallable } from 'utils/AbstractOperations/TestingAndComparsionOperations';
+import { FlattenIntoArray } from 'Array/flat';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.flatmap

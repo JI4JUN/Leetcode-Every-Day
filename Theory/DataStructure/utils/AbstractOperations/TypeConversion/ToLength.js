@@ -1,4 +1,4 @@
-import { ToIntegerOrInfinity } from './ToIntegerOrInfinity';
+import { ToIntegerOrInfinity } from 'utils/AbstractOperations/TypeConversion';
 
 /**
  * https://tc39.es/ecma262/#sec-tolength

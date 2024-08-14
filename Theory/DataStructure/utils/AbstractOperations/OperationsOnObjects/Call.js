@@ -1,4 +1,4 @@
-import { IsCallable } from '../TestingAndComparsionOperations';
+import { IsCallable } from 'utils/AbstractOperations/TestingAndComparsionOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-call

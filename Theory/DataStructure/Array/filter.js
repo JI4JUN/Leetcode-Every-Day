@@ -1,14 +1,16 @@
 import {
+    Get,
     Call,
     CreateDataPropertyOrThrow,
-    Get,
-    IsCallable,
-    LengthOfArrayLike,
-    ToBoolean,
-    ToObject,
-    ToString,
     HasProperty
-} from '../utils/AbstractOperations';
+} from 'utils/AbstractOperations/OperationsOnObjects';
+import {
+    ToObject,
+    LengthOfArrayLike,
+    ToString,
+    ToBoolean
+} from 'utils/AbstractOperations/TypeConversion';
+import { IsCallable } from 'utils/AbstractOperations/TestingAndComparsionOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.filter

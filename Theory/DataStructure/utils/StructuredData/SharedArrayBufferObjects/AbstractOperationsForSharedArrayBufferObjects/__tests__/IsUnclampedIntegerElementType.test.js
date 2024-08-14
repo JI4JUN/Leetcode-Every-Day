@@ -1,4 +1,4 @@
-import { IsUnclampedIntegerElementType } from '../IsUnclampedIntegerElementType ';
+import { IsUnclampedIntegerElementType } from '../IsUnclampedIntegerElementType';
 
 describe('IsUnclampedIntegerElementType function', () => {
     test('Should return true if element type is an Integer TypedArray element type not including UINT8CLAMPED', () => {

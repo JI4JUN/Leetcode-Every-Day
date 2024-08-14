@@ -1,4 +1,4 @@
-import { Set } from '../index';
+import { Set } from '../Set';
 
 describe('Set function', () => {
     let obj = { p1: 1 };

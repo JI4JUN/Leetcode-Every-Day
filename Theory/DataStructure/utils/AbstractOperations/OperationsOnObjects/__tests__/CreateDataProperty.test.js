@@ -1,4 +1,4 @@
-import { CreateDataProperty } from '../index';
+import { CreateDataProperty } from '../CreateDataProperty';
 
 describe('CreateDataProperty function', () => {
     test('Should create a new data property with correct descriptor', () => {

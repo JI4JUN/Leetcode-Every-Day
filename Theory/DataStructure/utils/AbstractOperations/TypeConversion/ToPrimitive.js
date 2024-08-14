@@ -1,5 +1,9 @@
-import { Get, Call, GetMethod } from '../OperationsOnObjects';
-import { IsCallable } from '../TestingAndComparsionOperations';
+import {
+    Get,
+    Call,
+    GetMethod
+} from 'utils/AbstractOperations/OperationsOnObjects';
+import { IsCallable } from 'utils/AbstractOperations/TestingAndComparsionOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-toprimitive

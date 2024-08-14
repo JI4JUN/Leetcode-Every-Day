@@ -1,4 +1,4 @@
-import { ValidateNonRevokedProxy } from '../../OridinaryAndExoticObjectsBehaviours/';
+import { ValidateNonRevokedProxy } from 'utils/OridinaryAndExoticObjectsBehaviours/ProxyObjectInternalMethodsAndInternalSlots/';
 
 /**
  * https://tc39.es/ecma262/#sec-isarray

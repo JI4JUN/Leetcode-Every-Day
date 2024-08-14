@@ -1,4 +1,4 @@
-import { IsCallable } from '../index';
+import { IsCallable } from '../IsCallable';
 
 describe('IsCallable function', () => {
     test('Should return true for function object', () => {

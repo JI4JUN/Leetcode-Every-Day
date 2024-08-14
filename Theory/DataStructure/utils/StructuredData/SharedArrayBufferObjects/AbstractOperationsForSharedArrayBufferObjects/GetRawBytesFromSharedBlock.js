@@ -1,4 +1,4 @@
-import { IsNoTearConfiguration } from './IsNoTearConfiguration';
+import { IsNoTearConfiguration } from 'utils/StructuredData/SharedArrayBufferObjects/AbstractOperationsForSharedArrayBufferObjects';
 /**
  * https://tc39.es/ecma262/#sec-getrawbytesfromsharedblock
  *

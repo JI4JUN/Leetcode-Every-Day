@@ -1,4 +1,5 @@
-import { tinyEvery, tinyFilter } from '../index';
+import { tinyEvery } from '../every';
+import { tinyFilter } from '../filter';
 
 describe('Array.prototype.every', () => {
     Array.prototype.tinyEvery = tinyEvery;

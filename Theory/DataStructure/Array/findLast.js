@@ -1,5 +1,8 @@
-import { LengthOfArrayLike, ToObject } from '../utils/AbstractOperations';
-import { FindViaPredicate } from './findLastIndex';
+import {
+    LengthOfArrayLike,
+    ToObject
+} from 'utils/AbstractOperations/TypeConversion';
+import { FindViaPredicate } from 'Array/findLastIndex';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.findlast

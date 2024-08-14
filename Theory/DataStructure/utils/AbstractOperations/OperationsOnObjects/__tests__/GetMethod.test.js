@@ -1,4 +1,4 @@
-import { GetMethod } from '../index';
+import { GetMethod } from '../GetMethod';
 
 describe('GetMethod function', () => {
     const testObject = {

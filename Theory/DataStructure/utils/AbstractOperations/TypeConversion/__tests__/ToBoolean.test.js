@@ -1,4 +1,4 @@
-import { ToBoolean } from '../index';
+import { ToBoolean } from '../ToBoolean';
 
 describe('ToBoolean function', () => {
     test('should return true for boolean true', () => {

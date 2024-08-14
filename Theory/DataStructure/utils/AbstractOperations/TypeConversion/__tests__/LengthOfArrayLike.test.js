@@ -1,4 +1,4 @@
-import { LengthOfArrayLike } from '../index';
+import { LengthOfArrayLike } from '../LengthOfArrayLike';
 
 describe('LengthOfArrayLike Function', () => {
     test('Should return the length property of an object as a non-negative integer', () => {

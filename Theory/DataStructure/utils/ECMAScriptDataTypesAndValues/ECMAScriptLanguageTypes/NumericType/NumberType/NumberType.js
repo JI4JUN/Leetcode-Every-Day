@@ -1,5 +1,5 @@
-import { equal } from './equal';
-import { sameValueZero } from './sameValueZero';
+import { equal } from 'utils/ECMAScriptDataTypesAndValues/ECMAScriptLanguageTypes/NumericType/NumberType/equal';
+import { sameValueZero } from 'utils/ECMAScriptDataTypesAndValues/ECMAScriptLanguageTypes/NumericType/NumberType/sameValueZero';
 
 export const NumberType = {
     sameValueZero: sameValueZero,
