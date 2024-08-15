@@ -12,7 +12,7 @@ import {
     IsTypedArrayOutOfBounds,
     TypedArrayLength,
     MakeTypedArrayWithBufferWitnessRecord
-} from 'utils/OridinaryAndExoticObjectsBehaviours/Built-inExoticObjectInternalMethodsAndSlots/TypedArrayExoticObjects';
+} from 'utils/OrdinaryAndExoticObjectsBehaviours/Built-inExoticObjectInternalMethodsAndSlots/TypedArrayExoticObjects';
 
 /**
  * https://tc39.es/ecma262/#sec-createarrayiterator
@@ -98,7 +98,7 @@ export function CreateArrayIterator(array, kind) {
                 }
             }
 
-            yield CreateIteratorResultObject(result, false);
+            yield CreateIteratorResultObject(result, false).value;
 
             index++;
         }

@@ -17,3 +17,4 @@ export * from './includes';
 export * from './indexOf';
 export * from './join';
 export * from './flatMap';
+export * from './keys';

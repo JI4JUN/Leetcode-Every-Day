@@ -24,7 +24,7 @@ Array.prototype.tinyIncludes = tinyIncludes;
  * @returns An Object.
  */
 export function MakeBasicObject(internalSlotsList) {
-    internalSlotsList = [...internalSlotsList, 'privateElements'];
+    internalSlotsList = [...internalSlotsList, 'PrivateElements'];
 
     const obj = new Object();
 
@@ -32,12 +32,12 @@ export function MakeBasicObject(internalSlotsList) {
         obj[slot] = undefined;
     });
 
-    obj['privateElements'] = [];
-    obj['extensible'] = internalSlotsList.includes('extensible');
-    obj['getPrototypeOf'] = Object.getPrototypeOf;
-    obj['setPrototypeOf'] = Object.setPrototypeOf;
-    obj['isExtensible'] = Object.isExtensible;
-    obj['preventExtensions'] = Object.preventExtensions;
+    obj['PrivateElements'] = [];
+    obj['Extensible'] = internalSlotsList.includes('Extensible');
+    obj['GetPrototypeOf'] = Object.getPrototypeOf;
+    obj['SetPrototypeOf'] = Object.setPrototypeOf;
+    obj['IsExtensible'] = Object.isExtensible;
+    obj['PreventExtensions'] = Object.preventExtensions;
 
     return obj;
 }
