@@ -89,7 +89,7 @@ export function CreateArrayIterator(array, kind) {
                 if (kind === 'VALUE') {
                     result = elementValue;
                 } else {
-                    if ((kind = 'VALUE+VALUE')) {
+                    if (kind === 'KEY+VALUE') {
                         result = CreateArrayFromList([
                             indexNumber,
                             elementValue
