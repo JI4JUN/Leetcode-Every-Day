@@ -1,12 +1,60 @@
-import { LengthOfArrayLike } from 'utils/AbstractOperations/TypeConversion';
-import { IsTypedArrayOutOfBounds } from 'utils/OridinaryAndExoticObjectsBehaviours/Built-inExoticObjectInternalMethodsAndSlots/TypedArrayExoticObjects';
-import { MakeTypedArrayWithBufferWitnessRecord } from 'utils/OridinaryAndExoticObjectsBehaviours/Built-inExoticObjectInternalMethodsAndSlots/TypedArrayExoticObjects/MakeTypedArrayWithBufferWithessRecord';
+import { CreateIteratorResultObject } from 'utils/AbstractOperations/OperationsOnIteratorObeject';
+import {
+    CreateArrayFromList,
+    Get
+} from 'utils/AbstractOperations/OperationsOnObjects';
+import {
+    LengthOfArrayLike,
+    ToString
+} from 'utils/AbstractOperations/TypeConversion';
+import { NormalCompletion } from 'utils/ECMAScriptDataTypesAndValues/ECMAScriptSpecificationTypes/TheCompletionRecodSpecificationType';
+import {
+    IsTypedArrayOutOfBounds,
+    TypedArrayLength,
+    MakeTypedArrayWithBufferWitnessRecord
+} from 'utils/OridinaryAndExoticObjectsBehaviours/Built-inExoticObjectInternalMethodsAndSlots/TypedArrayExoticObjects';
 
+/**
+ * https://tc39.es/ecma262/#sec-createarrayiterator
+ *
+ * The abstract operation CreateArrayIterator is used to create iterator objects for Array methods that return such iterators.
+ *
+ * ```markdown
+ * 1. Let closure be a new Abstract Closure with no parameters that captures kind and array and performs the following steps when called:
+ *     a. Let index be 0.
+ *     b. Repeat,
+ *         i. If array has a [[TypedArrayName]] internal slot, then
+ *             1. Let taRecord be MakeTypedArrayWithBufferWitnessRecord(array, SEQ-CST).
+ *             2. If IsTypedArrayOutOfBounds(taRecord) is true, throw a TypeError exception.
+ *             3. Let len be TypedArrayLength(taRecord).
+ *         ii. Else,
+ *             1. Let len be ? LengthOfArrayLike(array).
+ *         iii. If index ≥ len, return NormalCompletion(undefined).
+ *         iv. Let indexNumber be 𝔽(index).
+ *         v. If kind is KEY, then
+ *             1. Let result be indexNumber.
+ *         vi. Else,
+ *             1. Let elementKey be ! ToString(indexNumber).
+ *             2. Let elementValue be ? Get(array, elementKey).
+ *             3. If kind is VALUE, then
+ *                 a. Let result be elementValue.
+ *             4. Else,
+ *                 a. Assert: kind is KEY+VALUE.
+ *                 b. Let result be CreateArrayFromList(« indexNumber, elementValue »).
+ *         vii. Perform ? GeneratorYield(CreateIteratorResultObject(result, false)).
+ *         viii. Set index to index + 1.
+ * 2. Return CreateIteratorFromClosure(closure, "%ArrayIteratorPrototype%", %ArrayIteratorPrototype%).
+ * ```
+ *
+ * @param {*} array A array.
+ * @param {*} kind KEY+VALUE, KEY, or VALUE.
+ * @returns A Generator.
+ */
 export function CreateArrayIterator(array, kind) {
-    return function* () {
+    const closure = function* closure() {
         let index = 0;
 
-        while (1) {
+        while (true) {
             let taRecord;
             let len;
 
@@ -24,6 +72,37 @@ export function CreateArrayIterator(array, kind) {
             } else {
                 len = LengthOfArrayLike(array);
             }
+
+            if (index >= len) {
+                return NormalCompletion(undefined);
+            }
+
+            let indexNumber = index;
+            let result;
+
+            if (kind === 'KEY') {
+                result = indexNumber;
+            } else {
+                const elementKey = ToString(indexNumber);
+                const elementValue = Get(array, elementKey);
+
+                if (kind === 'VALUE') {
+                    result = elementValue;
+                } else {
+                    if ((kind = 'VALUE+VALUE')) {
+                        result = CreateArrayFromList([
+                            indexNumber,
+                            elementValue
+                        ]);
+                    }
+                }
+            }
+
+            yield CreateIteratorResultObject(result, false);
+
+            index++;
         }
     };
+
+    return closure();
 }

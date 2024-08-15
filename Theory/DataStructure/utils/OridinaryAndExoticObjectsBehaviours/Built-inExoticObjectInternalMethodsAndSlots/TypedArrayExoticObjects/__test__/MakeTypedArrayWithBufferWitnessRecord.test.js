@@ -1,4 +1,4 @@
-import { MakeTypedArrayWithBufferWitnessRecord } from '../MakeTypedArrayWithBufferWithessRecord';
+import { MakeTypedArrayWithBufferWitnessRecord } from '../MakeTypedArrayWithBufferWitnessRecord';
 
 describe('MakeTypedArrayWithBufferWitnessRecord function', () => {
     let sharedBuffer;
