@@ -2,6 +2,8 @@ import { ArrayBufferByteLength } from 'utils/StructuredData/SharedArrayBufferObj
 import { IsDetachedBuffer } from 'utils/StructuredData/ArrayBufferObjects/AbstractOperationsForArrayBufferObjects';
 
 /**
+ * https://tc39.es/ecma262/#sec-maketypedarraywithbufferwitnessrecord
+ *
  * The abstract operation MakeTypedArrayWithBuffer is to create a record that captures the state
  * of a TypedArray object in relation to its underlying buffer at a specific point in time.
  *

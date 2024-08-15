@@ -3,6 +3,8 @@ import { IsTypedArrayOutOfBounds } from './IsTypedArrayOutOfBounds';
 import { TypedArrayElementSize } from 'utils/IndexedCollections/TypedArrayObjects/AbstractOperationsForTypedArrayObjects';
 
 /**
+ * https://tc39.es/ecma262/#sec-typedarraylength
+ *
  * The abstract operation TypedArrayLength is to get the length of a typed array.
  *
  * ```markdown

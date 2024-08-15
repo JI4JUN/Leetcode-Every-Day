@@ -1,4 +1,6 @@
 /**
+ * https://tc39.es/ecma262/#sec-typedarrayelementsize
+ *
  * The abstract operation TypedArrayElementSize is used to get the element size of a typed array.
  *
  * ```markdown

@@ -1,6 +1,8 @@
 import { TypedArrayElementSize } from 'utils/IndexedCollections/TypedArrayObjects/AbstractOperationsForTypedArrayObjects';
 
 /**
+ * https://tc39.es/ecma262/#sec-istypedarrayoutofboundsss
+ *
  * The abstract operation IsTypedArrayOutOfBounds checks if any of the object's numeric properties
  * reference a value at an index not contained within the underlying buffer's bounds.
  *

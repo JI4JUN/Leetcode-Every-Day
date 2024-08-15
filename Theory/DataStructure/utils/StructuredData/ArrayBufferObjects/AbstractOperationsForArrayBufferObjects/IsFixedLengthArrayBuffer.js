@@ -1,4 +1,6 @@
 /**
+ * https://tc39.es/ecma262/#sec-isfixedlengtharraybuffer
+ *
  * The abstract operation IsFixedLengthArrayBuffer detemines the array buffer whether it has a fixed length.
  *
  * ```markdown
