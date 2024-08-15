@@ -1,4 +1,5 @@
 import { LengthOfArrayLike } from 'utils/AbstractOperations/TypeConversion';
+import { IsTypedArrayOutOfBounds } from 'utils/OridinaryAndExoticObjectsBehaviours/Built-inExoticObjectInternalMethodsAndSlots/TypedArrayExoticObjects';
 import { MakeTypedArrayWithBufferWitnessRecord } from 'utils/OridinaryAndExoticObjectsBehaviours/Built-inExoticObjectInternalMethodsAndSlots/TypedArrayExoticObjects/MakeTypedArrayWithBufferWithessRecord';
 
 export function CreateArrayIterator(array, kind) {
@@ -14,6 +15,12 @@ export function CreateArrayIterator(array, kind) {
                     array,
                     'SEQ-CST'
                 );
+
+                if (IsTypedArrayOutOfBounds(taRecord)) {
+                    throw new TypeError('TypedArray is out of bounds');
+                }
+
+                len = TypedArrayLength(taRecord);
             } else {
                 len = LengthOfArrayLike(array);
             }
