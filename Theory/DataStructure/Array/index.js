@@ -18,3 +18,4 @@ export * from './indexOf';
 export * from './join';
 export * from './flatMap';
 export * from './keys';
+export * from './entries';
