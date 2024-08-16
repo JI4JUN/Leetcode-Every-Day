@@ -19,3 +19,4 @@ export * from './join';
 export * from './flatMap';
 export * from './keys';
 export * from './entries';
+export * from './lastIndexOf';
