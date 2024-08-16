@@ -13,7 +13,7 @@ import { IsCallable } from 'utils/AbstractOperations/TestingAndComparsionOperati
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.foreach
  *
- * Array.prototype.forEach(callbackfn [, thisArg])
+ * Array.prototype.forEach(callbackfn [ , thisArg])
  *
  * ```markdown
  * Steps:

@@ -8,7 +8,7 @@ import { FlattenIntoArray } from 'Array/flat';
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.flatmap
  *
- * Array.prototype.flatMap(mapperFunction [, thisArg])
+ * Array.prototype.flatMap(mapperFunction [ , thisArg])
  *
  * ```markdown
  * Steps:

@@ -9,7 +9,7 @@ import {
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.fill
  *
- * Array.prototype.fill(value [, start [, end]])
+ * Array.prototype.fill(value [ , start [ , end]])
  *
  * ```markdown
  * Steps:

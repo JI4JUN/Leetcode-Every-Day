@@ -20,3 +20,4 @@ export * from './flatMap';
 export * from './keys';
 export * from './entries';
 export * from './lastIndexOf';
+export * from './reduce';

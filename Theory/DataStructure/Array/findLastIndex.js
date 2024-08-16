@@ -13,7 +13,7 @@ Array.prototype.tinyPush = tinyPush;
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.findlastindex
  *
- * Array.prototype.findLastIndex(predicate [, thisArg])
+ * Array.prototype.findLastIndex(predicate [ , thisArg])
  *
  * ```markdown
  * Steps:

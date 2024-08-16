@@ -7,7 +7,7 @@ import { FindViaPredicate } from 'Array/findLastIndex';
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.findlast
  *
- * Array.prototype.findIndex(predicate [, thisArg])
+ * Array.prototype.findIndex(predicate [ , thisArg])
  *
  * ```markdown
  * Steps:

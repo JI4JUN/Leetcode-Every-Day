@@ -10,7 +10,7 @@ import { IsStrictlyEqual } from 'utils/AbstractOperations/TestingAndComparsionOp
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.indexof
  *
- * Array.prototype.indexOf(searchElement [, fromIndex])
+ * Array.prototype.indexOf(searchElement [ , fromIndex])
  *
  * ```markdown
  * 1. Let O be ? ToObject(this value).

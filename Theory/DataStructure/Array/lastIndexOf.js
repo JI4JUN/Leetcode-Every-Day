@@ -10,7 +10,7 @@ import {
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.lastindexof
  *
- * Array.prototype.lastIndexOf(searchElement [, fromIndex])
+ * Array.prototype.lastIndexOf(searchElement [ , fromIndex])
  *
  * ```markdown
  * Steps:

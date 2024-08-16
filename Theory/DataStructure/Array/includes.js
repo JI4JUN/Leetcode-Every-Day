@@ -10,7 +10,7 @@ import { SameValueZero } from 'utils/AbstractOperations/TestingAndComparsionOper
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.includes
  *
- * Array.prototype.includes(searchElement [, fromIndex])
+ * Array.prototype.includes(searchElement [ , fromIndex])
  *
  * ```markdown
  * Steps:

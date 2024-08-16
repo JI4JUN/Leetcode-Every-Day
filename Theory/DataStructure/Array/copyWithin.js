@@ -14,7 +14,7 @@ import {
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.copywithin
  *
- * Array.prototype.copyWithin(target, start [, end])
+ * Array.prototype.copyWithin(target, start [ , end])
  *
  * ```markdown
  * Steps:

@@ -14,7 +14,7 @@ import { IsCallable } from 'utils/AbstractOperations/TestingAndComparsionOperati
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.every
  *
- * Array.prototype.every(callbackfn [, thisArg])
+ * Array.prototype.every(callbackfn [ , thisArg])
  *
  * ```markdown
  * Steps:
