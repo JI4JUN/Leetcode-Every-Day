@@ -25,3 +25,4 @@ export * from './reduceRight';
 export * from './reverse';
 export * from './shift';
 export * from './slice';
+export * from './some';

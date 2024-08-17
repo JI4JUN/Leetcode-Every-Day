@@ -96,6 +96,9 @@ describe('Array.prototype.slice', () => {
         expect(list1).toEqual([1, 2, 3]);
     });
 
+    /**
+     * The array returned from slice() may be sparse if the source is sparse.
+     */
     test('Using slice() on sparse arrays', () => {
         expect([1, 2, , 4, 5].tinySlice(1, 4)).toEqual([2, , 4]);
     });
