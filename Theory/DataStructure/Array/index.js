@@ -22,3 +22,4 @@ export * from './entries';
 export * from './lastIndexOf';
 export * from './reduce';
 export * from './reduceRight';
+export * from './reverse';
