@@ -23,3 +23,4 @@ export * from './lastIndexOf';
 export * from './reduce';
 export * from './reduceRight';
 export * from './reverse';
+export * from './shift';
