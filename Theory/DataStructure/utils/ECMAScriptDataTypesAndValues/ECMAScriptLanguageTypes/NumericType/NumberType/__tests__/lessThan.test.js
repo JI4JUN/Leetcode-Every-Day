@@ -1,6 +1,6 @@
 import { NumberType } from '../NumberType';
 
-describe('lessThan function', () => {
+describe('Number::lessThan function', () => {
     test('Should return true if a Number value x is less than another Number value y', () => {
         expect(NumberType.lessThan(1, 2)).toBeTruthy();
     });
