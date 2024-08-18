@@ -7,3 +7,4 @@ export * from './ToNumber';
 export * from './ToIntegerOrInfinity';
 export * from './ToBoolean';
 export * from './StringToBigInt';
+export * from './ToNumeric';
