@@ -26,3 +26,4 @@ export * from './reverse';
 export * from './shift';
 export * from './slice';
 export * from './some';
+export * from './sort';
