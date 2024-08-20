@@ -30,3 +30,4 @@ export * from './sort';
 export * from './splice';
 export * from './toLocaleString';
 export * from './toReversed';
+export * from './toSorted';
