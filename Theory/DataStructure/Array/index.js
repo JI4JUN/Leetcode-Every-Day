@@ -32,3 +32,4 @@ export * from './toLocaleString';
 export * from './toReversed';
 export * from './toSorted';
 export * from './toSpliced';
+export * from './toString';
