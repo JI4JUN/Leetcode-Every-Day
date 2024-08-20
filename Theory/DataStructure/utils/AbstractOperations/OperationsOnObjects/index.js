@@ -9,3 +9,4 @@ export * from './Set';
 export * from './DeletePropertyOrThrow';
 export * from './CreateArrayFromList';
 export * from './MakeBasicObject';
+export * from './Invoke';
