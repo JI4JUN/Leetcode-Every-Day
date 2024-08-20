@@ -27,3 +27,4 @@ export * from './shift';
 export * from './slice';
 export * from './some';
 export * from './sort';
+export * from './splice';
