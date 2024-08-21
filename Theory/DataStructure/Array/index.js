@@ -34,3 +34,4 @@ export * from './toSorted';
 export * from './toSpliced';
 export * from './toString';
 export * from './values';
+export * from './with';
