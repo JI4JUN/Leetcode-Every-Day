@@ -28,11 +28,11 @@ Base on the description of this problem, we convert returning all elements of th
 
 - **Case 1:** The final step is **“from right to left”**.
     
-    **Condition:** the `start` is less than `endX` and `endY` .
+    **Condition:** The `start` is less than `endX` and `endY` .
     
 - **Case 2:** The final step is **“from bottom to top”**.
     
-    **Condition:** the `start` is less than `endX` and `endY - 1` .
+    **Condition:** The `start` is less than `endX` and `endY - 1` .
     
 - **Case 3:** The final step is **“from left to right”**.
     
@@ -40,7 +40,7 @@ Base on the description of this problem, we convert returning all elements of th
     
 - **Case 4:** The final step is **“from top to bottom”**.
     
-    **Condition:** the `start` is less than  `endY` .
+    **Condition:** The `start` is less than  `endY` .
     
 
 ## 📊Complexity

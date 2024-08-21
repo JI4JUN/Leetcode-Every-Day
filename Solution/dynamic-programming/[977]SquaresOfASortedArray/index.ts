@@ -15,8 +15,8 @@ function sortedSquares(nums: number[]): number[] {
 
         result[i] =
             leftSquare > rightSquare
-                ? (left++, leftSquare)
-                : (right--, rightSquare);
+                ? (++left, leftSquare)
+                : (--right, rightSquare);
     }
 
     return result;
