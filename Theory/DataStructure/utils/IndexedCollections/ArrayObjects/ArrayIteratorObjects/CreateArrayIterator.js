@@ -74,7 +74,7 @@ export function CreateArrayIterator(array, kind) {
             }
 
             if (index >= len) {
-                return NormalCompletion(undefined);
+                return NormalCompletion(undefined).value;
             }
 
             let indexNumber = index;
