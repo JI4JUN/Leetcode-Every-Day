@@ -14,6 +14,12 @@
                             "utils": "./utils"
                         }
                     }
+                ],
+                [
+                    "@babel/plugin-proposal-decorators",
+                    {
+                        "version": "2023-11"
+                    }
                 ]
             ]
         }

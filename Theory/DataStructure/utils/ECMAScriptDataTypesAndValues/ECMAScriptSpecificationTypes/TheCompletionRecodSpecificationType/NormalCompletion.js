@@ -1,3 +1,29 @@
+// import { callable } from 'utils/helpers';
+// import {
+//     Completion,
+//     CompletionImpl
+// } from 'utils/NotationalConventions/AlgorithmConventions/RuntimeSemantics';
+
+// export let createNormalCompletion;
+
+// @callable((_target, _thisArg, [value]) => {
+//     return new Completion({ Type: 'normal', Value: value, Target: undefined });
+// })
+// export class NormalCompletionImpl extends CompletionImpl {
+//     constructor(init) {
+//         super(init);
+//     }
+
+//     static {
+//         Object.defineProperty(this, 'name', { value: 'NormalCompletion' });
+//         Object.defineProperty(this.prototype, 'Type', { value: 'normal' });
+
+//         createNormalCompletion = (init) => new NormalCompletionImpl(init);
+//     }
+// }
+
+// export const NormalCompletion = NormalCompletionImpl;
+
 /**
  * https://tc39.es/ecma262/#sec-normalcompletion
  *
@@ -13,9 +39,5 @@
  * @returns A normal completion.
  */
 export function NormalCompletion(value) {
-    return {
-        type: 'NORMAL',
-        value: value,
-        target: 'EMPTY'
-    };
+    return { Type: 'normal', Value: value, Target: undefined };
 }

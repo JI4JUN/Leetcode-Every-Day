@@ -5,10 +5,8 @@ describe('NormalCompletion function', () => {
         const value = 42;
         const completion = NormalCompletion(value);
 
-        expect(completion).toEqual({
-            type: 'NORMAL',
-            value: 42,
-            target: 'EMPTY'
-        });
+        expect(completion.Type).toBe('normal');
+        expect(completion.Value).toBe(42);
+        expect(completion.Target).toBe(undefined);
     });
 });
