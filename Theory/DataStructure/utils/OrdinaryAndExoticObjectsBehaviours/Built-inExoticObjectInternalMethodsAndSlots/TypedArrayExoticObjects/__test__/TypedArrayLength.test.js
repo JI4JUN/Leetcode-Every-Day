@@ -38,7 +38,7 @@ describe('TypedArrayLength function', () => {
             cachedBufferByteLength: buffer.byteLength
         };
 
-        expect(() => TypedArrayLength(taRecord)).toThrow(TypeError);
+        expect(() => TypedArrayLength(taRecord)).toThrow(Error);
     });
 
     test('Should throw an TypeError if the buffer is detached', () => {
@@ -50,6 +50,6 @@ describe('TypedArrayLength function', () => {
             cachedBufferByteLength: 'DETACHED'
         };
 
-        expect(() => TypedArrayLength(taRecord)).toThrow(TypeError);
+        expect(() => TypedArrayLength(taRecord)).toThrow(Error);
     });
 });

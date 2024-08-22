@@ -4,6 +4,7 @@ import {
     IsDetachedBuffer,
     RawBytesToNumeric
 } from 'utils/StructuredData/ArrayBufferObjects/AbstractOperationsForArrayBufferObjects';
+import { Assert } from 'utils/Assert';
 
 /**
  * https://tc39.es/ecma262/#sec-arraybufferbytelength
@@ -43,9 +44,7 @@ export function ArrayBufferByteLength(arrayBuffer, order) {
         return RawBytesToNumeric('BIGUINT64', rawLength, isLittleEndian);
     }
 
-    if (IsDetachedBuffer(arrayBuffer)) {
-        throw new Error('ArrayBuffer is detached');
-    }
+    Assert(IsDetachedBuffer(arrayBuffer) === false);
 
     return arrayBuffer.byteLength;
 }

@@ -7,6 +7,7 @@ import {
     LengthOfArrayLike,
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
+import { Assert } from 'utils/Assert';
 import { NormalCompletion } from 'utils/ECMAScriptDataTypesAndValues/ECMAScriptSpecificationTypes/TheCompletionRecodSpecificationType';
 import {
     IsTypedArrayOutOfBounds,
@@ -89,12 +90,9 @@ export function CreateArrayIterator(array, kind) {
                 if (kind === 'VALUE') {
                     result = elementValue;
                 } else {
-                    if (kind === 'KEY+VALUE') {
-                        result = CreateArrayFromList([
-                            indexNumber,
-                            elementValue
-                        ]);
-                    }
+                    Assert(kind === 'KEY+VALUE');
+
+                    result = CreateArrayFromList([indexNumber, elementValue]);
                 }
             }
 

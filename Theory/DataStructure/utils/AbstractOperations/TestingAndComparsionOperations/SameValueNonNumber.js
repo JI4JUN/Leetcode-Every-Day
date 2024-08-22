@@ -1,3 +1,4 @@
+import { Assert } from 'utils/Assert';
 import { BigIntType } from 'utils/ECMAScriptDataTypesAndValues/ECMAScriptLanguageTypes/NumericType/BigIntType';
 
 /**
@@ -25,9 +26,7 @@ import { BigIntType } from 'utils/ECMAScriptDataTypesAndValues/ECMAScriptLanguag
  * @returns A Boolean.
  */
 export function SameValueNonNumber(x, y) {
-    if (typeof x !== typeof y) {
-        return false;
-    }
+    Assert(typeof x === typeof y);
 
     if (x === null || x === undefined) {
         return true;

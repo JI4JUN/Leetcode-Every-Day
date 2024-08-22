@@ -1,6 +1,7 @@
 import { BigIntType } from 'utils/ECMAScriptDataTypesAndValues/ECMAScriptLanguageTypes/NumericType/BigIntType';
 import { NumberType } from 'utils/ECMAScriptDataTypesAndValues/ECMAScriptLanguageTypes/NumericType/NumberType';
 import { StringToBigInt, ToNumeric, ToPrimitive } from '../TypeConversion';
+import { Assert } from 'utils/Assert';
 
 /**
  * https://tc39.es/ecma262/#sec-islessthan
@@ -120,29 +121,29 @@ export function IsLessThan(x, y, LeftFirst) {
             if (typeof nx === 'number') {
                 return NumberType.lessThan(nx, ny);
             } else {
-                if (typeof nx === 'bigint') {
-                    return BigIntType.lessThan(nx, ny);
-                }
+                Assert(typeof nx === 'bigint');
+
+                return BigIntType.lessThan(nx, ny);
             }
         }
 
-        if (
+        Assert(
             (typeof nx === 'bigint' && typeof ny === 'number') ||
-            (typeof nx === 'number' && typeof ny === 'bigint')
-        ) {
-            if (Number.isNaN(nx) || Number.isNaN(ny)) {
-                return undefined;
-            }
+                (typeof nx === 'number' && typeof ny === 'bigint')
+        );
 
-            if (nx === -Infinity || ny === Infinity) {
-                return true;
-            }
-
-            if (nx === Infinity || ny === -Infinity) {
-                return false;
-            }
-
-            return nx < ny;
+        if (Number.isNaN(nx) || Number.isNaN(ny)) {
+            return undefined;
         }
+
+        if (nx === -Infinity || ny === Infinity) {
+            return true;
+        }
+
+        if (nx === Infinity || ny === -Infinity) {
+            return false;
+        }
+
+        return nx < ny;
     }
 }

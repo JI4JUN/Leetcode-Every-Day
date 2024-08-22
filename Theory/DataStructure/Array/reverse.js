@@ -9,6 +9,7 @@ import {
     ToObject,
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
+import { Assert } from 'utils/Assert';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.reverse
@@ -84,6 +85,8 @@ export function tinyReverse() {
             DeletePropertyOrThrow(O, lowerP);
             Set(O, upperP, lowerValue, true);
         } else {
+            Assert(lowerExists === false && upperExists === false);
+
             continue;
         }
 

@@ -1,4 +1,5 @@
 import { ToPrimitive } from 'utils/AbstractOperations/TypeConversion';
+import { Assert } from 'utils/Assert';
 
 /**
  * https://tc39.es/ecma262/#sec-tonumber
@@ -27,16 +28,6 @@ export function ToNumber(argument) {
         return +0;
     }
 
-    if (typeof argument === 'object') {
-        const primValue = ToPrimitive(argument, 'number');
-
-        if (typeof primValue !== 'object') {
-            return ToNumber(primValue);
-        } else {
-            throw new TypeError('ToPrimitive did not return a primitive value');
-        }
-    }
-
     const typeHandlers = {
         number: (arg) => arg,
         symbol: () => {
@@ -59,5 +50,11 @@ export function ToNumber(argument) {
         return handler(argument);
     }
 
-    throw new TypeError(`Cannot convert ${type} to a Number`);
+    Assert(type === 'object');
+
+    const primValue = ToPrimitive(argument, 'number');
+
+    Assert(typeof primValue !== 'object');
+
+    return ToNumber(primValue);
 }

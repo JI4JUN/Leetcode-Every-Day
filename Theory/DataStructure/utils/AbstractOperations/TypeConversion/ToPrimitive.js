@@ -4,6 +4,7 @@ import {
     GetMethod
 } from 'utils/AbstractOperations/OperationsOnObjects';
 import { IsCallable } from 'utils/AbstractOperations/TestingAndComparsionOperations';
+import { Assert } from 'utils/Assert';
 
 /**
  * https://tc39.es/ecma262/#sec-toprimitive
@@ -49,7 +50,7 @@ export function ToPrimitive(input, preferredType) {
                 ? 'default'
                 : preferredType === 'string'
                 ? 'string'
-                : 'number';
+                : (Assert(preferredType === 'number'), 'number');
 
         const result = Call(exoticToPrim, input, [hint]);
 

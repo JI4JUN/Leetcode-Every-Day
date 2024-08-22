@@ -9,6 +9,7 @@ import {
     ToObject,
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
+import { Assert } from 'utils/Assert';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.unshift
@@ -64,6 +65,8 @@ export function tinyUnshift(...items) {
 
                 Set(O, to, fromValue, true);
             } else {
+                Assert(fromPresent === false);
+
                 DeletePropertyOrThrow(O, to);
             }
 

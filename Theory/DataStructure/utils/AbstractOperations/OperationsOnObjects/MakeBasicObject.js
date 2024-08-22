@@ -33,7 +33,7 @@ export function MakeBasicObject(internalSlotsList) {
     });
 
     obj['PrivateElements'] = [];
-    obj['Extensible'] = internalSlotsList.includes('Extensible');
+    obj['Extensible'] = internalSlotsList.tinyIncludes('Extensible');
     obj['GetPrototypeOf'] = Object.getPrototypeOf;
     obj['SetPrototypeOf'] = Object.setPrototypeOf;
     obj['IsExtensible'] = Object.isExtensible;

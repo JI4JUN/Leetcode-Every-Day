@@ -1,6 +1,7 @@
 import { IsFixedLengthArrayBuffer } from 'utils/StructuredData/ArrayBufferObjects/AbstractOperationsForArrayBufferObjects';
 import { IsTypedArrayOutOfBounds } from './IsTypedArrayOutOfBounds';
 import { TypedArrayElementSize } from 'utils/IndexedCollections/TypedArrayObjects/AbstractOperationsForTypedArrayObjects';
+import { Assert } from 'utils/Assert';
 
 /**
  * https://tc39.es/ecma262/#sec-typedarraylength
@@ -24,9 +25,7 @@ import { TypedArrayElementSize } from 'utils/IndexedCollections/TypedArrayObject
  * @returns A non-negative integer.
  */
 export function TypedArrayLength(taRecord) {
-    if (IsTypedArrayOutOfBounds(taRecord)) {
-        throw new TypeError('TypedArray is out of bounds');
-    }
+    Assert(IsTypedArrayOutOfBounds(taRecord) === false);
 
     const O = taRecord.object;
 
@@ -34,17 +33,13 @@ export function TypedArrayLength(taRecord) {
         return O.length;
     }
 
-    if (IsFixedLengthArrayBuffer(O.buffer)) {
-        throw new TypeError('ArrayBuffer is fixed-length');
-    }
+    Assert(IsFixedLengthArrayBuffer(O.buffer) === false);
 
     const byteOffset = O.byteOffset;
     const elementSize = TypedArrayElementSize(O);
     const byteLength = taRecord.cachedBufferByteLength;
 
-    if (byteLength === 'DETACHED') {
-        throw new TypeError('ArrayBuffer is detached');
-    }
+    Assert(byteLength !== 'DETACHED');
 
     return Math.floor((byteLength - byteOffset) / elementSize);
 }

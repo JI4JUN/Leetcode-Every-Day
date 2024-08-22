@@ -1,4 +1,5 @@
 import { ToPrimitive } from 'utils/AbstractOperations/TypeConversion';
+import { Assert } from 'utils/Assert';
 
 /**
  * https://tc39.es/ecma262/#sec-tostring
@@ -37,19 +38,21 @@ export function ToString(argument) {
         undefined: () => 'undefined',
         boolean: (arg) => (arg ? 'true' : 'false'),
         number: (arg) => Number.prototype.toString.call(arg, 10),
-        bigint: (arg) => BigInt.prototype.toString.call(arg, 10),
-        object: (arg) => {
-            const primValue = ToPrimitive(arg, 'string');
-
-            return ToString(primValue);
-        }
+        bigint: (arg) => BigInt.prototype.toString.call(arg, 10)
     };
 
     const type = typeof argument;
     const handler = typeHandlers[type];
+
     if (handler) {
         return handler(argument);
     }
 
-    throw new TypeError('Cannot convert argument to a String');
+    Assert(type === 'object');
+
+    const primValue = ToPrimitive(argument, 'string');
+
+    Assert(typeof primValue !== 'object');
+
+    return ToString(primValue);
 }

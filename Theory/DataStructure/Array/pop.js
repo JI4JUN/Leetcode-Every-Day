@@ -8,6 +8,7 @@ import {
     LengthOfArrayLike,
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
+import { Assert } from 'utils/Assert';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.pop
@@ -41,6 +42,8 @@ export function tinyPop() {
 
         return undefined;
     } else {
+        Assert(len > 0);
+
         const newLen = len - 1;
         const index = ToString(newLen);
         const element = Get(O, index);

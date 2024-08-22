@@ -1,3 +1,5 @@
+import { Assert } from 'utils/Assert';
+
 /**
  * https://tc39.es/ecma262/#sec-numeric-types-number-lessThan
  *
@@ -40,6 +42,11 @@ export function lessThan(x, y) {
     if (y === +Infinity || x === -Infinity) {
         return true;
     }
+
+    Assert(
+        (x !== +Infinity || x !== -Infinity) &&
+            (y !== +Infinity || y !== -Infinity)
+    );
 
     return x < y;
 }

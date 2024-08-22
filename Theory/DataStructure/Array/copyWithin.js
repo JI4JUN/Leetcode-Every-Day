@@ -10,6 +10,7 @@ import {
     ToString,
     ToIntegerOrInfinity
 } from 'utils/AbstractOperations/TypeConversion';
+import { Assert } from 'utils/Assert';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.copywithin
@@ -120,6 +121,8 @@ export function tinyCopyWithin(target, start, end) {
 
             Set(O, toKey, fromValue, true);
         } else {
+            Assert(fromProperty === false);
+
             DeletePropertyOrThrow(O, toKey);
         }
 

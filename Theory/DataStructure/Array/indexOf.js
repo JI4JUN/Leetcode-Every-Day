@@ -6,6 +6,7 @@ import {
     ToIntegerOrInfinity
 } from 'utils/AbstractOperations/TypeConversion';
 import { IsStrictlyEqual } from 'utils/AbstractOperations/TestingAndComparsionOperations';
+import { Assert } from 'utils/Assert';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.indexof
@@ -45,9 +46,7 @@ export function tinyIndexOf(searchElement, fromIndex) {
 
     let n = ToIntegerOrInfinity(fromIndex);
 
-    if (fromIndex === 0) {
-        n = 0;
-    }
+    Assert(() => (fromIndex === undefined ? ((n = 0), true) : false));
 
     if (n === +Infinity) {
         return -1;

@@ -14,6 +14,7 @@ import {
     IsArray,
     IsCallable
 } from 'utils/AbstractOperations/TestingAndComparsionOperations';
+import { Assert } from 'utils/Assert';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.flat
@@ -103,13 +104,12 @@ export function FlattenIntoArray(
     mapperFunction,
     thisArg
 ) {
-    if (mapperFunction !== undefined) {
-        if (IsCallable(mapperFunction) !== true || depth !== 1) {
-            throw new TypeError(
-                'mapperFunction must be a function and depth must be 1'
-            );
-        }
-    }
+    Assert(
+        () =>
+            (mapperFunction !== undefined &&
+                IsCallable(mapperFunction) !== true) ||
+            depth !== 1
+    );
 
     let targetIndex = start;
     let sourceIndex = +0;

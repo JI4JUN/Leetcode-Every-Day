@@ -16,6 +16,7 @@ import {
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
 import { tinyPush } from './push';
+import { Assert } from 'utils/Assert';
 
 Array.prototype.tinyPush = tinyPush;
 
@@ -119,6 +120,8 @@ export function SortIndexedProperties(obj, len, SortCompare, holes) {
         if (holes === 'SKIP-HOLES') {
             kRead = HasProperty(obj, Pk);
         } else {
+            Assert(holes === 'READ-THROUGH-HOLES');
+
             kRead = true;
         }
 
