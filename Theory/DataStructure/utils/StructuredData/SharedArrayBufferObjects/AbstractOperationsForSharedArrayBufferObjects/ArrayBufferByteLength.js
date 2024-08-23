@@ -5,6 +5,7 @@ import {
     RawBytesToNumeric
 } from 'utils/StructuredData/ArrayBufferObjects/AbstractOperationsForArrayBufferObjects';
 import { Assert } from 'utils/Assert';
+import { R } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-arraybufferbytelength
@@ -41,7 +42,7 @@ export function ArrayBufferByteLength(arrayBuffer, order) {
         );
         const isLittleEndian = true;
 
-        return RawBytesToNumeric('BIGUINT64', rawLength, isLittleEndian);
+        return R(RawBytesToNumeric('BIGUINT64', rawLength, isLittleEndian));
     }
 
     Assert(IsDetachedBuffer(arrayBuffer) === false);

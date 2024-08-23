@@ -20,7 +20,7 @@ describe('isLessThan function', () => {
     });
 
     test('Comparison with BigInt and String', () => {
-        expect(IsLessThan(123n, '124', true)).toBeFalsy();
+        expect(IsLessThan(123n, '124', true)).toBeTruthy();
         expect(IsLessThan('125', 124n, true)).toBeFalsy();
         expect(IsLessThan('123', 123n, true)).toBeFalsy();
     });

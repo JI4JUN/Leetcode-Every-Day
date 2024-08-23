@@ -1,3 +1,5 @@
+import { Z } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
+
 /**
  * https://tc39.es/ecma262/#sec-stringtobigint
  *
@@ -23,7 +25,7 @@ export function StringToBigInt(str) {
             return undefined;
         }
 
-        return literal;
+        return Z(literal);
     } catch (e) {
         return undefined;
     }

@@ -15,7 +15,10 @@ import {
     IsCallable
 } from 'utils/AbstractOperations/TestingAndComparsionOperations';
 import { Assert } from 'utils/Assert';
-import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
+import {
+    F,
+    R
+} from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.flat
@@ -115,7 +118,7 @@ export function FlattenIntoArray(
     let targetIndex = start;
     let sourceIndex = +0;
 
-    while (sourceIndex < sourceLen) {
+    while (R(sourceIndex) < sourceLen) {
         const P = ToString(sourceIndex);
         const exists = HasProperty(source, P);
 

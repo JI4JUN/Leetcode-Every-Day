@@ -1,4 +1,5 @@
 import { ToNumber } from 'utils/AbstractOperations/TypeConversion';
+import { R } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-tointegerorinfinity
@@ -34,5 +35,5 @@ export function ToIntegerOrInfinity(argument) {
         return -Infinity;
     }
 
-    return Math.trunc(number);
+    return Math.trunc(R(number));
 }

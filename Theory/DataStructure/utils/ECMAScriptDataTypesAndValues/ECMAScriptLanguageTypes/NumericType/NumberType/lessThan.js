@@ -1,4 +1,5 @@
 import { Assert } from 'utils/Assert';
+import { R } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-numeric-types-number-lessThan
@@ -48,5 +49,5 @@ export function lessThan(x, y) {
             (y !== +Infinity || y !== -Infinity)
     );
 
-    return x < y;
+    return R(x) < R(y);
 }

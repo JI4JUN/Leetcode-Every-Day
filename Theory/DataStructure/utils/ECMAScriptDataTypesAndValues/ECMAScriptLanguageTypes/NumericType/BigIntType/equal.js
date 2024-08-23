@@ -1,3 +1,5 @@
+import { R } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
+
 /**
  * https://tc39.es/ecma262/#sec-numeric-types-bigint-equal
  *
@@ -13,5 +15,5 @@
  * @returns A Boolean.
  */
 export function equal(x, y) {
-    return x === y;
+    return R(x) === R(y);
 }

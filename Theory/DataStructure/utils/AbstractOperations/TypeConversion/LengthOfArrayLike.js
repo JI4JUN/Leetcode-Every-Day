@@ -3,6 +3,7 @@ import {
     Get,
     CreateDataProperty
 } from 'utils/AbstractOperations/OperationsOnObjects';
+import { R } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-lengthofarraylike
@@ -24,7 +25,5 @@ export function LengthOfArrayLike(obj) {
         CreateDataProperty(obj, 'length', 0);
     }
 
-    const length = ToLength(Get(obj, 'length'));
-
-    return length;
+    return R(ToLength(Get(obj, 'length')));
 }

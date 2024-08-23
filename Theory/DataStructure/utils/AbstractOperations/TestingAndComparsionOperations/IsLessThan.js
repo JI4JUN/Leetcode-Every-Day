@@ -2,6 +2,7 @@ import { BigIntType } from 'utils/ECMAScriptDataTypesAndValues/ECMAScriptLanguag
 import { NumberType } from 'utils/ECMAScriptDataTypesAndValues/ECMAScriptLanguageTypes/NumericType/NumberType';
 import { StringToBigInt, ToNumeric, ToPrimitive } from '../TypeConversion';
 import { Assert } from 'utils/Assert';
+import { R } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-islessthan
@@ -101,7 +102,7 @@ export function IsLessThan(x, y, LeftFirst) {
                 return undefined;
             }
 
-            return BigIntType.lessThan(py, ny);
+            return BigIntType.lessThan(px, ny);
         }
 
         if (typeof px === 'string' && typeof py === 'bigint') {
@@ -144,6 +145,6 @@ export function IsLessThan(x, y, LeftFirst) {
             return false;
         }
 
-        return nx < ny;
+        return R(nx) < R(ny);
     }
 }
