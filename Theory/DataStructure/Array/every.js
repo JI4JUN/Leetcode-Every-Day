@@ -10,6 +10,7 @@ import {
     ToBoolean
 } from 'utils/AbstractOperations/TypeConversion';
 import { IsCallable } from 'utils/AbstractOperations/TestingAndComparsionOperations';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.every
@@ -48,7 +49,7 @@ export function tinyEvery(callbackfn, thisArg) {
     let k = 0;
 
     while (k < len) {
-        const Pk = ToString(k);
+        const Pk = ToString(F(k));
         const kPresent = HasProperty(O, Pk);
 
         if (kPresent === true) {

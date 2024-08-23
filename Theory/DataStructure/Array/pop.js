@@ -9,6 +9,7 @@ import {
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
 import { Assert } from 'utils/Assert';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.pop
@@ -44,7 +45,7 @@ export function tinyPop() {
     } else {
         Assert(len > 0);
 
-        const newLen = len - 1;
+        const newLen = F(len - 1);
         const index = ToString(newLen);
         const element = Get(O, index);
 

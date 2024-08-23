@@ -10,6 +10,7 @@ import {
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
 import { Assert } from 'utils/Assert';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.unshift
@@ -56,8 +57,8 @@ export function tinyUnshift(...items) {
         let k = len;
 
         while (k > 0) {
-            const from = ToString(k - 1);
-            const to = ToString(k + argCount - 1);
+            const from = ToString(F(k - 1));
+            const to = ToString(F(k + argCount - 1));
             const fromPresent = HasProperty(O, from);
 
             if (fromPresent) {
@@ -81,8 +82,8 @@ export function tinyUnshift(...items) {
             j++;
         }
 
-        Set(O, 'length', len + argCount, true);
+        Set(O, 'length', F(len + argCount), true);
 
-        return len + argCount;
+        return F(len + argCount);
     }
 }

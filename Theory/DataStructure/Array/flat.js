@@ -15,6 +15,7 @@ import {
     IsCallable
 } from 'utils/AbstractOperations/TestingAndComparsionOperations';
 import { Assert } from 'utils/Assert';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.flat
@@ -162,7 +163,7 @@ export function FlattenIntoArray(
 
                 CreateDataPropertyOrThrow(
                     target,
-                    ToString(targetIndex),
+                    ToString(F(targetIndex)),
                     element
                 );
 

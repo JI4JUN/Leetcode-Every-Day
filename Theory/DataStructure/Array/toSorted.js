@@ -6,6 +6,7 @@ import {
 } from 'utils/AbstractOperations/TypeConversion';
 import { CompareArrayElements, SortIndexedProperties } from './sort';
 import { CreateDataPropertyOrThrow } from 'utils/AbstractOperations/OperationsOnObjects';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.tosorted
@@ -46,7 +47,7 @@ export function tinyToSorted(comparator) {
     let j = 0;
 
     while (j < len) {
-        CreateDataPropertyOrThrow(A, ToString(j), sortedList[j]);
+        CreateDataPropertyOrThrow(A, ToString(F(j)), sortedList[j]);
 
         j++;
     }

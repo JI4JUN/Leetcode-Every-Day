@@ -5,6 +5,7 @@ import {
     ToIntegerOrInfinity,
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.at
@@ -41,5 +42,5 @@ export function tinyAt(index) {
         return undefined;
     }
 
-    return Get(O, ToString(k));
+    return Get(O, ToString(F(k)));
 }

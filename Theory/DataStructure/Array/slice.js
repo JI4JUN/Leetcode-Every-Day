@@ -10,6 +10,7 @@ import {
     ToObject,
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * Array.prototype.slice
@@ -81,20 +82,20 @@ export function tinySlice(start, end) {
     let n = 0;
 
     while (k < final) {
-        const Pk = ToString(k);
+        const Pk = ToString(F(k));
         const kPresent = HasProperty(O, Pk);
 
         if (kPresent) {
             const kValue = Get(O, Pk);
 
-            CreateDataPropertyOrThrow(A, ToString(n), kValue);
+            CreateDataPropertyOrThrow(A, ToString(F(n)), kValue);
         }
 
         k++;
         n++;
     }
 
-    Set(A, 'length', n, true);
+    Set(A, 'length', F(n), true);
 
     return A;
 }

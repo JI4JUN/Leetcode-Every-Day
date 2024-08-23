@@ -1,4 +1,5 @@
 import { ToIntegerOrInfinity } from 'utils/AbstractOperations/TypeConversion';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-tolength
@@ -19,5 +20,5 @@ import { ToIntegerOrInfinity } from 'utils/AbstractOperations/TypeConversion';
 export function ToLength(argument) {
     const len = ToIntegerOrInfinity(argument);
 
-    return len <= 0 ? +0 : Math.min(len, Number.MAX_SAFE_INTEGER);
+    return len <= 0 ? F(+0) : F(Math.min(len, Number.MAX_SAFE_INTEGER));
 }

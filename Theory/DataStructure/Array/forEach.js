@@ -9,6 +9,7 @@ import {
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
 import { IsCallable } from 'utils/AbstractOperations/TestingAndComparsionOperations';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.foreach
@@ -46,13 +47,13 @@ export function tinyForEach(callbackfn, thisArg) {
     let k = 0;
 
     while (k < len) {
-        const Pk = ToString(k);
+        const Pk = ToString(F(k));
         const kPresent = HasProperty(O, Pk);
 
         if (kPresent === true) {
             const kValue = Get(O, Pk);
 
-            Call(callbackfn, thisArg, [kValue, k, O]);
+            Call(callbackfn, thisArg, [kValue, F(k), O]);
         }
 
         k++;

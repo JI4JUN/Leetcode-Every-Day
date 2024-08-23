@@ -4,7 +4,7 @@ import {
     LengthOfArrayLike,
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
-//import { Q } from 'utils/NotationalConventions/AlgorithmConventions/RuntimeSemantics';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.push
@@ -26,21 +26,22 @@ import {
  */
 export function tinyPush(...items) {
     const O = ToObject(this);
-    const argCount = items.length;
 
     let len = LengthOfArrayLike(O);
+
+    const argCount = items.length;
 
     if (len + argCount > Math.pow(2, 53) - 1) {
         throw new TypeError('The array length must not exceed 2^53 - 1');
     }
 
     for (const E of items) {
-        Set(O, ToString(len), E, true);
+        Set(O, ToString(F(len)), E, true);
 
         len++;
     }
 
-    Set(O, 'length', len, true);
+    Set(O, 'length', F(len), true);
 
-    return len;
+    return F(len);
 }

@@ -7,6 +7,7 @@ import {
     ToObject,
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.toreversed
@@ -35,8 +36,8 @@ export function tinyToReversed() {
     let k = 0;
 
     while (k < len) {
-        const from = ToString(len - k - 1);
-        const Pk = ToString(k);
+        const from = ToString(F(len - k - 1));
+        const Pk = ToString(F(k));
         const fromValue = Get(O, from);
 
         CreateDataPropertyOrThrow(A, Pk, fromValue);

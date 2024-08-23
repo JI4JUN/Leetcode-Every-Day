@@ -22,5 +22,5 @@ export function tinyFindLast(predicate, thisArg) {
     const len = LengthOfArrayLike(O);
     const findRec = FindViaPredicate(O, len, 'DESCENDING', predicate, thisArg);
 
-    return findRec.value;
+    return findRec.Value;
 }

@@ -10,6 +10,7 @@ import {
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
 import { Assert } from 'utils/Assert';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.reverse
@@ -57,8 +58,8 @@ export function tinyReverse() {
 
     while (lower !== middle) {
         const upper = len - lower - 1;
-        const upperP = ToString(upper);
-        const lowerP = ToString(lower);
+        const upperP = ToString(F(upper));
+        const lowerP = ToString(F(lower));
         const lowerExists = HasProperty(O, lowerP);
 
         let lowerValue;

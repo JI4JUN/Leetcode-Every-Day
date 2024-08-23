@@ -7,6 +7,7 @@ import {
 } from 'utils/AbstractOperations/TypeConversion';
 import { IsCallable } from 'utils/AbstractOperations/TestingAndComparsionOperations';
 import { tinyPush } from 'Array/push';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 Array.prototype.tinyPush = tinyPush;
 
@@ -28,7 +29,7 @@ export function tinyFindLastIndex(predicate, thisArg) {
     const len = LengthOfArrayLike(O);
     const findRec = FindViaPredicate(O, len, 'DESCENDING', predicate, thisArg);
 
-    return findRec.index;
+    return findRec.Index;
 }
 
 /**
@@ -73,14 +74,14 @@ export function FindViaPredicate(O, len, direction, predicate, thisArg) {
             : Array.from({ length: len }, (_, i) => len - 1 - i);
 
     for (const k of indices) {
-        const Pk = ToString(k);
+        const Pk = ToString(F(k));
         const kValue = Get(O, Pk);
-        const testResult = Call(predicate, thisArg, [kValue, k, O]);
+        const testResult = Call(predicate, thisArg, [kValue, F(k), O]);
 
         if (ToBoolean(testResult) === true) {
-            return { index: k, value: kValue };
+            return { Index: F(k), Value: kValue };
         }
     }
 
-    return { index: -1, value: undefined };
+    return { Index: -1, Value: undefined };
 }

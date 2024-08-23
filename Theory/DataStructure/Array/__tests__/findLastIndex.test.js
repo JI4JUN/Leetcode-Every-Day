@@ -13,7 +13,7 @@ describe('FindViaPredicate function', () => {
             null
         );
 
-        expect(result).toEqual({ index: 3, value: 4 });
+        expect(result).toEqual({ Index: 3, Value: 4 });
     });
 
     test('Should return the correct index and value when direction is DESCENDING', () => {
@@ -27,7 +27,7 @@ describe('FindViaPredicate function', () => {
             null
         );
 
-        expect(result).toEqual({ index: 4, value: 5 });
+        expect(result).toEqual({ Index: 4, Value: 5 });
     });
 
     test('Should return the correct index and value when no element satisfies the predicate', () => {
@@ -41,7 +41,7 @@ describe('FindViaPredicate function', () => {
             null
         );
 
-        expect(result).toEqual({ index: -1, value: undefined });
+        expect(result).toEqual({ Index: -1, Value: undefined });
     });
 
     test('Should throw TypeError when predicate is not a function', () => {

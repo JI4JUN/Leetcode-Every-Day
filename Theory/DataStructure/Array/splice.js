@@ -11,6 +11,7 @@ import {
     ToObject,
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.splice
@@ -114,12 +115,12 @@ export function tinySplice(start, deleteCount, ...items) {
     let k = 0;
 
     while (k < actualDeleteCount) {
-        const from = ToString(actualStart + k);
+        const from = ToString(F(actualStart + k));
 
         if (HasProperty(O, from)) {
             const fromValue = Get(O, from);
 
-            CreateDataPropertyOrThrow(A, ToString(k), fromValue);
+            CreateDataPropertyOrThrow(A, ToString(F(k)), fromValue);
         }
 
         k++;
@@ -131,8 +132,8 @@ export function tinySplice(start, deleteCount, ...items) {
         k = actualStart;
 
         while (k < len - actualDeleteCount) {
-            const from = ToString(k + actualDeleteCount);
-            const to = ToString(k + itemCount);
+            const from = ToString(F(k + actualDeleteCount));
+            const to = ToString(F(k + itemCount));
 
             if (HasProperty(O, from)) {
                 const fromValue = Get(O, from);
@@ -148,7 +149,7 @@ export function tinySplice(start, deleteCount, ...items) {
         k = len;
 
         while (k > len - actualDeleteCount + itemCount) {
-            DeletePropertyOrThrow(O, ToString(k - 1));
+            DeletePropertyOrThrow(O, ToString(F(k - 1)));
 
             k--;
         }
@@ -156,8 +157,8 @@ export function tinySplice(start, deleteCount, ...items) {
         k = len - actualDeleteCount;
 
         while (k > actualStart) {
-            const from = ToString(k + actualDeleteCount - 1);
-            const to = ToString(k + itemCount - 1);
+            const from = ToString(F(k + actualDeleteCount - 1));
+            const to = ToString(F(k + itemCount - 1));
 
             if (HasProperty(O, from)) {
                 const fromValue = Get(O, from);
@@ -174,12 +175,12 @@ export function tinySplice(start, deleteCount, ...items) {
     k = actualStart;
 
     for (const E of items) {
-        Set(O, ToString(k), E, true);
+        Set(O, ToString(F(k)), E, true);
 
         k++;
     }
 
-    Set(O, 'length', len - actualDeleteCount + itemCount, true);
+    Set(O, 'length', F(len - actualDeleteCount + itemCount), true);
 
     return A;
 }

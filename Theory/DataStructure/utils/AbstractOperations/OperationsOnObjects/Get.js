@@ -1,3 +1,5 @@
+import { NormalCompletion } from 'utils/ECMAScriptDataTypesAndValues/ECMAScriptSpecificationTypes/TheCompletionRecodSpecificationType';
+
 /**
  * https://tc39.es/ecma262/#sec-get-o-p
  *
@@ -21,5 +23,7 @@ export function Get(O, P) {
         );
     }
 
-    return O[P];
+    O = NormalCompletion(O);
+
+    return O.Value[P];
 }

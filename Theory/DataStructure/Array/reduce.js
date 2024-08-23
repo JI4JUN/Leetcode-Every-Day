@@ -9,6 +9,7 @@ import {
     ToObject,
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.reduce
@@ -71,7 +72,7 @@ export function tinyReduce(callback, initialValue) {
         let kPresent = false;
 
         while (!kPresent && k < len) {
-            const Pk = ToString(k);
+            const Pk = ToString(F(k));
 
             kPresent = HasProperty(O, Pk);
 
@@ -90,7 +91,7 @@ export function tinyReduce(callback, initialValue) {
     }
 
     while (k < len) {
-        const Pk = ToString(k);
+        const Pk = ToString(F(k));
         const kPresent = HasProperty(O, Pk);
 
         if (kPresent) {
@@ -98,7 +99,7 @@ export function tinyReduce(callback, initialValue) {
             accumulator = Call(callback, undefined, [
                 accumulator,
                 kValue,
-                k,
+                F(k),
                 O
             ]);
         }

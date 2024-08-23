@@ -10,6 +10,7 @@ import {
     ToObject,
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * Array.prototype.some(callback [ , thisArg ])
@@ -46,13 +47,13 @@ export function tinySome(callback, thisArg) {
     let k = 0;
 
     while (k < len) {
-        const Pk = ToString(k);
+        const Pk = ToString(F(k));
         const kPresent = HasProperty(O, Pk);
 
         if (kPresent) {
             const kValue = Get(O, Pk);
             const testResult = ToBoolean(
-                Call(callback, thisArg, [kValue, k, O])
+                Call(callback, thisArg, [kValue, F(k), O])
             );
 
             if (testResult) {

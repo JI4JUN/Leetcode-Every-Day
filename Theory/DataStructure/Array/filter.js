@@ -11,6 +11,7 @@ import {
     ToBoolean
 } from 'utils/AbstractOperations/TypeConversion';
 import { IsCallable } from 'utils/AbstractOperations/TestingAndComparsionOperations';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.filter
@@ -67,7 +68,7 @@ export function tinyFilter(callbackfn, thisArg) {
             );
 
             if (selected === true) {
-                CreateDataPropertyOrThrow(A, ToString(to), kValue);
+                CreateDataPropertyOrThrow(A, ToString(F(to)), kValue);
 
                 to++;
             }

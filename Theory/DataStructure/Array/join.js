@@ -4,6 +4,7 @@ import {
     LengthOfArrayLike,
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.join
@@ -48,7 +49,7 @@ export function tinyJoin(separator) {
             R = R + sep;
         }
 
-        const element = Get(O, k);
+        const element = Get(O, ToString(F(k)));
 
         if (element !== undefined && element !== null) {
             const S = ToString(element);

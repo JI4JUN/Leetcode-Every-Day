@@ -14,6 +14,7 @@ import {
     TypedArrayLength,
     MakeTypedArrayWithBufferWitnessRecord
 } from 'utils/OrdinaryAndExoticObjectsBehaviours/Built-inExoticObjectInternalMethodsAndSlots/TypedArrayExoticObjects';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-createarrayiterator
@@ -78,7 +79,7 @@ export function CreateArrayIterator(array, kind) {
                 return NormalCompletion(undefined).Value;
             }
 
-            let indexNumber = index;
+            let indexNumber = F(index);
             let result;
 
             if (kind === 'KEY') {

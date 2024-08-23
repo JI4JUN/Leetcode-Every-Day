@@ -11,6 +11,7 @@ import {
     ToIntegerOrInfinity
 } from 'utils/AbstractOperations/TypeConversion';
 import { Assert } from 'utils/Assert';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.copywithin
@@ -112,8 +113,8 @@ export function tinyCopyWithin(target, start, end) {
     }
 
     while (count > 0) {
-        const fromKey = ToString(from);
-        const toKey = ToString(to);
+        const fromKey = ToString(F(from));
+        const toKey = ToString(F(to));
         const fromProperty = HasProperty(O, fromKey);
 
         if (fromProperty === true) {

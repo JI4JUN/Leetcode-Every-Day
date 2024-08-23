@@ -8,6 +8,7 @@ import {
     ToObject,
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.tospliced
@@ -95,7 +96,7 @@ export function tinyToSpliced(start, skipCount, ...items) {
     let r = actualStart + actualSkipCount;
 
     while (i < actualStart) {
-        const Pi = ToString(i);
+        const Pi = ToString(F(i));
         const iValue = Get(O, Pi);
 
         CreateDataPropertyOrThrow(A, Pi, iValue);
@@ -104,7 +105,7 @@ export function tinyToSpliced(start, skipCount, ...items) {
     }
 
     for (const E of items) {
-        const Pi = ToString(i);
+        const Pi = ToString(F(i));
 
         CreateDataPropertyOrThrow(A, Pi, E);
 
@@ -112,8 +113,8 @@ export function tinyToSpliced(start, skipCount, ...items) {
     }
 
     while (i < newLen) {
-        const Pi = ToString(i);
-        const from = ToString(r);
+        const Pi = ToString(F(i));
+        const from = ToString(F(r));
         const fromValue = Get(O, from);
 
         CreateDataPropertyOrThrow(A, Pi, fromValue);

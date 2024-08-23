@@ -11,6 +11,7 @@ import {
     ToBoolean
 } from 'utils/AbstractOperations/TypeConversion';
 import { IsArray } from 'utils/AbstractOperations/TestingAndComparsionOperations';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.concat
@@ -69,13 +70,13 @@ export function tinyConcat(...items) {
             let k = 0;
 
             while (k < len) {
-                const Pk = ToString(k);
+                const Pk = ToString(F(k));
                 const exists = HasProperty(E, Pk);
 
                 if (exists === true) {
                     const subElement = Get(E, Pk);
 
-                    CreateDataPropertyOrThrow(A, ToString(n), subElement);
+                    CreateDataPropertyOrThrow(A, ToString(F(n)), subElement);
                 }
 
                 n++;
@@ -88,13 +89,13 @@ export function tinyConcat(...items) {
                 );
             }
 
-            CreateDataPropertyOrThrow(A, ToString(n), E);
+            CreateDataPropertyOrThrow(A, ToString(F(n)), E);
 
             n++;
         }
     }
 
-    Set(A, 'length', n, true);
+    Set(A, 'length', F(n), true);
 
     return A;
 }

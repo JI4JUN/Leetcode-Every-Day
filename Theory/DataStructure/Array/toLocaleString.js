@@ -4,6 +4,7 @@ import {
     ToObject,
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.tolocalestring
@@ -40,7 +41,7 @@ export function tinyToLocaleString(reserved1, reserved2) {
             R += separator;
         }
 
-        const element = Get(array, ToString(k));
+        const element = Get(array, ToString(F(k)));
 
         if (element !== undefined && element !== null) {
             const S = ToString(

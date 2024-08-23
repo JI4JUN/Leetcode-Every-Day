@@ -17,6 +17,7 @@ import {
 } from 'utils/AbstractOperations/TypeConversion';
 import { tinyPush } from './push';
 import { Assert } from 'utils/Assert';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 Array.prototype.tinyPush = tinyPush;
 
@@ -64,13 +65,13 @@ export function tinySort(comparator) {
     let j = 0;
 
     while (j < itemCount) {
-        Set(obj, ToString(j), sortedList[j], true);
+        Set(obj, ToString(F(j)), sortedList[j], true);
 
         j++;
     }
 
     while (j < len) {
-        DeletePropertyOrThrow(obj, ToString(j));
+        DeletePropertyOrThrow(obj, ToString(F(j)));
 
         j++;
     }
@@ -113,7 +114,7 @@ export function SortIndexedProperties(obj, len, SortCompare, holes) {
     let k = 0;
 
     while (k < len) {
-        const Pk = ToString(k);
+        const Pk = ToString(F(k));
 
         let kRead;
 

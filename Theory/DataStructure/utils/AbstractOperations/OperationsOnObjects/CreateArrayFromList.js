@@ -1,5 +1,6 @@
 import { ToString } from '../TypeConversion';
 import { CreateDataPropertyOrThrow } from './CreateDataPropertyOrThrow';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-createarrayfromlist
@@ -24,7 +25,7 @@ export function CreateArrayFromList(elements) {
     let n = 0;
 
     for (const e of elements) {
-        CreateDataPropertyOrThrow(array, ToString(n), e);
+        CreateDataPropertyOrThrow(array, ToString(F(n)), e);
 
         n++;
     }

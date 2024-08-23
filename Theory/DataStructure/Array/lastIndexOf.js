@@ -6,6 +6,7 @@ import {
     ToObject,
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.lastindexof
@@ -50,7 +51,7 @@ export function tinyLastIndexOf(searchElement, fromIndex) {
     let k = n >= 0 ? Math.min(n, len - 1) : len + n;
 
     while (k >= 0) {
-        const Pk = ToString(k);
+        const Pk = ToString(F(k));
         const kPresent = HasProperty(O, Pk);
 
         if (kPresent) {

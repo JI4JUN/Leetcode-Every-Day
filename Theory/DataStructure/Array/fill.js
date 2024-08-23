@@ -5,6 +5,7 @@ import {
     ToString,
     ToIntegerOrInfinity
 } from 'utils/AbstractOperations/TypeConversion';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.fill
@@ -64,7 +65,7 @@ export function tinyFill(value, start, end) {
     }
 
     while (k < final) {
-        const Pk = ToString(k);
+        const Pk = ToString(F(k));
 
         Set(O, Pk, value, true);
 

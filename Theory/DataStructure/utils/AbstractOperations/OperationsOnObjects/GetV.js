@@ -1,4 +1,5 @@
 import { ToObject } from 'utils/AbstractOperations/TypeConversion';
+import { NormalCompletion } from 'utils/ECMAScriptDataTypesAndValues/ECMAScriptSpecificationTypes/TheCompletionRecodSpecificationType';
 
 /**
  * https://tc39.es/ecma262/#sec-getv
@@ -21,10 +22,10 @@ export function GetV(V, P) {
     let O;
 
     try {
-        O = ToObject(V);
+        O = NormalCompletion(ToObject(V));
     } catch (e) {
         throw new TypeError('Cannot convert to object');
     }
 
-    return O[P];
+    return O.Value[P];
 }

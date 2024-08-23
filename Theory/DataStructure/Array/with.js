@@ -8,6 +8,7 @@ import {
     ToObject,
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.with
@@ -55,7 +56,7 @@ export function tinyWith(index, value) {
     let k = 0;
 
     while (k < len) {
-        const Pk = ToString(k);
+        const Pk = ToString(F(k));
 
         let fromValue;
 

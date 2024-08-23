@@ -7,6 +7,7 @@ import {
 } from 'utils/AbstractOperations/TypeConversion';
 import { SameValueZero } from 'utils/AbstractOperations/TestingAndComparsionOperations';
 import { Assert } from 'utils/Assert';
+import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.includes
@@ -66,7 +67,7 @@ export function tinyIncludes(searchElement, fromIndex) {
     }
 
     while (k < len) {
-        const elementK = Get(O, ToString(k));
+        const elementK = Get(O, ToString(F(k)));
 
         if (SameValueZero(searchElement, elementK) === true) {
             return true;
