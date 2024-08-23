@@ -24,6 +24,11 @@ export function ToObject(argument) {
         throw new TypeError(`Cannot convert a ${argument} to a Object`);
     }
 
+    const toCompletion = (thisArg) => {
+        Object.defineProperty(thisArg, 'Type', { value: 'normal' });
+        Object.defineProperty(thisArg, 'Value', { value: argument });
+        Object.defineProperty(thisArg, 'Target', { value: undefined });
+    };
     const type = typeof argument;
 
     if (
@@ -34,8 +39,14 @@ export function ToObject(argument) {
         type === 'symbol' ||
         type === 'bigint'
     ) {
-        return Object(argument);
+        const object = Object(argument);
+
+        toCompletion(object);
+
+        return object;
     } else if (type === 'object') {
+        toCompletion(argument);
+
         return argument;
     }
 
