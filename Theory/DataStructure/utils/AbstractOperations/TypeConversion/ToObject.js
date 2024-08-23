@@ -1,10 +1,10 @@
 /**
  * https://tc39.es/ecma262/#sec-toobject
  *
- * ```markdown
  * The abstract operation ToObject takes argument and returns either a normal
  * completion containing an object or a throw completion.
  *
+ * ```markdown
  * It converts argument to a value of type object according to the following (Argument Type --- Result):
  * Undefined --- Throw a TypeError exception.
  * Null --- Throw a TypeError exception.
