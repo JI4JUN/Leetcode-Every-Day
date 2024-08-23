@@ -1,4 +1,4 @@
-class AssertError extends Error {}
+export class AssertError extends Error {}
 
 /**
  * https://tc39.es/ecma262/#assert
