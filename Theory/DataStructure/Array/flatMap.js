@@ -20,7 +20,7 @@ import { FlattenIntoArray } from 'Array/flat';
  * 6. Return A.
  * ```
  */
-export function tinyFlatMap(mapperFunction, thisArg) {
+export function mockFlatMap(mapperFunction, thisArg) {
     const O = ToObject(this);
     const sourceLen = LengthOfArrayLike(O);
 

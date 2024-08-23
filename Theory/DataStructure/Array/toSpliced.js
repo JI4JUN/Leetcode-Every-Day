@@ -55,7 +55,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  * 19. Return A.
  * ```
  */
-export function tinyToSpliced(start, skipCount, ...items) {
+export function mockToSpliced(start, skipCount, ...items) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
     const relativeStart = ToIntegerOrInfinity(start);

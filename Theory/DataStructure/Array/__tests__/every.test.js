@@ -1,9 +1,9 @@
-import { tinyEvery } from '../every';
-import { tinyFilter } from '../filter';
+import { mockEvery } from '../every';
+import { mockFilter } from '../filter';
 
 describe('Array.prototype.every', () => {
-    Array.prototype.tinyEvery = tinyEvery;
-    Array.prototype.tinyFilter = tinyFilter;
+    Array.prototype.mockEvery = mockEvery;
+    Array.prototype.mockFilter = mockFilter;
 
     /**
      * The following example tests whether all elements in the array are 10 or bigger.
@@ -13,8 +13,8 @@ describe('Array.prototype.every', () => {
             return element >= 10;
         }
 
-        expect([12, 5, 8, 130, 44].tinyEvery(isBigEnough)).toBeFalsy();
-        expect([12, 54, 18, 130, 44].tinyEvery(isBigEnough)).toBeTruthy();
+        expect([12, 5, 8, 130, 44].mockEvery(isBigEnough)).toBeFalsy();
+        expect([12, 54, 18, 130, 44].mockEvery(isBigEnough)).toBeTruthy();
     });
 
     /**
@@ -24,8 +24,8 @@ describe('Array.prototype.every', () => {
     test('Using the third argument of callbackfn', () => {
         const numbers = [-2, 4, -8, 16, -32];
         const isIncreasing = numbers
-            .tinyFilter((num) => num > 0)
-            .tinyEvery((num, idx, arr) => {
+            .mockFilter((num) => num > 0)
+            .mockEvery((num, idx, arr) => {
                 if (idx === 0) {
                     return true;
                 }
@@ -40,8 +40,8 @@ describe('Array.prototype.every', () => {
      * every() will not run its predicate on empty slots.
      */
     test('Using every() on sparse arrays', () => {
-        expect([1, , 3].tinyEvery((x) => x !== undefined)).toBeTruthy();
-        expect([2, , 2].tinyEvery((x) => x === 2)).toBeTruthy();
+        expect([1, , 3].mockEvery((x) => x !== undefined)).toBeTruthy();
+        expect([2, , 2].mockEvery((x) => x === 2)).toBeTruthy();
     });
 
     /**
@@ -59,7 +59,7 @@ describe('Array.prototype.every', () => {
         };
 
         expect(
-            Array.prototype.tinyEvery.call(
+            Array.prototype.mockEvery.call(
                 arrayLike,
                 (x) => typeof x === 'string'
             )

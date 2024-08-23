@@ -28,7 +28,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  * 9. Return A.
  * ```
  */
-export function tinyToSorted(comparator) {
+export function mockToSorted(comparator) {
     if (comparator !== undefined && IsCallable(comparator) === false) {
         throw new TypeError('Invalid comparator');
     }

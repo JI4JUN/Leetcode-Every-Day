@@ -28,7 +28,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  * 6. Return A.
  * ```
  */
-export function tinyToReversed() {
+export function mockToReversed() {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
     const A = new Array(len);

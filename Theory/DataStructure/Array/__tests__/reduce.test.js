@@ -1,7 +1,7 @@
-import { tinyReduce } from 'Array/reduce';
+import { mockReduce } from 'Array/reduce';
 
 describe('Array.prototype.reduce', () => {
-    Array.prototype.tinyReduce = tinyReduce;
+    Array.prototype.mockReduce = mockReduce;
 
     /**
      * The code below shows what happens if we call reduce() with an array and no initial value.
@@ -22,7 +22,7 @@ describe('Array.prototype.reduce', () => {
             return returns;
         }
 
-        array.tinyReduce(reducer);
+        array.mockReduce(reducer);
 
         expect(consoleSpy).toHaveBeenCalledWith(
             'accumulator: 15, currentValue: 16, index: 1, returns: 31'
@@ -43,7 +43,7 @@ describe('Array.prototype.reduce', () => {
      * 10 passed as the second argument to reduce().
      */
     test('How reduce() works with an initial value', () => {
-        const result = [15, 16, 17, 18, 19].tinyReduce(
+        const result = [15, 16, 17, 18, 19].mockReduce(
             (accumulator, currentValue) => accumulator + currentValue,
             10
         );
@@ -57,7 +57,7 @@ describe('Array.prototype.reduce', () => {
      */
     test('Sum of values in an object array', () => {
         const objects = [{ x: 1 }, { x: 2 }, { x: 3 }];
-        const sum = objects.tinyReduce(
+        const sum = objects.mockReduce(
             (accumulator, currentValue) => accumulator + currentValue.x,
             0
         );
@@ -74,7 +74,7 @@ describe('Array.prototype.reduce', () => {
         const pipe =
             (...functions) =>
             (initialValue) =>
-                functions.tinyReduce((acc, fn) => fn(acc), initialValue);
+                functions.mockReduce((acc, fn) => fn(acc), initialValue);
         const double = (x) => 2 * x;
         const triple = (x) => 3 * x;
         const quadruple = (x) => 4 * x;
@@ -97,7 +97,7 @@ describe('Array.prototype.reduce', () => {
         const asyncPipe1 =
             (...functions) =>
             (initialValue) =>
-                functions.tinyReduce(
+                functions.mockReduce(
                     (acc, fn) => acc.then(fn),
                     Promise.resolve(initialValue)
                 );
@@ -111,7 +111,7 @@ describe('Array.prototype.reduce', () => {
         const asyncPipe2 =
             (...functions) =>
             (initialValue) =>
-                functions.tinyReduce(
+                functions.mockReduce(
                     async (acc, fn) => fn(await acc),
                     initialValue
                 );
@@ -123,8 +123,8 @@ describe('Array.prototype.reduce', () => {
      * reduce() skips missing elements in sparse arrays, but it does not skip undefined values.
      */
     test('Using reduce() with sparse arrays', () => {
-        expect([1, 2, , 4].tinyReduce((a, b) => a + b)).toBe(7);
-        expect([1, 2, undefined, 4].tinyReduce((a, b) => a + b)).toBe(NaN);
+        expect([1, 2, , 4].mockReduce((a, b) => a + b)).toBe(7);
+        expect([1, 2, undefined, 4].mockReduce((a, b) => a + b)).toBe(NaN);
     });
 
     /**
@@ -141,7 +141,7 @@ describe('Array.prototype.reduce', () => {
         };
 
         expect(
-            Array.prototype.tinyReduce.call(arrayLike, (x, y) => x + y)
+            Array.prototype.mockReduce.call(arrayLike, (x, y) => x + y)
         ).toBe(9);
     });
 });

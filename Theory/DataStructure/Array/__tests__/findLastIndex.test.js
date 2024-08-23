@@ -1,5 +1,5 @@
-import { FindViaPredicate, tinyFindLastIndex } from '../findLastIndex';
-import { tinyFilter } from '../filter';
+import { FindViaPredicate, mockFindLastIndex } from '../findLastIndex';
+import { mockFilter } from '../filter';
 
 describe('FindViaPredicate function', () => {
     test('Should find the first element that satisfies the predicate', () => {
@@ -54,8 +54,8 @@ describe('FindViaPredicate function', () => {
 });
 
 describe('Array.prototype.findLastIndex', () => {
-    Array.prototype.tinyFindLastIndex = tinyFindLastIndex;
-    Array.prototype.tinyFilter = tinyFilter;
+    Array.prototype.mockFindLastIndex = mockFindLastIndex;
+    Array.prototype.mockFilter = mockFilter;
 
     /**
      * The following example returns the index of the last element in the array that is a prime number,
@@ -76,8 +76,8 @@ describe('Array.prototype.findLastIndex', () => {
             return true;
         }
 
-        expect([4, 6, 8, 12].tinyFindLastIndex(isPrime)).toBe(-1);
-        expect([4, 5, 7, 8, 9, 11, 12].tinyFindLastIndex(isPrime)).toBe(5);
+        expect([4, 6, 8, 12].mockFindLastIndex(isPrime)).toBe(-1);
+        expect([4, 5, 7, 8, 9, 11, 12].mockFindLastIndex(isPrime)).toBe(5);
     });
 
     /**
@@ -87,8 +87,8 @@ describe('Array.prototype.findLastIndex', () => {
     test('Find the index of the last prime number in an array', () => {
         const numbers = [3, -1, 1, 4, 1, 5, 9, 2, 6];
         const lastTrough = numbers
-            .tinyFilter((num) => num > 0)
-            .tinyFindLastIndex((num, idx, arr) => {
+            .mockFilter((num) => num > 0)
+            .mockFindLastIndex((num, idx, arr) => {
                 if (idx > 0 && num >= arr[idx - 1]) {
                     return false;
                 }
@@ -107,7 +107,7 @@ describe('Array.prototype.findLastIndex', () => {
      * You can search for undefined in a sparse array and get the index of an empty slot.
      */
     test('Using findLastIndex() on sparse arrays', () => {
-        expect([1, , 3].tinyFindLastIndex((x) => x === undefined)).toBe(1);
+        expect([1, , 3].mockFindLastIndex((x) => x === undefined)).toBe(1);
     });
 
     /**
@@ -124,7 +124,7 @@ describe('Array.prototype.findLastIndex', () => {
         };
 
         expect(
-            Array.prototype.tinyFindLastIndex.call(arrayLike, (x) =>
+            Array.prototype.mockFindLastIndex.call(arrayLike, (x) =>
                 Number.isInteger(x)
             )
         ).toBe(2);

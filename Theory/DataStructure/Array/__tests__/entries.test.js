@@ -1,7 +1,7 @@
-import { tinyEntries } from 'Array/entries';
+import { mockEntries } from 'Array/entries';
 
 describe('Array.prototype.entries', () => {
-    Array.prototype.tinyEntries = tinyEntries;
+    Array.prototype.mockEntries = mockEntries;
 
     test('Iterating with index and element', () => {
         const a = ['a', 'b', 'c'];
@@ -9,7 +9,7 @@ describe('Array.prototype.entries', () => {
             .spyOn(console, 'log')
             .mockImplementation(() => {});
 
-        for (const [index, element] of a.tinyEntries()) {
+        for (const [index, element] of a.mockEntries()) {
             console.log(index, element);
         }
 
@@ -20,7 +20,7 @@ describe('Array.prototype.entries', () => {
 
     test('Using a for...of loop', () => {
         const array = ['a', 'b', 'c'];
-        const arrayEntries = array.tinyEntries();
+        const arrayEntries = array.mockEntries();
         const consoleSpy = jest
             .spyOn(console, 'log')
             .mockImplementation(() => {});
@@ -38,7 +38,7 @@ describe('Array.prototype.entries', () => {
      * entries() will visit empty slots as if they are undefined.
      */
     test('Iterating sparse arrays', () => {
-        for (const element of [, 'a'].tinyEntries()) {
+        for (const element of [, 'a'].mockEntries()) {
             console.log(element);
         }
 
@@ -63,7 +63,7 @@ describe('Array.prototype.entries', () => {
             3: 'd'
         };
 
-        for (const entry of Array.prototype.tinyEntries.call(arrayLike)) {
+        for (const entry of Array.prototype.mockEntries.call(arrayLike)) {
             console.log(entry);
         }
 

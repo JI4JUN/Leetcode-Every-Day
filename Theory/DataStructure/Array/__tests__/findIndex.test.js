@@ -1,7 +1,7 @@
-import { tinyFindIndex } from '../findIndex';
+import { mockFindIndex } from '../findIndex';
 
 describe('Array.prototype.findIndex', () => {
-    Array.prototype.tinyFindIndex = tinyFindIndex;
+    Array.prototype.mockFindIndex = mockFindIndex;
 
     /**
      * The following example returns the index of the first element in the array that
@@ -22,8 +22,8 @@ describe('Array.prototype.findIndex', () => {
             return true;
         }
 
-        expect([4, 6, 8, 9, 12].tinyFindIndex(isPrime)).toBe(-1);
-        expect([4, 6, 7, 9, 12].tinyFindIndex(isPrime)).toBe(2);
+        expect([4, 6, 8, 9, 12].mockFindIndex(isPrime)).toBe(-1);
+        expect([4, 6, 7, 9, 12].mockFindIndex(isPrime)).toBe(2);
     });
 
     /**

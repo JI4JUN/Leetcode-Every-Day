@@ -1,7 +1,7 @@
-import { tinyValues } from 'Array/values';
+import { mockValues } from 'Array/values';
 
 describe('Array.prototype.values', () => {
-    Array.prototype.tinyValues = tinyValues;
+    Array.prototype.mockValues = mockValues;
 
     /**
      * Because values() returns an iterable iterator, you can use a for...of loop to iterate it.
@@ -11,7 +11,7 @@ describe('Array.prototype.values', () => {
             .spyOn(console, 'log')
             .mockImplementation(() => {});
         const arr = ['a', 'b', 'c', 'd', 'e'];
-        const iterator = arr.tinyValues();
+        const iterator = arr.mockValues();
 
         for (const letter of iterator) {
             console.log(letter);
@@ -29,7 +29,7 @@ describe('Array.prototype.values', () => {
      */
     test('Iteration using next()', () => {
         const arr = ['a', 'b', 'c', 'd', 'e'];
-        const iterator = arr.tinyValues();
+        const iterator = arr.mockValues();
 
         expect(iterator.next()).toEqual({ value: 'a', done: false });
         expect(iterator.next()).toEqual({ value: 'b', done: false });
@@ -49,7 +49,7 @@ describe('Array.prototype.values', () => {
             .spyOn(console, 'log')
             .mockImplementation(() => {});
         const arr = ['a', 'b', 'c', 'd', 'e'];
-        const values = arr.tinyValues();
+        const values = arr.mockValues();
 
         for (const letter of values) {
             console.log(letter);
@@ -75,7 +75,7 @@ describe('Array.prototype.values', () => {
      */
     test('Mutations during iteration', () => {
         const arr = ['a', 'b', 'c', 'd', 'e'];
-        const iterator = arr.tinyValues();
+        const iterator = arr.mockValues();
 
         expect(iterator.next().value).toBe('a');
 
@@ -92,7 +92,7 @@ describe('Array.prototype.values', () => {
             .spyOn(console, 'log')
             .mockImplementation(() => {});
 
-        for (const element of [, 'a'].tinyValues()) {
+        for (const element of [, 'a'].mockValues()) {
             console.log(element);
         }
 
@@ -116,7 +116,7 @@ describe('Array.prototype.values', () => {
             3: 'd'
         };
 
-        for (const entry of Array.prototype.tinyValues.call(arrayLike)) {
+        for (const entry of Array.prototype.mockValues.call(arrayLike)) {
             console.log(entry);
         }
 

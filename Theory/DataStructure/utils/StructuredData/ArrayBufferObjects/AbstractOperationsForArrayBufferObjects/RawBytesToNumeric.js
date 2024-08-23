@@ -1,11 +1,11 @@
-import { tinyForEach, tinyIncludes, tinyMap, tinyJoin } from 'Array';
+import { mockForEach, mockIncludes, mockMap, mockJoin } from 'Array';
 import { IsBigIntElementType } from 'utils/StructuredData/SharedArrayBufferObjects/AbstractOperationsForSharedArrayBufferObjects';
 import { IsUnsignedElementType } from 'utils/StructuredData/ArrayBufferObjects/AbstractOperationsForArrayBufferObjects';
 
-Array.prototype.tinyForEach = tinyForEach;
-Array.prototype.tinyIncludes = tinyIncludes;
-Array.prototype.tinyMap = tinyMap;
-Array.prototype.tinyJoin = tinyJoin;
+Array.prototype.mockForEach = mockForEach;
+Array.prototype.mockIncludes = mockIncludes;
+Array.prototype.mockMap = mockMap;
+Array.prototype.mockJoin = mockJoin;
 
 /**
  * https://tc39.es/ecma262/#sec-rawbytestonumeric
@@ -60,7 +60,7 @@ export function RawBytesToNumeric(type, rawBytes, isLittleEndian) {
     const buffer = new ArrayBuffer(elementSize);
     const view = new DataView(buffer);
 
-    rawBytes.tinyForEach((byte, index) => view.setUint8(index, byte));
+    rawBytes.mockForEach((byte, index) => view.setUint8(index, byte));
 
     const typeHandler = {
         INT8: () => view.getInt8(0, true),

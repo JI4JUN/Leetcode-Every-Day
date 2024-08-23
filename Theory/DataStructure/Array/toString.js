@@ -15,7 +15,7 @@ import { ToObject } from 'utils/AbstractOperations/TypeConversion';
  * 4. Return ? Call(func, array).
  * ```
  */
-export function tinyToString() {
+export function mockToString() {
     const array = ToObject(this);
     let func = Get(array, 'join');
 

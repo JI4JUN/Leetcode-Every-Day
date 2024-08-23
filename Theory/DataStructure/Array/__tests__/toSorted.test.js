@@ -1,17 +1,17 @@
-import { tinyToSorted } from 'Array/toSorted';
+import { mockToSorted } from 'Array/toSorted';
 
 describe('Array.prototype.toSorted', () => {
-    Array.prototype.tinyToSorted = tinyToSorted;
+    Array.prototype.mockToSorted = mockToSorted;
 
     test('Sorting an array', () => {
         const months = ['Mar', 'Jan', 'Feb', 'Dec'];
-        const sortedMonths = months.tinyToSorted();
+        const sortedMonths = months.mockToSorted();
 
         expect(sortedMonths).toEqual(['Dec', 'Feb', 'Jan', 'Mar']);
         expect(months).toEqual(['Mar', 'Jan', 'Feb', 'Dec']);
 
         const values = [1, 10, 21, 2];
-        const sortedValues = values.tinyToSorted((a, b) => a - b);
+        const sortedValues = values.mockToSorted((a, b) => a - b);
 
         expect(sortedValues).toEqual([1, 2, 10, 21]);
         expect(values).toEqual([1, 10, 21, 2]);
@@ -22,13 +22,13 @@ describe('Array.prototype.toSorted', () => {
      * the array and compareFn is not called for them.
      */
     test('Using toSorted() on sparse arrays', () => {
-        expect(['a', 'c', , 'b'].tinyToSorted()).toEqual([
+        expect(['a', 'c', , 'b'].mockToSorted()).toEqual([
             'a',
             'b',
             'c',
             undefined
         ]);
-        expect([, undefined, 'a', 'b'].tinyToSorted()).toEqual([
+        expect([, undefined, 'a', 'b'].mockToSorted()).toEqual([
             'a',
             'b',
             undefined,
@@ -45,7 +45,7 @@ describe('Array.prototype.toSorted', () => {
             3: 3
         };
 
-        expect(Array.prototype.tinyToSorted.call(arrayLike)).toEqual([
+        expect(Array.prototype.mockToSorted.call(arrayLike)).toEqual([
             4,
             5,
             undefined

@@ -1,16 +1,16 @@
-import { tinyReduceRight } from 'Array/reduceRight';
-import { tinyReduce } from 'Array/reduce';
+import { mockReduceRight } from 'Array/reduceRight';
+import { mockReduce } from 'Array/reduce';
 
 describe('Array.prototype.reduceRight', () => {
-    Array.prototype.tinyReduceRight = tinyReduceRight;
-    Array.prototype.tinyReduce = tinyReduce;
+    Array.prototype.mockReduceRight = mockReduceRight;
+    Array.prototype.mockReduce = mockReduce;
 
     test('How reduceRight() works without an initial value', () => {
         const consoleSpy = jest
             .spyOn(console, 'log')
             .mockImplementation(() => {});
 
-        [0, 1, 2, 3, 4].tinyReduceRight(
+        [0, 1, 2, 3, 4].mockReduceRight(
             (accumulator, currentValue, index, _array) => {
                 const returns = accumulator + currentValue;
 
@@ -41,7 +41,7 @@ describe('Array.prototype.reduceRight', () => {
             .spyOn(console, 'log')
             .mockImplementation(() => {});
 
-        [0, 1, 2, 3, 4].tinyReduceRight(
+        [0, 1, 2, 3, 4].mockReduceRight(
             (accumulator, currentValue, index, _array) => {
                 const returns = accumulator + currentValue;
 
@@ -72,7 +72,7 @@ describe('Array.prototype.reduceRight', () => {
     });
 
     test('Sum up all values within an array', () => {
-        const sum = [0, 1, 2, 3].tinyReduceRight((a, b) => a + b);
+        const sum = [0, 1, 2, 3].mockReduceRight((a, b) => a + b);
 
         expect(sum).toBe(6);
     });
@@ -81,7 +81,7 @@ describe('Array.prototype.reduceRight', () => {
         const waterfall =
             (...functions) =>
             (callback, ...args) =>
-                functions.tinyReduceRight(
+                functions.mockReduceRight(
                     (composition, fn) =>
                         (...results) =>
                             fn(composition, ...results),
@@ -112,8 +112,8 @@ describe('Array.prototype.reduceRight', () => {
 
     test('Difference between reduce and reduceRight', () => {
         const a = ['1', '2', '3', '4', '5'];
-        const left = a.tinyReduce((prev, cur) => prev + cur);
-        const right = a.tinyReduceRight((prev, cur) => prev + cur);
+        const left = a.mockReduce((prev, cur) => prev + cur);
+        const right = a.mockReduceRight((prev, cur) => prev + cur);
 
         expect(left).toBe('12345');
         expect(right).toBe('54321');
@@ -128,7 +128,7 @@ describe('Array.prototype.reduceRight', () => {
         const compose =
             (...args) =>
             (value) =>
-                args.tinyReduceRight((acc, fn) => fn(acc), value);
+                args.mockReduceRight((acc, fn) => fn(acc), value);
         const inc = (n) => n + 1;
         const double = (n) => n * 2;
 
@@ -140,8 +140,8 @@ describe('Array.prototype.reduceRight', () => {
      * reduceRight() skips missing elements in sparse arrays, but it does not skip undefined values.
      */
     test('Using reduceRight() with sparse arrays', () => {
-        expect([1, 2, , 4].tinyReduceRight((a, b) => a + b)).toBe(7);
-        expect([1, 2, undefined, 4].tinyReduceRight((a, b) => a + b)).toBeNaN();
+        expect([1, 2, , 4].mockReduceRight((a, b) => a + b)).toBe(7);
+        expect([1, 2, undefined, 4].mockReduceRight((a, b) => a + b)).toBeNaN();
     });
 
     /**
@@ -158,7 +158,7 @@ describe('Array.prototype.reduceRight', () => {
         };
 
         expect(
-            Array.prototype.tinyReduceRight.call(arrayLike, (x, y) => x - y)
+            Array.prototype.mockReduceRight.call(arrayLike, (x, y) => x - y)
         ).toBe(-1);
     });
 });

@@ -1,10 +1,10 @@
 import {
     CompareArrayElements,
     SortIndexedProperties,
-    tinySort
+    mockSort
 } from 'Array/sort';
-import { tinyJoin } from 'Array/join';
-import { tinyMap } from 'Array/map';
+import { mockJoin } from 'Array/join';
+import { mockMap } from 'Array/map';
 
 describe('SortIndexedProperties function', () => {
     test('Should sort properties with no holes', () => {
@@ -220,9 +220,9 @@ describe('CompareArrayElements function', () => {
 });
 
 describe('Array.prototype.sort', () => {
-    Array.prototype.tinySort = tinySort;
-    Array.prototype.tinyJoin = tinyJoin;
-    Array.prototype.tinyMap = tinyMap;
+    Array.prototype.mockSort = mockSort;
+    Array.prototype.mockJoin = mockJoin;
+    Array.prototype.mockMap = mockMap;
 
     /**
      * The following example creates four arrays and displays the original array, then the sorted arrays.
@@ -238,26 +238,26 @@ describe('Array.prototype.sort', () => {
             return a - b;
         }
 
-        stringArray.tinyJoin();
+        stringArray.mockJoin();
 
-        expect(stringArray.tinySort()).toEqual(['Beluga', 'Blue', 'Humpback']);
+        expect(stringArray.mockSort()).toEqual(['Beluga', 'Blue', 'Humpback']);
 
-        numberArray.tinyJoin();
+        numberArray.mockJoin();
 
-        expect(numberArray.tinySort()).toEqual([1, 200, 40, 5]);
-        expect(numberArray.tinySort(compareNumbers)).toEqual([1, 5, 40, 200]);
+        expect(numberArray.mockSort()).toEqual([1, 200, 40, 5]);
+        expect(numberArray.mockSort(compareNumbers)).toEqual([1, 5, 40, 200]);
 
-        numericStringArray.tinyJoin();
+        numericStringArray.mockJoin();
 
-        expect(numericStringArray.tinySort()).toEqual(['700', '80', '9']);
-        expect(numericStringArray.tinySort(compareNumbers)).toEqual([
+        expect(numericStringArray.mockSort()).toEqual(['700', '80', '9']);
+        expect(numericStringArray.mockSort(compareNumbers)).toEqual([
             '9',
             '80',
             '700'
         ]);
 
-        mixedNumericArray.tinyJoin();
-        expect(mixedNumericArray.tinySort()).toEqual([
+        mixedNumericArray.mockJoin();
+        expect(mixedNumericArray.mockSort()).toEqual([
             1,
             200,
             40,
@@ -266,7 +266,7 @@ describe('Array.prototype.sort', () => {
             '80',
             '9'
         ]);
-        expect(mixedNumericArray.tinySort(compareNumbers)).toEqual([
+        expect(mixedNumericArray.mockSort(compareNumbers)).toEqual([
             1,
             5,
             '9',
@@ -290,7 +290,7 @@ describe('Array.prototype.sort', () => {
             { name: 'Zeros', value: 37 }
         ];
 
-        expect(items.tinySort((a, b) => a.value - b.value)).toEqual([
+        expect(items.mockSort((a, b) => a.value - b.value)).toEqual([
             { name: 'The', value: -12 },
             { name: 'Magnetic', value: 13 },
             { name: 'Edward', value: 21 },
@@ -299,7 +299,7 @@ describe('Array.prototype.sort', () => {
             { name: 'And', value: 45 }
         ]);
         expect(
-            items.tinySort((a, b) => {
+            items.mockSort((a, b) => {
                 const nameA = a.name.toUpperCase();
                 const nameB = b.name.toUpperCase();
 
@@ -367,11 +367,11 @@ describe('Array.prototype.sort', () => {
         }
 
         const data = ['delta', 'alpha', 'charlie', 'bravo'];
-        const mapped = data.tinyMap((v, i) => {
+        const mapped = data.mockMap((v, i) => {
             return { i, value: someSlowOperation(v) };
         });
 
-        mapped.tinySort((a, b) => {
+        mapped.mockSort((a, b) => {
             if (a.value > b.value) {
                 return 1;
             }
@@ -383,7 +383,7 @@ describe('Array.prototype.sort', () => {
             return 0;
         });
 
-        const result = mapped.tinyMap((v) => data[v.i]);
+        const result = mapped.mockMap((v) => data[v.i]);
 
         expect(result).toEqual(['alpha', 'bravo', 'charlie', 'delta']);
     });
@@ -394,7 +394,7 @@ describe('Array.prototype.sort', () => {
      */
     test('sort() returns the reference to the same array', () => {
         const numbers1 = [3, 1, 4, 1, 5];
-        const sorted1 = numbers1.tinySort((a, b) => a - b);
+        const sorted1 = numbers1.mockSort((a, b) => a - b);
 
         sorted1[0] = 10;
 
@@ -402,7 +402,7 @@ describe('Array.prototype.sort', () => {
         expect(numbers1[0]).toBe(10);
 
         const numbers2 = [3, 1, 4, 1, 5];
-        const sorted2 = [...numbers2].tinySort((a, b) => a - b);
+        const sorted2 = [...numbers2].mockSort((a, b) => a - b);
 
         sorted2[0] = 10;
 
@@ -434,7 +434,7 @@ describe('Array.prototype.sort', () => {
             }
         ];
 
-        students.tinySort(
+        students.mockSort(
             (firstItem, secondItem) => firstItem.grade - secondItem.grade
         );
 
@@ -454,14 +454,14 @@ describe('Array.prototype.sort', () => {
         const arr1 = [3, 1, 4, 1, 5, 9];
         const compareFn1 = (a, b) => (a > b ? 1 : 0);
 
-        arr1.tinySort(compareFn1);
+        arr1.mockSort(compareFn1);
 
         expect(arr1).toEqual([1, 1, 3, 4, 5, 9]);
 
         const arr2 = [3, 1, 4, 1, 5, 9];
         const compareFn2 = (a, b) => (a > b ? -1 : 0);
 
-        arr2.tinySort(compareFn2);
+        arr2.mockSort(compareFn2);
 
         expect(arr2).toEqual([3, 1, 4, 1, 5, 9]);
     });
@@ -470,8 +470,8 @@ describe('Array.prototype.sort', () => {
      * Empty slots are moved to the end of the array.
      */
     test('Using sort() on sparse arrays', () => {
-        expect(['a', 'c', , 'b'].tinySort()).toEqual(['a', 'b', 'c', ,]);
-        expect([, undefined, 'a', 'b'].tinySort()).toEqual([
+        expect(['a', 'c', , 'b'].mockSort()).toEqual(['a', 'b', 'c', ,]);
+        expect([, undefined, 'a', 'b'].mockSort()).toEqual([
             'a',
             'b',
             undefined,
@@ -493,7 +493,7 @@ describe('Array.prototype.sort', () => {
             2: 4
         };
 
-        expect(Array.prototype.tinySort.call(arrayLike)).toEqual({
+        expect(Array.prototype.mockSort.call(arrayLike)).toEqual({
             0: 4,
             1: 5,
             length: 3,

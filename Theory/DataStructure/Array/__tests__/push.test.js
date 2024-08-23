@@ -1,7 +1,7 @@
-import { tinyPush } from '../push';
+import { mockPush } from '../push';
 
 describe('Array.prototype.push', () => {
-    Array.prototype.tinyPush = tinyPush;
+    Array.prototype.mockPush = mockPush;
 
     /**
      * The following code creates the sports array containing two elements,
@@ -10,7 +10,7 @@ describe('Array.prototype.push', () => {
      */
     test('Adding elements to an array', () => {
         const sports = ['soccer', 'baseball'];
-        const total = sports.tinyPush('football', 'swimming');
+        const total = sports.mockPush('football', 'swimming');
 
         expect(sports).toStrictEqual([
             'soccer',
@@ -29,7 +29,7 @@ describe('Array.prototype.push', () => {
         const vegetables = ['parsnip', 'potato'];
         const moreVegs = ['celery', 'beetroot'];
 
-        vegetables.tinyPush(...moreVegs);
+        vegetables.mockPush(...moreVegs);
 
         expect(vegetables).toStrictEqual([
             'parsnip',
@@ -52,8 +52,8 @@ describe('Array.prototype.push', () => {
         };
         const plainObj = {};
 
-        Array.prototype.tinyPush.call(arrayLike, 1, 2);
-        Array.prototype.tinyPush.call(plainObj, 1, 2);
+        Array.prototype.mockPush.call(arrayLike, 1, 2);
+        Array.prototype.mockPush.call(plainObj, 1, 2);
 
         expect(arrayLike).toStrictEqual({
             2: 4,
@@ -74,7 +74,7 @@ describe('Array.prototype.push', () => {
             length: 0,
 
             addElem(elem) {
-                [].tinyPush.call(this, elem);
+                [].mockPush.call(this, elem);
             }
         };
 

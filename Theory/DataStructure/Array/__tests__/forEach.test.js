@@ -1,7 +1,7 @@
-import { tinyForEach } from '../forEach';
+import { mockForEach } from '../forEach';
 
 describe('Array.prototype.forEach', () => {
-    Array.prototype.tinyForEach = tinyForEach;
+    Array.prototype.mockForEach = mockForEach;
 
     test('Converting a for loop to forEach', () => {
         const items = ['item1', 'item2', 'item3'];
@@ -12,7 +12,7 @@ describe('Array.prototype.forEach', () => {
             copyItems1.push(items[i]);
         }
 
-        items.tinyForEach((item) => copyItems2.push(item));
+        items.mockForEach((item) => copyItems2.push(item));
 
         expect(copyItems1).toStrictEqual(copyItems2);
     });
@@ -27,7 +27,7 @@ describe('Array.prototype.forEach', () => {
         const consoleSpy = jest
             .spyOn(console, 'log')
             .mockImplementation(() => {});
-        [2, 5, , 9].tinyForEach(logArrayElements);
+        [2, 5, , 9].mockForEach(logArrayElements);
 
         expect(consoleSpy).toHaveBeenCalledWith('a[0] = 2');
         expect(consoleSpy).toHaveBeenCalledWith('a[1] = 5');
@@ -46,7 +46,7 @@ describe('Array.prototype.forEach', () => {
             }
 
             add(array) {
-                array.tinyForEach(function countEntry(entry) {
+                array.mockForEach(function countEntry(entry) {
                     this.sum += entry;
                     ++this.count;
                 }, this);
@@ -68,7 +68,7 @@ describe('Array.prototype.forEach', () => {
             const copy = Object.create(Object.getPrototypeOf(obj));
             const propNames = Object.getOwnPropertyNames(obj);
 
-            propNames.tinyForEach((name) => {
+            propNames.mockForEach((name) => {
                 const desc = Object.getOwnPropertyDescriptor(obj, name);
                 Object.defineProperty(copy, name, desc);
             });
@@ -90,7 +90,7 @@ describe('Array.prototype.forEach', () => {
         const flatten = (arr) => {
             const result = [];
 
-            arr.tinyForEach((item) => {
+            arr.mockForEach((item) => {
                 if (Array.isArray(item)) {
                     result.push(...flatten(item));
                 } else {
@@ -116,7 +116,7 @@ describe('Array.prototype.forEach', () => {
         const processArray = (numbers) => {
             return numbers
                 .filter((num) => num > 0)
-                .tinyForEach((num, idx, arr) => {
+                .mockForEach((num, idx, arr) => {
                     console.log(arr[idx - 1], num, arr[idx + 1]);
                 });
         };
@@ -143,7 +143,7 @@ describe('Array.prototype.forEach', () => {
 
         let numCallbackRuns = 0;
 
-        arraySparse.tinyForEach((element) => {
+        arraySparse.mockForEach((element) => {
             console.log({ element });
 
             numCallbackRuns++;
@@ -173,7 +173,7 @@ describe('Array.prototype.forEach', () => {
             3: 5
         };
 
-        Array.prototype.tinyForEach.call(arrayLike, (x) => console.log(x));
+        Array.prototype.mockForEach.call(arrayLike, (x) => console.log(x));
 
         expect(consoleSpy).toHaveBeenCalledTimes(3);
         expect(consoleSpy).toHaveBeenCalledWith(2);

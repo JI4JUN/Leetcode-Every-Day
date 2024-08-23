@@ -42,7 +42,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  * 16. Return A.
  * ```
  */
-export function tinySlice(start, end) {
+export function mockSlice(start, end) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
     const relativeStart = ToIntegerOrInfinity(start);

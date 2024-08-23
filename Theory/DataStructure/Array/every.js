@@ -34,7 +34,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  * 6. Return true.
  * ```
  */
-export function tinyEvery(callbackfn, thisArg) {
+export function mockEvery(callbackfn, thisArg) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
 

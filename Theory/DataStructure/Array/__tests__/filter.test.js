@@ -1,7 +1,7 @@
-import { tinyFilter } from '../filter';
+import { mockFilter } from '../filter';
 
 describe('Array.prototype.filter', () => {
-    Array.prototype.tinyFilter = tinyFilter;
+    Array.prototype.mockFilter = mockFilter;
 
     /**
      * The following example uses filter() to create a filtered array that has all elements
@@ -12,7 +12,7 @@ describe('Array.prototype.filter', () => {
             return value >= 10;
         }
 
-        const filtered = [12, 5, 8, 130, 44].tinyFilter(isBigEnough);
+        const filtered = [12, 5, 8, 130, 44].mockFilter(isBigEnough);
 
         expect(filtered).toStrictEqual([12, 130, 44]);
     });
@@ -34,7 +34,7 @@ describe('Array.prototype.filter', () => {
             return num > 1;
         }
 
-        const primes = array.tinyFilter(isPrime);
+        const primes = array.mockFilter(isPrime);
 
         expect(primes).toStrictEqual([2, 3, 5, 7, 11, 13]);
     });
@@ -68,7 +68,7 @@ describe('Array.prototype.filter', () => {
             return false;
         }
 
-        const arrByID = arr.tinyFilter(filterById);
+        const arrByID = arr.mockFilter(filterById);
 
         expect(arrByID).toStrictEqual([
             { id: 15 },
@@ -86,7 +86,7 @@ describe('Array.prototype.filter', () => {
         const fruits = ['apple', 'banana', 'grapes', 'mango', 'orange'];
 
         function filterItems(arr, query) {
-            return arr.tinyFilter((el) =>
+            return arr.mockFilter((el) =>
                 el.toLowerCase().includes(query.toLowerCase())
             );
         }
@@ -108,7 +108,7 @@ describe('Array.prototype.filter', () => {
         const names = ['JC63', 'Bob132', 'Ursula89', 'Ben96'];
         const greatIDs = names
             .map((name) => parseInt(name.match(/[0-9]+/)[0], 10))
-            .tinyFilter((id, idx, arr) => {
+            .mockFilter((id, idx, arr) => {
                 if (idx > 0 && id <= arr[idx - 1]) {
                     return false;
                 }
@@ -127,8 +127,8 @@ describe('Array.prototype.filter', () => {
      * filter() will skip empty slots.
      */
     test('Using filter() on sparse arrays', () => {
-        const result1 = [1, , undefined].tinyFilter((x) => x === undefined);
-        const result2 = [1, , undefined].tinyFilter((x) => x !== 2);
+        const result1 = [1, , undefined].mockFilter((x) => x === undefined);
+        const result2 = [1, , undefined].mockFilter((x) => x !== 2);
 
         expect(result1).toStrictEqual([undefined]);
         expect(result2).toStrictEqual([1, undefined]);
@@ -148,7 +148,7 @@ describe('Array.prototype.filter', () => {
         };
 
         expect(
-            Array.prototype.tinyFilter.call(arrayLike, (x) => x <= 'b')
+            Array.prototype.mockFilter.call(arrayLike, (x) => x <= 'b')
         ).toStrictEqual(['a', 'b']);
     });
 });

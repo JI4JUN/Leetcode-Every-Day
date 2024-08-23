@@ -1,9 +1,9 @@
-import { tinySome } from 'Array/some';
-import { tinyFilter } from 'Array/filter';
+import { mockSome } from 'Array/some';
+import { mockFilter } from 'Array/filter';
 
 describe('Array.prototype.some', () => {
-    Array.prototype.tinySome = tinySome;
-    Array.prototype.tinyFilter = tinyFilter;
+    Array.prototype.mockSome = mockSome;
+    Array.prototype.mockFilter = mockFilter;
 
     /**
      * The following example tests whether any element in the array is bigger than 10.
@@ -13,16 +13,16 @@ describe('Array.prototype.some', () => {
             return element > 10;
         }
 
-        expect([2, 5, 8, 1, 4].tinySome(isBiggerThan10)).toBeFalsy();
-        expect([12, 5, 8, 1, 4].tinySome(isBiggerThan10)).toBeTruthy();
+        expect([2, 5, 8, 1, 4].mockSome(isBiggerThan10)).toBeFalsy();
+        expect([12, 5, 8, 1, 4].mockSome(isBiggerThan10)).toBeTruthy();
     });
 
     /**
      * Arrow functions provide a shorter syntax for the same test.
      */
     test('Testing array elements using arrow functions', () => {
-        expect([2, 5, 8, 1, 4].tinySome((x) => x > 10)).toBeFalsy();
-        expect([12, 5, 8, 1, 4].tinySome((x) => x > 10)).toBeTruthy();
+        expect([2, 5, 8, 1, 4].mockSome((x) => x > 10)).toBeFalsy();
+        expect([12, 5, 8, 1, 4].mockSome((x) => x > 10)).toBeTruthy();
     });
 
     /**
@@ -33,7 +33,7 @@ describe('Array.prototype.some', () => {
         const fruits = ['apple', 'banana', 'mango', 'guava'];
 
         function checkAvailability(arr, val) {
-            return arr.tinySome((arrVal) => val === arrVal);
+            return arr.mockSome((arrVal) => val === arrVal);
         }
 
         expect(checkAvailability(fruits, 'kela')).toBeFalsy();
@@ -48,7 +48,7 @@ describe('Array.prototype.some', () => {
                 value = value.toLowerCase().trim();
             }
 
-            return TRUTHY_VALUE.tinySome((t) => t === value);
+            return TRUTHY_VALUE.mockSome((t) => t === value);
         }
 
         expect(getBoolean(false)).toBeFalsy();
@@ -66,8 +66,8 @@ describe('Array.prototype.some', () => {
     test('Using the third argument of callbackFn', () => {
         const numbers = [3, -1, 1, 4, 1, 5];
         const isIncreasing = !numbers
-            .tinyFilter((num) => num > 0)
-            .tinySome((num, idx, arr) => {
+            .mockFilter((num) => num > 0)
+            .mockSome((num, idx, arr) => {
                 if (idx === 0) {
                     return false;
                 }
@@ -82,9 +82,9 @@ describe('Array.prototype.some', () => {
      * some() will not run its predicate on empty slots.
      */
     test('Using some() on sparse arrays', () => {
-        expect([1, , 3].tinySome((x) => x === undefined)).toBeFalsy();
-        expect([1, , 1].tinySome((x) => x !== 1)).toBeFalsy();
-        expect([1, undefined, 1].tinySome((x) => x !== 1)).toBeTruthy();
+        expect([1, , 3].mockSome((x) => x === undefined)).toBeFalsy();
+        expect([1, , 1].mockSome((x) => x !== 1)).toBeFalsy();
+        expect([1, undefined, 1].mockSome((x) => x !== 1)).toBeTruthy();
     });
 
     test('Calling some() on non-array objects', () => {
@@ -97,7 +97,7 @@ describe('Array.prototype.some', () => {
         };
 
         expect(
-            Array.prototype.tinySome.call(
+            Array.prototype.mockSome.call(
                 arrayLike,
                 (x) => typeof x === 'number'
             )

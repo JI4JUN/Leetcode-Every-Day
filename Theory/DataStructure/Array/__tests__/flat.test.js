@@ -1,24 +1,24 @@
-import { tinyFlat } from '../flat';
+import { mockFlat } from '../flat';
 
 describe('Array.prototype.flat', () => {
-    Array.prototype.tinyFlat = tinyFlat;
+    Array.prototype.mockFlat = mockFlat;
 
     test('Flattening nested arrays', () => {
         const arr1 = [1, 2, [3, 4]];
 
-        expect(arr1.tinyFlat()).toEqual([1, 2, 3, 4]);
+        expect(arr1.mockFlat()).toEqual([1, 2, 3, 4]);
 
         const arr2 = [1, 2, [3, 4, [5, 6]]];
 
-        expect(arr2.tinyFlat()).toEqual([1, 2, 3, 4, [5, 6]]);
+        expect(arr2.mockFlat()).toEqual([1, 2, 3, 4, [5, 6]]);
 
         const arr3 = [1, 2, [3, 4, [5, 6]]];
 
-        expect(arr3.tinyFlat(2)).toEqual([1, 2, 3, 4, 5, 6]);
+        expect(arr3.mockFlat(2)).toEqual([1, 2, 3, 4, 5, 6]);
 
         const arr4 = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]];
 
-        expect(arr4.tinyFlat(Infinity)).toEqual([
+        expect(arr4.mockFlat(Infinity)).toEqual([
             1, 2, 3, 4, 5, 6, 7, 8, 9, 10
         ]);
     });
@@ -29,16 +29,16 @@ describe('Array.prototype.flat', () => {
     test('Using flat() on sparse arrays', () => {
         const arr5 = [1, 2, , 4, 5];
 
-        expect(arr5.tinyFlat()).toEqual([1, 2, 4, 5]);
+        expect(arr5.mockFlat()).toEqual([1, 2, 4, 5]);
 
         const array = [1, , 3, ['a', 'c']];
 
-        expect(array.tinyFlat()).toEqual([1, 3, 'a', 'c']);
+        expect(array.mockFlat()).toEqual([1, 3, 'a', 'c']);
 
         const array2 = [1, , 3, ['a', , ['d', , 'e']]];
 
-        expect(array2.tinyFlat()).toEqual([1, 3, 'a', ['d', , 'e']]);
-        expect(array2.tinyFlat(2)).toEqual([1, 3, 'a', 'd', 'e']);
+        expect(array2.mockFlat()).toEqual([1, 3, 'a', ['d', , 'e']]);
+        expect(array2.mockFlat(2)).toEqual([1, 3, 'a', 'd', 'e']);
     });
 
     /**
@@ -56,7 +56,7 @@ describe('Array.prototype.flat', () => {
             3: 3
         };
 
-        expect(Array.prototype.tinyFlat.call(arrayLike)).toEqual([
+        expect(Array.prototype.mockFlat.call(arrayLike)).toEqual([
             1,
             2,
             { 0: 3, 1: 4, length: 2 },

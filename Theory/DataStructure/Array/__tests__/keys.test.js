@@ -1,7 +1,7 @@
-import { tinyKeys } from '../keys';
+import { mockKeys } from '../keys';
 
 describe('Array.prototype.keys', () => {
-    Array.prototype.tinyKeys = tinyKeys;
+    Array.prototype.mockKeys = mockKeys;
 
     /**
      * Unlike Object.keys(), which only includes keys that actually exist in the array,
@@ -10,7 +10,7 @@ describe('Array.prototype.keys', () => {
     test('Using keys() on sparse arrays', () => {
         const arr = ['a', , 'c'];
         const sparseKeys = Object.keys(arr);
-        const denseKeys = [...arr.tinyKeys()];
+        const denseKeys = [...arr.mockKeys()];
 
         expect(sparseKeys).toEqual(['0', '2']);
         expect(denseKeys).toEqual([0, 1, 2]);
@@ -28,7 +28,7 @@ describe('Array.prototype.keys', () => {
             .spyOn(console, 'log')
             .mockImplementation(() => {});
 
-        for (const entry of Array.prototype.tinyKeys.call(arrayLike)) {
+        for (const entry of Array.prototype.mockKeys.call(arrayLike)) {
             console.log(entry);
         }
 

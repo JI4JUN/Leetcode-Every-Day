@@ -1,11 +1,11 @@
-import { tinySplice } from '../splice';
+import { mockSplice } from '../splice';
 
 describe('Array.prototype.splice', () => {
-    Array.prototype.tinySplice = tinySplice;
+    Array.prototype.mockSplice = mockSplice;
 
     test('Remove 0 (zero) elements before index 2, and insert "drum"', () => {
         const myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
-        const removed = myFish.tinySplice(2, 0, 'drum');
+        const removed = myFish.mockSplice(2, 0, 'drum');
 
         expect(myFish).toEqual([
             'angel',
@@ -19,7 +19,7 @@ describe('Array.prototype.splice', () => {
 
     test('Remove 0 (zero) elements before index 2, and insert "drum" and "guitar"', () => {
         const myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
-        const removed = myFish.tinySplice(2, 0, 'drum', 'guitar');
+        const removed = myFish.mockSplice(2, 0, 'drum', 'guitar');
 
         expect(myFish).toEqual([
             'angel',
@@ -37,7 +37,7 @@ describe('Array.prototype.splice', () => {
      */
     test('Remove 0 (zero) elements at index 0, and insert "angel"', () => {
         const myFish = ['clown', 'mandarin', 'sturgeon'];
-        const removed = myFish.tinySplice(0, 0, 'angel');
+        const removed = myFish.mockSplice(0, 0, 'angel');
 
         expect(myFish).toEqual(['angel', 'clown', 'mandarin', 'sturgeon']);
         expect(removed).toEqual([]);
@@ -48,7 +48,7 @@ describe('Array.prototype.splice', () => {
      */
     test('Remove 0 (zero) elements at last index, and insert "sturgeon"', () => {
         const myFish = ['angel', 'clown', 'mandarin'];
-        const removed = myFish.tinySplice(myFish.length, 0, 'sturgeon');
+        const removed = myFish.mockSplice(myFish.length, 0, 'sturgeon');
 
         expect(myFish).toEqual(['angel', 'clown', 'mandarin', 'sturgeon']);
         expect(removed).toEqual([]);
@@ -56,7 +56,7 @@ describe('Array.prototype.splice', () => {
 
     test('Remove 1 element at index 3', () => {
         const myFish = ['angel', 'clown', 'drum', 'mandarin', 'sturgeon'];
-        const removed = myFish.tinySplice(3, 1);
+        const removed = myFish.mockSplice(3, 1);
 
         expect(myFish).toEqual(['angel', 'clown', 'drum', 'sturgeon']);
         expect(removed).toEqual(['mandarin']);
@@ -64,7 +64,7 @@ describe('Array.prototype.splice', () => {
 
     test('Remove 1 element at index 2, and insert "trumpet"', () => {
         const myFish = ['angel', 'clown', 'drum', 'sturgeon'];
-        const removed = myFish.tinySplice(2, 1, 'trumpet');
+        const removed = myFish.mockSplice(2, 1, 'trumpet');
 
         expect(myFish).toEqual(['angel', 'clown', 'trumpet', 'sturgeon']);
         expect(removed).toEqual(['drum']);
@@ -72,7 +72,7 @@ describe('Array.prototype.splice', () => {
 
     test('Remove 2 elements from index 0, and insert "parrot", "anemone" and "blue"', () => {
         const myFish = ['angel', 'clown', 'trumpet', 'sturgeon'];
-        const removed = myFish.tinySplice(0, 2, 'parrot', 'anemone', 'blue');
+        const removed = myFish.mockSplice(0, 2, 'parrot', 'anemone', 'blue');
 
         expect(myFish).toEqual([
             'parrot',
@@ -86,7 +86,7 @@ describe('Array.prototype.splice', () => {
 
     test('Remove 2 elements, starting from index 2', () => {
         const myFish = ['parrot', 'anemone', 'blue', 'trumpet', 'sturgeon'];
-        const removed = myFish.tinySplice(2, 2);
+        const removed = myFish.mockSplice(2, 2);
 
         expect(myFish).toEqual(['parrot', 'anemone', 'sturgeon']);
         expect(removed).toEqual(['blue', 'trumpet']);
@@ -94,7 +94,7 @@ describe('Array.prototype.splice', () => {
 
     test('Remove 1 element from index -2', () => {
         const myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
-        const removed = myFish.tinySplice(-2, 1);
+        const removed = myFish.mockSplice(-2, 1);
 
         expect(myFish).toEqual(['angel', 'clown', 'sturgeon']);
         expect(removed).toEqual(['mandarin']);
@@ -102,7 +102,7 @@ describe('Array.prototype.splice', () => {
 
     test('Remove all elements, starting from index 2', () => {
         const myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
-        const removed = myFish.tinySplice(2);
+        const removed = myFish.mockSplice(2);
 
         expect(myFish).toEqual(['angel', 'clown']);
         expect(removed).toEqual(['mandarin', 'sturgeon']);
@@ -114,7 +114,7 @@ describe('Array.prototype.splice', () => {
     test('Using splice() on sparse arrays', () => {
         const arr = [1, , 3, 4, , 6];
 
-        expect(arr.tinySplice(1, 2)).toEqual([, 3]);
+        expect(arr.mockSplice(1, 2)).toEqual([, 3]);
         expect(arr).toEqual([1, 4, , 6]);
     });
 
@@ -130,7 +130,7 @@ describe('Array.prototype.splice', () => {
             2: 4
         };
 
-        expect(Array.prototype.tinySplice.call(arrayLike, 0, 1, 2, 3)).toEqual([
+        expect(Array.prototype.mockSplice.call(arrayLike, 0, 1, 2, 3)).toEqual([
             5
         ]);
         expect(arrayLike).toEqual({

@@ -45,7 +45,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  * 10. Return accumulator.
  * ```
  */
-export function tinyReduce(callback, initialValue) {
+export function mockReduce(callback, initialValue) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
 

@@ -1,7 +1,7 @@
-import { tinyReverse } from 'Array/reverse';
+import { mockReverse } from 'Array/reverse';
 
 describe('Array.prototype.reverse', () => {
-    Array.prototype.tinyReverse = tinyReverse;
+    Array.prototype.mockReverse = mockReverse;
 
     /**
      * The following example creates an array items, containing three elements, then reverses the array.
@@ -10,7 +10,7 @@ describe('Array.prototype.reverse', () => {
     test('Reversing the elements in an array', () => {
         const items = [1, 2, 3];
 
-        items.tinyReverse();
+        items.mockReverse();
 
         expect(items).toEqual([3, 2, 1]);
     });
@@ -21,7 +21,7 @@ describe('Array.prototype.reverse', () => {
      */
     test('The reverse() method returns the reference to the same array', () => {
         const numbers = [3, 2, 4, 1, 5];
-        const reversed = numbers.tinyReverse();
+        const reversed = numbers.mockReverse();
 
         reversed[0] = 5;
 
@@ -33,8 +33,8 @@ describe('Array.prototype.reverse', () => {
      * new indices as empty slots.
      */
     test('Using reverse() on sparse arrays', () => {
-        expect([1, , 3].tinyReverse()).toEqual([3, , 1]);
-        expect([1, , 3, 4].tinyReverse()).toEqual([4, 3, , 1]);
+        expect([1, , 3].mockReverse()).toEqual([3, , 1]);
+        expect([1, , 3, 4].mockReverse()).toEqual([4, 3, , 1]);
     });
 
     /**
@@ -50,7 +50,7 @@ describe('Array.prototype.reverse', () => {
             3: 33
         };
 
-        expect(Array.prototype.tinyReverse.call(arrayLike)).toEqual({
+        expect(Array.prototype.mockReverse.call(arrayLike)).toEqual({
             0: 4,
             3: 33,
             length: 3,

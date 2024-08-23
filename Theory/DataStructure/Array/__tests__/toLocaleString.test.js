@@ -1,7 +1,7 @@
-import { tinyToLocaleString } from 'Array/toLocaleString';
+import { mockToLocaleString } from 'Array/toLocaleString';
 
 describe('Array.prototype.toLocaleString', () => {
-    Array.prototype.tinyToLocaleString = tinyToLocaleString;
+    Array.prototype.mockToLocaleString = mockToLocaleString;
 
     /**
      * Always display the currency for the strings and numbers in the prices array.
@@ -10,7 +10,7 @@ describe('Array.prototype.toLocaleString', () => {
         const prices = ['￥7', 500, 8123, 12];
 
         expect(
-            prices.tinyToLocaleString('ja-JP', {
+            prices.mockToLocaleString('ja-JP', {
                 style: 'currency',
                 currency: 'JPY'
             })
@@ -21,7 +21,7 @@ describe('Array.prototype.toLocaleString', () => {
      * toLocaleString() treats empty slots the same as undefined and produces an extra separator.
      */
     test('Using toLocaleString() on sparse arrays', () => {
-        expect([1, , 3].tinyToLocaleString()).toBe('1,,3');
+        expect([1, , 3].mockToLocaleString()).toBe('1,,3');
     });
 
     test('Calling toLocaleString() on non-array objects', () => {
@@ -33,7 +33,7 @@ describe('Array.prototype.toLocaleString', () => {
             3: 4
         };
 
-        expect(Array.prototype.tinyToLocaleString.call(arrayLike)).toBe(
+        expect(Array.prototype.mockToLocaleString.call(arrayLike)).toBe(
             '1,2,3'
         );
     });

@@ -1,7 +1,7 @@
-import { tinyMap } from '../map';
+import { mockMap } from '../map';
 
 describe('Array.prototype.map', () => {
-    Array.prototype.tinyMap = tinyMap;
+    Array.prototype.mockMap = mockMap;
 
     /**
      * The following code takes an array of numbers and creates a new array containing
@@ -9,7 +9,7 @@ describe('Array.prototype.map', () => {
      */
     test('Mapping an array of numbers to an array of square roots', () => {
         const numbers = [1, 4, 9];
-        const roots = numbers.tinyMap((num) => Math.sqrt(num));
+        const roots = numbers.mockMap((num) => Math.sqrt(num));
 
         expect(roots).toStrictEqual([1, 2, 3]);
         expect(numbers).toStrictEqual([1, 4, 9]);
@@ -26,7 +26,7 @@ describe('Array.prototype.map', () => {
             { key: 3, value: 30 }
         ];
 
-        const reformattedArray = kvArray.tinyMap(({ key, value }) => ({
+        const reformattedArray = kvArray.mockMap(({ key, value }) => ({
             [key]: value
         }));
 
@@ -43,9 +43,9 @@ describe('Array.prototype.map', () => {
     });
 
     test('Using parseInt() with map()', () => {
-        expect(['1', '2', '3'].tinyMap(parseInt)).toStrictEqual([1, NaN, NaN]);
+        expect(['1', '2', '3'].mockMap(parseInt)).toStrictEqual([1, NaN, NaN]);
         expect(
-            ['1', '2', '3'].tinyMap((str) => parseInt(str, 10))
+            ['1', '2', '3'].mockMap((str) => parseInt(str, 10))
         ).toStrictEqual([1, 2, 3]);
     });
 
@@ -54,7 +54,7 @@ describe('Array.prototype.map', () => {
      */
     test('Mapped array contains undefined', () => {
         const numbers = [1, 2, 3, 4];
-        const filteredNumbers = numbers.tinyMap((num, index) => {
+        const filteredNumbers = numbers.mockMap((num, index) => {
             if (index < 3) {
                 return num;
             }
@@ -72,7 +72,7 @@ describe('Array.prototype.map', () => {
 
         let total = 0;
 
-        const withTax = cart.tinyMap((cost) => {
+        const withTax = cart.mockMap((cost) => {
             total += cost;
             return cost * 1.2;
         });
@@ -90,7 +90,7 @@ describe('Array.prototype.map', () => {
         const numbers = [3, -1, 1, 4, 1, 5, 9, 2, 6];
         const averaged = numbers
             .filter((num) => num > 0)
-            .tinyMap((num, idx, arr) => {
+            .mockMap((num, idx, arr) => {
                 const prev = arr[idx - 1];
                 const next = arr[idx + 1];
 
@@ -122,7 +122,7 @@ describe('Array.prototype.map', () => {
         const consoleSpy = jest
             .spyOn(console, 'log')
             .mockImplementation(() => {});
-        const mapResult = [1, , 3].tinyMap((x, index) => {
+        const mapResult = [1, , 3].mockMap((x, index) => {
             console.log(`Visit ${index}`);
 
             return x * 2;
@@ -147,7 +147,7 @@ describe('Array.prototype.map', () => {
         };
 
         expect(
-            Array.prototype.tinyMap.call(arrayLike, (x) => x ** 2)
+            Array.prototype.mockMap.call(arrayLike, (x) => x ** 2)
         ).toStrictEqual([4, 9, 16]);
     });
 });

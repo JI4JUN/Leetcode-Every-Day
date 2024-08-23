@@ -10,7 +10,7 @@ import {
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
 
-export function tinyShift() {
+export function mockShift() {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
 

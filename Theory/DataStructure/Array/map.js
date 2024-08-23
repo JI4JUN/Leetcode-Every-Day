@@ -36,7 +36,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  * 8. Return A.
  * ```
  */
-export function tinyMap(callbackfn, thisArg) {
+export function mockMap(callbackfn, thisArg) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
 

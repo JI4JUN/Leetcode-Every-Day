@@ -1,9 +1,9 @@
-import { tinyFind } from '../find';
-import { tinyFilter } from '../filter';
+import { mockFind } from '../find';
+import { mockFilter } from '../filter';
 
 describe('Array.prototype.findLastIndex', () => {
-    Array.prototype.tinyFind = tinyFind;
-    Array.prototype.tinyFilter = tinyFilter;
+    Array.prototype.mockFind = mockFind;
+    Array.prototype.mockFilter = mockFilter;
 
     test('Find an object in an array by one of its properties', () => {
         const inventory = [
@@ -16,7 +16,7 @@ describe('Array.prototype.findLastIndex', () => {
             return fruit.name === 'cherries';
         }
 
-        expect(inventory.tinyFind(isCherries)).toEqual({
+        expect(inventory.mockFind(isCherries)).toEqual({
             name: 'cherries',
             quantity: 5
         });
@@ -29,7 +29,7 @@ describe('Array.prototype.findLastIndex', () => {
             { name: 'cherries', quantity: 5 }
         ];
 
-        const result = inventory.tinyFind(({ name }) => name === 'cherries');
+        const result = inventory.mockFind(({ name }) => name === 'cherries');
 
         expect(result).toEqual({ name: 'cherries', quantity: 5 });
     });
@@ -51,8 +51,8 @@ describe('Array.prototype.findLastIndex', () => {
             return element > 1;
         }
 
-        expect([4, 6, 8, 12].tinyFind(isPrime)).toBeUndefined();
-        expect([4, 5, 8, 12].tinyFind(isPrime)).toBe(5);
+        expect([4, 6, 8, 12].mockFind(isPrime)).toBeUndefined();
+        expect([4, 5, 8, 12].mockFind(isPrime)).toBe(5);
     });
 
     /**
@@ -86,7 +86,7 @@ describe('Array.prototype.findLastIndex', () => {
         const visitedIndexes1 = [];
         const visitedValues1 = [];
 
-        array1.tinyFind((value, index) => {
+        array1.mockFind((value, index) => {
             visitedIndexes1.push(index);
             visitedValues1.push(value);
         });
@@ -106,7 +106,7 @@ describe('Array.prototype.findLastIndex', () => {
         const visitedIndexes2 = [];
         const visitedValues2 = [];
 
-        array2.tinyFind((value, index) => {
+        array2.mockFind((value, index) => {
             if (index === 0) {
                 delete array2[5];
             }

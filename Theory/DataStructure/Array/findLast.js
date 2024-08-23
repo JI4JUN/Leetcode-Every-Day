@@ -17,7 +17,7 @@ import { FindViaPredicate } from 'Array/findLastIndex';
  * 4. Return findRec.[[Value]].
  * ```
  */
-export function tinyFindLast(predicate, thisArg) {
+export function mockFindLast(predicate, thisArg) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
     const findRec = FindViaPredicate(O, len, 'DESCENDING', predicate, thisArg);

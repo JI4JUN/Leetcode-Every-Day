@@ -47,7 +47,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  * 7. Return A.
  * ```
  */
-export function tinyConcat(...items) {
+export function mockConcat(...items) {
     const O = ToObject(this);
     const A = new Array();
 

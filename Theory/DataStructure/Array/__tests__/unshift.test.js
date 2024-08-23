@@ -1,21 +1,21 @@
-import { tinyUnshift } from 'Array/unshift';
+import { mockUnshift } from 'Array/unshift';
 
 describe('Array.prototype.unshift', () => {
-    Array.prototype.tinyUnshift = tinyUnshift;
+    Array.prototype.mockUnshift = mockUnshift;
 
     test('Using unshift()', () => {
         const arr = [1, 2];
 
-        arr.tinyUnshift(0);
+        arr.mockUnshift(0);
         expect(arr).toEqual([0, 1, 2]);
 
-        arr.tinyUnshift(-2, -1);
+        arr.mockUnshift(-2, -1);
         expect(arr).toEqual([-2, -1, 0, 1, 2]);
 
-        arr.tinyUnshift([-4, -3]);
+        arr.mockUnshift([-4, -3]);
         expect(arr).toEqual([[-4, -3], -2, -1, 0, 1, 2]);
 
-        arr.tinyUnshift([-7, -6], [-5]);
+        arr.mockUnshift([-7, -6], [-5]);
         expect(arr).toEqual([[-7, -6], [-5], [-4, -3], -2, -1, 0, 1, 2]);
     });
 
@@ -32,7 +32,7 @@ describe('Array.prototype.unshift', () => {
             2: 4
         };
 
-        Array.prototype.tinyUnshift.call(arrayLike, 1, 2);
+        Array.prototype.mockUnshift.call(arrayLike, 1, 2);
         expect(arrayLike).toEqual({
             0: 1,
             1: 2,
@@ -43,7 +43,7 @@ describe('Array.prototype.unshift', () => {
 
         const plainObj = {};
 
-        Array.prototype.tinyUnshift.call(plainObj, 1, 2);
+        Array.prototype.mockUnshift.call(plainObj, 1, 2);
         expect(plainObj).toEqual({ 0: 1, 1: 2, length: 2 });
     });
 });

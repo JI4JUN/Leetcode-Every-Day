@@ -44,7 +44,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  * 6. Return 𝔽(len + argCount).
  * ```
  */
-export function tinyUnshift(...items) {
+export function mockUnshift(...items) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
     const argCount = items.length;

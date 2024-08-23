@@ -6,10 +6,10 @@ import {
     ToBoolean
 } from 'utils/AbstractOperations/TypeConversion';
 import { IsCallable } from 'utils/AbstractOperations/TestingAndComparsionOperations';
-import { tinyPush } from 'Array/push';
+import { mockPush } from 'Array/push';
 import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
-Array.prototype.tinyPush = tinyPush;
+Array.prototype.mockPush = mockPush;
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.findlastindex
@@ -24,7 +24,7 @@ Array.prototype.tinyPush = tinyPush;
  * 4. Return findRec.[[Index]].
  * ```
  */
-export function tinyFindLastIndex(predicate, thisArg) {
+export function mockFindLastIndex(predicate, thisArg) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
     const findRec = FindViaPredicate(O, len, 'DESCENDING', predicate, thisArg);

@@ -38,7 +38,7 @@ import {
  * 7. Return A.
  * ```
  */
-export function tinyFlat(depth) {
+export function mockFlat(depth) {
     const O = ToObject(this);
     const sourceLen = LengthOfArrayLike(O);
 

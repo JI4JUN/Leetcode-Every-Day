@@ -1,7 +1,7 @@
-import { tinyShift } from 'Array/shift';
+import { mockShift } from 'Array/shift';
 
 describe('Array.prototype.shift', () => {
-    Array.prototype.tinyShift = tinyShift;
+    Array.prototype.mockShift = mockShift;
 
     /**
      * The following code displays the myFish array before and after removing its first element.
@@ -9,7 +9,7 @@ describe('Array.prototype.shift', () => {
      */
     test('Removing an element from an array', () => {
         const myFish = ['angel', 'clown', 'mandarin', 'surgeon'];
-        const shifted = myFish.tinyShift();
+        const shifted = myFish.mockShift();
 
         expect(myFish).toEqual(['clown', 'mandarin', 'surgeon']);
         expect(shifted).toEqual('angel');
@@ -27,7 +27,7 @@ describe('Array.prototype.shift', () => {
 
         let i;
 
-        while (typeof (i = names.tinyShift()) !== 'undefined') {
+        while (typeof (i = names.mockShift()) !== 'undefined') {
             console.log(i);
         }
 
@@ -51,7 +51,7 @@ describe('Array.prototype.shift', () => {
             2: 4
         };
 
-        expect(Array.prototype.tinyShift.call(arrayLike)).toBeUndefined();
+        expect(Array.prototype.mockShift.call(arrayLike)).toBeUndefined();
         expect(arrayLike).toEqual({
             length: 2,
             1: 4,
@@ -60,7 +60,7 @@ describe('Array.prototype.shift', () => {
 
         const plainObj = {};
 
-        Array.prototype.tinyShift.call(plainObj);
+        Array.prototype.mockShift.call(plainObj);
 
         expect(plainObj).toEqual({ length: 0 });
     });

@@ -1,6 +1,6 @@
-import { tinyIncludes } from 'Array';
+import { mockIncludes } from 'Array';
 
-Array.prototype.tinyIncludes = tinyIncludes;
+Array.prototype.mockIncludes = mockIncludes;
 
 /**
  * https://tc39.es/ecma262/#sec-isbigintelementtype
@@ -16,5 +16,5 @@ Array.prototype.tinyIncludes = tinyIncludes;
  * @returns A Boolean.
  */
 export function IsBigIntElementType(type) {
-    return ['BIGUINT64', 'BIGINT64'].tinyIncludes(type);
+    return ['BIGUINT64', 'BIGINT64'].mockIncludes(type);
 }

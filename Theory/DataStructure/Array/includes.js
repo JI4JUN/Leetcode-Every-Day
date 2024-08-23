@@ -36,7 +36,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  *
  * ```
  */
-export function tinyIncludes(searchElement, fromIndex) {
+export function mockIncludes(searchElement, fromIndex) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
 

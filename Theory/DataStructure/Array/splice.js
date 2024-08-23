@@ -77,7 +77,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  * 21. Return A.
  * ```
  */
-export function tinySplice(start, deleteCount, ...items) {
+export function mockSplice(start, deleteCount, ...items) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
     const relativeStart = ToIntegerOrInfinity(start);

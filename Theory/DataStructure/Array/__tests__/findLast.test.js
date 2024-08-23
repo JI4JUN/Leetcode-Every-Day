@@ -1,7 +1,7 @@
-import { tinyFindLast } from '../findLast';
+import { mockFindLast } from '../findLast';
 
 describe('Array.prototype.findLast', () => {
-    Array.prototype.tinyFindLast = tinyFindLast;
+    Array.prototype.mockFindLast = mockFindLast;
 
     /**
      * This example shows how you might create a test based on the properties of array elements.
@@ -18,7 +18,7 @@ describe('Array.prototype.findLast', () => {
             return item.quantity < 2;
         }
 
-        expect(inventory.tinyFindLast(isNotEnough)).toEqual({
+        expect(inventory.mockFindLast(isNotEnough)).toEqual({
             name: 'fish',
             quantity: 1
         });
@@ -35,7 +35,7 @@ describe('Array.prototype.findLast', () => {
             { name: 'cherries', quantity: 5 }
         ];
 
-        const result = inventory.tinyFindLast(({ quantity }) => quantity < 2);
+        const result = inventory.mockFindLast(({ quantity }) => quantity < 2);
 
         expect(result).toEqual({
             name: 'fish',
@@ -62,8 +62,8 @@ describe('Array.prototype.findLast', () => {
             return true;
         }
 
-        expect([4, 6, 8, 12].tinyFindLast(isPrime)).toBeUndefined();
-        expect([4, 5, 7, 8, 9, 11, 12].tinyFindLast(isPrime)).toBe(11);
+        expect([4, 6, 8, 12].mockFindLast(isPrime)).toBeUndefined();
+        expect([4, 5, 7, 8, 9, 11, 12].mockFindLast(isPrime)).toBe(11);
     });
 
     /**
@@ -74,7 +74,7 @@ describe('Array.prototype.findLast', () => {
         const numbers = [3, -1, 1, 4, 1, 5, 9, 2, 6];
         const lastTrough = numbers
             .filter((num) => num > 0)
-            .tinyFindLast((num, idx, arr) => {
+            .mockFindLast((num, idx, arr) => {
                 if (idx > 0 && num >= arr[idx - 1]) {
                     return false;
                 }
@@ -97,7 +97,7 @@ describe('Array.prototype.findLast', () => {
         const visitedIndexes1 = [];
         const visitedValues1 = [];
 
-        array1.tinyFindLast((value, index) => {
+        array1.mockFindLast((value, index) => {
             visitedIndexes1.push(index);
             visitedValues1.push(value);
         });
@@ -117,7 +117,7 @@ describe('Array.prototype.findLast', () => {
         const visitedIndexes2 = [];
         const visitedValues2 = [];
 
-        array2.tinyFindLast((value, index) => {
+        array2.mockFindLast((value, index) => {
             if (index === 6) {
                 delete array2[5];
             }
@@ -152,7 +152,7 @@ describe('Array.prototype.findLast', () => {
         };
 
         expect(
-            Array.prototype.tinyFindLast.call(arrayLike, (x) =>
+            Array.prototype.mockFindLast.call(arrayLike, (x) =>
                 Number.isInteger(x)
             )
         ).toBe(4);

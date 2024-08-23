@@ -15,11 +15,11 @@ import {
     ToObject,
     ToString
 } from 'utils/AbstractOperations/TypeConversion';
-import { tinyPush } from './push';
+import { mockPush } from './push';
 import { Assert } from 'utils/Assert';
 import { F } from 'utils/NotationalConventions/AlgorithmConventions/MathematicalOperations';
 
-Array.prototype.tinyPush = tinyPush;
+Array.prototype.mockPush = mockPush;
 
 /**
  * https://tc39.es/ecma262/#sec-array.prototype.sort
@@ -46,7 +46,7 @@ Array.prototype.tinyPush = tinyPush;
  * 11. Return obj.
  * ```
  */
-export function tinySort(comparator) {
+export function mockSort(comparator) {
     if (comparator !== undefined && IsCallable(comparator) === false) {
         throw new TypeError('Comparator must be a function or undefined');
     }
@@ -129,7 +129,7 @@ export function SortIndexedProperties(obj, len, SortCompare, holes) {
         if (kRead) {
             const kValue = Get(obj, Pk);
 
-            items.tinyPush(kValue);
+            items.mockPush(kValue);
         }
 
         k++;

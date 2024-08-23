@@ -49,7 +49,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  * 6. Return O.
  * ```
  */
-export function tinyReverse() {
+export function mockReverse() {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
     const middle = Math.floor(len / 2);

@@ -25,7 +25,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  * 7. Return ? Get(O, ! ToString(𝔽(k))).
  * ```
  */
-export function tinyAt(index) {
+export function mockAt(index) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
     const relativeIndex = ToIntegerOrInfinity(index);

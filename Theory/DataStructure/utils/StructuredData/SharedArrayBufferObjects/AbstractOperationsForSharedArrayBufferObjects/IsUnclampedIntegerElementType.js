@@ -1,6 +1,6 @@
-import { tinyIncludes } from 'Array';
+import { mockIncludes } from 'Array';
 
-Array.prototype.tinyIncludes = tinyIncludes;
+Array.prototype.mockIncludes = mockIncludes;
 
 /**
  * https://tc39.es/ecma262/#sec-isunclampedintegerelementtype
@@ -18,7 +18,7 @@ Array.prototype.tinyIncludes = tinyIncludes;
  * @returns A Boolean.
  */
 export function IsUnclampedIntegerElementType(type) {
-    return ['INT8', 'UINT8', 'INT16', 'UINT16', 'INT32', 'UINT32'].tinyIncludes(
+    return ['INT8', 'UINT8', 'INT16', 'UINT16', 'INT32', 'UINT32'].mockIncludes(
         type
     );
 }

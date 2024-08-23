@@ -34,7 +34,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  * 10. Return A.
  * ```
  */
-export function tinyWith(index, value) {
+export function mockWith(index, value) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
     const relativeIndex = ToIntegerOrInfinity(index);

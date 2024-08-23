@@ -28,7 +28,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  * 7. Return R.
  * ```
  */
-export function tinyToLocaleString(reserved1, reserved2) {
+export function mockToLocaleString(reserved1, reserved2) {
     const array = ToObject(this);
     const len = LengthOfArrayLike(array);
     const separator = ',';

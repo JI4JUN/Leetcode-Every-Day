@@ -12,7 +12,7 @@ import { CreateArrayIterator } from 'utils/IndexedCollections/ArrayObjects/Array
  * 2. Return CreateArrayIterator(O, KEY+VALUE).
  * ```
  */
-export function tinyEntries() {
+export function mockEntries() {
     const O = ToObject(this);
 
     return CreateArrayIterator(O, 'KEY+VALUE');

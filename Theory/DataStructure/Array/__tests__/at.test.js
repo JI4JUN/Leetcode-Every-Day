@@ -1,9 +1,9 @@
-import { tinyAt } from '../at';
-import { tinyPush } from '../push';
+import { mockAt } from '../at';
+import { mockPush } from '../push';
 
 describe('Array.prototype.at', () => {
-    Array.prototype.tinyAt = tinyAt;
-    Array.prototype.tinyPush = tinyPush;
+    Array.prototype.mockAt = mockAt;
+    Array.prototype.mockPush = mockPush;
 
     /**
      * The following example provides a function which returns the last element found in a specified array.
@@ -12,14 +12,14 @@ describe('Array.prototype.at', () => {
         const cart = ['apple', 'banana', 'pear'];
 
         function returnLast(arr) {
-            return arr.tinyAt(-1);
+            return arr.mockAt(-1);
         }
 
         const item1 = returnLast(cart);
 
         expect(item1).toBe('pear');
 
-        cart.tinyPush('orange');
+        cart.mockPush('orange');
 
         const item2 = returnLast(cart);
 
@@ -35,7 +35,7 @@ describe('Array.prototype.at', () => {
         const colors = ['red', 'green', 'blue'];
         const lengthWay = colors[colors.length - 2];
         const sliceWay = colors.slice(-2, -1)[0];
-        const atWay = colors.tinyAt(-2);
+        const atWay = colors.mockAt(-2);
 
         expect(lengthWay).toBe(sliceWay);
         expect(lengthWay).toBe(atWay);
@@ -53,7 +53,7 @@ describe('Array.prototype.at', () => {
             2: 'c'
         };
 
-        expect(Array.prototype.tinyAt.call(arrayLike, 0)).toBe('a');
-        expect(Array.prototype.tinyAt.call(arrayLike, 2)).toBeUndefined();
+        expect(Array.prototype.mockAt.call(arrayLike, 0)).toBe('a');
+        expect(Array.prototype.mockAt.call(arrayLike, 2)).toBeUndefined();
     });
 });

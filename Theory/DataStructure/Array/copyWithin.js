@@ -57,7 +57,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  * 19. Return O.
  * ```
  */
-export function tinyCopyWithin(target, start, end) {
+export function mockCopyWithin(target, start, end) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
     const relativeTarget = ToIntegerOrInfinity(target);

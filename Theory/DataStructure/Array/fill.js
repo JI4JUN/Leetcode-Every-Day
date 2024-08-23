@@ -31,7 +31,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  * 12. Return O.
  * ```
  */
-export function tinyFill(value, start, end) {
+export function mockFill(value, start, end) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
     const relativeStart = ToIntegerOrInfinity(start);

@@ -1,12 +1,12 @@
-import { tinyToString } from '../toString';
+import { mockToString } from '../toString';
 
 describe('Array.prototype.toString', () => {
-    Array.prototype.tinyToString = tinyToString;
+    Array.prototype.mockToString = mockToString;
 
     test('Using toString()', () => {
         const array1 = [1, 2, 'a', '1a'];
 
-        expect(array1.tinyToString()).toBe('1,2,a,1a');
+        expect(array1.mockToString()).toBe('1,2,a,1a');
     });
 
     /**
@@ -14,7 +14,7 @@ describe('Array.prototype.toString', () => {
      * and produces an extra separator.
      */
     test('Using toString() on sparse arrays', () => {
-        expect([1, , 3].tinyToString()).toBe('1,,3');
+        expect([1, , 3].mockToString()).toBe('1,,3');
     });
 
     /**
@@ -22,12 +22,12 @@ describe('Array.prototype.toString', () => {
      * Object.prototype.toString() instead.
      */
     test('Calling toString() on non-array objects', () => {
-        expect(Array.prototype.tinyToString.call({ join: () => 1 })).toBe(1);
+        expect(Array.prototype.mockToString.call({ join: () => 1 })).toBe(1);
         expect(
-            Array.prototype.tinyToString.call({ join: () => undefined })
+            Array.prototype.mockToString.call({ join: () => undefined })
         ).toBe(undefined);
         expect(
-            Array.prototype.tinyToString.call({ join: 'not function' })
+            Array.prototype.mockToString.call({ join: 'not function' })
         ).toBe('[object Object]');
     });
 });

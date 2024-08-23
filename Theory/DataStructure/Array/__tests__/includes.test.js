@@ -1,15 +1,15 @@
-import { tinyIncludes } from '../includes';
+import { mockIncludes } from '../includes';
 
 describe('Array.prototype.includes', () => {
-    Array.prototype.tinyIncludes = tinyIncludes;
+    Array.prototype.mockIncludes = mockIncludes;
 
     test('Using includes()', () => {
-        expect([1, 2, 3].tinyIncludes(2)).toBeTruthy();
-        expect([1, 2, 3].tinyIncludes(4)).toBeFalsy();
-        expect([1, 2, 3].tinyIncludes(3, 3)).toBeFalsy();
-        expect([1, 2, 3].tinyIncludes(3, -1)).toBeTruthy();
-        expect([1, 2, NaN].tinyIncludes(NaN)).toBeTruthy();
-        expect(['1', '2', '3'].tinyIncludes(3)).toBeFalsy();
+        expect([1, 2, 3].mockIncludes(2)).toBeTruthy();
+        expect([1, 2, 3].mockIncludes(4)).toBeFalsy();
+        expect([1, 2, 3].mockIncludes(3, 3)).toBeFalsy();
+        expect([1, 2, 3].mockIncludes(3, -1)).toBeTruthy();
+        expect([1, 2, NaN].mockIncludes(NaN)).toBeTruthy();
+        expect(['1', '2', '3'].mockIncludes(3)).toBeFalsy();
     });
 
     /**
@@ -19,8 +19,8 @@ describe('Array.prototype.includes', () => {
     test('fromIndex is greater than or equal to the array length', () => {
         const arr = ['a', 'b', 'c'];
 
-        expect(arr.tinyIncludes('c', 3)).toBeFalsy();
-        expect(arr.tinyIncludes('c', 100)).toBeFalsy();
+        expect(arr.mockIncludes('c', 3)).toBeFalsy();
+        expect(arr.mockIncludes('c', 100)).toBeFalsy();
     });
 
     /**
@@ -31,17 +31,17 @@ describe('Array.prototype.includes', () => {
     test('Computed index is less than 0', () => {
         const arr = ['a', 'b', 'c'];
 
-        expect(arr.tinyIncludes('a', -100)).toBeTruthy();
-        expect(arr.tinyIncludes('b', -100)).toBeTruthy();
-        expect(arr.tinyIncludes('c', -100)).toBeTruthy();
-        expect(arr.tinyIncludes('a', -2)).toBeFalsy();
+        expect(arr.mockIncludes('a', -100)).toBeTruthy();
+        expect(arr.mockIncludes('b', -100)).toBeTruthy();
+        expect(arr.mockIncludes('c', -100)).toBeTruthy();
+        expect(arr.mockIncludes('a', -2)).toBeFalsy();
     });
 
     /**
      * You can search for undefined in a sparse array and get true.
      */
     test('Using includes() on sparse arrays', () => {
-        expect([1, , 3].tinyIncludes(undefined)).toBeTruthy();
+        expect([1, , 3].mockIncludes(undefined)).toBeTruthy();
     });
 
     /**
@@ -57,7 +57,7 @@ describe('Array.prototype.includes', () => {
             3: 1
         };
 
-        expect(Array.prototype.tinyIncludes.call(arrayLike, 2)).toBeTruthy();
-        expect(Array.prototype.tinyIncludes.call(arrayLike, 1)).toBeFalsy();
+        expect(Array.prototype.mockIncludes.call(arrayLike, 2)).toBeTruthy();
+        expect(Array.prototype.mockIncludes.call(arrayLike, 1)).toBeFalsy();
     });
 });

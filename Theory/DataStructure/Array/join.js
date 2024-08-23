@@ -29,7 +29,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  * 8. Return R.
  * ```
  */
-export function tinyJoin(separator) {
+export function mockJoin(separator) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
 

@@ -1,7 +1,7 @@
-import { tinyToSpliced } from 'Array/toSpliced';
+import { mockToSpliced } from 'Array/toSpliced';
 
 describe('Array.prototype.toSpliced', () => {
-    Array.prototype.tinyToSpliced = tinyToSpliced;
+    Array.prototype.mockToSpliced = mockToSpliced;
 
     /**
      * You can use toSpliced() to delete, add, and replace elements in an array and create a new array
@@ -9,14 +9,14 @@ describe('Array.prototype.toSpliced', () => {
      */
     test('Deleting, adding, and replacing elements', () => {
         const months = ['Jan', 'Mar', 'Apr', 'May'];
-        const months2 = months.tinyToSpliced(1, 0, 'Feb');
+        const months2 = months.mockToSpliced(1, 0, 'Feb');
 
         expect(months2).toEqual(['Jan', 'Feb', 'Mar', 'Apr', 'May']);
 
-        const months3 = months2.tinyToSpliced(2, 2);
+        const months3 = months2.mockToSpliced(2, 2);
         expect(months3).toEqual(['Jan', 'Feb', 'May']);
 
-        const months4 = months3.tinyToSpliced(1, 1, 'Feb', 'Mar');
+        const months4 = months3.mockToSpliced(1, 1, 'Feb', 'Mar');
         expect(months4).toEqual(['Jan', 'Feb', 'Mar', 'May']);
 
         expect(months).toEqual(['Jan', 'Mar', 'Apr', 'May']);
@@ -28,7 +28,7 @@ describe('Array.prototype.toSpliced', () => {
     test('Using toSpliced() on sparse arrays', () => {
         const arr = [1, , 3, 4, , 6];
 
-        expect(arr.tinyToSpliced(1, 2)).toEqual([1, 4, undefined, 6]);
+        expect(arr.mockToSpliced(1, 2)).toEqual([1, 4, undefined, 6]);
     });
 
     /**
@@ -44,7 +44,7 @@ describe('Array.prototype.toSpliced', () => {
         };
 
         expect(
-            Array.prototype.tinyToSpliced.call(arrayLike, 0, 1, 2, 3)
+            Array.prototype.mockToSpliced.call(arrayLike, 0, 1, 2, 3)
         ).toEqual([2, 3, undefined, 4]);
     });
 });

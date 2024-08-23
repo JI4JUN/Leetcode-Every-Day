@@ -1,32 +1,32 @@
-import { tinySlice } from 'Array/slice';
+import { mockSlice } from 'Array/slice';
 
 describe('Array.prototype.slice', () => {
-    Array.prototype.tinySlice = tinySlice;
+    Array.prototype.mockSlice = mockSlice;
 
     test('Return a portion of an existing array', () => {
         const fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];
-        const citrus = fruits.tinySlice(1, 3);
+        const citrus = fruits.mockSlice(1, 3);
 
         expect(citrus).toEqual(['Orange', 'Lemon']);
     });
 
     test('Omitting the end parameter', () => {
         const fruits = ['Apple', 'Banana', 'Orange', 'Mango', 'Pineapple'];
-        const tropical = fruits.tinySlice(2);
+        const tropical = fruits.mockSlice(2);
 
         expect(tropical).toEqual(['Orange', 'Mango', 'Pineapple']);
     });
 
     test('Using negative indices', () => {
         const fruits = ['Apple', 'Banana', 'Orange', 'Mango', 'Pineapple'];
-        const lastTwo = fruits.tinySlice(-2);
+        const lastTwo = fruits.mockSlice(-2);
 
         expect(lastTwo).toEqual(['Mango', 'Pineapple']);
     });
 
     test('Using a positive start index and a negative end index', () => {
         const fruits = ['Apple', 'Banana', 'Orange', 'Mango', 'Pineapple'];
-        const sliceExample = fruits.tinySlice(1, -1);
+        const sliceExample = fruits.mockSlice(1, -1);
 
         expect(sliceExample).toEqual(['Banana', 'Orange', 'Mango']);
     });
@@ -43,7 +43,7 @@ describe('Array.prototype.slice', () => {
             engine: { cylinders: 4, size: 2.2 }
         };
         const myCar = [myHonda, 2, 'cherry condition', 'purchased 1997'];
-        const newCar = myCar.tinySlice(0, 2);
+        const newCar = myCar.mockSlice(0, 2);
 
         expect(myCar).toEqual([
             { color: 'red', wheels: 4, engine: { cylinders: 4, size: 2.2 } },
@@ -77,7 +77,7 @@ describe('Array.prototype.slice', () => {
             3: 33
         };
 
-        expect(Array.prototype.tinySlice.call(arrayLike, 1, 3)).toEqual([3, 4]);
+        expect(Array.prototype.mockSlice.call(arrayLike, 1, 3)).toEqual([3, 4]);
     });
 
     /**
@@ -85,7 +85,7 @@ describe('Array.prototype.slice', () => {
      * that converts an array-like object into an array.
      */
     test('Using slice() to convert array-like objects to arrays', () => {
-        const slice = Function.prototype.call.bind(Array.prototype.tinySlice);
+        const slice = Function.prototype.call.bind(Array.prototype.mockSlice);
 
         function list() {
             return slice(arguments);
@@ -100,6 +100,6 @@ describe('Array.prototype.slice', () => {
      * The array returned from slice() may be sparse if the source is sparse.
      */
     test('Using slice() on sparse arrays', () => {
-        expect([1, 2, , 4, 5].tinySlice(1, 4)).toEqual([2, , 4]);
+        expect([1, 2, , 4, 5].mockSlice(1, 4)).toEqual([2, , 4]);
     });
 });

@@ -37,7 +37,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  * 11. Return -1𝔽.
  * ```
  */
-export function tinyIndexOf(searchElement, fromIndex) {
+export function mockIndexOf(searchElement, fromIndex) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
 

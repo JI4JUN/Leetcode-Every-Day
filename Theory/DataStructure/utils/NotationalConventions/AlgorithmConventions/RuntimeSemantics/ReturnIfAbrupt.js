@@ -8,11 +8,11 @@
 //     return _completion;
 // }
 
-import { tinyIncludes } from 'Array/includes';
+import { mockIncludes } from 'Array/includes';
 import { Assert } from 'utils/Assert';
 import { Completion } from './Completion';
 
-Array.prototype.tinyIncludes = tinyIncludes;
+Array.prototype.mockIncludes = mockIncludes;
 
 /**
  * https://tc39.es/ecma262/#sec-returnifabrupt
@@ -39,7 +39,7 @@ export function ReturnIfAbrupt(argument) {
     );
 
     const abruptCompletionValue = ['break', 'continue', 'return', 'throw'];
-    const isAbruptCompletion = abruptCompletionValue.tinyIncludes(
+    const isAbruptCompletion = abruptCompletionValue.mockIncludes(
         argument.Type
     );
 

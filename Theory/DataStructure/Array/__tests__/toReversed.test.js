@@ -1,7 +1,7 @@
-import { tinyToReversed } from 'Array/toReversed';
+import { mockToReversed } from 'Array/toReversed';
 
 describe('Array.prototype.toReversed', () => {
-    Array.prototype.tinyToReversed = tinyToReversed;
+    Array.prototype.mockToReversed = mockToReversed;
 
     /**
      * The following example creates an array items, containing three elements, then creates a new array
@@ -9,7 +9,7 @@ describe('Array.prototype.toReversed', () => {
      */
     test('Reversing the elements in an array', () => {
         const items = [1, 2, 3];
-        const reversedItems = items.tinyToReversed();
+        const reversedItems = items.mockToReversed();
 
         expect(reversedItems).toEqual([3, 2, 1]);
         expect(items).toEqual([1, 2, 3]);
@@ -19,8 +19,8 @@ describe('Array.prototype.toReversed', () => {
      * The return value of toReversed() is never sparse. Empty slots become undefined in the returned array.
      */
     test('Using toReversed() on sparse arrays', () => {
-        expect([1, , 3].tinyToReversed()).toEqual([3, undefined, 1]);
-        expect([1, , 3, 4].tinyToReversed()).toEqual([4, 3, undefined, 1]);
+        expect([1, , 3].mockToReversed()).toEqual([3, undefined, 1]);
+        expect([1, , 3, 4].mockToReversed()).toEqual([4, 3, undefined, 1]);
     });
 
     /**
@@ -35,7 +35,7 @@ describe('Array.prototype.toReversed', () => {
             2: 4
         };
 
-        expect(Array.prototype.tinyToReversed.call(arrayLike)).toEqual([
+        expect(Array.prototype.mockToReversed.call(arrayLike)).toEqual([
             4,
             undefined,
             undefined

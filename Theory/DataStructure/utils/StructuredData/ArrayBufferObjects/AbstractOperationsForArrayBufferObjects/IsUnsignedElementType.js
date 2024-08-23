@@ -1,6 +1,6 @@
-import { tinyIncludes } from 'Array';
+import { mockIncludes } from 'Array';
 
-Array.prototype.tinyIncludes = tinyIncludes;
+Array.prototype.mockIncludes = mockIncludes;
 
 /**
  * https://tc39.es/ecma262/#sec-isunsignedelementtype
@@ -23,5 +23,5 @@ export function IsUnsignedElementType(type) {
         'UINT16',
         'UINT32',
         'BIGUINT64'
-    ].tinyIncludes(type);
+    ].mockIncludes(type);
 }

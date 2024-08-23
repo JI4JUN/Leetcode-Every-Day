@@ -1,18 +1,18 @@
-import { tinyFill } from '../fill';
+import { mockFill } from '../fill';
 
 describe('Array.prototype.fill', () => {
-    Array.prototype.tinyFill = tinyFill;
+    Array.prototype.mockFill = mockFill;
 
     test('Using fill()', () => {
-        expect([1, 2, 3].tinyFill(4)).toEqual([4, 4, 4]);
-        expect([1, 2, 3].tinyFill(4, 1)).toEqual([1, 4, 4]);
-        expect([1, 2, 3].tinyFill(4, 1, 2)).toEqual([1, 4, 3]);
-        expect([1, 2, 3].tinyFill(4, 1, 1)).toEqual([1, 2, 3]);
-        expect([1, 2, 3].tinyFill(4, 3, 3)).toEqual([1, 2, 3]);
-        expect([1, 2, 3].tinyFill(4, -3, -2)).toEqual([4, 2, 3]);
-        expect([1, 2, 3].tinyFill(4, NaN, NaN)).toEqual([1, 2, 3]);
-        expect([1, 2, 3].tinyFill(4, 3, 5)).toEqual([1, 2, 3]);
-        expect(Array(3).tinyFill(4)).toEqual([4, 4, 4]);
+        expect([1, 2, 3].mockFill(4)).toEqual([4, 4, 4]);
+        expect([1, 2, 3].mockFill(4, 1)).toEqual([1, 4, 4]);
+        expect([1, 2, 3].mockFill(4, 1, 2)).toEqual([1, 4, 3]);
+        expect([1, 2, 3].mockFill(4, 1, 1)).toEqual([1, 2, 3]);
+        expect([1, 2, 3].mockFill(4, 3, 3)).toEqual([1, 2, 3]);
+        expect([1, 2, 3].mockFill(4, -3, -2)).toEqual([4, 2, 3]);
+        expect([1, 2, 3].mockFill(4, NaN, NaN)).toEqual([1, 2, 3]);
+        expect([1, 2, 3].mockFill(4, 3, 5)).toEqual([1, 2, 3]);
+        expect(Array(3).mockFill(4)).toEqual([4, 4, 4]);
 
         const arr = Array(3).fill({});
 
@@ -28,7 +28,7 @@ describe('Array.prototype.fill', () => {
      * The end parameter does not have to be specified.
      */
     test('Using fill() to populate an empty array', () => {
-        const tempGirls = Array(5).tinyFill('girl', 0);
+        const tempGirls = Array(5).mockFill('girl', 0);
 
         expect(tempGirls).toEqual(['girl', 'girl', 'girl', 'girl', 'girl']);
     });
@@ -42,7 +42,7 @@ describe('Array.prototype.fill', () => {
             length: 2
         };
 
-        expect(Array.prototype.tinyFill.call(arrayLike, 1)).toEqual({
+        expect(Array.prototype.mockFill.call(arrayLike, 1)).toEqual({
             0: 1,
             1: 1,
             length: 2

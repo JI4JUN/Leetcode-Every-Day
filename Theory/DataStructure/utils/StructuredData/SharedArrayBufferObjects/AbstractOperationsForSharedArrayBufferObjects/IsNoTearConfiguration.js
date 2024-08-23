@@ -1,8 +1,8 @@
 import { IsBigIntElementType } from 'utils/StructuredData/SharedArrayBufferObjects/AbstractOperationsForSharedArrayBufferObjects';
 import { IsUnclampedIntegerElementType } from 'utils/StructuredData/SharedArrayBufferObjects/AbstractOperationsForSharedArrayBufferObjects';
-import { tinyIncludes } from 'Array';
+import { mockIncludes } from 'Array';
 
-Array.prototype.tinyIncludes = tinyIncludes;
+Array.prototype.mockIncludes = mockIncludes;
 
 /**
  * https://tc39.es/ecma262/#sec-isnotearconfiguration
@@ -24,6 +24,6 @@ export function IsNoTearConfiguration(type, order) {
     return (
         IsUnclampedIntegerElementType(type) ||
         (IsBigIntElementType(type) &&
-            !['UNORDERED', 'INIT'].tinyIncludes(order))
+            !['UNORDERED', 'INIT'].mockIncludes(order))
     );
 }

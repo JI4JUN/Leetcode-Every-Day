@@ -1,18 +1,18 @@
-import { tinyFlatMap } from '../flatMap';
-import { tinyMap } from '../map';
-import { tinyFilter } from '../filter';
+import { mockFlatMap } from '../flatMap';
+import { mockMap } from '../map';
+import { mockFilter } from '../filter';
 
 describe('Array.prototype.flatMap', () => {
-    Array.prototype.tinyFlatMap = tinyFlatMap;
-    Array.prototype.tinyMap = tinyMap;
-    Array.prototype.tinyFilter = tinyFilter;
+    Array.prototype.mockFlatMap = mockFlatMap;
+    Array.prototype.mockMap = mockMap;
+    Array.prototype.mockFilter = mockFilter;
 
     test('map() and flatMap()', () => {
         const arr1 = [1, 2, 3, 4];
 
-        expect(arr1.tinyMap((x) => [x * 2])).toEqual([[2], [4], [6], [8]]);
-        expect(arr1.tinyFlatMap((x) => [x * 2])).toEqual([2, 4, 6, 8]);
-        expect(arr1.tinyFlatMap((x) => [[x * 2]])).toEqual([
+        expect(arr1.mockMap((x) => [x * 2])).toEqual([[2], [4], [6], [8]]);
+        expect(arr1.mockFlatMap((x) => [x * 2])).toEqual([2, 4, 6, 8]);
+        expect(arr1.mockFlatMap((x) => [[x * 2]])).toEqual([
             [2],
             [4],
             [6],
@@ -21,12 +21,12 @@ describe('Array.prototype.flatMap', () => {
 
         const arr2 = ["it's Sunny in", '', 'California'];
 
-        expect(arr2.tinyMap((x) => x.split(' '))).toEqual([
+        expect(arr2.mockMap((x) => x.split(' '))).toEqual([
             ["it's", 'Sunny', 'in'],
             [''],
             ['California']
         ]);
-        expect(arr2.tinyFlatMap((x) => x.split(' '))).toEqual([
+        expect(arr2.mockFlatMap((x) => x.split(' '))).toEqual([
             "it's",
             'Sunny',
             'in',
@@ -41,7 +41,7 @@ describe('Array.prototype.flatMap', () => {
      */
     test('For adding and removing items during a map()', () => {
         const a = [5, 4, -3, 20, 17, -33, -4, 18];
-        const result = a.tinyFlatMap((n) => {
+        const result = a.mockFlatMap((n) => {
             if (n < 0) {
                 return [];
             }
@@ -65,8 +65,8 @@ describe('Array.prototype.flatMap', () => {
             'Stratford'
         ];
         const line = stations
-            .tinyFilter((name) => !name.endsWith('(closed)'))
-            .tinyFlatMap((name, idx, arr) => {
+            .mockFilter((name) => !name.endsWith('(closed)'))
+            .mockFlatMap((name, idx, arr) => {
                 if (idx === arr.length - 1) {
                     return [];
                 }
@@ -85,8 +85,8 @@ describe('Array.prototype.flatMap', () => {
      * while flat() ignores empty slots in the returned arrays.
      */
     test('Using flatMap() on sparse arrays', () => {
-        expect([1, 2, , 4, 5].tinyMap((x) => [x, x * 2]));
-        expect([1, 2, 3, 4].tinyMap((x) => [, x * 2]));
+        expect([1, 2, , 4, 5].mockMap((x) => [x, x * 2]));
+        expect([1, 2, 3, 4].mockMap((x) => [, x * 2]));
     });
 
     /**

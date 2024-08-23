@@ -1,7 +1,7 @@
-import { tinyPop } from '../pop';
+import { mockPop } from '../pop';
 
 describe('Array.prototype.pop', () => {
-    Array.prototype.tinyPop = tinyPop;
+    Array.prototype.mockPop = mockPop;
 
     /**
      * The following code creates the myFish array containing four elements,
@@ -9,7 +9,7 @@ describe('Array.prototype.pop', () => {
      */
     test('Removing the last element of an array', () => {
         const myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
-        const popped = myFish.tinyPop();
+        const popped = myFish.mockPop();
 
         expect(myFish).toStrictEqual(['angel', 'clown', 'mandarin']);
         expect(popped).toBe('sturgeon');
@@ -29,8 +29,8 @@ describe('Array.prototype.pop', () => {
         };
         const plainObj = {};
 
-        const res = Array.prototype.tinyPop.call(arrayLike);
-        Array.prototype.tinyPop.call(plainObj);
+        const res = Array.prototype.mockPop.call(arrayLike);
+        Array.prototype.mockPop.call(plainObj);
 
         expect(res).toBe(4);
         expect(arrayLike).toStrictEqual({ length: 2, unrelated: 'foo' });
@@ -49,7 +49,7 @@ describe('Array.prototype.pop', () => {
                 return [].push.call(this, ...elements);
             },
             removeElement() {
-                return [].tinyPop.call(this);
+                return [].mockPop.call(this);
             }
         };
 

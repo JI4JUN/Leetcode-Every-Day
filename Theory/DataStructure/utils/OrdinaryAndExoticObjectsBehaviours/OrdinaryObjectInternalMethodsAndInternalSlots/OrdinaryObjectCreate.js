@@ -1,7 +1,7 @@
 import { MakeBasicObject } from 'utils/AbstractOperations/OperationsOnObjects';
-import { tinyPush } from 'Array';
+import { mockPush } from 'Array';
 
-Array.prototype.tinyPush = tinyPush;
+Array.prototype.mockPush = mockPush;
 
 /**
  * https://tc39.es/ecma262/#sec-ordinaryobjectcreate
@@ -25,7 +25,7 @@ export function OrdinaryObjectCreate(proto, additionalInternalSlotsList) {
     const internalSlotsList = ['Prototype', 'Extensible'];
 
     if (additionalInternalSlotsList !== undefined) {
-        internalSlotsList.tinyPush(...additionalInternalSlotsList);
+        internalSlotsList.mockPush(...additionalInternalSlotsList);
     }
 
     const O = MakeBasicObject(internalSlotsList);

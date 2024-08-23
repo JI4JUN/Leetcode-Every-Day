@@ -1,9 +1,9 @@
-import { tinyConcat, IsConcatSpreadable } from '../concat';
-import { tinyPush } from '../push';
+import { mockConcat, IsConcatSpreadable } from '../concat';
+import { mockPush } from '../push';
 
 describe('Array.prototype.concat', () => {
-    Array.prototype.tinyConcat = tinyConcat;
-    Array.prototype.tinyPush = tinyPush;
+    Array.prototype.mockConcat = mockConcat;
+    Array.prototype.mockPush = mockPush;
 
     /**
      * The following code concatenates two arrays.
@@ -11,7 +11,7 @@ describe('Array.prototype.concat', () => {
     test('Concatenating two arrays', () => {
         const letters = ['a', 'b', 'c'];
         const numbers = [1, 2, 3];
-        const alphaNumeric = letters.tinyConcat(numbers);
+        const alphaNumeric = letters.mockConcat(numbers);
 
         expect(alphaNumeric).toEqual(['a', 'b', 'c', 1, 2, 3]);
     });
@@ -23,7 +23,7 @@ describe('Array.prototype.concat', () => {
         const num1 = [1, 2, 3];
         const num2 = [4, 5, 6];
         const num3 = [7, 8, 9];
-        const numbers = num1.tinyConcat(num2, num3);
+        const numbers = num1.mockConcat(num2, num3);
 
         expect(numbers).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9]);
     });
@@ -33,7 +33,7 @@ describe('Array.prototype.concat', () => {
      */
     test('Concatenating values to an array', () => {
         const letters = ['a', 'b', 'c'];
-        const alphaNumeric = letters.tinyConcat(1, [2, 3]);
+        const alphaNumeric = letters.mockConcat(1, [2, 3]);
 
         expect(alphaNumeric).toEqual(['a', 'b', 'c', 1, 2, 3]);
     });
@@ -44,11 +44,11 @@ describe('Array.prototype.concat', () => {
     test('Concatenating nested arrays', () => {
         const num1 = [[1]];
         const num2 = [2, [3]];
-        const numbers = num1.tinyConcat(num2);
+        const numbers = num1.mockConcat(num2);
 
         expect(numbers).toEqual([[1], 2, [3]]);
 
-        num1[0].tinyPush(4);
+        num1[0].mockPush(4);
 
         expect(numbers).toEqual([[1, 4], 2, [3]]);
     });
@@ -67,7 +67,7 @@ describe('Array.prototype.concat', () => {
             [Symbol.isConcatSpreadable]: true
         };
 
-        expect([0].tinyConcat(obj1, obj2)).toEqual([
+        expect([0].mockConcat(obj1, obj2)).toEqual([
             0,
             { 0: 1, 1: 2, 2: 3, length: 3 },
             1,
@@ -81,13 +81,13 @@ describe('Array.prototype.concat', () => {
      * the arguments for concat(). In this case the return value is always a plain new array.
      */
     test('Calling concat() on non-array objects', () => {
-        expect(Array.prototype.tinyConcat.call({}, 1, 2, 3)).toEqual([
+        expect(Array.prototype.mockConcat.call({}, 1, 2, 3)).toEqual([
             {},
             1,
             2,
             3
         ]);
-        expect(Array.prototype.tinyConcat.call(1, 2, 3)).toEqual([
+        expect(Array.prototype.mockConcat.call(1, 2, 3)).toEqual([
             new Number(1),
             2,
             3
@@ -101,7 +101,7 @@ describe('Array.prototype.concat', () => {
             2: 99
         };
 
-        expect(Array.prototype.tinyConcat.call(arrayLike, 3, 4)).toEqual([
+        expect(Array.prototype.mockConcat.call(arrayLike, 3, 4)).toEqual([
             1, 2, 3, 4
         ]);
     });

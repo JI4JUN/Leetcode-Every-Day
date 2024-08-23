@@ -1,12 +1,12 @@
-import { tinyWith } from 'Array/with';
+import { mockWith } from 'Array/with';
 
 describe('Array.prototype.with', () => {
-    Array.prototype.tinyWith = tinyWith;
+    Array.prototype.mockWith = mockWith;
 
     test('Creating a new array with a single element changed', () => {
         const arr = [1, 2, 3, 4, 5];
 
-        expect(arr.tinyWith(2, 6)).toEqual([1, 2, 6, 4, 5]);
+        expect(arr.mockWith(2, 6)).toEqual([1, 2, 6, 4, 5]);
         expect(arr).toEqual([1, 2, 3, 4, 5]);
     });
 
@@ -16,7 +16,7 @@ describe('Array.prototype.with', () => {
     test('Chaining array methods', () => {
         const arr = [1, 2, 3, 4, 5];
 
-        expect(arr.tinyWith(2, 6).map((x) => x ** 2)).toEqual([
+        expect(arr.mockWith(2, 6).map((x) => x ** 2)).toEqual([
             1, 4, 36, 16, 25
         ]);
     });
@@ -27,7 +27,7 @@ describe('Array.prototype.with', () => {
     test('Using with() on sparse arrays', () => {
         const arr = [1, , 3, 4, , 6];
 
-        expect(arr.tinyWith(0, 2)).toEqual([2, undefined, 3, 4, undefined, 6]);
+        expect(arr.mockWith(0, 2)).toEqual([2, undefined, 3, 4, undefined, 6]);
     });
 
     /**
@@ -45,6 +45,6 @@ describe('Array.prototype.with', () => {
             3: 3
         };
 
-        expect(Array.prototype.tinyWith.call(arrayLike, 0, 1));
+        expect(Array.prototype.mockWith.call(arrayLike, 0, 1));
     });
 });

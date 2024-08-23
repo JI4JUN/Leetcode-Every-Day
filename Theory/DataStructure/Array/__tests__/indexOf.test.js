@@ -1,9 +1,9 @@
-import { tinyIndexOf } from '../indexOf';
-import { tinyPush } from '../push';
+import { mockIndexOf } from '../indexOf';
+import { mockPush } from '../push';
 
 describe('Array.prototype.indexOf', () => {
-    Array.prototype.tinyIndexOf = tinyIndexOf;
-    Array.prototype.tinyPush = tinyPush;
+    Array.prototype.mockIndexOf = mockIndexOf;
+    Array.prototype.mockPush = mockPush;
 
     /**
      * The following example uses indexOf() to locate values in an array.
@@ -11,14 +11,14 @@ describe('Array.prototype.indexOf', () => {
     test('Using indexOf()', () => {
         const array = [2, 9, 9];
 
-        expect(array.tinyIndexOf(2)).toBe(0);
-        expect(array.tinyIndexOf(7)).toBe(-1);
-        expect(array.tinyIndexOf(9, 2)).toBe(2);
-        expect(array.tinyIndexOf(2, -1)).toBe(-1);
-        expect(array.tinyIndexOf(2, -3)).toBe(0);
+        expect(array.mockIndexOf(2)).toBe(0);
+        expect(array.mockIndexOf(7)).toBe(-1);
+        expect(array.mockIndexOf(9, 2)).toBe(2);
+        expect(array.mockIndexOf(2, -1)).toBe(-1);
+        expect(array.mockIndexOf(2, -3)).toBe(0);
 
         const array2 = [NaN];
-        expect(array2.tinyIndexOf(NaN)).toBe(-1);
+        expect(array2.mockIndexOf(NaN)).toBe(-1);
     });
 
     test('Finding all the occurrences of an element', () => {
@@ -26,11 +26,11 @@ describe('Array.prototype.indexOf', () => {
         const array = ['a', 'b', 'a', 'c', 'a', 'd'];
         const element = 'a';
 
-        let idx = array.tinyIndexOf(element);
+        let idx = array.mockIndexOf(element);
 
         while (idx !== -1) {
-            indices.tinyPush(idx);
-            idx = array.tinyIndexOf(element, idx + 1);
+            indices.mockPush(idx);
+            idx = array.mockIndexOf(element, idx + 1);
         }
 
         expect(indices).toEqual([0, 2, 4]);
@@ -42,8 +42,8 @@ describe('Array.prototype.indexOf', () => {
             .mockImplementation(() => {});
 
         function updateVegetablesCollection(veggies, veggie) {
-            if (veggies.tinyIndexOf(veggie) === -1) {
-                veggies.tinyPush(veggie);
+            if (veggies.mockIndexOf(veggie) === -1) {
+                veggies.mockPush(veggie);
 
                 console.log(`New veggies collection is: ${veggies}`);
             } else {
@@ -70,7 +70,7 @@ describe('Array.prototype.indexOf', () => {
      * You cannot use indexOf() to search for empty slots in sparse arrays.
      */
     test('Using indexOf() on sparse arrays', () => {
-        expect([1, , 3].tinyIndexOf(undefined)).toBe(-1);
+        expect([1, , 3].mockIndexOf(undefined)).toBe(-1);
     });
 
     /**
@@ -86,7 +86,7 @@ describe('Array.prototype.indexOf', () => {
             3: 5
         };
 
-        expect(Array.prototype.tinyIndexOf.call(arrayLike, 2)).toBe(0);
-        expect(Array.prototype.tinyIndexOf.call(arrayLike, 5)).toBe(-1);
+        expect(Array.prototype.mockIndexOf.call(arrayLike, 2)).toBe(0);
+        expect(Array.prototype.mockIndexOf.call(arrayLike, 5)).toBe(-1);
     });
 });

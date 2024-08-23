@@ -24,7 +24,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  * 7. Return 𝔽(len).
  * ```
  */
-export function tinyPush(...items) {
+export function mockPush(...items) {
     const O = ToObject(this);
 
     let len = LengthOfArrayLike(O);

@@ -39,7 +39,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  * 8. Return A.
  * ```
  */
-export function tinyFilter(callbackfn, thisArg) {
+export function mockFilter(callbackfn, thisArg) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
 

@@ -1,9 +1,9 @@
-import { tinyLastIndexOf } from '../lastIndexOf';
-import { tinyPush } from '../push';
+import { mockLastIndexOf } from '../lastIndexOf';
+import { mockPush } from '../push';
 
 describe('Array.prototype.lastIndexOf', () => {
-    Array.prototype.tinyLastIndexOf = tinyLastIndexOf;
-    Array.prototype.tinyPush = tinyPush;
+    Array.prototype.mockLastIndexOf = mockLastIndexOf;
+    Array.prototype.mockPush = mockPush;
 
     /**
      * The following example uses lastIndexOf() to locate values in an array.
@@ -11,16 +11,16 @@ describe('Array.prototype.lastIndexOf', () => {
     test('Using lastIndexOf()', () => {
         const numbers = [2, 5, 9, 2];
 
-        expect(numbers.tinyLastIndexOf(2)).toBe(3);
-        expect(numbers.tinyLastIndexOf(7)).toBe(-1);
-        expect(numbers.tinyLastIndexOf(2, 3)).toBe(3);
-        expect(numbers.tinyLastIndexOf(2, 2)).toBe(0);
-        expect(numbers.tinyLastIndexOf(2, -2)).toBe(0);
-        expect(numbers.tinyLastIndexOf(2, -1)).toBe(3);
+        expect(numbers.mockLastIndexOf(2)).toBe(3);
+        expect(numbers.mockLastIndexOf(7)).toBe(-1);
+        expect(numbers.mockLastIndexOf(2, 3)).toBe(3);
+        expect(numbers.mockLastIndexOf(2, 2)).toBe(0);
+        expect(numbers.mockLastIndexOf(2, -2)).toBe(0);
+        expect(numbers.mockLastIndexOf(2, -1)).toBe(3);
 
         const array = [NaN];
 
-        expect(array.tinyLastIndexOf(NaN)).toBe(-1);
+        expect(array.mockLastIndexOf(NaN)).toBe(-1);
     });
 
     /**
@@ -32,11 +32,11 @@ describe('Array.prototype.lastIndexOf', () => {
         const array = ['a', 'b', 'a', 'c', 'a', 'd'];
         const element = 'a';
 
-        let idx = array.tinyLastIndexOf(element);
+        let idx = array.mockLastIndexOf(element);
 
         while (idx !== -1) {
-            indices.tinyPush(idx);
-            idx = idx > 0 ? array.tinyLastIndexOf(element, idx - 1) : -1;
+            indices.mockPush(idx);
+            idx = idx > 0 ? array.mockLastIndexOf(element, idx - 1) : -1;
         }
     });
 
@@ -44,7 +44,7 @@ describe('Array.prototype.lastIndexOf', () => {
      * You cannot use lastIndexOf() to search for empty slots in sparse arrays.
      */
     test('Using lastIndexOf() on sparse arrays', () => {
-        expect([1, , 3].tinyLastIndexOf(undefined)).toBe(-1);
+        expect([1, , 3].mockLastIndexOf(undefined)).toBe(-1);
     });
 
     /**
@@ -60,7 +60,7 @@ describe('Array.prototype.lastIndexOf', () => {
             3: 5
         };
 
-        expect(Array.prototype.tinyLastIndexOf.call(arrayLike, 2)).toBe(2);
-        expect(Array.prototype.tinyLastIndexOf.call(arrayLike, 5)).toBe(-1);
+        expect(Array.prototype.mockLastIndexOf.call(arrayLike, 2)).toBe(2);
+        expect(Array.prototype.mockLastIndexOf.call(arrayLike, 5)).toBe(-1);
     });
 });

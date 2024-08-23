@@ -33,7 +33,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  *     g. Return element.
  * ```
  */
-export function tinyPop() {
+export function mockPop() {
     const O = ToObject(this);
 
     let len = LengthOfArrayLike(O);

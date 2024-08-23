@@ -1,7 +1,7 @@
-import { tinyForEach, tinyIncludes } from 'Array';
+import { mockForEach, mockIncludes } from 'Array';
 
-Array.prototype.tinyForEach = tinyForEach;
-Array.prototype.tinyIncludes = tinyIncludes;
+Array.prototype.mockForEach = mockForEach;
+Array.prototype.mockIncludes = mockIncludes;
 
 /**
  * https://tc39.es/ecma262/#sec-makebasicobject
@@ -28,12 +28,12 @@ export function MakeBasicObject(internalSlotsList) {
 
     const obj = new Object();
 
-    internalSlotsList.tinyForEach((slot) => {
+    internalSlotsList.mockForEach((slot) => {
         obj[slot] = undefined;
     });
 
     obj['PrivateElements'] = [];
-    obj['Extensible'] = internalSlotsList.tinyIncludes('Extensible');
+    obj['Extensible'] = internalSlotsList.mockIncludes('Extensible');
     obj['GetPrototypeOf'] = Object.getPrototypeOf;
     obj['SetPrototypeOf'] = Object.setPrototypeOf;
     obj['IsExtensible'] = Object.isExtensible;

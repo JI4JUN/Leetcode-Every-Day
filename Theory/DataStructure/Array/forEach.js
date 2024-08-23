@@ -32,7 +32,7 @@ import { F } from 'utils/NotationalConventions/AlgorithmConventions/Mathematical
  * 6. Return undefined.
  * ```
  */
-export function tinyForEach(callbackfn, thisArg) {
+export function mockForEach(callbackfn, thisArg) {
     const O = ToObject(this);
     const len = LengthOfArrayLike(O);
 
