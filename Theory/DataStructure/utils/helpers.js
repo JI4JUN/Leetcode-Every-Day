@@ -15,3 +15,6 @@ export class OutOfRange extends RangeError {
         this.detail = detail;
     }
 }
+
+export const isLeadingSurrogate = (cp) => cp >= 0xd800 && cp <= 0xdbff;
+export const isTrailingSurrogate = (cp) => cp >= 0xdc00 && cp <= 0xdfff;
