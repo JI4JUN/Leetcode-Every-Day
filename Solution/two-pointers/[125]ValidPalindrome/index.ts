@@ -12,19 +12,22 @@ function isPalindrome(s: string): boolean {
     const isAlnum = (str: string): boolean => /^[a-zA-Z0-9]+$/.test(str);
 
     while (start <= end) {
-        if (!isAlnum(s[start])) {
+        const startChar: string = s[start];
+        const endChar: string = s[end];
+
+        if (!isAlnum(startChar)) {
             ++start;
 
             continue;
         }
 
-        if (!isAlnum(s[end])) {
+        if (!isAlnum(endChar)) {
             --end;
 
             continue;
         }
 
-        if (s[start].toLocaleLowerCase() !== s[end].toLocaleLowerCase()) {
+        if (startChar.toLocaleLowerCase() !== endChar.toLocaleLowerCase()) {
             return false;
         }
 
