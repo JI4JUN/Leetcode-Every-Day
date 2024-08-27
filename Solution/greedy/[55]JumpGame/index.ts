@@ -5,7 +5,8 @@
  */
 
 // @lc code=start
-function canJump(nums: number[]): boolean {
+// ======================== Approach 1 ======================== //
+function canJump1(nums: number[]): boolean {
     const len: number = nums.length;
 
     if (len === 1) {
@@ -27,5 +28,22 @@ function canJump(nums: number[]): boolean {
     }
 
     return false;
+}
+
+// ======================== Approach 2 ======================== //
+function canJump(nums: number[]): boolean {
+    let gas: number = 0;
+
+    for (const num of nums) {
+        if (gas < 0) {
+            return false;
+        } else if (num > gas) {
+            gas = num;
+        }
+
+        --gas;
+    }
+
+    return true;
 }
 // @lc code=end
