@@ -18,7 +18,7 @@ function rotate1(nums: number[], k: number): void {
 // ======================== Approach 2 ======================== //
 function rotate2(nums: number[], k: number): void {
     const len: number = nums.length;
-    const reverseSegement = (start: number, end: number): void => {
+    const reverseSegment = (start: number, end: number): void => {
         while (start < end) {
             [nums[start++], nums[end--]] = [nums[end], nums[start]];
         }
@@ -26,8 +26,8 @@ function rotate2(nums: number[], k: number): void {
 
     k %= len;
 
-    reverseSegement(0, len - k - 1);
-    reverseSegement(len - k, len - 1);
+    reverseSegment(0, len - k - 1);
+    reverseSegment(len - k, len - 1);
     nums.reverse();
 }
 
