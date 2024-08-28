@@ -12,7 +12,7 @@ Topics: Array, Dynamic Programming, Greedy
 
 Imagine, we are about to go from Terminal 0 to Terminal 4 (take `nums = [2, 3, 1, 1, 4]` as an example, and the number of terminal correspond to the indices of the `nums` ) at an airport with terminals arranged in series. 
 
-Each Terminal has an moving walkway, and the `nums[n]` represents the number of the farthest terminal that can be reached by the walkway starting from Terminal `n` .
+Each Terminal has an moving walkway, and the `nums[n]` represents the maximum number of terminals that can pass through.
 
 Now, we are taking on a challenge to successfully reach Terminal 4 by only taking the moving walkway.
 
