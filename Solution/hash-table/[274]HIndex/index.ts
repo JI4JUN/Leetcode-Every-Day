@@ -8,11 +8,14 @@
 function hIndex(citations: number[]): number {
     const len: number = citations.length;
 
-    return citations
-        .sort((a, b) => a - b)
-        .reduce(
-            (acc, cur, i) => (cur > len - i ? Math.max(acc, len - i) : cur),
-            0
-        );
+    citations.sort((a, b) => a - b);
+
+    for (let i = 0; i < len; ++i) {
+        if (citations[i] >= len - i) {
+            return len - i;
+        }
+    }
+
+    return 0;
 }
 // @lc code=end
