@@ -6,7 +6,7 @@
 
 // @lc code=start
 // ======================== Approach 1 ======================== //
-function canJump1(nums: number[]): boolean {
+function canJump(nums: number[]): boolean {
     const len: number = nums.length;
 
     if (len === 1) {
@@ -15,7 +15,7 @@ function canJump1(nums: number[]): boolean {
 
     let maxReach: number = 0;
 
-    for (let i = 0; i < len; ++i) {
+    for (let i = 0; i < len - 1; ++i) {
         if (i > maxReach) {
             return false;
         }
@@ -31,7 +31,7 @@ function canJump1(nums: number[]): boolean {
 }
 
 // ======================== Approach 2 ======================== //
-function canJump(nums: number[]): boolean {
+function canJump2(nums: number[]): boolean {
     let gas: number = 0;
 
     for (const num of nums) {
