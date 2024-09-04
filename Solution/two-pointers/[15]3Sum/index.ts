@@ -5,7 +5,8 @@
  */
 
 // @lc code=start
-function threeSum(nums: number[]): number[][] {
+// ======================== Approach 1 ======================== //
+function threeSum1(nums: number[]): number[][] {
     const result: number[][] = [];
     const len: number = nums.length;
 
@@ -41,6 +42,42 @@ function threeSum(nums: number[]): number[][] {
                 }
                 while (j < k && nums[j] === nums[j - 1]) {
                     ++j;
+                }
+            }
+        }
+    }
+
+    return result;
+}
+
+// ======================== Approach 2 ======================== //
+function threeSum(nums: number[]): number[][] {
+    const result: number[][] = [];
+    const len: number = nums.length;
+    const set: Set<number> = new Set();
+    const resultMap: Map<number, Set<number>> = new Map();
+    let i: number, j: number, k: number;
+
+    nums.sort((a, b) => a - b);
+
+    for (j = 1; j < len - 1; ++j) {
+        set.clear();
+
+        for (i = 0; i < j; ++i) {
+            const x: number = nums[i] + nums[j];
+
+            set.add(x);
+        }
+        for (k = j + 1; k < len; ++k) {
+            if (set.has(-nums[k])) {
+                const two: number = nums[j];
+                const three: number = nums[k];
+                const one: number = -two - three;
+
+                if (!resultMap.get(one)?.has(two)) {
+                    resultMap.set(one, new Set([two]));
+
+                    result.push([one, two, three]);
                 }
             }
         }
