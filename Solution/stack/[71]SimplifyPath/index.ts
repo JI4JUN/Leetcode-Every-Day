@@ -10,7 +10,7 @@ function simplifyPath(path: string): string {
         '/' +
         path
             .split('/')
-            .filter((token) => !['.', ''].includes(token))
+            .filter((token) => !['', '.'].includes(token))
             .reduce(
                 (acc, cur) =>
                     cur === '..' ? (acc.pop(), acc) : (acc.push(cur), acc),
