@@ -24,7 +24,7 @@ class MinStack1 {
     }
 
     pop(): void {
-        if (this.queue.pop()! === this.minQueue.at(-1)!) {
+        if (this.queue.pop()! === this.getMin()) {
             this.minQueue.pop();
         }
     }
@@ -46,7 +46,7 @@ class MinNode {
 
     constructor(val?: number, freq?: number, next?: MinNode | null) {
         this.val = val ?? 0;
-        this.freq = freq ?? 0;
+        this.freq = freq ?? 1;
         this.next = next ?? null;
     }
 }
@@ -67,7 +67,7 @@ class MinStack {
             const curMinVal: number = this.getMin();
 
             if (val < curMinVal) {
-                const newMinNode: MinNode = new MinNode(val, 1);
+                const newMinNode: MinNode = new MinNode(val);
 
                 newMinNode.next = this.minNode;
                 this.minNode = newMinNode;
@@ -75,7 +75,7 @@ class MinStack {
                 ++this.minNode.freq;
             }
         } else {
-            this.minNode = new MinNode(val, 1);
+            this.minNode = new MinNode(val);
         }
     }
 
