@@ -18,8 +18,8 @@
  *     }
  * }
  */
-
-function getMinimumDifference(root: TreeNode | null): number {
+// ======================== Approach 1 ======================== //
+function getMinimumDifference1(root: TreeNode | null): number {
     const arr: number[] = new Array();
 
     const backtrack = (root: TreeNode | null): void => {
@@ -39,11 +39,39 @@ function getMinimumDifference(root: TreeNode | null): number {
 
     arr.sort((a, b) => a - b);
 
-    let minDiff = Infinity;
+    let minDiff: number = Infinity;
 
     for (let i = 1; i < arr.length; ++i) {
         minDiff = Math.min(minDiff, Math.abs(arr[i] - arr[i - 1]));
     }
+
+    return minDiff;
+}
+
+// ======================== Approach 2 ======================== //
+function getMinimumDifference(root: TreeNode | null): number {
+    let minDiff: number = Infinity;
+    let preVal: number | null = null;
+
+    const inorder = (root: TreeNode | null): void => {
+        if (root === null) {
+            return;
+        }
+
+        const { val, left, right } = root;
+
+        inorder(left);
+
+        if (preVal !== null) {
+            minDiff = Math.min(minDiff, Math.abs(val - preVal));
+        }
+
+        preVal = val;
+
+        inorder(right);
+    };
+
+    inorder(root);
 
     return minDiff;
 }
