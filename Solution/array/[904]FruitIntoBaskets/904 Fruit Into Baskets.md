@@ -67,3 +67,7 @@ function totalFruit(fruits: number[]): number {
     return result;
 }
 ```
+
+## 🔖Reference
+
+None.

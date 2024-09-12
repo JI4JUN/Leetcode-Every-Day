@@ -6,7 +6,7 @@ Topics: Backtracking, Dynamic Programming, String
 
 ## 📖Description
 
-[**Generate Parentheses**](https://leetcode.com/problems/generate-parentheses/description)
+[Generate Parentheses](https://leetcode.com/problems/generate-parentheses/description)
 
 ## 🤔Intuition
 
