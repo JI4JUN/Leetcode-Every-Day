@@ -4642,10 +4642,10 @@
 				"fill": "none",
 				"color": "red",
 				"labelColor": "black",
-				"bend": -105.65840195390432,
+				"bend": -132.06835477126205,
 				"start": {
-					"x": 0,
-					"y": 0
+					"x": 3.6006676358856566,
+					"y": -22.045195844933914
 				},
 				"end": {
 					"x": 261.2334734866506,
@@ -4661,23 +4661,6 @@
 			"parentId": "page:page",
 			"index": "b0gbWW",
 			"typeName": "shape"
-		},
-		{
-			"meta": {},
-			"id": "binding:PaMQlVnV3QtEnm3urOt1n",
-			"type": "arrow",
-			"fromId": "shape:A1rnKDVTiNZSgVRy8ah9y",
-			"toId": "shape:L_E8Fp7NF34MGcxmwwsvF",
-			"props": {
-				"isPrecise": false,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.449082031664914,
-					"y": 0.3669980652406021
-				},
-				"terminal": "start"
-			},
-			"typeName": "binding"
 		},
 		{
 			"meta": {},
@@ -4697,7 +4680,7 @@
 			"typeName": "binding"
 		},
 		{
-			"x": 3029.1392976120374,
+			"x": 3044.7352683810495,
 			"y": 840.6307553195174,
 			"rotation": 0,
 			"isLocked": false,
@@ -5838,9 +5821,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 3022.450177467588,
-			"y": 1831.906002127493,
-			"lastActivityTimestamp": 1726194254336,
+			"x": 3557.1254624695166,
+			"y": 1670.6415190638395,
+			"lastActivityTimestamp": 1726198320399,
 			"meta": {}
 		},
 		{
@@ -5864,8 +5847,8 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 1080,
-				"h": 822
+				"w": 1536,
+				"h": 798
 			},
 			"insets": [
 				false,
@@ -5880,7 +5863,7 @@
 			"isChatting": false,
 			"highlightedUserIds": [],
 			"isFocused": true,
-			"devicePixelRatio": 1,
+			"devicePixelRatio": 2,
 			"isCoarsePointer": false,
 			"isHoveringCanvas": true,
 			"openMenus": [],
@@ -5896,9 +5879,9 @@
 			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:UT8HEdmoFLo8rKIJdXJv2"
+				"shape:3OOOX9ZaD3DY9gpheyKVt"
 			],
-			"hoveredShapeId": "shape:UT8HEdmoFLo8rKIJdXJv2",
+			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -5908,9 +5891,9 @@
 			"typeName": "instance_page_state"
 		},
 		{
-			"x": -1730.9054031080627,
-			"y": -916.52132704341,
-			"z": 0.5396638303504737,
+			"x": -1808.9775216857172,
+			"y": -1336.7176712087391,
+			"z": 0.7067479651899778,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -7036,12 +7019,12 @@
 				"dash": "draw",
 				"size": "xl",
 				"fill": "none",
-				"color": "black",
+				"color": "red",
 				"labelColor": "black",
 				"bend": 0,
 				"start": {
-					"x": 0,
-					"y": 0
+					"x": 80.73041526286534,
+					"y": 0.041063575171392586
 				},
 				"end": {
 					"x": 244.5967147997958,
@@ -7057,23 +7040,6 @@
 			"parentId": "page:page",
 			"index": "b1fAvK",
 			"typeName": "shape"
-		},
-		{
-			"meta": {},
-			"id": "binding:09QKlmMvxCmpQm69Xr5ly",
-			"type": "arrow",
-			"fromId": "shape:3OOOX9ZaD3DY9gpheyKVt",
-			"toId": "shape:RxoN6fw8uy3ygAzo7MAzy",
-			"props": {
-				"isPrecise": false,
-				"isExact": false,
-				"normalizedAnchor": {
-					"x": 0.4805117455649368,
-					"y": 0.49327225591702384
-				},
-				"terminal": "start"
-			},
-			"typeName": "binding"
 		},
 		{
 			"meta": {},
@@ -7385,6 +7351,40 @@
 			"parentId": "page:page",
 			"index": "b1i27q",
 			"typeName": "shape"
+		},
+		{
+			"meta": {},
+			"id": "binding:-P6tAUHnKPBRk0YDUTRlf",
+			"type": "arrow",
+			"fromId": "shape:A1rnKDVTiNZSgVRy8ah9y",
+			"toId": "shape:L_E8Fp7NF34MGcxmwwsvF",
+			"props": {
+				"isPrecise": true,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5,
+					"y": 0.5
+				},
+				"terminal": "start"
+			},
+			"typeName": "binding"
+		},
+		{
+			"meta": {},
+			"id": "binding:r-ZYpMGErOVd3B6k2fjWw",
+			"type": "arrow",
+			"fromId": "shape:3OOOX9ZaD3DY9gpheyKVt",
+			"toId": "shape:SpXjc04tyobgp-iCLwu_v",
+			"props": {
+				"isPrecise": true,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.9436880064078894,
+					"y": 0.5004949862324716
+				},
+				"terminal": "start"
+			},
+			"typeName": "binding"
 		}
 	]
 }
