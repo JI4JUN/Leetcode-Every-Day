@@ -50,7 +50,7 @@ If one of the two given linked lists is null but other is not, link the remainin
     - Update `resultNode` to `resultNode .next .`
     - Update `l1` to `l1.next` .
     - Update `l2` to `l2.next` .
-- Use `tailNode` to point to the remaining nodes of `l1` or `l2` .
+- Use `tailNode` to point to the remaining nodes of `l1` or `l2` , or `null`.
 - If `tailNode` is not `null` , means there are remaining nodes need to be processed, iterate over them and do the same thing just like what the first `while` loop did.
 - If `isOver` is true, we need to add a new node which value is 1 at the end of the `result` .
 - Return `result.next` .
