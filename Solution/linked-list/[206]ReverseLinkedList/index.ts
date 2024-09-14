@@ -39,6 +39,27 @@ function reverseList(head: ListNode | null): ListNode | null {
 
 // ======================== Approach 2 ======================== //
 function reverseList2(head: ListNode | null): ListNode | null {
+    if (head === null || head.next === null) {
+        return head;
+    }
+
+    const dummyNode: ListNode = new ListNode(0, head);
+    const preNode: ListNode | null = dummyNode;
+    let tempNode: ListNode | null = null;
+    let curNode: ListNode | null = head;
+
+    while (curNode.next) {
+        tempNode = curNode.next;
+        curNode.next = tempNode.next;
+        tempNode.next = preNode.next;
+        preNode.next = tempNode;
+    }
+
+    return dummyNode.next;
+}
+
+// ======================== Approach 3 ======================== //
+function reverseList3(head: ListNode | null): ListNode | null {
     const recur = (
         preNode: ListNode | null,
         curNode: ListNode | null
@@ -59,8 +80,8 @@ function reverseList2(head: ListNode | null): ListNode | null {
     return recur(null, head);
 }
 
-// ======================== Approach 3 ======================== //
-function reverseList3(head: ListNode | null): ListNode | null {
+// ======================== Approach 4 ======================== //
+function reverseList4(head: ListNode | null): ListNode | null {
     if (head === null || head.next === null) {
         return head;
     }
@@ -81,4 +102,5 @@ function reverseList3(head: ListNode | null): ListNode | null {
 
     return newHead;
 }
+
 // @lc code=end

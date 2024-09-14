@@ -12,15 +12,15 @@ Topics: Linked List, Recursion
 
 To solve this problem, we don’t need to insert or delete node, just need to keep track of nodes, and change each node’s next pointer to the previous node.
 
-## 📋Approach
+## 📋Approach One
 
 ### **Illustration**
 
-![ReverseLinkedList](./ReverseLinkedList.png)
+![ReverseLinkedList](ReverseLinkedList.png)
 
 Base on the above illustration, we can summarize an approach process:  
 
-- Initialize three nodes `tempNode` , `curNode` and `preNode` , where `tempNode` and `preNode` are initialized to `null` , and `curNode` is initialized to given `head` .
+- Initialize three pointer `tempNode` , `curNode` and `preNode` , where `tempNode` and `preNode` are initialized to `null` , and `curNode` is initialized to given `head` .
 - Start a `while` loop, iterate through the list till the `curNode` is equal to `null` .
     - Update the `tempNode` point to the `curNode.next` to record the node which will be going to process in the next iteration.
     - Reverse the current node in this iteration by updating the next pointer of `curNode` to point to the `preNode` .
@@ -57,6 +57,54 @@ function reverseList(head: ListNode | null): ListNode | null {
 ```
 
 ## 📋Approach Two
+
+Here introduce another in-place reversal method, which involves dummy node and “head insertion”. In short, this approach takes nodes one by one, removes it from its original place, and inserts it after the dummy node.
+
+### **Illustration**
+
+![ReverseLinkedList2.png](ReverseLinkedList2.png)
+
+### Step By Step Breakdown
+
+- Construct a dummy node which points to `head` , and initialize a pointer `preNode` to `dummyNode` .
+- Initialize two pointers `tempNode` and `curNode` , where `tempNode` are initialized to `null` , and `curNode` is initialized to `head` .
+- Iterate over the given linked list till `curNode.next` is `null` .
+    - Point `tempNode` to `curNode.next` for storing the next node to be process.
+    - Point `curNode.next` to `tempNode.next` , this operation “remove” the `tempNode` from the list.
+    - Point `tempNode.next` to `preNode.next` , which makes `tempNode` become the beginning of the reversing list.
+    - Update the pointer `preNode.next` to `tempNode` , then, `tempNode` has already become the first node of the reversing list.
+- Return `dummyNode.next` that is the reversed list.
+
+## 📊Complexity
+
+- **Time complexity:** $O(N)$
+- **Space complexity:** $O(1)$
+
+## 🧑🏻‍💻Code
+
+```tsx
+function reverseList(head: ListNode | null): ListNode | null {
+    if (head === null || head.next === null) {
+        return head;
+    }
+
+    const dummyNode: ListNode = new ListNode(0, head);
+    const preNode: ListNode | null = dummyNode;
+    let tempNode: ListNode | null = null;
+    let curNode: ListNode | null = head;
+
+    while (curNode.next) {
+        tempNode = curNode.next;
+        curNode.next = tempNode.next;
+        tempNode.next = preNode.next;
+        preNode.next = tempNode;
+    }
+
+    return dummyNode.next;
+}
+```
+
+## 📋Approach Three
 
 We can solve this problem by using recursion.
 
@@ -95,7 +143,7 @@ function reverseList(head: ListNode | null): ListNode | null {
 }
 ```
 
-## 📋Approach Three
+## 📋Approach Four
 
 The approach three also uses recursion, but the difference is this approach will be going to reverse from the end of the given linked list.
 
