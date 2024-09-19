@@ -44,10 +44,10 @@ type Value = {
     val: number;
 };
 
-class DListNode {
+class DoublyLinkedNode {
     public value: Value;
-    public next: DListNode | null = null;
-    public prev: DListNode | null = null;
+    public next: DoublyLinkedNode | null = null;
+    public prev: DoublyLinkedNode | null = null;
 
     constructor(value: Value) {
         this.value = value;
@@ -55,44 +55,43 @@ class DListNode {
 }
 
 class DoublyLinkedList {
-    public head: DListNode | null = null;
-    public tail: DListNode | null = null;
+    public firstNode: DoublyLinkedNode | null = null;
+    public lastNode: DoublyLinkedNode | null = null;
     public size: number = 0;
 
-    push_front(node: DListNode): void {
-        if (this.head === null) {
-            this.head = node;
-            this.tail = node;
+    push_front(node: DoublyLinkedNode): void {
+        if (this.firstNode === null) {
+            this.firstNode = node;
+            this.lastNode = node;
         } else {
-            node.next = this.head;
-            this.head.prev = node;
-            this.head = node;
+            node.next = this.firstNode;
+            this.firstNode.prev = node;
+            this.firstNode = node;
         }
 
         ++this.size;
     }
 
-    remove(node: DListNode): void {
-        if (this.head === null) {
+    remove(node: DoublyLinkedNode): void {
+        if (this.firstNode === null) {
             return;
         }
 
         --this.size;
 
-        if (this.head === node) {
-            this.head = node.next;
+        if (this.firstNode === node) {
+            this.firstNode = node.next;
 
             if (node.next !== null) {
                 node.next.prev = null;
+                node.next = null;
             }
-
-            node.next = null;
 
             return;
         }
 
-        if (this.tail === node) {
-            this.tail = node.prev;
+        if (this.lastNode === node) {
+            this.lastNode = node.prev;
             node.prev!.next = null;
             node.prev = null;
 
@@ -106,7 +105,7 @@ class DoublyLinkedList {
 
 class LRUCache {
     private list: DoublyLinkedList;
-    private keys: Map<number, DListNode>;
+    private keys: Map<number, DoublyLinkedNode>;
     private capacity: number;
 
     constructor(capacity: number) {
@@ -116,7 +115,7 @@ class LRUCache {
     }
 
     get(key: number): number {
-        const node: DListNode | undefined = this.keys.get(key);
+        const node: DoublyLinkedNode | undefined = this.keys.get(key);
 
         if (node === undefined) {
             return -1;
@@ -130,22 +129,26 @@ class LRUCache {
 
     put(key: number, value: number): void {
         if (this.keys.has(key)) {
-            const node: DListNode = this.keys.get(key)!;
+            const node: DoublyLinkedNode = this.keys.get(key)!;
 
             node.value.val = value;
+
             this.list.remove(node);
             this.list.push_front(node);
 
             return;
         } else {
-            const newNode: DListNode = new DListNode({ key: key, val: value });
+            const newNode: DoublyLinkedNode = new DoublyLinkedNode({
+                key: key,
+                val: value
+            });
 
             this.keys.set(key, newNode);
             this.list.push_front(newNode);
         }
 
         if (this.list.size > this.capacity) {
-            const lastNode: DListNode = this.list.tail!;
+            const lastNode: DoublyLinkedNode = this.list.lastNode!;
 
             this.keys.delete(lastNode.value.key);
             this.list.remove(lastNode);
