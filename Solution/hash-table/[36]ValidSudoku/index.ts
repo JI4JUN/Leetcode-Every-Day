@@ -5,8 +5,9 @@
  */
 
 // @lc code=start
-function isValidSudoku1(board: string[][]): boolean {
-    const isRowValid = (board: string[][], index: number): boolean => {
+// ======================== Approach 1 ======================== //
+function isValidSudoku(board: string[][]): boolean {
+    const isRowValid = (index: number): boolean => {
         const digitSet: Set<string> = new Set();
         const rowArray: string[] = board[index];
 
@@ -24,7 +25,7 @@ function isValidSudoku1(board: string[][]): boolean {
         return true;
     };
 
-    const isColValid = (board: string[][], index: number): boolean => {
+    const isColValid = (index: number): boolean => {
         const digitSet: Set<string> = new Set();
         const colArray: string[] = board.reduce((acc, cur) => {
             acc.push(cur[index]);
@@ -46,7 +47,7 @@ function isValidSudoku1(board: string[][]): boolean {
         return true;
     };
 
-    const isSubBoxValid = (board: string[][], index: number): boolean => {
+    const isSubBoxValid = (index: number): boolean => {
         const digitSet: Set<string> = new Set();
         const subBoxTop: number = Math.floor(index / 3) * 3;
         const subBoxLeft: number = (index % 3) * 3;
@@ -69,11 +70,7 @@ function isValidSudoku1(board: string[][]): boolean {
     };
 
     for (let i = 0; i < 9; ++i) {
-        if (
-            !isRowValid(board, i) ||
-            !isColValid(board, i) ||
-            !isSubBoxValid(board, i)
-        ) {
+        if (!isRowValid(i) || !isColValid(i) || !isSubBoxValid(i)) {
             return false;
         }
     }
@@ -81,7 +78,8 @@ function isValidSudoku1(board: string[][]): boolean {
     return true;
 }
 
-function isValidSudoku(board: string[][]): boolean {
+// ======================== Approach 2 ======================== //
+function isValidSudoku2(board: string[][]): boolean {
     const rowSets: Set<string>[] = Array.from({ length: 9 }, () => new Set());
     const colSets: Set<string>[] = Array.from({ length: 9 }, () => new Set());
     const subBoxSets: Set<string>[] = Array.from(
