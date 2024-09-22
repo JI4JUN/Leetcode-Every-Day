@@ -59,16 +59,16 @@ function buildTree(preorder: number[], inorder: number[]): TreeNode | null {
         return null;
     }
 
-    const rootValue: number = preorder[0];
+    const rootValue: number = preorder.shift()!;
     const rootNode: TreeNode = new TreeNode(rootValue);
     const rootIndex: number = inorder.indexOf(rootValue);
 
     rootNode.left = buildTree(
-        preorder.slice(1, 1 + rootIndex),
+        preorder.slice(0, rootIndex),
         inorder.slice(0, rootIndex)
     );
     rootNode.right = buildTree(
-        preorder.slice(1 + rootIndex),
+        preorder.slice(rootIndex),
         inorder.slice(rootIndex + 1)
     );
 
