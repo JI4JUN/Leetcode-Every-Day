@@ -18,8 +18,8 @@
  *     }
  * }
  */
-
-function buildTree(inorder: number[], postorder: number[]): TreeNode | null {
+// ======================== Approach 1 ======================== //
+function buildTree1(inorder: number[], postorder: number[]): TreeNode | null {
     const backtracking = (
         inorderStart: number,
         inorderEnd: number,
@@ -51,5 +51,27 @@ function buildTree(inorder: number[], postorder: number[]): TreeNode | null {
     };
 
     return backtracking(0, inorder.length, 0, postorder.length);
+}
+
+// ======================== Approach 2 ======================== //
+function buildTree(inorder: number[], postorder: number[]): TreeNode | null {
+    if (postorder.length === 0) {
+        return null;
+    }
+
+    const rootValue: number = postorder.pop()!;
+    const rootNode: TreeNode = new TreeNode(rootValue);
+    const rootIndex: number = inorder.indexOf(rootValue);
+
+    rootNode.left = buildTree(
+        inorder.slice(0, rootIndex),
+        postorder.slice(0, rootIndex)
+    );
+    rootNode.right = buildTree(
+        inorder.slice(rootIndex + 1),
+        postorder.slice(rootIndex)
+    );
+
+    return rootNode;
 }
 // @lc code=end
