@@ -6,19 +6,20 @@
 
 // @lc code=start
 function addBinary(a: string, b: string): string {
-    let result: string = '';
     let carry: number = 0;
     let i: number = a.length - 1;
     let j: number = b.length - 1;
+    let k: number = Math.max(i, j) + 1;
+    const result: string[] = new Array<string>(k + 1);
 
     while (i >= 0 || j >= 0 || carry > 0) {
         i >= 0 && (carry += Number(a[i--]));
         j >= 0 && (carry += Number(b[j--]));
 
-        result += String(carry % 2);
-        carry = carry >> 1;
+        result[k--] = '' + (carry % 2);
+        carry >>= 1;
     }
 
-    return result.split('').reverse().join('');
+    return result.join('');
 }
 // @lc code=end
