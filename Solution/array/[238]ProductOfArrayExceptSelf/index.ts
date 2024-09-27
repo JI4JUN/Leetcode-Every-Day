@@ -13,7 +13,7 @@ function productExceptSelf1(nums: number[]): number[] {
 }
 
 // ======================== Approach 2 ======================== //
-function productExceptSelf(nums: number[]): number[] {
+function productExceptSelf2(nums: number[]): number[] {
     const len: number = nums.length;
     const result: number[] = new Array(len).fill(0);
     const { product, zeroCnt } = nums.reduce(
@@ -43,6 +43,26 @@ function productExceptSelf(nums: number[]): number[] {
     }
 
     // zeroCnt === 0
+    return result;
+}
+
+// ======================== Approach 3 ======================== //
+function productExceptSelf(nums: number[]): number[] {
+    const result: number[] = new Array(nums.length).fill(1);
+
+    nums.reduce((acc, curr, index) => {
+        result[index] *= acc;
+        acc *= curr;
+
+        return acc;
+    }, 1);
+    nums.reduceRight((acc, curr, index) => {
+        result[index] *= acc;
+        acc *= curr;
+
+        return acc;
+    }, 1);
+
     return result;
 }
 // @lc code=end
