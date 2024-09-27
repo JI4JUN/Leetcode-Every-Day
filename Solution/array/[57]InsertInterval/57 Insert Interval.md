@@ -12,13 +12,13 @@ Topics: Array
 
 To understand the description of this problem, we can imagine that given interval `newInterval` is a greedy snake and each interval in the given `intervals` is food. If there is an intersection between “snake interval” and the “food interval”, means that this snake will eat this food. After eating, the length of this snake (“snake interval”) will increase to the length of the union of “snake interval” and the “food interval”. Until there are no intersections of the “snake interval” and the “food interval”, return the “snake interval” and the residual “food intervals”, and the return value will be the disjoint set.
 
-## 📋Approach One
+## 📋Approach
 
 ### Growth Of The “Snake Interval”
 
 There are four situations where the “snake interval” and the “food interval” intersect, and the growth process is shown in the following figure.
 
-![InsertInterval.png](InsertInterval.png)
+![InsertInterval.png](InsertInterval1.png)
 
 We can use one judgment condition to detect these four situations:
 
