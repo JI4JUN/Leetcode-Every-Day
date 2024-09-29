@@ -10,16 +10,19 @@ class RandomizedSet {
     private map: Map<number, number>;
 
     constructor() {
-        this.list = [];
+        this.list = new Array();
         this.map = new Map();
     }
 
     insert(val: number): boolean {
-        return this.map.has(val)
-            ? false
-            : (this.list.push(val),
-              this.map.set(val, this.list.length - 1),
-              true);
+        if (this.map.has(val)) {
+            return false;
+        }
+
+        this.list.push(val);
+        this.map.set(val, this.list.length - 1);
+
+        return true;
     }
 
     remove(val: number): boolean {
