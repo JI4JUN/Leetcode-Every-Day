@@ -18,21 +18,19 @@
  *     }
  * }
  */
-
-function zigzagLevelOrder(root: TreeNode | null): number[][] {
+// ======================== Approach 1 ======================== //
+function zigzagLevelOrder1(root: TreeNode | null): number[][] {
     if (root === null) {
         return [];
     }
 
     const result: number[][] = [[root.val]];
     const queue: TreeNode[] = [root];
-    let directiveFlag: boolean = false;
+    let directiveFlag: boolean = true;
 
     while (queue.length) {
         const size: number = queue.length;
         const currLevel: number[] = [];
-
-        directiveFlag = !directiveFlag;
 
         for (let i = 0; i < size; ++i) {
             if (directiveFlag) {
@@ -61,6 +59,44 @@ function zigzagLevelOrder(root: TreeNode | null): number[][] {
         }
 
         currLevel.length && result.push(currLevel);
+
+        directiveFlag = !directiveFlag;
+    }
+
+    return result;
+}
+
+// ======================== Approach 2 ======================== //
+function zigzagLevelOrder(root: TreeNode | null): number[][] {
+    if (root === null) {
+        return [];
+    }
+
+    const result: number[][] = [[root.val]];
+    const queue: TreeNode[] = [root];
+    let directiveFlag: boolean = true;
+
+    while (queue.length) {
+        const size: number = queue.length;
+        const currLevel: number[] = [];
+
+        for (let i = 0; i < size; ++i) {
+            const { left, right } = queue.shift()!;
+
+            if (left !== null) {
+                currLevel.push(left.val);
+                queue.push(left);
+            }
+            if (right !== null) {
+                currLevel.push(right.val);
+                queue.push(right);
+            }
+        }
+
+        directiveFlag && currLevel.reverse();
+        currLevel.length && result.push(currLevel);
+
+        directiveFlag = !directiveFlag;
     }
 
     return result;
