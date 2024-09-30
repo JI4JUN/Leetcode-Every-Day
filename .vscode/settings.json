@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "list": "cpp",
+        "vector": "cpp",
+        "xhash": "cpp",
+        "xstring": "cpp"
+    }
+}
