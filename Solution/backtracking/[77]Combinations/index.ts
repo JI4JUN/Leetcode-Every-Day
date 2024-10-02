@@ -5,7 +5,30 @@
  */
 
 // @lc code=start
+// ======================== Approach 1 ======================== //
 function combine(n: number, k: number): number[][] {
+    const result: number[][] = [];
+    const backtrack = (startIndex: number, path: number[]): void => {
+        if (path.length === k) {
+            result.push([...path]);
+
+            return;
+        }
+
+        for (let i = startIndex; i <= n; ++i) {
+            path.push(i);
+            backtrack(i + 1, path);
+            path.pop();
+        }
+    };
+
+    backtrack(1, []);
+
+    return result;
+}
+
+// ======================== Approach 2 ======================== //
+function combine2(n: number, k: number): number[][] {
     const result: number[][] = [];
     const path: number[] = [];
 
@@ -23,11 +46,10 @@ function combine(n: number, k: number): number[][] {
             backtrack(n, k, i + 1);
             path.pop();
         }
-    }
+    };
 
     backtrack(n, k, 1);
 
     return result;
-};
+}
 // @lc code=end
-
