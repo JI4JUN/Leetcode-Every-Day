@@ -78,7 +78,7 @@ const isWellFormed = (str: string): boolean => {
 ## 🧑🏻‍💻Code
 
 ```tsx
-function generateParenthesis(n: number): string[] {
+function generateParenthesis1(n: number): string[] {
     const result: string[] = [];
     const visited: boolean[] = new Array<boolean>(n).fill(false);
 
@@ -113,7 +113,6 @@ function generateParenthesis(n: number): string[] {
 
         for (let i = 0; i < 2 * n; ++i) {
             if (
-                (i === 0 && parenthesis[i] === ')') ||
                 (i > 0 &&
                     parenthesis[i - 1] === parenthesis[i] &&
                     !visited[i - 1]) ||

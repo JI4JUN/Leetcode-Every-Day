@@ -41,7 +41,6 @@ function generateParenthesis1(n: number): string[] {
 
         for (let i = 0; i < 2 * n; ++i) {
             if (
-                (i === 0 && parenthesis[i] === ')') ||
                 (i > 0 &&
                     parenthesis[i - 1] === parenthesis[i] &&
                     !visited[i - 1]) ||
