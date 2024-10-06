@@ -2,7 +2,7 @@
 
 Created: September 30, 2024 11:24 AM
 Difficulty: Medium
-Topics: Binary-Tree, Breadth-First Seasrch, Tree
+Topics: Binary-Tree, Breadth-First Search, Tree
 Status: Done
 
 ## 📖Description

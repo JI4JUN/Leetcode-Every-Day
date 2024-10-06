@@ -55,7 +55,6 @@ function numIslands(grid: string[][]): number {
     const directions: number[] = [-1, 0, 1, 0, -1];
     const bfs = (r: number, c: number): void => {
         const queue: [number, number][] = [[r, c]];
-        visited[r][c] = true;
 
         while (queue.length > 0) {
             const [currX, currY]: [number, number] = queue.shift()!;
