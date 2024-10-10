@@ -29,17 +29,19 @@ function calcEquation(
         if (from === to) {
             return 1;
         }
-        if (visited.has(from) || !variableMap.has(from)) {
+        if (!variableMap.has(from)) {
             return -1;
         }
 
         visited.add(from);
 
         for (const [neighbor, value] of variableMap.get(from)!.entries()) {
-            const product: number = dfs(neighbor, to, visited);
+            if (!visited.has(neighbor)) {
+                const product: number = dfs(neighbor, to, visited);
 
-            if (product !== -1) {
-                return product * value;
+                if (product !== -1) {
+                    return product * value;
+                }
             }
         }
 
