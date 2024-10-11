@@ -5,7 +5,8 @@
  */
 
 // @lc code=start
-function canFinish(numCourses: number, prerequisites: number[][]): boolean {
+// ======================== Approach 1 ======================== //
+function canFinish1(numCourses: number, prerequisites: number[][]): boolean {
     const graph: number[][] = Array.from({ length: numCourses }, () => []);
     const visited: number[] = new Array(numCourses).fill(0); // 0: not visited 1: visiting 2: visited
 
@@ -41,5 +42,37 @@ function canFinish(numCourses: number, prerequisites: number[][]): boolean {
     }
 
     return true;
+}
+
+// ======================== Approach 2 ======================== //
+function canFinish(numCourses: number, prerequisites: number[][]): boolean {
+    const graph: number[][] = Array.from({ length: numCourses }, () => []);
+    const indegrees: number[] = new Array(numCourses).fill(0);
+    const queue: number[] = [];
+    let count: number = 0;
+
+    prerequisites.forEach(([course, preCourse]) => {
+        graph[preCourse].push(course);
+        ++indegrees[course];
+    });
+    indegrees.forEach((count, index) => {
+        if (count === 0) {
+            queue.push(index);
+        }
+    });
+
+    while (queue.length > 0) {
+        ++count;
+
+        const currCourse: number = queue.shift()!;
+
+        for (const neighbor of graph[currCourse]) {
+            if (--indegrees[neighbor] === 0) {
+                queue.push(neighbor);
+            }
+        }
+    }
+
+    return count === numCourses;
 }
 // @lc code=end
