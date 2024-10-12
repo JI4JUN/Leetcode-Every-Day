@@ -14,7 +14,7 @@ function canFinish1(numCourses: number, prerequisites: number[][]): boolean {
         graph[preCourse].push(course);
     });
 
-    const checkCycle = (course: number): boolean => {
+    const dfs = (course: number): boolean => {
         if (visited[course] === 1) {
             return true;
         }
@@ -25,7 +25,7 @@ function canFinish1(numCourses: number, prerequisites: number[][]): boolean {
         visited[course] = 1;
 
         for (const neighbor of graph[course]) {
-            if (checkCycle(neighbor)) {
+            if (dfs(neighbor)) {
                 return true;
             }
         }
@@ -36,7 +36,7 @@ function canFinish1(numCourses: number, prerequisites: number[][]): boolean {
     };
 
     for (let i = 0; i < numCourses; ++i) {
-        if (graph[i].length > 0 && visited[i] === 0 && checkCycle(i)) {
+        if (visited[i] === 0 && dfs(i)) {
             return false;
         }
     }
