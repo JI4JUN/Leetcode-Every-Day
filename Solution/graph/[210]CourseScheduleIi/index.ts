@@ -49,12 +49,14 @@ function findOrder(numCourses: number, prerequisites: number[][]): number[] {
     const result: number[] = [];
     const graph: number[][] = Array.from({ length: numCourses }, () => []);
     const indegrees: number[] = new Array(numCourses).fill(0);
-    const queue: number[] = [];
 
     prerequisites.forEach(([course, preCourse]) => {
         graph[preCourse].push(course);
         ++indegrees[course];
     });
+
+    const queue: number[] = [];
+
     indegrees.forEach((count, index) => {
         if (count === 0) {
             queue.push(index);
@@ -75,4 +77,5 @@ function findOrder(numCourses: number, prerequisites: number[][]): number[] {
 
     return result.length === numCourses ? result : [];
 }
+
 // @lc code=end
