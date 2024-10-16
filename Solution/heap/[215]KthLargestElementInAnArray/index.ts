@@ -5,7 +5,8 @@
  */
 
 // @lc code=start
-function findKthLargest(nums: number[], k: number): number {
+// ======================== Approach 1 ======================== //
+function findKthLargest1(nums: number[], k: number): number {
     let len: number = nums.length;
     const startIndex: number = (len - 1) >> 1;
     const maxHeapify = (i: number): void => {
@@ -38,5 +39,18 @@ function findKthLargest(nums: number[], k: number): number {
     }
 
     return nums[0];
+}
+
+// ======================== Approach 2 ======================== //
+function findKthLargest(nums: number[], k: number): number {
+    const maxQueue = new MaxPriorityQueue();
+
+    nums.forEach((num) => maxQueue.enqueue(num));
+
+    for (let i = 0; i < k - 1; ++i) {
+        maxQueue.dequeue();
+    }
+
+    return maxQueue.front().element;
 }
 // @lc code=end
