@@ -62,4 +62,5 @@ function searchMatrix(matrix: number[][], target: number): boolean {
 
     return found ? found : binarySearch(matrix[index]).found;
 }
+
 // @lc code=end
