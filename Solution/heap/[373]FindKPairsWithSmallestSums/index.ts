@@ -40,7 +40,7 @@ function kSmallestPairs1(
 
         const nextIndex2: number = index2 + 1;
 
-        if (nextIndex2 < nums1.length) {
+        if (nextIndex2 < nums2.length) {
             minQueue.enqueue({
                 sum: num1 + nums2[nextIndex2],
                 num1,
