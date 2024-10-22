@@ -32,10 +32,10 @@ For easily managing the next pair which waiting to be inserted in the `MinPriori
 
 ```tsx
 interface INode {
-		sum: number;
-		num1: number;
-		nums: number;
-		index2: number;
+    sum: number;
+    num1: number;
+    nums: number;
+    index2: number;
 }
 ```
 
@@ -49,7 +49,7 @@ The size of created `minQueue` will be limited to the minimum value between the 
 
 ```tsx
 const minQueue = new MinPriorityQueue({
-		priority: (node: INode) => node.sum;
+    priority: (node: INode) => node.sum;
 })
 
 for (let i = 0; i < Math.min(nums1.length, k); ++i) {
