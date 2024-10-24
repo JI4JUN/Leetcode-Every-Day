@@ -28,7 +28,8 @@ class WordDictionary {
 		current.wordEnd = true;
 	}
 
-	search(word: string): boolean {
+	// ======================== Approach 1 ======================== //
+	search1(word: string): boolean {
 		let current: WordDictionary = this;
 
 		const dfs = (currWord: string, currNode: WordDictionary): boolean => {
@@ -56,6 +57,38 @@ class WordDictionary {
 		};
 
 		return dfs(word, current);
+	}
+
+	// ======================== Approach 2 ======================== //
+	search(word: string): boolean {
+		const queue: [WordDictionary, number][] = [[this, 0]];
+
+		while (queue.length > 0) {
+			const [currentNode, index] = queue.shift()!;
+
+			if (index !== word.length) {
+				const currentLetter: string = word[index];
+
+				if (currentLetter === '.') {
+					for (const childLetter of currentNode.children.values()) {
+						queue.push([childLetter, index + 1]);
+					}
+				} else {
+					if (currentNode.children.has(currentLetter)) {
+						queue.push([
+							currentNode.children.get(currentLetter)!,
+							index + 1
+						]);
+					}
+				}
+			} else {
+				if (currentNode.wordEnd) {
+					return true;
+				}
+			}
+		}
+
+		return false;
 	}
 }
 
