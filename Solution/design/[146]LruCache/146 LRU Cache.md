@@ -73,12 +73,12 @@ push_front(node: DoublyLinkedNode): void {
 
 **`remove(node)` :**
 
-- If `this.firstNode` is `null` , indicates the linked list has no elements available for deletion, just return.
-- Update `this.size` to `this.size - 1` .
+- If the `this.size` is equal to `0` , means that the linked list has no elements available for deletion, just return.
+- Decrease the `this.size` by `1` .
+- If the `this.size` is equal to `0` now, means that the current linked list only includes one node, just remove this node.
 - If `this.firstNode` points to `node` , means that `node` is the fist node of the linked list.
     - Point `this.firstNode` to `node.next` for updating the pointer `firstNode` .
-    - If `node.next` exists,
-        - Remove `node` from the list.
+    - Remove `node` from the list.
     - Stop the execution of the function `remove` .
 - If `this.lastNode` points to `node` , means that `node` is the last node of the linked list.
     - Point itself to `node.prev` for updating the pointer `lastNode` .
@@ -87,27 +87,33 @@ push_front(node: DoublyLinkedNode): void {
 - Otherwise, use the `prev` and `next` pointers directly to remove the `node` .
 
 ```tsx
-remove(node: DoublyLinkedNode): void {
-    if (this.firstNode === null) {
+remove(node: DListNode): void {
+    if (this.size === 0) {
         return;
     }
 
-    --this.size;
+    this.size--;
 
-    if (this.firstNode === node) {
-        this.firstNode = node.next;
-
-        if (node.next !== null) {
-            node.next.prev = null;
-            node.next = null;
-        }
+    if (this.size === 0) {
+        node.next = null;
+        node.prev = null;
+        this.first = null;
+        this.last = null;
 
         return;
     }
 
-    if (this.lastNode === node) {
-        this.lastNode = node.prev;
-        node.prev!.next = null;
+    if (this.first === node) {
+        this.first = node.next;
+        node.next.prev = null;
+        node.next = null;
+
+        return;
+    }
+
+    if (this.last === node) {
+        this.last = node.prev;
+        node.prev.next = null;
         node.prev = null;
 
         return;
@@ -115,6 +121,8 @@ remove(node: DoublyLinkedNode): void {
 
     node.prev!.next = node.next;
     node.next!.prev = node.prev;
+    node.next = null;
+    node.prev = null;
 }
 ```
 
@@ -260,28 +268,33 @@ class DoublyLinkedList {
         ++this.size;
     }
 
-    remove(node: DoublyLinkedNode): void {
-        if (this.firstNode === null) {
+    remove(node: DListNode): void {
+        if (this.size === 0) {
             return;
         }
 
-        --this.size;
+        this.size--;
 
-        if (this.firstNode === node) {
-            this.firstNode = node.next;
+        if (this.size === 0) {
+            node.next = null;
+            node.prev = null;
+            this.first = null;
+            this.last = null;
 
-            if (node.next !== null) {
-                node.next.prev = null;
-            }
+            return;
+        }
 
+        if (this.first === node) {
+            this.first = node.next;
+            node.next.prev = null;
             node.next = null;
 
             return;
         }
 
-        if (this.lastNode === node) {
-            this.lastNode = node.prev;
-            node.prev!.next = null;
+        if (this.last === node) {
+            this.last = node.prev;
+            node.prev.next = null;
             node.prev = null;
 
             return;
@@ -289,6 +302,8 @@ class DoublyLinkedList {
 
         node.prev!.next = node.next;
         node.next!.prev = node.prev;
+        node.next = null;
+        node.prev = null;
     }
 }
 

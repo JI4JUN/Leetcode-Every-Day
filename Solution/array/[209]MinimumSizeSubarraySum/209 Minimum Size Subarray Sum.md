@@ -53,7 +53,7 @@ function minSubArrayLen(target: number, nums: number[]): number {
 
 ## 📋Approach Two
 
-Following up the problem, we can coding another solution of which the time complexity is $O(NlogN)$ base on Binary Search Technique.
+Following up the problem, we can code another solution of which the time complexity is $O(NlogN)$ base on Binary Search Technique.
 
 ### Initialization
 
