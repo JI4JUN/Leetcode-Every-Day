@@ -11,7 +11,7 @@ Status: Done
 
 ## 🤔Intuition
 
-This problem can be visualized as a directed graph where courses are nodes and prerequisites are the directed edges. And the purpose of this problem is to find out the [**Topological Ordering](https://en.wikipedia.org/wiki/Topological_ordering)** of the directed graph formed by `prerequisites` .
+This problem can be visualized as a directed graph where courses are nodes and prerequisites are the directed edges. And the purpose of this problem is to find out the [**Topological Ordering**](https://en.wikipedia.org/wiki/Topological_ordering) of the directed graph formed by `prerequisites` .
 
 There are two methods to determine the Topological Ordering:
 

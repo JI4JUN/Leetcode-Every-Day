@@ -2,7 +2,7 @@
 
 Created: July 8, 2024 9:23 AM
 Difficulty: Hard
-Topics: Depth-First Search, Eulerian Circuit, Graph
+Topics: Backtracking, Depth-First Search, Eulerian Circuit, Graph
 
 ## 📖Description
 
