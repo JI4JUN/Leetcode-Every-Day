@@ -20,35 +20,33 @@
  */
 
 function levelOrder(root: TreeNode | null): number[][] {
-    if (root === null) {
-        return [];
-    }
+	if (root === null) {
+		return [];
+	}
 
-    const result: number[][] = [[root.val]];
-    const queue: TreeNode[] = [root];
+	const result: number[][] = [];
+	const queue: TreeNode[] = [root];
 
-    while (queue.length > 0) {
-        const size: number = queue.length;
-        const currentLevel: number[] = [];
+	while (queue.length > 0) {
+		const size: number = queue.length;
+		const currentLevel: number[] = [];
 
-        for (let i = 0; i < size; ++i) {
-            const { left, right } = queue.shift()!;
+		for (let i = 0; i < size; ++i) {
+			const { val, left, right } = queue.shift()!;
 
-            if (left) {
-                currentLevel.push(left.val);
-                queue.push(left);
-            }
-            if (right) {
-                currentLevel.push(right.val);
-                queue.push(right);
-            }
-        }
+			if (left) {
+				queue.push(left);
+			}
+			if (right) {
+				queue.push(right);
+			}
 
-        if (currentLevel.length > 0) {
-            result.push(currentLevel);
-        }
-    }
+			currentLevel.push(val);
+		}
 
-    return result;
+		result.push(currentLevel);
+	}
+
+	return result;
 }
 // @lc code=end
